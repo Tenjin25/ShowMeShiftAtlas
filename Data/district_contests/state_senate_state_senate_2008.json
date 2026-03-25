@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2008,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 44146,
+        "rep_votes": 44224,
+        "other_votes": 0,
+        "total_votes": 88370,
+        "dem_candidate": "Joan Barry",
+        "rep_candidate": "James Lembke",
+        "margin": 78,
+        "margin_pct": 0.088265,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 29917,
+        "rep_votes": 42551,
+        "other_votes": 0,
+        "total_votes": 72468,
+        "dem_candidate": "Dennis Riche",
+        "rep_candidate": "Kevin Engler",
+        "margin": 12634,
+        "margin_pct": 17.433902,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 57796,
+        "rep_votes": 0,
+        "other_votes": 5248,
+        "total_votes": 63044,
+        "dem_candidate": "Robin Wright-Jones",
+        "rep_candidate": "",
+        "margin": -57796,
+        "margin_pct": -91.675655,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 34347,
+        "rep_votes": 54702,
+        "other_votes": 0,
+        "total_votes": 89049,
+        "dem_candidate": "Kevin Leeseberg",
+        "rep_candidate": "Jane Cunningham",
+        "margin": 20355,
+        "margin_pct": 22.858202,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 59589,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 59589,
+        "dem_candidate": "Yvonne Wilson",
+        "rep_candidate": "",
+        "margin": -59589,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 62128,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 62128,
+        "dem_candidate": "Victor Callahan",
+        "rep_candidate": "",
+        "margin": -62128,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 70933,
+        "rep_votes": 0,
+        "other_votes": 6239,
+        "total_votes": 77172,
+        "dem_candidate": "Timothy Green",
+        "rep_candidate": "",
+        "margin": -70933,
+        "margin_pct": -91.915462,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 42469,
+        "rep_votes": 51366,
+        "other_votes": 0,
+        "total_votes": 93835,
+        "dem_candidate": "James Trout",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 8897,
+        "margin_pct": 9.481537,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 44578,
+        "rep_votes": 50451,
+        "other_votes": 0,
+        "total_votes": 95029,
+        "dem_candidate": "Sandra Aust",
+        "rep_candidate": "Barbara Ridgeway",
+        "margin": 5873,
+        "margin_pct": 6.180219,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 42732,
+        "rep_votes": 44265,
+        "other_votes": 4286,
+        "total_votes": 91283,
+        "dem_candidate": "Charles Graham",
+        "rep_candidate": "Kurt Schaefer",
+        "margin": 1533,
+        "margin_pct": 1.679393,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 26643,
+        "rep_votes": 47285,
+        "other_votes": 0,
+        "total_votes": 73928,
+        "dem_candidate": "Joe Sadeghi",
+        "rep_candidate": "William Stouffer",
+        "margin": 20642,
+        "margin_pct": 27.921762,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 33613,
+        "rep_votes": 50821,
+        "other_votes": 0,
+        "total_votes": 84434,
+        "dem_candidate": "Larry Willis",
+        "rep_candidate": "Thomas Dempsey",
+        "margin": 17208,
+        "margin_pct": 20.380415,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 22952,
+        "rep_votes": 43232,
+        "other_votes": 0,
+        "total_votes": 66184,
+        "dem_candidate": "Michael Stoelting",
+        "rep_candidate": "Robert Mayer",
+        "margin": 20280,
+        "margin_pct": 30.641847,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 27308,
+        "rep_votes": 49059,
+        "other_votes": 0,
+        "total_votes": 76367,
+        "dem_candidate": "Linda Sanders",
+        "rep_candidate": "Jason Crowell",
+        "margin": 21751,
+        "margin_pct": 28.482198,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 0,
+        "rep_votes": 67612,
+        "other_votes": 0,
+        "total_votes": 67612,
+        "dem_candidate": "",
+        "rep_candidate": "Jack Goodman",
+        "margin": 67612,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 36658,
+        "rep_votes": 49059,
+        "other_votes": 0,
+        "total_votes": 85717,
+        "dem_candidate": "Christopher Benjamin",
+        "rep_candidate": "David Pearce",
+        "margin": 12401,
+        "margin_pct": 14.467375,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 25997,
+        "rep_votes": 53529,
+        "other_votes": 0,
+        "total_votes": 79526,
+        "dem_candidate": "Eric Reeve",
+        "rep_candidate": "Charles (Chuck) Purgason",
+        "margin": 27532,
+        "margin_pct": 34.620124,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

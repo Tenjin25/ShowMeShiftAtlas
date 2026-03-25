@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 267927,
+        "rep_votes": 60832,
+        "other_votes": 11824,
+        "total_votes": 340583,
+        "dem_candidate": "Lacy Clay",
+        "rep_candidate": "Robyn Hamlin",
+        "margin": -207095,
+        "margin_pct": -60.80603,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 146272,
+        "rep_votes": 236971,
+        "other_votes": 11205,
+        "total_votes": 394448,
+        "dem_candidate": "Glenn Koenen",
+        "rep_candidate": "Ann Wagner",
+        "margin": 90699,
+        "margin_pct": 22.993905,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 111189,
+        "rep_votes": 214843,
+        "other_votes": 12353,
+        "total_votes": 338385,
+        "dem_candidate": "Eric C. Mayer",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 103654,
+        "margin_pct": 30.631972,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 113120,
+        "rep_votes": 192237,
+        "other_votes": 13366,
+        "total_votes": 318723,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Vicky Hartzler",
+        "margin": 79117,
+        "margin_pct": 24.823122,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 200290,
+        "rep_votes": 122149,
+        "other_votes": 8503,
+        "total_votes": 330942,
+        "dem_candidate": "Emanuel Cleaver II",
+        "rep_candidate": "Jacob Turk",
+        "margin": -78141,
+        "margin_pct": -23.61169,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 108503,
+        "rep_votes": 216906,
+        "other_votes": 8279,
+        "total_votes": 333688,
+        "dem_candidate": "Kyle Yarber",
+        "rep_candidate": "Sam Graves",
+        "margin": 108403,
+        "margin_pct": 32.486335,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 98498,
+        "rep_votes": 203566,
+        "other_votes": 16677,
+        "total_votes": 318741,
+        "dem_candidate": "Jim Evans",
+        "rep_candidate": "Billy Long",
+        "margin": 105068,
+        "margin_pct": 32.963441,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 73755,
+        "rep_votes": 216082,
+        "other_votes": 10553,
+        "total_votes": 300390,
+        "dem_candidate": "Jack Rushin",
+        "rep_candidate": "Jo Ann Emerson",
+        "margin": 142327,
+        "margin_pct": 47.380738,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

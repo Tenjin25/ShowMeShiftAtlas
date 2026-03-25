@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2002,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 133946,
+        "rep_votes": 51755,
+        "other_votes": 5354,
+        "total_votes": 191055,
+        "dem_candidate": "William Clay",
+        "rep_candidate": "Richard Schwadron",
+        "margin": -82191,
+        "margin_pct": -43.019549,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 77223,
+        "rep_votes": 167057,
+        "other_votes": 4548,
+        "total_votes": 248828,
+        "dem_candidate": "John Hogan",
+        "rep_candidate": "W. Akin",
+        "margin": 89834,
+        "margin_pct": 36.10285,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 122181,
+        "rep_votes": 80551,
+        "other_votes": 4146,
+        "total_votes": 206878,
+        "dem_candidate": "Richard Gephardt",
+        "rep_candidate": "Catherine Enz",
+        "margin": -41630,
+        "margin_pct": -20.122971,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 142204,
+        "rep_votes": 64451,
+        "other_votes": 3583,
+        "total_votes": 210238,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "James Noland",
+        "margin": -77753,
+        "margin_pct": -36.983324,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 122646,
+        "rep_votes": 60245,
+        "other_votes": 3277,
+        "total_votes": 186168,
+        "dem_candidate": "Karen McCarthy",
+        "rep_candidate": "Stephen Gordon",
+        "margin": -62401,
+        "margin_pct": -33.51865,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 73202,
+        "rep_votes": 131151,
+        "other_votes": 3735,
+        "total_votes": 208088,
+        "dem_candidate": "Cathy Rinehart",
+        "rep_candidate": "Samuel Graves",
+        "margin": 57949,
+        "margin_pct": 27.848314,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 45965,
+        "rep_votes": 149519,
+        "other_votes": 4380,
+        "total_votes": 199864,
+        "dem_candidate": "Roland Lapham",
+        "rep_candidate": "Roy Blunt",
+        "margin": 103554,
+        "margin_pct": 51.812232,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 50683,
+        "rep_votes": 135146,
+        "other_votes": 2491,
+        "total_votes": 188320,
+        "dem_candidate": "Gene Curtis",
+        "rep_candidate": "Jo Ann Emerson",
+        "margin": 84463,
+        "margin_pct": 44.850786,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 61126,
+        "rep_votes": 146032,
+        "other_votes": 6967,
+        "total_votes": 214125,
+        "dem_candidate": "Donald Deichman",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": 84906,
+        "margin_pct": 39.652539,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

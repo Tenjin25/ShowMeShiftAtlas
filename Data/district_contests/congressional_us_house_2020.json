@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2020,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 249080,
+        "rep_votes": 59939,
+        "other_votes": 6855,
+        "total_votes": 315874,
+        "dem_candidate": "Cori Bush",
+        "rep_candidate": "Anthony Rogers",
+        "margin": -189141,
+        "margin_pct": -59.878622,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 204536,
+        "rep_votes": 233150,
+        "other_votes": 11647,
+        "total_votes": 449333,
+        "dem_candidate": "Jill Schupp",
+        "rep_candidate": "Ann Wagner",
+        "margin": 28614,
+        "margin_pct": 6.368106,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 116095,
+        "rep_votes": 282866,
+        "other_votes": 8387,
+        "total_votes": 407348,
+        "dem_candidate": "Megan Rezabek",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 166771,
+        "margin_pct": 40.94067,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 107635,
+        "rep_votes": 245247,
+        "other_votes": 9954,
+        "total_votes": 362836,
+        "dem_candidate": "Lindsey Simmons",
+        "rep_candidate": "Vicky Hartzler",
+        "margin": 137612,
+        "margin_pct": 37.926777,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 179439,
+        "rep_votes": 119537,
+        "other_votes": 8508,
+        "total_votes": 307484,
+        "dem_candidate": "Emanuel Cleaver II",
+        "rep_candidate": "Ryan Derks",
+        "margin": -59902,
+        "margin_pct": -19.481339,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 111513,
+        "rep_votes": 252070,
+        "other_votes": 7966,
+        "total_votes": 371549,
+        "dem_candidate": "Gena L. Ross",
+        "rep_candidate": "Sam Graves",
+        "margin": 140557,
+        "margin_pct": 37.830004,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 98111,
+        "rep_votes": 254318,
+        "other_votes": 16854,
+        "total_votes": 369283,
+        "dem_candidate": "Teresa Montseny",
+        "rep_candidate": "Billy Long",
+        "margin": 156207,
+        "margin_pct": 42.300079,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 70561,
+        "rep_votes": 253811,
+        "other_votes": 5854,
+        "total_votes": 330226,
+        "dem_candidate": "Kathy Ellis",
+        "rep_candidate": "Jason Smith",
+        "margin": 183250,
+        "margin_pct": 55.492299,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

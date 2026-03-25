@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2000,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 149173,
+        "rep_votes": 42730,
+        "other_votes": 6444,
+        "total_votes": 198347,
+        "dem_candidate": "William Lacy Clay",
+        "rep_candidate": "Z. Dwight Billingsly",
+        "margin": -106443,
+        "margin_pct": -53.665042,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 126441,
+        "rep_votes": 164926,
+        "other_votes": 6695,
+        "total_votes": 298062,
+        "dem_candidate": "Ted House",
+        "rep_candidate": "Todd Akin",
+        "margin": 38485,
+        "margin_pct": 12.911743,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 147222,
+        "rep_votes": 100967,
+        "other_votes": 6350,
+        "total_votes": 254539,
+        "dem_candidate": "Richard A. (Dick) Gephardt",
+        "rep_candidate": "Bill Federer",
+        "margin": -46255,
+        "margin_pct": -18.172068,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 180634,
+        "rep_votes": 84406,
+        "other_votes": 4849,
+        "total_votes": 269889,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "Jim Noland",
+        "margin": -96228,
+        "margin_pct": -35.654658,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 159826,
+        "rep_votes": 66439,
+        "other_votes": 5872,
+        "total_votes": 232137,
+        "dem_candidate": "Karen McCarthy",
+        "rep_candidate": "Steve Gordon",
+        "margin": -93387,
+        "margin_pct": -40.229261,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 127792,
+        "rep_votes": 138925,
+        "other_votes": 6484,
+        "total_votes": 273201,
+        "dem_candidate": "Steve Danner",
+        "rep_candidate": "Samuel B. (Sam) Graves, Jr.",
+        "margin": 11133,
+        "margin_pct": 4.075022,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 65510,
+        "rep_votes": 202305,
+        "other_votes": 6122,
+        "total_votes": 273937,
+        "dem_candidate": "Charles Christrup",
+        "rep_candidate": "Roy Blunt",
+        "margin": 136795,
+        "margin_pct": 49.936664,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 67760,
+        "rep_votes": 162238,
+        "other_votes": 4067,
+        "total_votes": 234065,
+        "dem_candidate": "Bob Camp",
+        "rep_candidate": "Jo Ann Emerson",
+        "margin": 94478,
+        "margin_pct": 40.364001,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 111661,
+        "rep_votes": 172787,
+        "other_votes": 7161,
+        "total_votes": 291609,
+        "dem_candidate": "Steven R. Carroll",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": 61126,
+        "margin_pct": 20.96163,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

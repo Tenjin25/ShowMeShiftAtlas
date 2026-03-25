@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 236993,
+        "rep_votes": 62714,
+        "other_votes": 14317,
+        "total_votes": 314024,
+        "dem_candidate": "Lacy Clay",
+        "rep_candidate": "Steven G. Bailey",
+        "margin": -174279,
+        "margin_pct": -55.498624,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 155689,
+        "rep_votes": 241954,
+        "other_votes": 15653,
+        "total_votes": 413296,
+        "dem_candidate": "Bill Otto",
+        "rep_candidate": "Ann Wagner",
+        "margin": 86265,
+        "margin_pct": 20.87245,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 102891,
+        "rep_votes": 249865,
+        "other_votes": 15577,
+        "total_votes": 368333,
+        "dem_candidate": "Kevin Miller",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 146974,
+        "margin_pct": 39.90248,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 92510,
+        "rep_votes": 225348,
+        "other_votes": 14376,
+        "total_votes": 332234,
+        "dem_candidate": "Gordon Christensen",
+        "rep_candidate": "Vicky Hartzler",
+        "margin": 132838,
+        "margin_pct": 39.983265,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 190766,
+        "rep_votes": 123771,
+        "other_votes": 9733,
+        "total_votes": 324270,
+        "dem_candidate": "Emanuel Cleaver II",
+        "rep_candidate": "Jacob Turk",
+        "margin": -66995,
+        "margin_pct": -20.660252,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 99692,
+        "rep_votes": 0,
+        "other_votes": 250752,
+        "total_votes": 350444,
+        "dem_candidate": "David M Blackwell",
+        "rep_candidate": "",
+        "margin": -99692,
+        "margin_pct": -28.447341,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 92756,
+        "rep_votes": 228692,
+        "other_votes": 17159,
+        "total_votes": 338607,
+        "dem_candidate": "Genevieve (Gen) Williams",
+        "rep_candidate": "Billy Long",
+        "margin": 135936,
+        "margin_pct": 40.145656,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 70009,
+        "rep_votes": 229792,
+        "other_votes": 9070,
+        "total_votes": 308871,
+        "dem_candidate": "Dave Cowell",
+        "rep_candidate": "Jason Smith",
+        "margin": 159783,
+        "margin_pct": 51.731305,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

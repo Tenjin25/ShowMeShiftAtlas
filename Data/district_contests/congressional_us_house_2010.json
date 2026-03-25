@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2010,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 135907,
+        "rep_votes": 43649,
+        "other_votes": 5223,
+        "total_votes": 184779,
+        "dem_candidate": "Lacy Clay",
+        "rep_candidate": "Robyn Hamlin",
+        "margin": -92258,
+        "margin_pct": -49.928834,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 77467,
+        "rep_votes": 180481,
+        "other_votes": 7684,
+        "total_votes": 265632,
+        "dem_candidate": "Arthur Lieber",
+        "rep_candidate": "Todd Akin",
+        "margin": 103014,
+        "margin_pct": 38.780719,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 99398,
+        "rep_votes": 94757,
+        "other_votes": 8930,
+        "total_votes": 203085,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Ed Martin",
+        "margin": -4641,
+        "margin_pct": -2.28525,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 101532,
+        "rep_votes": 113489,
+        "other_votes": 10035,
+        "total_votes": 225056,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "Vicky Hartzler",
+        "margin": 11957,
+        "margin_pct": 5.3129,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 102076,
+        "rep_votes": 84578,
+        "other_votes": 4769,
+        "total_votes": 191423,
+        "dem_candidate": "Emanuel Cleaver",
+        "rep_candidate": "Jacob Turk",
+        "margin": -17498,
+        "margin_pct": -9.141012,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 67762,
+        "rep_votes": 154103,
+        "other_votes": 47,
+        "total_votes": 221912,
+        "dem_candidate": "Clint Hylton",
+        "rep_candidate": "Sam Graves",
+        "margin": 86341,
+        "margin_pct": 38.907765,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 67545,
+        "rep_votes": 141010,
+        "other_votes": 13876,
+        "total_votes": 222431,
+        "dem_candidate": "Scott Eckersley",
+        "rep_candidate": "Billy Long",
+        "margin": 73465,
+        "margin_pct": 33.02822,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 56377,
+        "rep_votes": 128499,
+        "other_votes": 11123,
+        "total_votes": 195999,
+        "dem_candidate": "Tommy Sowers",
+        "rep_candidate": "Jo Ann Emerson",
+        "margin": 72122,
+        "margin_pct": 36.797127,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 0,
+        "rep_votes": 162724,
+        "other_votes": 47634,
+        "total_votes": 210358,
+        "dem_candidate": "",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 162724,
+        "margin_pct": 77.355746,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

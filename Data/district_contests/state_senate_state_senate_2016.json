@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2016,
+    "district_count": 18,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 48926,
+        "rep_votes": 43227,
+        "other_votes": 0,
+        "total_votes": 92153,
+        "dem_candidate": "Scott Sifton",
+        "rep_candidate": "Randy Jotte",
+        "margin": -5699,
+        "margin_pct": -6.18428,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 0,
+        "rep_votes": 54414,
+        "other_votes": 12555,
+        "total_votes": 66969,
+        "dem_candidate": "",
+        "rep_candidate": "Gary Romine",
+        "margin": 54414,
+        "margin_pct": 81.25252,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 57288,
+        "rep_votes": 20686,
+        "other_votes": 3019,
+        "total_votes": 80993,
+        "dem_candidate": "Jacob W Hummel",
+        "rep_candidate": "Bryan Young",
+        "margin": -36602,
+        "margin_pct": -45.19156,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 53339,
+        "rep_votes": 0,
+        "other_votes": 9195,
+        "total_votes": 62534,
+        "dem_candidate": "Jamilah Nasheed",
+        "rep_candidate": "",
+        "margin": -53339,
+        "margin_pct": -85.295999,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 60759,
+        "rep_votes": 0,
+        "other_votes": 15931,
+        "total_votes": 76690,
+        "dem_candidate": "Jason Holsman",
+        "rep_candidate": "",
+        "margin": -60759,
+        "margin_pct": -79.226757,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 55506,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 55506,
+        "dem_candidate": "Shalonn (Kiki) Curls",
+        "rep_candidate": "",
+        "margin": -55506,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 33071,
+        "rep_votes": 30318,
+        "other_votes": 0,
+        "total_votes": 63389,
+        "dem_candidate": "John Joseph Rizzo",
+        "rep_candidate": "Brent Thurston Lasater",
+        "margin": -2753,
+        "margin_pct": -4.343025,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 66400,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 66400,
+        "dem_candidate": "Gina Walsh",
+        "rep_candidate": "",
+        "margin": -66400,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 40193,
+        "rep_votes": 62988,
+        "other_votes": 33,
+        "total_votes": 103214,
+        "dem_candidate": "Stephen Eagleton",
+        "rep_candidate": "Andrew Koenig",
+        "margin": 22795,
+        "margin_pct": 22.085182,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 32422,
+        "rep_votes": 51262,
+        "other_votes": 0,
+        "total_votes": 83684,
+        "dem_candidate": "J. Ranen Bechthold",
+        "rep_candidate": "Ryan Silvey",
+        "margin": 18840,
+        "margin_pct": 22.513264,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 43179,
+        "rep_votes": 45335,
+        "other_votes": 0,
+        "total_votes": 88514,
+        "dem_candidate": "Stephen Webber",
+        "rep_candidate": "Caleb Rowden",
+        "margin": 2156,
+        "margin_pct": 2.435773,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 19988,
+        "rep_votes": 50288,
+        "other_votes": 4077,
+        "total_votes": 74353,
+        "dem_candidate": "ElGene Ver Dught",
+        "rep_candidate": "Denny Hoskins",
+        "margin": 30300,
+        "margin_pct": 40.75155,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 34651,
+        "rep_votes": 56870,
+        "other_votes": 3014,
+        "total_votes": 94535,
+        "dem_candidate": "Richard Orr",
+        "rep_candidate": "Bill Eigel",
+        "margin": 22219,
+        "margin_pct": 23.503464,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 19607,
+        "rep_votes": 44373,
+        "other_votes": 0,
+        "total_votes": 63980,
+        "dem_candidate": "Bill Burlison",
+        "rep_candidate": "Doug Libla",
+        "margin": 24766,
+        "margin_pct": 38.708972,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 19486,
+        "rep_votes": 56750,
+        "other_votes": 0,
+        "total_votes": 76236,
+        "dem_candidate": "Donnie Owens",
+        "rep_candidate": "Wayne Wallingford",
+        "margin": 37264,
+        "margin_pct": 48.879794,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 0,
+        "rep_votes": 68542,
+        "other_votes": 0,
+        "total_votes": 68542,
+        "dem_candidate": "",
+        "rep_candidate": "David Sater",
+        "margin": 68542,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 0,
+        "rep_votes": 57296,
+        "other_votes": 21805,
+        "total_votes": 79101,
+        "dem_candidate": "",
+        "rep_candidate": "Ed Emery",
+        "margin": 57296,
+        "margin_pct": 72.433977,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 0,
+        "rep_votes": 64520,
+        "other_votes": 0,
+        "total_votes": 64520,
+        "dem_candidate": "",
+        "rep_candidate": "Mike Cunningham",
+        "margin": 64520,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

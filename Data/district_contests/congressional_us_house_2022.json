@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2022,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 160999,
+        "rep_votes": 53767,
+        "other_votes": 6192,
+        "total_votes": 220958,
+        "dem_candidate": "Cori Bush",
+        "rep_candidate": "Andrew Jones",
+        "margin": -107232,
+        "margin_pct": -48.53049,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 135895,
+        "rep_votes": 173277,
+        "other_votes": 6494,
+        "total_votes": 315666,
+        "dem_candidate": "Trish Gunby",
+        "rep_candidate": "Ann Wagner",
+        "margin": 37382,
+        "margin_pct": 11.842264,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 96853,
+        "rep_votes": 180760,
+        "other_votes": 0,
+        "total_votes": 277613,
+        "dem_candidate": "Bethany Mann",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 83907,
+        "margin_pct": 30.224449,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 66824,
+        "rep_votes": 181287,
+        "other_votes": 6107,
+        "total_votes": 254218,
+        "dem_candidate": "Jack Truman",
+        "rep_candidate": "Mark Alford",
+        "margin": 114463,
+        "margin_pct": 45.025529,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 140688,
+        "rep_votes": 84008,
+        "other_votes": 5859,
+        "total_votes": 230555,
+        "dem_candidate": "Emanuel Cleaver Ii",
+        "rep_candidate": "Jacob Turk",
+        "margin": -56680,
+        "margin_pct": -24.584156,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 72253,
+        "rep_votes": 184865,
+        "other_votes": 5774,
+        "total_votes": 262892,
+        "dem_candidate": "Henry Martin",
+        "rep_candidate": "Sam Graves",
+        "margin": 112612,
+        "margin_pct": 42.835841,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 67410,
+        "rep_votes": 178408,
+        "other_votes": 5862,
+        "total_votes": 251680,
+        "dem_candidate": "Kristen Radaker-Sheafer",
+        "rep_candidate": "Eric Burlison",
+        "margin": 110998,
+        "margin_pct": 44.102829,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 53738,
+        "rep_votes": 186472,
+        "other_votes": 5185,
+        "total_votes": 245395,
+        "dem_candidate": "Randi Mccallian",
+        "rep_candidate": "Jason Smith",
+        "margin": 132734,
+        "margin_pct": 54.089937,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

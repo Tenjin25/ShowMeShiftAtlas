@@ -1,0 +1,859 @@
+{
+  "files": [
+    {
+      "contest_type": "attorney_general",
+      "year": 2000,
+      "file": "attorney_general_2000.json",
+      "rows": 114,
+      "dem_total": 1378375,
+      "rep_total": 855814,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2004,
+      "file": "attorney_general_2004.json",
+      "rows": 114,
+      "dem_total": 1592888,
+      "rep_total": 1000521,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2008,
+      "file": "attorney_general_2008.json",
+      "rows": 114,
+      "dem_total": 1471648,
+      "rep_total": 1312721,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2012,
+      "file": "attorney_general_2012.json",
+      "rows": 114,
+      "dem_total": 1491139,
+      "rep_total": 1084107,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2016,
+      "file": "attorney_general_2016.json",
+      "rows": 114,
+      "dem_total": 1140252,
+      "rep_total": 1607550,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2020,
+      "file": "attorney_general_2020.json",
+      "rows": 114,
+      "dem_total": 1084288,
+      "rep_total": 1728768,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "attorney_general",
+      "year": 2024,
+      "file": "attorney_general_2024.json",
+      "rows": 114,
+      "dem_total": 1103482,
+      "rep_total": 1739626,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2002,
+      "file": "auditor_2002.json",
+      "rows": 114,
+      "dem_total": 1090593,
+      "rep_total": 664977,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2006,
+      "file": "auditor_2006.json",
+      "rows": 114,
+      "dem_total": 1091832,
+      "rep_total": 892578,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2010,
+      "file": "auditor_2010.json",
+      "rows": 114,
+      "dem_total": 871867,
+      "rep_total": 974517,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2014,
+      "file": "auditor_2014.json",
+      "rows": 114,
+      "dem_total": 0,
+      "rep_total": 937962,
+      "major_party_contested": false
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2018,
+      "file": "auditor_2018.json",
+      "rows": 114,
+      "dem_total": 0,
+      "rep_total": 0,
+      "major_party_contested": false
+    },
+    {
+      "contest_type": "auditor",
+      "year": 2022,
+      "file": "auditor_2022.json",
+      "rows": 114,
+      "dem_total": 771704,
+      "rep_total": 1218771,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2000,
+      "file": "governor_2000.json",
+      "rows": 114,
+      "dem_total": 1152752,
+      "rep_total": 1131307,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2004,
+      "file": "governor_2004.json",
+      "rows": 114,
+      "dem_total": 1301469,
+      "rep_total": 1382989,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2008,
+      "file": "governor_2008.json",
+      "rows": 114,
+      "dem_total": 1680612,
+      "rep_total": 1136366,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2012,
+      "file": "governor_2012.json",
+      "rows": 114,
+      "dem_total": 1494055,
+      "rep_total": 1160265,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2016,
+      "file": "governor_2016.json",
+      "rows": 114,
+      "dem_total": 1277360,
+      "rep_total": 1433397,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2020,
+      "file": "governor_2020.json",
+      "rows": 114,
+      "dem_total": 1190292,
+      "rep_total": 1696688,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "governor",
+      "year": 2024,
+      "file": "governor_2024.json",
+      "rows": 114,
+      "dem_total": 1146173,
+      "rep_total": 1750802,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2000,
+      "file": "lieutenant_governor_2000.json",
+      "rows": 114,
+      "dem_total": 1201959,
+      "rep_total": 1014446,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2004,
+      "file": "lieutenant_governor_2004.json",
+      "rows": 114,
+      "dem_total": 1286285,
+      "rep_total": 1300117,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2008,
+      "file": "lieutenant_governor_2008.json",
+      "rows": 114,
+      "dem_total": 1331178,
+      "rep_total": 1403707,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2012,
+      "file": "lieutenant_governor_2012.json",
+      "rows": 114,
+      "dem_total": 1219457,
+      "rep_total": 1319746,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2016,
+      "file": "lieutenant_governor_2016.json",
+      "rows": 114,
+      "dem_total": 1168947,
+      "rep_total": 1459392,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2020,
+      "file": "lieutenant_governor_2020.json",
+      "rows": 114,
+      "dem_total": 1115633,
+      "rep_total": 1708172,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "lieutenant_governor",
+      "year": 2024,
+      "file": "lieutenant_governor_2024.json",
+      "rows": 114,
+      "dem_total": 1121608,
+      "rep_total": 1671771,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2004,
+      "file": "president_2004.json",
+      "rows": 114,
+      "dem_total": 1259221,
+      "rep_total": 1455761,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2008,
+      "file": "president_2008.json",
+      "rows": 114,
+      "dem_total": 1441912,
+      "rep_total": 1445816,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2012,
+      "file": "president_2012.json",
+      "rows": 114,
+      "dem_total": 1223796,
+      "rep_total": 1482439,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2016,
+      "file": "president_2016.json",
+      "rows": 114,
+      "dem_total": 1071068,
+      "rep_total": 1594511,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2020,
+      "file": "president_2020.json",
+      "rows": 114,
+      "dem_total": 1215776,
+      "rep_total": 1694179,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "president",
+      "year": 2024,
+      "file": "president_2024.json",
+      "rows": 114,
+      "dem_total": 1200599,
+      "rep_total": 1751986,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2000,
+      "file": "secretary_of_state_2000.json",
+      "rows": 114,
+      "dem_total": 1037064,
+      "rep_total": 1180236,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2004,
+      "file": "secretary_of_state_2004.json",
+      "rows": 114,
+      "dem_total": 1367819,
+      "rep_total": 1243025,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2008,
+      "file": "secretary_of_state_2008.json",
+      "rows": 114,
+      "dem_total": 1749153,
+      "rep_total": 1006089,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2012,
+      "file": "secretary_of_state_2012.json",
+      "rows": 115,
+      "dem_total": 1298022,
+      "rep_total": 1258936,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2016,
+      "file": "secretary_of_state_2016.json",
+      "rows": 114,
+      "dem_total": 1061788,
+      "rep_total": 1591086,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2020,
+      "file": "secretary_of_state_2020.json",
+      "rows": 114,
+      "dem_total": 1049336,
+      "rep_total": 1772572,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "secretary_of_state",
+      "year": 2024,
+      "file": "secretary_of_state_2024.json",
+      "rows": 114,
+      "dem_total": 1154090,
+      "rep_total": 1677902,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2000,
+      "file": "state_house_2000.json",
+      "rows": 114,
+      "dem_total": 1042251,
+      "rep_total": 1024911,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2002,
+      "file": "state_house_2002.json",
+      "rows": 114,
+      "dem_total": 855504,
+      "rep_total": 889451,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2004,
+      "file": "state_house_2004.json",
+      "rows": 114,
+      "dem_total": 1120764,
+      "rep_total": 1341512,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2006,
+      "file": "state_house_2006.json",
+      "rows": 114,
+      "dem_total": 1009468,
+      "rep_total": 965369,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2008,
+      "file": "state_house_2008.json",
+      "rows": 114,
+      "dem_total": 1384162,
+      "rep_total": 1241186,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2010,
+      "file": "state_house_2010.json",
+      "rows": 114,
+      "dem_total": 698064,
+      "rep_total": 1085289,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2012,
+      "file": "state_house_2012.json",
+      "rows": 114,
+      "dem_total": 999763,
+      "rep_total": 1443246,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2014,
+      "file": "state_house_2014.json",
+      "rows": 114,
+      "dem_total": 451440,
+      "rep_total": 839692,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2016,
+      "file": "state_house_2016.json",
+      "rows": 114,
+      "dem_total": 852546,
+      "rep_total": 1613070,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2018,
+      "file": "state_house_2018.json",
+      "rows": 114,
+      "dem_total": 0,
+      "rep_total": 0,
+      "major_party_contested": false
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2020,
+      "file": "state_house_2020.json",
+      "rows": 114,
+      "dem_total": 983920,
+      "rep_total": 1710663,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2022,
+      "file": "state_house_2022.json",
+      "rows": 114,
+      "dem_total": 632717,
+      "rep_total": 1227529,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_house",
+      "year": 2024,
+      "file": "state_house_2024.json",
+      "rows": 114,
+      "dem_total": 1038438,
+      "rep_total": 1716107,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2000,
+      "file": "state_senate_2000.json",
+      "rows": 43,
+      "dem_total": 530583,
+      "rep_total": 502329,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2002,
+      "file": "state_senate_2002.json",
+      "rows": 67,
+      "dem_total": 405820,
+      "rep_total": 471263,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2004,
+      "file": "state_senate_2004.json",
+      "rows": 51,
+      "dem_total": 651857,
+      "rep_total": 628020,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2006,
+      "file": "state_senate_2006.json",
+      "rows": 67,
+      "dem_total": 476674,
+      "rep_total": 528260,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2008,
+      "file": "state_senate_2008.json",
+      "rows": 51,
+      "dem_total": 661806,
+      "rep_total": 648156,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2010,
+      "file": "state_senate_2010.json",
+      "rows": 67,
+      "dem_total": 311264,
+      "rep_total": 585705,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2012,
+      "file": "state_senate_2012.json",
+      "rows": 52,
+      "dem_total": 536801,
+      "rep_total": 653295,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2014,
+      "file": "state_senate_2014.json",
+      "rows": 67,
+      "dem_total": 162564,
+      "rep_total": 501263,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2016,
+      "file": "state_senate_2016.json",
+      "rows": 52,
+      "dem_total": 584815,
+      "rep_total": 706869,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2018,
+      "file": "state_senate_2018.json",
+      "rows": 67,
+      "dem_total": 0,
+      "rep_total": 0,
+      "major_party_contested": false
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2020,
+      "file": "state_senate_2020.json",
+      "rows": 52,
+      "dem_total": 575491,
+      "rep_total": 730461,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2022,
+      "file": "state_senate_2022.json",
+      "rows": 72,
+      "dem_total": 313588,
+      "rep_total": 681148,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "state_senate",
+      "year": 2024,
+      "file": "state_senate_2024.json",
+      "rows": 46,
+      "dem_total": 598588,
+      "rep_total": 776116,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2000,
+      "file": "treasurer_2000.json",
+      "rows": 114,
+      "dem_total": 1186627,
+      "rep_total": 1057354,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2004,
+      "file": "treasurer_2004.json",
+      "rows": 114,
+      "dem_total": 1213800,
+      "rep_total": 1342067,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2008,
+      "file": "treasurer_2008.json",
+      "rows": 114,
+      "dem_total": 1394629,
+      "rep_total": 1302626,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2012,
+      "file": "treasurer_2012.json",
+      "rows": 114,
+      "dem_total": 1332876,
+      "rep_total": 1200367,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2016,
+      "file": "treasurer_2016.json",
+      "rows": 114,
+      "dem_total": 1078063,
+      "rep_total": 1545582,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2020,
+      "file": "treasurer_2020.json",
+      "rows": 114,
+      "dem_total": 1088796,
+      "rep_total": 1719163,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "treasurer",
+      "year": 2024,
+      "file": "treasurer_2024.json",
+      "rows": 114,
+      "dem_total": 1106236,
+      "rep_total": 1684714,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2000,
+      "file": "us_house_2000.json",
+      "rows": 114,
+      "dem_total": 1136019,
+      "rep_total": 1135723,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2002,
+      "file": "us_house_2002.json",
+      "rows": 114,
+      "dem_total": 829176,
+      "rep_total": 985907,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2004,
+      "file": "us_house_2004.json",
+      "rows": 114,
+      "dem_total": 1192885,
+      "rep_total": 1429813,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2006,
+      "file": "us_house_2006.json",
+      "rows": 114,
+      "dem_total": 992367,
+      "rep_total": 1049436,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2008,
+      "file": "us_house_2008.json",
+      "rows": 114,
+      "dem_total": 1413115,
+      "rep_total": 1313030,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2010,
+      "file": "us_house_2010.json",
+      "rows": 114,
+      "dem_total": 708064,
+      "rep_total": 1103290,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2012,
+      "file": "us_house_2012.json",
+      "rows": 114,
+      "dem_total": 1119554,
+      "rep_total": 1463586,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2014,
+      "file": "us_house_2014.json",
+      "rows": 114,
+      "dem_total": 513600,
+      "rep_total": 838283,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2016,
+      "file": "us_house_2016.json",
+      "rows": 114,
+      "dem_total": 1041306,
+      "rep_total": 1362136,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2018,
+      "file": "us_house_2018.json",
+      "rows": 114,
+      "dem_total": 0,
+      "rep_total": 0,
+      "major_party_contested": false
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2020,
+      "file": "us_house_2020.json",
+      "rows": 114,
+      "dem_total": 1136970,
+      "rep_total": 1700938,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2022,
+      "file": "us_house_2022.json",
+      "rows": 114,
+      "dem_total": 794660,
+      "rep_total": 1222844,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2024,
+      "file": "us_house_2024.json",
+      "rows": 114,
+      "dem_total": 1125671,
+      "rep_total": 1711050,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2002,
+      "file": "us_senate_2002.json",
+      "rows": 114,
+      "dem_total": 913776,
+      "rep_total": 935033,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2004,
+      "file": "us_senate_2004.json",
+      "rows": 114,
+      "dem_total": 1158283,
+      "rep_total": 1518117,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2006,
+      "file": "us_senate_2006.json",
+      "rows": 114,
+      "dem_total": 1055347,
+      "rep_total": 1007119,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2010,
+      "file": "us_senate_2010.json",
+      "rows": 114,
+      "dem_total": 789736,
+      "rep_total": 1054160,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2012,
+      "file": "us_senate_2012.json",
+      "rows": 114,
+      "dem_total": 1494125,
+      "rep_total": 1066158,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2016,
+      "file": "us_senate_2016.json",
+      "rows": 114,
+      "dem_total": 1300200,
+      "rep_total": 1378458,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2018,
+      "file": "us_senate_2018.json",
+      "rows": 114,
+      "dem_total": 1112944,
+      "rep_total": 1254942,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2022,
+      "file": "us_senate_2022.json",
+      "rows": 114,
+      "dem_total": 872346,
+      "rep_total": 1146224,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "us_senate",
+      "year": 2024,
+      "file": "us_senate_2024.json",
+      "rows": 114,
+      "dem_total": 1243728,
+      "rep_total": 1651907,
+      "major_party_contested": true
+    }
+  ]
+}

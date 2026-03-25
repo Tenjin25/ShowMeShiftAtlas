@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2024,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 53263,
+        "rep_votes": 41598,
+        "other_votes": 0,
+        "total_votes": 94861,
+        "dem_candidate": "DOUG BECK",
+        "rep_candidate": "ROBERT J. CRUMP",
+        "margin": -11665,
+        "margin_pct": -12.29694,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 19273,
+        "rep_votes": 60548,
+        "other_votes": 0,
+        "total_votes": 79821,
+        "dem_candidate": "Doug Halbert",
+        "rep_candidate": "Mike Henderson",
+        "margin": 41275,
+        "margin_pct": 51.70945,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 47670,
+        "rep_votes": 6151,
+        "other_votes": 0,
+        "total_votes": 53821,
+        "dem_candidate": "Steve Roberts",
+        "rep_candidate": "Robert Vroman",
+        "margin": -41519,
+        "margin_pct": -77.142751,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 58149,
+        "rep_votes": 19939,
+        "other_votes": 0,
+        "total_votes": 78088,
+        "dem_candidate": "Patty Lewis",
+        "rep_candidate": "Joey LaSalle",
+        "margin": -38210,
+        "margin_pct": -48.931974,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 50220,
+        "rep_votes": 13103,
+        "other_votes": 0,
+        "total_votes": 63323,
+        "dem_candidate": "Barbara Anne Washington",
+        "rep_candidate": "Derron Black",
+        "margin": -37117,
+        "margin_pct": -58.615353,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 33680,
+        "rep_votes": 37008,
+        "other_votes": 0,
+        "total_votes": 70688,
+        "dem_candidate": "Robert Sauls",
+        "rep_candidate": "Joe Nicola",
+        "margin": 3328,
+        "margin_pct": 4.708013,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 63076,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 63076,
+        "dem_candidate": "ANGELA WALTON MOSLEY",
+        "rep_candidate": "",
+        "margin": -63076,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 50841,
+        "rep_votes": 56093,
+        "other_votes": 1733,
+        "total_votes": 108667,
+        "dem_candidate": "JOE PERELES",
+        "rep_candidate": "DAVID GREGORY",
+        "margin": 5252,
+        "margin_pct": 4.833114,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 44709,
+        "rep_votes": 39650,
+        "other_votes": 0,
+        "total_votes": 84359,
+        "dem_candidate": "Maggie Nurrenbern",
+        "rep_candidate": "Jerry Nolte",
+        "margin": -5059,
+        "margin_pct": -5.996989,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 48998,
+        "rep_votes": 37010,
+        "other_votes": 0,
+        "total_votes": 86008,
+        "dem_candidate": "Stephen Webber",
+        "rep_candidate": "James Coyne",
+        "margin": -11988,
+        "margin_pct": -13.938238,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 28521,
+        "rep_votes": 64446,
+        "other_votes": 0,
+        "total_votes": 92967,
+        "dem_candidate": "Jim Bates",
+        "rep_candidate": "Kurtis Gregory",
+        "margin": 35925,
+        "margin_pct": 38.642744,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 41822,
+        "rep_votes": 51308,
+        "other_votes": 0,
+        "total_votes": 93130,
+        "dem_candidate": "Matt Williams",
+        "rep_candidate": "Adam Schnelting",
+        "margin": 9486,
+        "margin_pct": 10.185762,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 12215,
+        "rep_votes": 62593,
+        "other_votes": 0,
+        "total_votes": 74808,
+        "dem_candidate": "Chuck Banks",
+        "rep_candidate": "Jason Bean",
+        "margin": 50378,
+        "margin_pct": 67.343065,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 0,
+        "rep_votes": 72629,
+        "other_votes": 0,
+        "total_votes": 72629,
+        "dem_candidate": "",
+        "rep_candidate": "Jamie Burger",
+        "margin": 72629,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 18326,
+        "rep_votes": 73685,
+        "other_votes": 0,
+        "total_votes": 92011,
+        "dem_candidate": "Ron Monnig",
+        "rep_candidate": "Mike Moon",
+        "margin": 55359,
+        "margin_pct": 60.165632,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 27825,
+        "rep_votes": 60541,
+        "other_votes": 0,
+        "total_votes": 88366,
+        "dem_candidate": "Raymond L. James",
+        "rep_candidate": "Rick Brattin",
+        "margin": 32716,
+        "margin_pct": 37.02329,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 0,
+        "rep_votes": 79814,
+        "other_votes": 0,
+        "total_votes": 79814,
+        "dem_candidate": "",
+        "rep_candidate": "Brad Hudson",
+        "margin": 79814,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

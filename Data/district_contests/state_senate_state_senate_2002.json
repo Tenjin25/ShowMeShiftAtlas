@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2002,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 24694,
+        "rep_votes": 35523,
+        "other_votes": 0,
+        "total_votes": 60217,
+        "dem_candidate": "Edward Schieffer",
+        "rep_candidate": "Jonathan Dolan",
+        "margin": 10829,
+        "margin_pct": 17.983294,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 41580,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 41580,
+        "dem_candidate": "J. Dougherty",
+        "rep_candidate": "",
+        "margin": -41580,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 24839,
+        "rep_votes": 35244,
+        "other_votes": 0,
+        "total_votes": 60083,
+        "dem_candidate": "William Gratz",
+        "rep_candidate": "Carl Vogel",
+        "margin": 10405,
+        "margin_pct": 17.317711,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 23289,
+        "rep_votes": 36393,
+        "other_votes": 0,
+        "total_votes": 59682,
+        "dem_candidate": "Bruce Dotson",
+        "rep_candidate": "Matthew Bartle",
+        "margin": 13104,
+        "margin_pct": 21.956369,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 38731,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 38731,
+        "dem_candidate": "Charles Wheeler",
+        "rep_candidate": "",
+        "margin": -38731,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 0,
+        "rep_votes": 41721,
+        "other_votes": 0,
+        "total_votes": 41721,
+        "dem_candidate": "",
+        "rep_candidate": "David Klindt",
+        "margin": 41721,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 39766,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 39766,
+        "dem_candidate": "Rita Days",
+        "rep_candidate": "",
+        "margin": -39766,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 14728,
+        "rep_votes": 36288,
+        "other_votes": 0,
+        "total_votes": 51016,
+        "dem_candidate": "Clara Ichord",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 21560,
+        "margin_pct": 42.261251,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 23890,
+        "rep_votes": 29853,
+        "other_votes": 0,
+        "total_votes": 53743,
+        "dem_candidate": "Samuel Berkowitz",
+        "rep_candidate": "John Cauthorn",
+        "margin": 5963,
+        "margin_pct": 11.095398,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 27721,
+        "rep_votes": 36586,
+        "other_votes": 0,
+        "total_votes": 64307,
+        "dem_candidate": "James Kreider",
+        "rep_candidate": "Danny Clemens",
+        "margin": 8865,
+        "margin_pct": 13.785435,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 28854,
+        "rep_votes": 19254,
+        "other_votes": 0,
+        "total_votes": 48108,
+        "dem_candidate": "Stephen Stoll",
+        "rep_candidate": "George Engelbach",
+        "margin": -9600,
+        "margin_pct": -19.955101,
+        "winner": "DEM",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 33799,
+        "rep_votes": 30559,
+        "other_votes": 1130,
+        "total_votes": 65488,
+        "dem_candidate": "Joan Bray",
+        "rep_candidate": "John Lewis",
+        "margin": -3240,
+        "margin_pct": -4.947471,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 17952,
+        "rep_votes": 42057,
+        "other_votes": 0,
+        "total_votes": 60009,
+        "dem_candidate": "Donald Meyer",
+        "rep_candidate": "John Griesheimer",
+        "margin": 24105,
+        "margin_pct": 40.168975,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 18703,
+        "rep_votes": 37543,
+        "other_votes": 1179,
+        "total_votes": 57425,
+        "dem_candidate": "Catherine Johnson",
+        "rep_candidate": "Delbert Scott",
+        "margin": 18840,
+        "margin_pct": 32.80801,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 24419,
+        "rep_votes": 25915,
+        "other_votes": 0,
+        "total_votes": 50334,
+        "dem_candidate": "William Hosmer",
+        "rep_candidate": "Norma Champion",
+        "margin": 1496,
+        "margin_pct": 2.972146,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 0,
+        "rep_votes": 36993,
+        "other_votes": 0,
+        "total_votes": 36993,
+        "dem_candidate": "",
+        "rep_candidate": "Gary Nodler",
+        "margin": 36993,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 22855,
+        "rep_votes": 27334,
+        "other_votes": 2644,
+        "total_votes": 52833,
+        "dem_candidate": "Glenda Kelly",
+        "rep_candidate": "Charles Shields",
+        "margin": 4479,
+        "margin_pct": 8.477656,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

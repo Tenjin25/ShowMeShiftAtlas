@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2008,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 242570,
+        "rep_votes": 0,
+        "other_votes": 36707,
+        "total_votes": 279277,
+        "dem_candidate": "William Clay",
+        "rep_candidate": "",
+        "margin": -242570,
+        "margin_pct": -86.856419,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 132068,
+        "rep_votes": 232276,
+        "other_votes": 8628,
+        "total_votes": 372972,
+        "dem_candidate": "William Haas",
+        "rep_candidate": "Todd Akin",
+        "margin": 100208,
+        "margin_pct": 26.867432,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 202470,
+        "rep_votes": 92759,
+        "other_votes": 9842,
+        "total_votes": 305071,
+        "dem_candidate": "John Carnahan",
+        "rep_candidate": "Christopher Sander",
+        "margin": -109711,
+        "margin_pct": -35.962448,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 200009,
+        "rep_votes": 103446,
+        "other_votes": 0,
+        "total_votes": 303455,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "Jeffrey Parnell",
+        "margin": -96563,
+        "margin_pct": -31.821193,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 197249,
+        "rep_votes": 109166,
+        "other_votes": 0,
+        "total_votes": 306415,
+        "dem_candidate": "Emanuel Cleaver",
+        "rep_candidate": "Richard Turk",
+        "margin": -88083,
+        "margin_pct": -28.746308,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 121894,
+        "rep_votes": 196536,
+        "other_votes": 12279,
+        "total_votes": 330709,
+        "dem_candidate": "B. Kay Waldo Barnes",
+        "rep_candidate": "Samuel Graves",
+        "margin": 74642,
+        "margin_pct": 22.570296,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 91109,
+        "rep_votes": 219018,
+        "other_votes": 13186,
+        "total_votes": 323313,
+        "dem_candidate": "Richard Monroe",
+        "rep_candidate": "Roy Blunt",
+        "margin": 127909,
+        "margin_pct": 39.561972,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 72790,
+        "rep_votes": 198798,
+        "other_votes": 6700,
+        "total_votes": 278288,
+        "dem_candidate": "Joseph Allen",
+        "rep_candidate": "Jo Emerson",
+        "margin": 126008,
+        "margin_pct": 45.27971,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 152956,
+        "rep_votes": 161031,
+        "other_votes": 8108,
+        "total_votes": 322095,
+        "dem_candidate": "Judith Baker",
+        "rep_candidate": "William Luetkemeyer",
+        "margin": 8075,
+        "margin_pct": 2.507024,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

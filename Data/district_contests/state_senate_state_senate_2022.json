@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2022,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 24998,
+        "rep_votes": 42568,
+        "other_votes": 0,
+        "total_votes": 67566,
+        "dem_candidate": "Michael Sinclair",
+        "rep_candidate": "Nick Schroer",
+        "margin": 17570,
+        "margin_pct": 26.004203,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 51419,
+        "rep_votes": 17906,
+        "other_votes": 0,
+        "total_votes": 69325,
+        "dem_candidate": "Karla May",
+        "rep_candidate": "Mary Theresa Mclean",
+        "margin": -33513,
+        "margin_pct": -48.341868,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 0,
+        "rep_votes": 56439,
+        "other_votes": 0,
+        "total_votes": 56439,
+        "dem_candidate": "",
+        "rep_candidate": "Mike Bernskoetter",
+        "margin": 56439,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 30100,
+        "rep_votes": 38018,
+        "other_votes": 0,
+        "total_votes": 68118,
+        "dem_candidate": "Antoine D Jennings",
+        "rep_candidate": "Mike Cierpiot",
+        "margin": 7918,
+        "margin_pct": 11.623947,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 0,
+        "rep_votes": 44169,
+        "other_votes": 12728,
+        "total_votes": 56897,
+        "dem_candidate": "",
+        "rep_candidate": "Travis Fitzwater",
+        "margin": 44169,
+        "margin_pct": 77.629752,
+        "winner": "REP",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 12254,
+        "rep_votes": 51470,
+        "other_votes": 0,
+        "total_votes": 63724,
+        "dem_candidate": "Michael J Baumli",
+        "rep_candidate": "Rusty Black",
+        "margin": 39216,
+        "margin_pct": 61.540393,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 41832,
+        "rep_votes": 0,
+        "other_votes": 24,
+        "total_votes": 41856,
+        "dem_candidate": "Brian Williams",
+        "rep_candidate": "",
+        "margin": -41832,
+        "margin_pct": -99.942661,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 9363,
+        "rep_votes": 39087,
+        "other_votes": 0,
+        "total_votes": 48450,
+        "dem_candidate": "Tara Anura",
+        "rep_candidate": "Justin Dan Brown",
+        "margin": 29724,
+        "margin_pct": 61.349845,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 13739,
+        "rep_votes": 42989,
+        "other_votes": 0,
+        "total_votes": 56728,
+        "dem_candidate": "Ayanna Shivers",
+        "rep_candidate": "Cindy Olaughlin",
+        "margin": 29250,
+        "margin_pct": 51.561839,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 0,
+        "rep_votes": 53630,
+        "other_votes": 0,
+        "total_votes": 53630,
+        "dem_candidate": "",
+        "rep_candidate": "Curtis Trent",
+        "margin": 53630,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 21456,
+        "rep_votes": 40695,
+        "other_votes": 0,
+        "total_votes": 62151,
+        "dem_candidate": "Benjamin Hagin",
+        "rep_candidate": "Mary Elizabeth Coleman",
+        "margin": 19239,
+        "margin_pct": 30.955254,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 43081,
+        "rep_votes": 36164,
+        "other_votes": 1481,
+        "total_votes": 80726,
+        "dem_candidate": "Tracy Mccreery",
+        "rep_candidate": "George J Hruza",
+        "margin": -6917,
+        "margin_pct": -8.568491,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 17115,
+        "rep_votes": 48469,
+        "other_votes": 0,
+        "total_votes": 65584,
+        "dem_candidate": "John Kiehne",
+        "rep_candidate": "Ben Brown",
+        "margin": 31354,
+        "margin_pct": 47.807392,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 0,
+        "rep_votes": 55062,
+        "other_votes": 0,
+        "total_votes": 55062,
+        "dem_candidate": "",
+        "rep_candidate": "Sandy Crawford",
+        "margin": 55062,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 22464,
+        "rep_votes": 30483,
+        "other_votes": 0,
+        "total_votes": 52947,
+        "dem_candidate": "Raymond Lampert",
+        "rep_candidate": "Lincoln Hough",
+        "margin": 8019,
+        "margin_pct": 15.145334,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 0,
+        "rep_votes": 46763,
+        "other_votes": 0,
+        "total_votes": 46763,
+        "dem_candidate": "",
+        "rep_candidate": "Jill Carter",
+        "margin": 46763,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 25767,
+        "rep_votes": 37236,
+        "other_votes": 0,
+        "total_votes": 63003,
+        "dem_candidate": "Sarah Shorter",
+        "rep_candidate": "Tony Luetkemeyer",
+        "margin": 11469,
+        "margin_pct": 18.203895,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2006,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 37650,
+        "rep_votes": 44785,
+        "other_votes": 0,
+        "total_votes": 82435,
+        "dem_candidate": "Wayne Henke",
+        "rep_candidate": "Scott Rupp",
+        "margin": 7135,
+        "margin_pct": 8.655304,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 40966,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 40966,
+        "dem_candidate": "Jeffrey Smith",
+        "rep_candidate": "",
+        "margin": -40966,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 20862,
+        "rep_votes": 44103,
+        "other_votes": 0,
+        "total_votes": 64965,
+        "dem_candidate": "Ronald Bonar",
+        "rep_candidate": "Carl Vogel",
+        "margin": 23241,
+        "margin_pct": 35.774648,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 31120,
+        "rep_votes": 43860,
+        "other_votes": 0,
+        "total_votes": 74980,
+        "dem_candidate": "Jason Norbury",
+        "rep_candidate": "Matthew Bartle",
+        "margin": 12740,
+        "margin_pct": 16.991198,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 37563,
+        "rep_votes": 14536,
+        "other_votes": 0,
+        "total_votes": 52099,
+        "dem_candidate": "Jolie Justus",
+        "rep_candidate": "Milton Mounts",
+        "margin": -23027,
+        "margin_pct": -44.198545,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 25136,
+        "rep_votes": 36481,
+        "other_votes": 0,
+        "total_votes": 61617,
+        "dem_candidate": "James Neely",
+        "rep_candidate": "Brad Lager",
+        "margin": 11345,
+        "margin_pct": 18.412127,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 42489,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 42489,
+        "dem_candidate": "Rita Days",
+        "rep_candidate": "",
+        "margin": -42489,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 30435,
+        "rep_votes": 27607,
+        "other_votes": 0,
+        "total_votes": 58042,
+        "dem_candidate": "Franklin Barnitz",
+        "rep_candidate": "Susan Snyders",
+        "margin": -2828,
+        "margin_pct": -4.872334,
+        "winner": "DEM",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 28795,
+        "rep_votes": 26953,
+        "other_votes": 0,
+        "total_votes": 55748,
+        "dem_candidate": "Wesley Shoemyer",
+        "rep_candidate": "Robert Behnen",
+        "margin": -1842,
+        "margin_pct": -3.304154,
+        "winner": "DEM",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 28352,
+        "rep_votes": 51495,
+        "other_votes": 0,
+        "total_votes": 79847,
+        "dem_candidate": "Barbara Adams",
+        "rep_candidate": "Danny Clemens",
+        "margin": 23143,
+        "margin_pct": 28.984182,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 34682,
+        "rep_votes": 22675,
+        "other_votes": 0,
+        "total_votes": 57357,
+        "dem_candidate": "Ryan McKenna",
+        "rep_candidate": "William Alter",
+        "margin": -12007,
+        "margin_pct": -20.933801,
+        "winner": "DEM",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 41173,
+        "rep_votes": 26738,
+        "other_votes": 0,
+        "total_votes": 67911,
+        "dem_candidate": "Joan Bray",
+        "rep_candidate": "John Maupin",
+        "margin": -14435,
+        "margin_pct": -21.255761,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 25556,
+        "rep_votes": 44346,
+        "other_votes": 0,
+        "total_votes": 69902,
+        "dem_candidate": "Eugene Tyler",
+        "rep_candidate": "John Griesheimer",
+        "margin": 18790,
+        "margin_pct": 26.88049,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 0,
+        "rep_votes": 36426,
+        "other_votes": 27175,
+        "total_votes": 63601,
+        "dem_candidate": "",
+        "rep_candidate": "Delbert Scott",
+        "margin": 36426,
+        "margin_pct": 57.272684,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 26934,
+        "rep_votes": 36370,
+        "other_votes": 0,
+        "total_votes": 63304,
+        "dem_candidate": "Mark Harpool",
+        "rep_candidate": "Norma Champion",
+        "margin": 9436,
+        "margin_pct": 14.905851,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 0,
+        "rep_votes": 35240,
+        "other_votes": 20198,
+        "total_votes": 55438,
+        "dem_candidate": "",
+        "rep_candidate": "Gary Nodler",
+        "margin": 35240,
+        "margin_pct": 63.566507,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 24961,
+        "rep_votes": 36645,
+        "other_votes": 0,
+        "total_votes": 61606,
+        "dem_candidate": "David Mason",
+        "rep_candidate": "Charles Shields",
+        "margin": 11684,
+        "margin_pct": 18.965685,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

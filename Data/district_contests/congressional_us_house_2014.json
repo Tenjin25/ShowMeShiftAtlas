@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2014,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 119315,
+        "rep_votes": 35273,
+        "other_votes": 8906,
+        "total_votes": 163494,
+        "dem_candidate": "Lacy Clay",
+        "rep_candidate": "Daniel J. Elder",
+        "margin": -84042,
+        "margin_pct": -51.403721,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 75384,
+        "rep_votes": 148191,
+        "other_votes": 7542,
+        "total_votes": 231117,
+        "dem_candidate": "Arthur Lieber",
+        "rep_candidate": "Ann Wagner",
+        "margin": 72807,
+        "margin_pct": 31.502226,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 52021,
+        "rep_votes": 130940,
+        "other_votes": 8659,
+        "total_votes": 191620,
+        "dem_candidate": "Courtney Denton",
+        "rep_candidate": "Blaine Luetkemeyer",
+        "margin": 78919,
+        "margin_pct": 41.185158,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 46464,
+        "rep_votes": 120014,
+        "other_votes": 9807,
+        "total_votes": 176285,
+        "dem_candidate": "Nate Irvin",
+        "rep_candidate": "Vicky Hartzler",
+        "margin": 73550,
+        "margin_pct": 41.722211,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 79256,
+        "rep_votes": 69071,
+        "other_votes": 5308,
+        "total_votes": 153635,
+        "dem_candidate": "Emanuel Cleaver II",
+        "rep_candidate": "Jacob Turk",
+        "margin": -10185,
+        "margin_pct": -6.629349,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 55157,
+        "rep_votes": 124616,
+        "other_votes": 7197,
+        "total_votes": 186970,
+        "dem_candidate": "W. A. (Bill) Hedge",
+        "rep_candidate": "Sam Graves",
+        "margin": 69459,
+        "margin_pct": 37.14981,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 47282,
+        "rep_votes": 104054,
+        "other_votes": 12621,
+        "total_votes": 163957,
+        "dem_candidate": "Jim Evans",
+        "rep_candidate": "Billy Long",
+        "margin": 56772,
+        "margin_pct": 34.626152,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 38721,
+        "rep_votes": 106124,
+        "other_votes": 14379,
+        "total_votes": 159224,
+        "dem_candidate": "Barbara Stocker",
+        "rep_candidate": "Jason Smith",
+        "margin": 67403,
+        "margin_pct": 42.332186,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2024,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 233312,
+        "rep_votes": 56453,
+        "other_votes": 17500,
+        "total_votes": 307265,
+        "dem_candidate": "WESLEY BELL",
+        "rep_candidate": "ANDREW JONES",
+        "margin": -176859,
+        "margin_pct": -57.55911,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 182056,
+        "rep_votes": 233444,
+        "other_votes": 12892,
+        "total_votes": 428392,
+        "dem_candidate": "RAY HARTMANN",
+        "rep_candidate": "ANN WAGNER",
+        "margin": 51388,
+        "margin_pct": 11.995555,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 138532,
+        "rep_votes": 240620,
+        "other_votes": 13311,
+        "total_votes": 392463,
+        "dem_candidate": "Bethany E. Mann",
+        "rep_candidate": "Bob Onder",
+        "margin": 102088,
+        "margin_pct": 26.012134,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 96568,
+        "rep_votes": 259886,
+        "other_votes": 9242,
+        "total_votes": 365696,
+        "dem_candidate": "Jeanette Cass",
+        "rep_candidate": "Mark Alford",
+        "margin": 163318,
+        "margin_pct": 44.659499,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 199900,
+        "rep_votes": 120957,
+        "other_votes": 11072,
+        "total_votes": 331929,
+        "dem_candidate": "Emanuel Cleaver, II",
+        "rep_candidate": "Sean E. Smith",
+        "margin": -78943,
+        "margin_pct": -23.783098,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 100999,
+        "rep_votes": 265210,
+        "other_votes": 8977,
+        "total_votes": 375186,
+        "dem_candidate": "Pam May",
+        "rep_candidate": "Sam Graves",
+        "margin": 164211,
+        "margin_pct": 43.767891,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 96655,
+        "rep_votes": 263231,
+        "other_votes": 7982,
+        "total_votes": 367868,
+        "dem_candidate": "Missi Hesketh",
+        "rep_candidate": "Eric Burlison",
+        "margin": 166576,
+        "margin_pct": 45.28146,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 77649,
+        "rep_votes": 271249,
+        "other_votes": 7166,
+        "total_votes": 356064,
+        "dem_candidate": "Randi McCallian",
+        "rep_candidate": "Jason Smith",
+        "margin": 193600,
+        "margin_pct": 54.372248,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

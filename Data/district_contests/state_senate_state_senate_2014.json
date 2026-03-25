@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2014,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 0,
+        "rep_votes": 37607,
+        "other_votes": 0,
+        "total_votes": 37607,
+        "dem_candidate": "",
+        "rep_candidate": "Bob Onder",
+        "margin": 37607,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 29041,
+        "rep_votes": 11206,
+        "other_votes": 0,
+        "total_votes": 40247,
+        "dem_candidate": "Joseph (Joe) Keaveny",
+        "rep_candidate": "Courtney Blunt",
+        "margin": -17835,
+        "margin_pct": -44.313862,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 9937,
+        "rep_votes": 37561,
+        "other_votes": 0,
+        "total_votes": 47498,
+        "dem_candidate": "Mollie Kristen Freebairn",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 27624,
+        "margin_pct": 58.158238,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 0,
+        "rep_votes": 31432,
+        "other_votes": 0,
+        "total_votes": 31432,
+        "dem_candidate": "",
+        "rep_candidate": "Will Kraus",
+        "margin": 31432,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 13856,
+        "rep_votes": 28871,
+        "other_votes": 0,
+        "total_votes": 42727,
+        "dem_candidate": "Ed Schieffer",
+        "rep_candidate": "Jeanie Riddle",
+        "margin": 15015,
+        "margin_pct": 35.141714,
+        "winner": "REP",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 0,
+        "rep_votes": 39006,
+        "other_votes": 0,
+        "total_votes": 39006,
+        "dem_candidate": "",
+        "rep_candidate": "Dan Hegeman",
+        "margin": 39006,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 30203,
+        "rep_votes": 0,
+        "other_votes": 1869,
+        "total_votes": 32072,
+        "dem_candidate": "Maria N. Chappelle-Nadal",
+        "rep_candidate": "",
+        "margin": -30203,
+        "margin_pct": -94.172487,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 0,
+        "rep_votes": 31829,
+        "other_votes": 0,
+        "total_votes": 31829,
+        "dem_candidate": "",
+        "rep_candidate": "Dan Brown",
+        "margin": 31829,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 0,
+        "rep_votes": 39460,
+        "other_votes": 0,
+        "total_votes": 39460,
+        "dem_candidate": "",
+        "rep_candidate": "Brian Munzlinger",
+        "margin": 39460,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 0,
+        "rep_votes": 40191,
+        "other_votes": 0,
+        "total_votes": 40191,
+        "dem_candidate": "",
+        "rep_candidate": "Jay Wasson",
+        "margin": 40191,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 18774,
+        "rep_votes": 22208,
+        "other_votes": 0,
+        "total_votes": 40982,
+        "dem_candidate": "Jeff Roorda",
+        "rep_candidate": "Paul Wieland",
+        "margin": 3434,
+        "margin_pct": 8.379288,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 28022,
+        "rep_votes": 26196,
+        "other_votes": 1727,
+        "total_votes": 55945,
+        "dem_candidate": "Jill Schupp",
+        "rep_candidate": "John R. Ashcroft",
+        "margin": -1826,
+        "margin_pct": -3.26392,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 13808,
+        "rep_votes": 37219,
+        "other_votes": 0,
+        "total_votes": 51027,
+        "dem_candidate": "Lloyd Klinedinst",
+        "rep_candidate": "Dave Schatz",
+        "margin": 23411,
+        "margin_pct": 45.879632,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 0,
+        "rep_votes": 34573,
+        "other_votes": 0,
+        "total_votes": 34573,
+        "dem_candidate": "",
+        "rep_candidate": "Mike Parson",
+        "margin": 34573,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 0,
+        "rep_votes": 27207,
+        "other_votes": 0,
+        "total_votes": 27207,
+        "dem_candidate": "",
+        "rep_candidate": "Bob Dixon",
+        "margin": 27207,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 0,
+        "rep_votes": 32558,
+        "other_votes": 0,
+        "total_votes": 32558,
+        "dem_candidate": "",
+        "rep_candidate": "Ron Richard",
+        "margin": 32558,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 18923,
+        "rep_votes": 24139,
+        "other_votes": 0,
+        "total_votes": 43062,
+        "dem_candidate": "Robert Stuber",
+        "rep_candidate": "Rob Schaaf",
+        "margin": 5216,
+        "margin_pct": 12.112768,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

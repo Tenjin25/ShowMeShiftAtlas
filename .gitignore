@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+_repo_upstream_check/
+_tmp_*/
+
+Data/_extract_county20/
+Data/_extract_vtd20/
+Data/tiger2008/
+
+Data/*tabblock*.zip
+
+*.log

@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2020,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 54095,
+        "rep_votes": 43495,
+        "other_votes": 0,
+        "total_votes": 97590,
+        "dem_candidate": "Doug Beck",
+        "rep_candidate": "David Lenihan",
+        "margin": -10600,
+        "margin_pct": -10.861769,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 0,
+        "rep_votes": 65686,
+        "other_votes": 0,
+        "total_votes": 65686,
+        "dem_candidate": "",
+        "rep_candidate": "Elaine Freeman Gannon",
+        "margin": 65686,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 56379,
+        "rep_votes": 8349,
+        "other_votes": 0,
+        "total_votes": 64728,
+        "dem_candidate": "Steve Roberts",
+        "rep_candidate": "Michael Hebron",
+        "margin": -48030,
+        "margin_pct": -74.202818,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 65715,
+        "rep_votes": 0,
+        "other_votes": 14370,
+        "total_votes": 80085,
+        "dem_candidate": "Greg Razer",
+        "rep_candidate": "",
+        "margin": -65715,
+        "margin_pct": -82.056565,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 48600,
+        "rep_votes": 10101,
+        "other_votes": 0,
+        "total_votes": 58701,
+        "dem_candidate": "Barbara Anne Washington",
+        "rep_candidate": "David Martin",
+        "margin": -38499,
+        "margin_pct": -65.584913,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 34765,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 34765,
+        "dem_candidate": "John Joseph Rizzo",
+        "rep_candidate": "",
+        "margin": -34765,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 64190,
+        "rep_votes": 0,
+        "other_votes": 9122,
+        "total_votes": 73312,
+        "dem_candidate": "Angela Walton Mosley",
+        "rep_candidate": "",
+        "margin": -64190,
+        "margin_pct": -87.557289,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 52132,
+        "rep_votes": 61172,
+        "other_votes": 0,
+        "total_votes": 113304,
+        "dem_candidate": "Deb Lavender",
+        "rep_candidate": "Andrew Koenig",
+        "margin": 9040,
+        "margin_pct": 7.978536,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 51690,
+        "rep_votes": 45141,
+        "other_votes": 0,
+        "total_votes": 96831,
+        "dem_candidate": "Lauren Arthur",
+        "rep_candidate": "Mickey Younghanz",
+        "margin": -6549,
+        "margin_pct": -6.76333,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 47367,
+        "rep_votes": 50570,
+        "other_votes": 72,
+        "total_votes": 98009,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Caleb Rowden",
+        "margin": 3203,
+        "margin_pct": 3.268067,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 0,
+        "rep_votes": 61698,
+        "other_votes": 15595,
+        "total_votes": 77293,
+        "dem_candidate": "",
+        "rep_candidate": "Denny Hoskins",
+        "margin": 61698,
+        "margin_pct": 79.823529,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 43306,
+        "rep_votes": 57988,
+        "other_votes": 0,
+        "total_votes": 101294,
+        "dem_candidate": "Richard Orr",
+        "rep_candidate": "Bill Eigel",
+        "margin": 14682,
+        "margin_pct": 14.494442,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 0,
+        "rep_votes": 58215,
+        "other_votes": 0,
+        "total_votes": 58215,
+        "dem_candidate": "",
+        "rep_candidate": "Jason Bean",
+        "margin": 58215,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 19135,
+        "rep_votes": 63644,
+        "other_votes": 0,
+        "total_votes": 82779,
+        "dem_candidate": "Donnie Owens",
+        "rep_candidate": "Holly Rehder",
+        "margin": 44509,
+        "margin_pct": 53.768468,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 0,
+        "rep_votes": 75582,
+        "other_votes": 0,
+        "total_votes": 75582,
+        "dem_candidate": "",
+        "rep_candidate": "Mike Moon",
+        "margin": 75582,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 25584,
+        "rep_votes": 63929,
+        "other_votes": 0,
+        "total_votes": 89513,
+        "dem_candidate": "Raymond Kinney",
+        "rep_candidate": "Rick Brattin",
+        "margin": 38345,
+        "margin_pct": 42.837353,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 12533,
+        "rep_votes": 64891,
+        "other_votes": 0,
+        "total_votes": 77424,
+        "dem_candidate": "Tammy Harty",
+        "rep_candidate": "Karla Eslinger",
+        "margin": 52358,
+        "margin_pct": 67.625026,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

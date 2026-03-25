@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2006,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 141574,
+        "rep_votes": 47893,
+        "other_votes": 4768,
+        "total_votes": 194235,
+        "dem_candidate": "William Clay",
+        "rep_candidate": "Mark Byrne",
+        "margin": -93681,
+        "margin_pct": -48.230751,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 105242,
+        "rep_votes": 176452,
+        "other_votes": 5923,
+        "total_votes": 287617,
+        "dem_candidate": "George Weber",
+        "rep_candidate": "W. Akin",
+        "margin": 71210,
+        "margin_pct": 24.75862,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 145219,
+        "rep_votes": 70189,
+        "other_votes": 6040,
+        "total_votes": 221448,
+        "dem_candidate": "John Carnahan",
+        "rep_candidate": "David Bertelsen",
+        "margin": -75030,
+        "margin_pct": -33.881543,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 159412,
+        "rep_votes": 69346,
+        "other_votes": 6973,
+        "total_votes": 235731,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "James Noland",
+        "margin": -90066,
+        "margin_pct": -38.207109,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 136149,
+        "rep_votes": 68456,
+        "other_votes": 7314,
+        "total_votes": 211919,
+        "dem_candidate": "Emanuel Cleaver",
+        "rep_candidate": "Richard Turk",
+        "margin": -67693,
+        "margin_pct": -31.942865,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 87477,
+        "rep_votes": 150882,
+        "other_votes": 6437,
+        "total_votes": 244796,
+        "dem_candidate": "Sara Shettles",
+        "rep_candidate": "Samuel Graves",
+        "margin": 63405,
+        "margin_pct": 25.901159,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 72592,
+        "rep_votes": 160940,
+        "other_votes": 7589,
+        "total_votes": 241121,
+        "dem_candidate": "Jack Truman",
+        "rep_candidate": "Roy Blunt",
+        "margin": 88348,
+        "margin_pct": 36.640525,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 57557,
+        "rep_votes": 156164,
+        "other_votes": 4268,
+        "total_votes": 217989,
+        "dem_candidate": "Veronica Hambacker",
+        "rep_candidate": "Jo Emerson",
+        "margin": 98607,
+        "margin_pct": 45.234851,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 87145,
+        "rep_votes": 149114,
+        "other_votes": 6412,
+        "total_votes": 242671,
+        "dem_candidate": "Duane Burghard",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": 61969,
+        "margin_pct": 25.53622,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

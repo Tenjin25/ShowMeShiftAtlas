@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2004,
+    "district_count": 9,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 213658,
+        "rep_votes": 64791,
+        "other_votes": 5322,
+        "total_votes": 283771,
+        "dem_candidate": "William Clay",
+        "rep_candidate": "Leslie Farr",
+        "margin": -148867,
+        "margin_pct": -52.460258,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 115366,
+        "rep_votes": 228725,
+        "other_votes": 5776,
+        "total_votes": 349867,
+        "dem_candidate": "George Weber",
+        "rep_candidate": "W. Akin",
+        "margin": 113359,
+        "margin_pct": 32.400598,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 146925,
+        "rep_votes": 125447,
+        "other_votes": 5602,
+        "total_votes": 277974,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "William Federer",
+        "margin": -21478,
+        "margin_pct": -7.726622,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 190799,
+        "rep_votes": 93334,
+        "other_votes": 4092,
+        "total_votes": 288225,
+        "dem_candidate": "Ike Skelton",
+        "rep_candidate": "James Noland",
+        "margin": -97465,
+        "margin_pct": -33.815595,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 161727,
+        "rep_votes": 123432,
+        "other_votes": 7867,
+        "total_votes": 293026,
+        "dem_candidate": "Emanuel Cleaver",
+        "rep_candidate": "Jeanne Patterson",
+        "margin": -38295,
+        "margin_pct": -13.068806,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 106987,
+        "rep_votes": 196516,
+        "other_votes": 4352,
+        "total_votes": 307855,
+        "dem_candidate": "Charles Broomfield",
+        "rep_candidate": "Samuel Graves",
+        "margin": 89529,
+        "margin_pct": 29.081548,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 84356,
+        "rep_votes": 210080,
+        "other_votes": 3769,
+        "total_votes": 298205,
+        "dem_candidate": "Jim Newberry",
+        "rep_candidate": "Roy Blunt",
+        "margin": 125724,
+        "margin_pct": 42.160259,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 71544,
+        "rep_votes": 194139,
+        "other_votes": 3129,
+        "total_votes": 268812,
+        "dem_candidate": "Dean Henderson",
+        "rep_candidate": "JoAnn Emerson",
+        "margin": 122595,
+        "margin_pct": 45.606223,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 101523,
+        "rep_votes": 193349,
+        "other_votes": 4674,
+        "total_votes": 299546,
+        "dem_candidate": "Linda Jacobsen",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": 91826,
+        "margin_pct": 30.655058,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "state_senate",
+    "year": 2012,
+    "district_count": 17,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-03-22T22:17:05.790848+00:00"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 45689,
+        "rep_votes": 44055,
+        "other_votes": 0,
+        "total_votes": 89744,
+        "dem_candidate": "Scott Sifton",
+        "rep_candidate": "Jim Lembke",
+        "margin": -1634,
+        "margin_pct": -1.820735,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 30335,
+        "rep_votes": 35384,
+        "other_votes": 0,
+        "total_votes": 65719,
+        "dem_candidate": "Joseph Fallert, Jr.",
+        "rep_candidate": "Gary Romine",
+        "margin": 5049,
+        "margin_pct": 7.68271,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 64026,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 64026,
+        "dem_candidate": "Jamilah Nasheed",
+        "rep_candidate": "",
+        "margin": -64026,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 64674,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 64674,
+        "dem_candidate": "Jason Holsman",
+        "rep_candidate": "",
+        "margin": -64674,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 62964,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 62964,
+        "dem_candidate": "Shalonn (Kiki) Curls",
+        "rep_candidate": "",
+        "margin": -62964,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 50824,
+        "rep_votes": 0,
+        "other_votes": 0,
+        "total_votes": 50824,
+        "dem_candidate": "Paul LeVota",
+        "rep_candidate": "",
+        "margin": -50824,
+        "margin_pct": -100.0,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 67715,
+        "rep_votes": 15243,
+        "other_votes": 0,
+        "total_votes": 82958,
+        "dem_candidate": "Gina Walsh",
+        "rep_candidate": "Jacquelyn Thomas",
+        "margin": -52472,
+        "margin_pct": -63.251284,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 0,
+        "rep_votes": 77745,
+        "other_votes": 0,
+        "total_votes": 77745,
+        "dem_candidate": "",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 77745,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 37997,
+        "rep_votes": 42491,
+        "other_votes": 0,
+        "total_votes": 80488,
+        "dem_candidate": "Sandra Reeves",
+        "rep_candidate": "Ryan Silvey",
+        "margin": 4494,
+        "margin_pct": 5.583441,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 34216,
+        "rep_votes": 47067,
+        "other_votes": 0,
+        "total_votes": 81283,
+        "dem_candidate": "Mary Wynne Still",
+        "rep_candidate": "Kurt Schaefer",
+        "margin": 12851,
+        "margin_pct": 15.810194,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 22073,
+        "rep_votes": 47490,
+        "other_votes": 3351,
+        "total_votes": 72914,
+        "dem_candidate": "ElGene Ver Dught",
+        "rep_candidate": "David Pearce",
+        "margin": 25417,
+        "margin_pct": 34.858875,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 0,
+        "rep_votes": 72310,
+        "other_votes": 0,
+        "total_votes": 72310,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Dempsey",
+        "margin": 72310,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 27913,
+        "rep_votes": 35756,
+        "other_votes": 0,
+        "total_votes": 63669,
+        "dem_candidate": "Terry Swinger",
+        "rep_candidate": "Doug Libla",
+        "margin": 7843,
+        "margin_pct": 12.318397,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 0,
+        "rep_votes": 61891,
+        "other_votes": 0,
+        "total_votes": 61891,
+        "dem_candidate": "",
+        "rep_candidate": "Wayne Wallingford",
+        "margin": 61891,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 0,
+        "rep_votes": 64011,
+        "other_votes": 0,
+        "total_votes": 64011,
+        "dem_candidate": "",
+        "rep_candidate": "David Sater",
+        "margin": 64011,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 28375,
+        "rep_votes": 49993,
+        "other_votes": 0,
+        "total_votes": 78368,
+        "dem_candidate": "Charles A. (Charlie) Burton",
+        "rep_candidate": "Ed Emery",
+        "margin": 21618,
+        "margin_pct": 27.585239,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 0,
+        "rep_votes": 59859,
+        "other_votes": 0,
+        "total_votes": 59859,
+        "dem_candidate": "",
+        "rep_candidate": "Mike Cunningham",
+        "margin": 59859,
+        "margin_pct": 100.0,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
