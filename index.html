@@ -549,11 +549,7 @@
       const counties = countiesSource._data.features;
       // Normalize county names for matching
       function normalizeCountyName(name) {
-        return (name || '')
-          .replace(/[^a-z0-9 .\-]/gi, '')  // Keep periods for St. names and hyphens for Miami-Dade
-          .replace(/\s+/g, ' ')
-          .trim()
-          .toUpperCase();
+        return normalizeCountyFeatureToken(name);
       }
       const normTarget = normalizeCountyName(countyName);
       const countyFeature = counties.find(f => {
@@ -9001,6 +8997,14 @@ document.addEventListener('DOMContentLoaded', function() {
         .toUpperCase();
     }
 
+    function isStLouisCityAliasToken(name) {
+      const norm = normalizeCountyToken(name);
+      return !!norm && (
+        /^CITY OF (ST\.?\s+LOUIS|SAINT\s+LOUIS)$/i.test(norm)
+        || /^(ST\.?\s+LOUIS|SAINT\s+LOUIS)\s+CITY$/i.test(norm)
+      );
+    }
+
     function getCountyNameFromProps(props = {}) {
       return (
         props.NAMELSAD20
@@ -9017,6 +9021,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function normalizeCountyFeatureToken(name) {
       let norm = normalizeCountyToken(name);
       if (!norm) return '';
+      if (isStLouisCityAliasToken(norm)) return 'ST. LOUIS CITY';
       const stLouis = norm.match(/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(.*)$/i);
       if (stLouis) {
         const suffix = (stLouis[2] || '').toString().toUpperCase();
@@ -9026,10 +9031,31 @@ document.addEventListener('DOMContentLoaded', function() {
       return `${norm} COUNTY`;
     }
 
+    function normalizeCountyResultKey(name) {
+      const raw = (name || '').toString().trim();
+      if (!raw) return '';
+      const scopedMatch = raw.match(/^(.*?)\s+-\s+(.*)$/);
+      if (!scopedMatch) return normalizeCountyFeatureToken(raw);
+
+      const countyNorm = normalizeCountyFeatureToken(scopedMatch[1]);
+      const scopedNorm = normalizeCountyToken(scopedMatch[2]);
+      if (countyNorm && scopedNorm) return `${countyNorm} - ${scopedNorm}`;
+      return normalizeCountyToken(raw);
+    }
+
     function countyFeatureNameExpression() {
       return [
         'upcase',
         ['coalesce', ['get', 'NAMELSAD20'], ['get', 'CountyName'], ['get', 'COUNTYNAME'], ['get', 'county_nam'], ['get', 'NAME20'], ['get', 'NAME'], ['get', 'name']]
+      ];
+    }
+
+    function countyDisplayNameExpression() {
+      return [
+        'case',
+        ['==', countyFeatureNameExpression(), 'ST. LOUIS CITY'],
+        'City of St. Louis',
+        ['coalesce', ['get', 'NAMELSAD20'], ['get', 'CountyName'], ['get', 'NAME20'], ['get', 'NAME'], ['get', 'county_nam'], ['get', 'COUNTYNAME'], ['get', 'County'], ['get', 'name']]
       ];
     }
 
@@ -9042,18 +9068,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const v = normalizeCountyToken(value);
         if (!v) return;
         const variants = [v];
-        const stLouis = v.match(/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(.*)$/i);
-        if (stLouis) {
-          const suffix = (stLouis[2] || '').toString().toUpperCase();
-          variants.push(`ST. LOUIS${suffix}`);
-          variants.push(`ST LOUIS${suffix}`);
-          variants.push(`SAINT LOUIS${suffix}`);
+        if (isStLouisCityAliasToken(v)) {
+          variants.push('ST. LOUIS CITY');
+          variants.push('ST LOUIS CITY');
+          variants.push('SAINT LOUIS CITY');
+          variants.push('CITY OF ST. LOUIS');
+          variants.push('CITY OF ST LOUIS');
+          variants.push('CITY OF SAINT LOUIS');
+        } else {
+          const stLouis = v.match(/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(.*)$/i);
+          if (stLouis) {
+            const suffix = (stLouis[2] || '').toString().toUpperCase();
+            variants.push(`ST. LOUIS${suffix}`);
+            variants.push(`ST LOUIS${suffix}`);
+            variants.push(`SAINT LOUIS${suffix}`);
+          }
         }
         variants.forEach(token => {
           if (!token || out.includes(token)) return;
           out.push(token);
         });
       };
+
+      if (isStLouisCityAliasToken(norm)) {
+        add('ST. LOUIS CITY');
+        return out;
+      }
 
       if (/\s+CITY$/i.test(norm)) {
         add(norm);
@@ -10708,11 +10748,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!boundaryGeoJSON || !boundaryGeoJSON.features || !electionData) return boundaryGeoJSON;
   const electionMap = {};
   function normalizeCountyName(name) {
-    return (name || '')
-      .replace(/[^a-z0-9 .\-]/gi, '')  // Keep periods for St. names and hyphens for Miami-Dade
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toUpperCase();
+    return normalizeCountyFeatureToken(name);
   }
   electionData.forEach(row => {
     let name = normalizeCountyName(row[countyNameKey]);
@@ -10732,17 +10768,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function buildCountyNameMapFromGeoJSON(geojson) {
       const map = {};
       if (!geojson || !geojson.features) return map;
-      function normalizeCountyName(name) {
-        return (name || '')
-          .replace(/[^a-z0-9 .\-]/gi, '')  // Keep periods for St. names and hyphens for Miami-Dade
-          .replace(/\s+/g, ' ')
-          .trim()
-          .toUpperCase();
-      }
       geojson.features.forEach(f => {
         const p = f.properties || {};
-        const name = normalizeCountyName(getCountyNameFromProps(p) || p.precinct_name || p.county_nam || p.COUNTYNAME || p.NAME || p.County || p.name || p.NAMELSAD || '');
-        if (name) map[name] = name;
+        const rawName = getCountyNameFromProps(p) || p.precinct_name || p.county_nam || p.COUNTYNAME || p.NAME || p.County || p.name || p.NAMELSAD || '';
+        const label = formatCountyJurisdictionLabel(rawName);
+        getCountyLookupTokens(rawName).forEach(token => {
+          if (!token || Object.prototype.hasOwnProperty.call(map, token)) return;
+          map[token] = label;
+        });
       });
       return map;
     }
@@ -11823,16 +11856,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayCountyName(raw) {
-      const s = (raw || '').toString().trim();
-      if (!s) return 'Unknown County';
-      // Remove any trailing "COUNTY" if present; UI will add "County".
-      const cleaned = s.replace(/\s+COUNTY$/i, '').trim();
+      const norm = normalizeCountyFeatureToken(raw);
+      if (!norm) return 'Unknown County';
+      if (norm === 'ST. LOUIS CITY') return 'City of St. Louis';
+      const cleaned = norm.replace(/\s+COUNTY$/i, '').trim();
       return toTitleCaseName(cleaned);
     }
 
     function formatCountyJurisdictionLabel(raw) {
       const display = displayCountyName(raw);
       if (!display || display === 'Unknown County') return 'Unknown County';
+      if (display === 'City of St. Louis') return display;
       return /\bCity$/i.test(display) ? display : `${display} County`;
     }
 
@@ -16040,7 +16074,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const rowName = (r?.county || '').toString();
         if (!rowName.includes(' - ')) return;
         const [cRaw, pRaw] = rowName.split(' - ', 2);
-        const cNorm = normalizeCountyName(cRaw);
+        const cNorm = normalizeCountyFeatureToken(cRaw);
         if (cNorm !== norm) return;
         const token = (pRaw || '').toString().trim().toUpperCase();
         if (!token) return;
@@ -16178,7 +16212,7 @@ document.addEventListener('DOMContentLoaded', function() {
           source: 'counties',
           minzoom: 7.5,
           layout: {
-            'text-field': ['coalesce', ['get', 'NAMELSAD20'], ['get', 'CountyName'], ['get', 'NAME20'], ['get', 'NAME'], ['get', 'county_nam'], ['get', 'COUNTYNAME'], ['get', 'County'], ['get', 'name']],
+            'text-field': countyDisplayNameExpression(),
             'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
             'text-size': 11,
             'text-anchor': 'center',
@@ -17378,7 +17412,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const counties = countiesGeoJSON && countiesGeoJSON.features
         ? Array.from(new Set(
             countiesGeoJSON.features
-              .map(f => getCountyNameFromProps(f.properties || {}))
+              .map(f => formatCountyJurisdictionLabel(getCountyNameFromProps(f.properties || {})))
               .filter(Boolean)
           )).sort((a, b) => a.localeCompare(b))
         : [];
@@ -17587,28 +17621,32 @@ document.addEventListener('DOMContentLoaded', function() {
       // Prefer the authoritative source: window.countiesData if present, otherwise try map source
       const src = (window.countiesData && window.countiesData.features) ? window.countiesData : (map.getSource && map.getSource('counties') && (map.getSource('counties')._data || map.getSource('counties').data)) || null;
       if (countyName && src && src.features) {
-        // Normalize input for matching
-        function normalize(name) {
-          return (name || '').toString().replace(/[^a-z0-9 ]/gi, '').replace(/\s+/g, ' ').trim().toUpperCase();
-        }
-        const normTarget = normalize(countyName);
+        const normTarget = normalizeCountyFeatureToken(countyName);
+        const displayTarget = formatCountyJurisdictionLabel(countyName);
+        const looseTarget = (countyName || '').toString().trim().toLowerCase();
+        const lookupTokens = new Set(getCountyLookupTokens(countyName));
+        if (normTarget) lookupTokens.add(normTarget);
         let found = false;
         // First try exact match
         src.features.forEach(f => {
+          if (found) return;
           const props = f.properties || {};
           const rawName = getCountyNameFromProps(props) || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
-          const n = normalize(rawName);
-          if (n === normTarget) {
+          const featureNorm = normalizeCountyFeatureToken(rawName);
+          if (featureNorm && lookupTokens.has(featureNorm)) {
             found = f;
           }
         });
         // If no exact match, try containment (user types 'Jackson' vs 'Jackson County')
         if (!found) {
           src.features.forEach(f => {
+            if (found) return;
             const props = f.properties || {};
             const rawName = getCountyNameFromProps(props) || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
-            const n = normalize(rawName);
-            if (n.indexOf(normTarget) !== -1 || normTarget.indexOf(n) !== -1) {
+            const label = formatCountyJurisdictionLabel(rawName);
+            const labelLower = label.toLowerCase();
+            const displayLower = displayTarget.toLowerCase();
+            if (labelLower.indexOf(displayLower) !== -1 || displayLower.indexOf(labelLower) !== -1 || labelLower.indexOf(looseTarget) !== -1) {
               if (!found) found = f; // pick first sensible hit
             }
           });
@@ -17617,9 +17655,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (found) {
           const props = found.properties || {};
           lastSelectedCounty = getCountyNameFromProps(props) || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name;
+          const displayName = formatCountyJurisdictionLabel(lastSelectedCounty);
           const bbox = turf.bbox(found);
           debugLog('[DIAGNOSTIC] Matched county for', countyName, '->', lastSelectedCounty, 'bbox:', bbox);
-          syncFlySearchInputs(lastSelectedCounty);
+          syncFlySearchInputs(displayName);
           setFlySearchFeedback('#10b981');
           map.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], { padding: 40, duration: 1000 });
           showCountyDetails(lastSelectedCounty);
@@ -19320,11 +19359,7 @@ document.addEventListener('DOMContentLoaded', function() {
       lastContestSliceMeta = { contestType, year: Number(year), rows: contestData };
 
 	      function normalizeCountyName(name) {
-	        return (name || '')
-	          .replace(/[^a-z0-9 .\-]/gi, '')
-	          .replace(/\s+/g, ' ')
-	          .trim()
-	          .toUpperCase();
+	        return normalizeCountyResultKey(name);
 	      }
 
       // Only build heavy precinct matching/color expressions when the overlay is enabled.
