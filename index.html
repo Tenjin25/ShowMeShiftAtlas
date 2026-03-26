@@ -7955,6 +7955,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let contestSliceCache = new Map();
     let districtSliceCache = new Map();
     const districtCarryCrosswalkCache = new Map();
+    const legislativeDistrictOverlayCache = new Map();
     let districtsInfo = null;
     let stateHouseInfo = null;
     let stateSenateInfo = null;
@@ -7978,6 +7979,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let precinctCentroidsLoaded = false;
     let precinctCentroidsLoadInFlight = false;
     let precinctCodeIndexByCounty = null; // Map<string countyNorm, Set<string prec_id>> built from precinct centroids.
+    let precinctMatcherIndexByCounty = null; // Map<string countyNorm, { aliasToNorms: Map<string, Set<string>>, features: Array }>
+    let precinctMatcherIndexLoadInFlight = false;
+    let precinctMatcherIndexPromise = null;
     let precinctAliasIndexByCounty = null; // Map<string countyNorm, Map<string alias, string[] codes>>
     let precinctAliasLoadInFlight = false;
     let precinctVariantOverridesByCounty = null; // Map<string countyNorm, Map<string alias, string[] codes>>
@@ -8359,6 +8363,7 @@ document.addEventListener('DOMContentLoaded', function() {
       currentDistrictLinesYear = nextYear;
       districtManifest = getActiveDistrictManifest();
       districtSliceCache = new Map();
+      legislativeDistrictOverlayCache.clear();
       districtCarryCrosswalkCache.clear();
       vizPrevDistrictCache.clear();
       clearDistrictSearchGeoJSONCache();
@@ -9482,6 +9487,202 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    function normalizePrecinctCodeToken(value) {
+      return (value || '').toString().trim().toUpperCase().replace(/\s+/g, ' ');
+    }
+
+    function extractBaseCodeToken(value) {
+      const raw = normalizePrecinctCodeToken(value);
+      if (!raw) return '';
+      const firstToken = raw.split(/\s+/, 1)[0].trim();
+      return (firstToken.includes('_') ? firstToken.split('_', 1)[0] : firstToken).trim().toUpperCase();
+    }
+
+    function collectPrecinctCodeCandidates(rawCode, countyNorm, countyCodes = null, countyAliases = null) {
+      const out = new Set();
+      const raw = normalizePrecinctCodeToken(rawCode);
+      if (!raw) return out;
+      if (isNonGeographicPrecinctToken(raw, countyNorm)) return out;
+
+      const addCode = (value) => {
+        const code = normalizePrecinctCodeToken(value);
+        if (!code) return;
+        out.add(code);
+        const compact = compactPrecinctAliasToken(code);
+        if (compact) out.add(compact);
+        const normalizedAlias = normalizePrecinctAliasToken(code);
+        if (normalizedAlias) out.add(normalizedAlias);
+      };
+
+      addCode(raw);
+      extractPrecinctAliasCandidates(raw).forEach(addCode);
+      addNumericBaseVariantsFromAlphaSuffix(raw, addCode);
+      addEmbeddedPrecinctCodeVariants(raw, addCode);
+      addKnownLegacyCentroidBridges(countyNorm, raw, addCode);
+
+      const baseToken = extractBaseCodeToken(raw);
+      if (baseToken && baseToken !== raw) {
+        addCode(baseToken);
+        extractPrecinctAliasCandidates(baseToken).forEach(addCode);
+        addKnownLegacyCentroidBridges(countyNorm, baseToken, addCode);
+      }
+
+      if (countyCodes) {
+        addCompactCodeVariants(raw, countyCodes, addCode);
+        addPrefixStrippedNumericVariants(raw, countyCodes, addCode);
+        if (baseToken && baseToken !== raw) {
+          addCompactCodeVariants(baseToken, countyCodes, addCode);
+          addPrefixStrippedNumericVariants(baseToken, countyCodes, addCode);
+        }
+        if (countyNorm === 'WAKE') addClosestHyphenCodeVariants(raw, countyCodes, addCode);
+      }
+
+      if (countyAliases) {
+        const resolved = resolveUniquePrecinctCodeByAlias(countyAliases, raw);
+        if (resolved) addCode(resolved);
+        if (baseToken && baseToken !== raw) {
+          const resolvedBase = resolveUniquePrecinctCodeByAlias(countyAliases, baseToken);
+          if (resolvedBase) addCode(resolvedBase);
+        }
+      }
+
+      try {
+        applyPrecinctVariantOverrides(countyNorm, raw, addCode);
+        if (baseToken && baseToken !== raw) applyPrecinctVariantOverrides(countyNorm, baseToken, addCode);
+      } catch (_) {}
+
+      return out;
+    }
+
+    const DIRECTIONAL_PRECINCT_PREFIXES = {
+      NORTH: 'N',
+      SOUTH: 'S',
+      EAST: 'E',
+      WEST: 'W',
+      NORTHEAST: 'NE',
+      NORTHWEST: 'NW',
+      SOUTHEAST: 'SE',
+      SOUTHWEST: 'SW'
+    };
+
+    const PRECINCT_NUMBER_WORDS = {
+      ONE: '1',
+      TWO: '2',
+      THREE: '3',
+      FOUR: '4',
+      FIVE: '5',
+      SIX: '6',
+      SEVEN: '7',
+      EIGHT: '8',
+      NINE: '9',
+      TEN: '10',
+      FIRST: '1',
+      SECOND: '2',
+      THIRD: '3',
+      FOURTH: '4',
+      FIFTH: '5'
+    };
+
+    function normalizePrecinctNumberWord(token) {
+      const t = (token || '').toString().trim().toUpperCase();
+      if (!t) return '';
+      if (/^\d+[A-Z]{0,2}$/.test(t)) return t;
+      return PRECINCT_NUMBER_WORDS[t] || '';
+    }
+
+    function addPrecinctAliasVariants(rawValue, addAliasFn) {
+      if (typeof addAliasFn !== 'function') return;
+      const raw = (rawValue || '').toString().trim().toUpperCase();
+      if (!raw) return;
+
+      const addSafe = (value) => {
+        const token = (value || '').toString().trim().toUpperCase();
+        if (token) addAliasFn(token);
+      };
+
+      const normalized = normalizePrecinctAliasToken(raw);
+      const compact = compactPrecinctAliasToken(raw);
+      addSafe(raw);
+      addSafe(normalized);
+      addSafe(compact);
+      extractPrecinctAliasCandidates(raw).forEach(addSafe);
+
+      const stripped = raw
+        .replace(/\bVOTING DISTRICT\b/g, ' ')
+        .replace(/\bDISTRICT\b/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+      const strippedNorm = normalizePrecinctAliasToken(stripped);
+      const strippedCompact = compactPrecinctAliasToken(stripped);
+      addSafe(stripped);
+      addSafe(strippedNorm);
+      addSafe(strippedCompact);
+      extractPrecinctAliasCandidates(stripped).forEach(addSafe);
+
+      const words = (strippedNorm || '').split(' ').filter(Boolean);
+      if (words.length >= 2) {
+        const acronym = words
+          .filter(word => /[A-Z]/.test(word) && !/^\d+$/.test(word))
+          .map(word => word[0])
+          .join('');
+        if (acronym.length >= 2) addSafe(acronym);
+      }
+
+      if (words.length >= 2) {
+        const tail = normalizePrecinctNumberWord(words[words.length - 1]);
+        const dir = DIRECTIONAL_PRECINCT_PREFIXES[words[0]] || '';
+        if (dir && tail) {
+          addSafe(`${dir}${tail}`);
+          addSafe(`${dir} ${tail}`);
+        }
+      }
+
+      const trailingCode = (strippedNorm || '').match(/(?:^|\s)(\d+[A-Z]{0,2})$/);
+      if (trailingCode) addSafe(trailingCode[1]);
+    }
+
+    function expandCompositePrecinctCodes(rawValue) {
+      const out = new Set();
+      const raw = (rawValue || '').toString().trim().toUpperCase();
+      if (!raw) return out;
+
+      const addExpanded = (value) => {
+        const token = (value || '').toString().trim().toUpperCase();
+        if (token) out.add(token);
+      };
+
+      const sourceParts = raw.split('/').map(part => part.trim()).filter(Boolean);
+      if (!sourceParts.length) sourceParts.push(raw);
+
+      sourceParts.forEach(part => {
+        const compact = part.replace(/\s+/g, '');
+        const alphaBundle = compact.match(/^(\d{1,3})-([A-Z]{1,4})$/);
+        if (alphaBundle) {
+          alphaBundle[2].split('').forEach(ch => addExpanded(`${String(Number(alphaBundle[1]))}${ch}`));
+          return;
+        }
+
+        const alphaInline = compact.match(/^(\d{1,3})([A-Z]{2,4})$/);
+        if (alphaInline) {
+          alphaInline[2].split('').forEach(ch => addExpanded(`${String(Number(alphaInline[1]))}${ch}`));
+          return;
+        }
+
+        const simpleCode = compact.match(/^(\d{1,3})-([A-Z])$/);
+        if (simpleCode) {
+          addExpanded(`${String(Number(simpleCode[1]))}${simpleCode[2]}`);
+          return;
+        }
+
+        const numericOnly = compact.match(/^(\d{1,3})$/);
+        if (numericOnly) {
+          addExpanded(String(Number(numericOnly[1])));
+        }
+      });
+
+      return out;
+    }
+
     function isKnownPrecinctCodeForCounty(countyNameOrNorm, code) {
       const countyNorm = normalizeCountyToken(countyNameOrNorm);
       const c = (code || '').toString().replace(/\s+/g, ' ').trim().toUpperCase();
@@ -10426,15 +10627,181 @@ document.addEventListener('DOMContentLoaded', function() {
 	      return r.text();
 	    }
 
-	        const PRESIDENT_OPEN_ELECTIONS_CSV = {
-	      2000: withBase('./Data/20001107__mo__general__precinct.csv'),
-	      2004: withBase('./Data/20041102__mo__general__precinct.csv'),
-	      2008: withBase('./Data/20081104__mo__general__precinct.csv'),
-	      2012: withBase('./Data/20121106__mo__general__precinct.csv'),
-	      2016: withBase('./Data/20161108__mo__general__precinct.csv'),
-	      2020: withBase('./Data/20201103__mo__general__precinct.csv'),
-	      2024: withBase('./Data/20241105__mo__general__precinct.csv')
-	    };
+      const RAW_PRECINCT_RESULTS_CSV = {
+        2000: withBase('./Data/20001107__mo__general__precinct.csv'),
+        2002: withBase('./Data/20021105__mo__general__precinct.csv'),
+        2004: withBase('./Data/20041102__mo__general__precinct.csv'),
+        2006: withBase('./Data/20061107__mo__general__precinct.csv'),
+        2008: withBase('./Data/20081104__mo__general__precinct.csv'),
+        2010: withBase('./Data/20101102__mo__general__precinct.csv'),
+        2012: withBase('./Data/20121106__mo__general__precinct.csv'),
+        2014: withBase('./Data/20141104__mo__general__precinct.csv'),
+        2016: withBase('./Data/20161108__mo__general__precinct.csv'),
+        2018: withBase('./Data/20181106__mo__general__precinct.csv'),
+        2020: withBase('./Data/20201103__mo__general__precinct.csv'),
+        2022: withBase('./Data/20221108__mo__general__precinct.csv'),
+        2024: withBase('./Data/20241105__mo__general__precinct.csv')
+      };
+
+      const PRESIDENT_OPEN_ELECTIONS_CSV = {
+        2000: RAW_PRECINCT_RESULTS_CSV[2000],
+        2004: RAW_PRECINCT_RESULTS_CSV[2004],
+        2008: RAW_PRECINCT_RESULTS_CSV[2008],
+        2012: RAW_PRECINCT_RESULTS_CSV[2012],
+        2016: RAW_PRECINCT_RESULTS_CSV[2016],
+        2020: RAW_PRECINCT_RESULTS_CSV[2020],
+        2024: RAW_PRECINCT_RESULTS_CSV[2024]
+      };
+
+      function normalizeRawOfficeName(rawOffice) {
+        return (rawOffice || '')
+          .toString()
+          .trim()
+          .toUpperCase()
+          .replace(/U\.S\./g, 'US')
+          .replace(/\s+/g, ' ');
+      }
+
+      function extractRawDistrictNumber(rawOffice, rawDistrict) {
+        const districtText = (rawDistrict || '').toString().trim();
+        if (districtText && districtText.toUpperCase() !== 'STATEWIDE') {
+          const districtMatch = districtText.match(/(\d+)/);
+          if (districtMatch) return String(Number(districtMatch[1]));
+          return districtText;
+        }
+
+        const office = normalizeRawOfficeName(rawOffice);
+        const officeMatch = office.match(/\bDISTRICT\s*([0-9]+)\b/);
+        if (officeMatch) return String(Number(officeMatch[1]));
+        return '';
+      }
+
+      function mapContestTypeFromRawOffice(rawOffice, rawDistrict = '') {
+        const office = normalizeRawOfficeName(rawOffice);
+        const district = extractRawDistrictNumber(rawOffice, rawDistrict);
+
+        if (office.startsWith('US HOUSE') || office.startsWith('US REPRESENTATIVE')) {
+          return { contestType: 'us_house', scope: 'congressional', district };
+        }
+        if (office.startsWith('STATE HOUSE') || office.startsWith('STATE REPRESENTATIVE')) {
+          return { contestType: 'state_house', scope: 'state_house', district };
+        }
+        if (office.startsWith('STATE SENATE') || office.startsWith('STATE SENATOR')) {
+          return { contestType: 'state_senate', scope: 'state_senate', district };
+        }
+
+        if (office.startsWith('PRESIDENT') || office.startsWith('US PRESIDENT')) return { contestType: 'president', scope: null, district: '' };
+        if (office.startsWith('US SENATE')) return { contestType: 'us_senate', scope: null, district: '' };
+        if (office.startsWith('GOVERNOR')) return { contestType: 'governor', scope: null, district: '' };
+        if (office.startsWith('LIEUTENANT GOVERNOR')) return { contestType: 'lieutenant_governor', scope: null, district: '' };
+        if (office.startsWith('ATTORNEY GENERAL')) return { contestType: 'attorney_general', scope: null, district: '' };
+        if (office.startsWith('SECRETARY OF STATE')) return { contestType: 'secretary_of_state', scope: null, district: '' };
+        if (office.startsWith('STATE TREASURER') || office === 'TREASURER') return { contestType: 'treasurer', scope: null, district: '' };
+        if (office.startsWith('STATE AUDITOR') || office === 'AUDITOR') return { contestType: 'auditor', scope: null, district: '' };
+        return { contestType: null, scope: null, district: '' };
+      }
+
+      function rawPartyBucket(rawParty) {
+        const party = (rawParty || '').toString().trim().toUpperCase();
+        if (party.startsWith('DEM')) return 'dem';
+        if (party.startsWith('REP')) return 'rep';
+        return 'other';
+      }
+
+      function rawCandidateName(row) {
+        const direct = (row?.candidate || '').toString().trim();
+        if (direct) return direct;
+        const first = (row?.['first name'] || row?.first_name || row?.firstName || '').toString().trim();
+        const last = (row?.['last name'] || row?.last_name || row?.lastName || row?.last_name || '').toString().trim();
+        if (first || last) return `${first} ${last}`.trim();
+        const lastOnly = (row?.last_name || row?.lastName || '').toString().trim();
+        if (lastOnly) return lastOnly;
+        return '';
+      }
+
+      function parseRawVotes(rawVotes) {
+        if (rawVotes === undefined || rawVotes === null) return 0;
+        const text = rawVotes.toString().trim().replace(/,/g, '');
+        if (!text) return 0;
+        const num = Number(text);
+        return Number.isFinite(num) ? Math.trunc(num) : 0;
+      }
+
+      function createVoteAccumulator() {
+        return {
+          demVotes: 0,
+          repVotes: 0,
+          otherVotes: 0,
+          demCandidates: new Map(),
+          repCandidates: new Map()
+        };
+      }
+
+      function topAccumCandidate(map) {
+        let bestName = '';
+        let bestVotes = -1;
+        map.forEach((votes, name) => {
+          if ((Number(votes) || 0) > bestVotes) {
+            bestVotes = Number(votes) || 0;
+            bestName = name;
+          }
+        });
+        return bestName;
+      }
+
+      function addVotesToAccumulator(acc, partyBucket, candidate, votes) {
+        if (!acc) return;
+        const amount = Number(votes) || 0;
+        if (!(amount > 0)) return;
+        if (partyBucket === 'dem') {
+          acc.demVotes += amount;
+          if (candidate) acc.demCandidates.set(candidate, (acc.demCandidates.get(candidate) || 0) + amount);
+          return;
+        }
+        if (partyBucket === 'rep') {
+          acc.repVotes += amount;
+          if (candidate) acc.repCandidates.set(candidate, (acc.repCandidates.get(candidate) || 0) + amount);
+          return;
+        }
+        acc.otherVotes += amount;
+      }
+
+      function addScaledAccumulatorVotes(acc, demVotes, repVotes, otherVotes, demCandidate = '', repCandidate = '') {
+        if (!acc) return;
+        const dem = Number(demVotes) || 0;
+        const rep = Number(repVotes) || 0;
+        const other = Number(otherVotes) || 0;
+        if (dem > 0) {
+          acc.demVotes += dem;
+          if (demCandidate) acc.demCandidates.set(demCandidate, (acc.demCandidates.get(demCandidate) || 0) + dem);
+        }
+        if (rep > 0) {
+          acc.repVotes += rep;
+          if (repCandidate) acc.repCandidates.set(repCandidate, (acc.repCandidates.get(repCandidate) || 0) + rep);
+        }
+        if (other > 0) acc.otherVotes += other;
+      }
+
+      function finalizeAccumulator(acc, defaultDemCandidate = '', defaultRepCandidate = '') {
+        const demVotes = Math.round(Number(acc?.demVotes || 0));
+        const repVotes = Math.round(Number(acc?.repVotes || 0));
+        const otherVotes = Math.round(Number(acc?.otherVotes || 0));
+        const totalVotes = demVotes + repVotes + otherVotes;
+        const margin = repVotes - demVotes;
+        const marginPct = totalVotes ? (margin / totalVotes) * 100 : 0;
+        return {
+          dem_votes: demVotes,
+          rep_votes: repVotes,
+          other_votes: otherVotes,
+          total_votes: totalVotes,
+          dem_candidate: topAccumCandidate(acc?.demCandidates || new Map()) || defaultDemCandidate,
+          rep_candidate: topAccumCandidate(acc?.repCandidates || new Map()) || defaultRepCandidate,
+          margin,
+          margin_pct: Number(marginPct.toFixed(6)),
+          winner: margin > 0 ? 'REP' : (margin < 0 ? 'DEM' : 'TIE'),
+          color: ''
+        };
+      }
 
 	    async function loadPresidentSliceFromOpenElectionsCSV(year) {
 	      const y = Number(year);
@@ -10597,11 +10964,429 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      function isLegislativeOverlayScope(scope) {
+        return scope === 'state_house' || scope === 'state_senate';
+      }
+
+      function roundDistrictOverlayNumber(value, digits = 6) {
+        const factor = 10 ** digits;
+        return Math.round((Number(value) || 0) * factor) / factor;
+      }
+
+      function addLookupValue(map, key, value) {
+        if (!map || !key || !value) return;
+        if (!map.has(key)) map.set(key, new Set());
+        map.get(key).add(value);
+      }
+
+      async function ensurePrecinctMatcherIndex() {
+        if (precinctMatcherIndexByCounty) return precinctMatcherIndexByCounty;
+        if (precinctMatcherIndexPromise) return precinctMatcherIndexPromise;
+        precinctMatcherIndexLoadInFlight = true;
+        precinctMatcherIndexPromise = (async () => {
+          let precincts = null;
+          try {
+            precincts = await loadJSON(CONFIG.paths.precincts);
+          } catch (err) {
+            console.warn('Failed to load precinct matcher geometry:', err?.message || err);
+            precinctMatcherIndexByCounty = new Map();
+            return precinctMatcherIndexByCounty;
+          }
+
+          let precinctAliasIdx = null;
+          try { precinctAliasIdx = await ensurePrecinctAliasIndex(); } catch (_) { precinctAliasIdx = null; }
+          try { await ensurePrecinctVariantOverrides(); } catch (_) {}
+
+          const idx = new Map();
+          (precincts?.features || []).forEach(feature => {
+            const props = feature?.properties || {};
+            const countyNorm = normalizeCountyFeatureToken(
+              props.county_nam
+              || props.COUNTYNAME
+              || props.County
+              || props.NAME
+              || props.NAMELSAD20
+              || ''
+            );
+            const precId = (props.prec_id || props.PREC_ID || props.VTDST20 || '').toString().trim().toUpperCase();
+            const precinctNorm = normalizeCountyToken(
+              props.precinct_norm
+              || (countyNorm && precId ? `${countyNorm} - ${precId}` : '')
+            );
+            if (!countyNorm || !precinctNorm) return;
+
+            if (!idx.has(countyNorm)) {
+              idx.set(countyNorm, {
+                aliasToNorms: new Map(),
+                features: []
+              });
+            }
+            const countyNode = idx.get(countyNorm);
+
+            const aliases = new Set();
+            const nameAliases = new Set();
+            const addAlias = (value) => {
+              const token = (value || '').toString().trim().toUpperCase();
+              if (token) aliases.add(token);
+            };
+            const addNameAlias = (value) => {
+              const token = normalizePrecinctAliasToken(
+                (value || '')
+                  .toString()
+                  .replace(/\bVOTING DISTRICT\b/gi, ' ')
+                  .replace(/\bDISTRICT\b/gi, ' ')
+              );
+              if (token) nameAliases.add(token);
+            };
+
+            [precId, props.NAME20, props.NAMELSAD20, props.precinct_name].forEach(value => {
+              addPrecinctAliasVariants(value, addAlias);
+              addNameAlias(value);
+            });
+            addAlias(precinctNorm);
+            addAlias(compactPrecinctAliasToken(precId));
+
+            aliases.forEach(alias => addLookupValue(countyNode.aliasToNorms, alias, precinctNorm));
+            countyNode.features.push({
+              precinctNorm,
+              aliases,
+              nameAliases
+            });
+
+            const countyAliases = precinctAliasIdx && countyNorm ? precinctAliasIdx.get(countyNorm) : null;
+            if (countyAliases && precId) {
+              countyAliases.forEach((codes, alias) => {
+                if (!Array.isArray(codes) || !codes.length) return;
+                if (!codes.includes(precId)) return;
+                addLookupValue(countyNode.aliasToNorms, (alias || '').toString().trim().toUpperCase(), precinctNorm);
+              });
+            }
+          });
+
+          precinctMatcherIndexByCounty = idx;
+          return precinctMatcherIndexByCounty;
+        })();
+
+        try {
+          return await precinctMatcherIndexPromise;
+        } finally {
+          precinctMatcherIndexLoadInFlight = false;
+          precinctMatcherIndexPromise = null;
+        }
+      }
+
+      function matchPrecinctNormsForRawRow(row, countyNorm, countyInfo, countyCodes = null, countyAliases = null) {
+        if (!row || !countyNorm || !countyInfo) return [];
+        const rawPrecinct = (row.rawPrecinct || '').toString().trim();
+        const rawCode = (row.rawCode || '').toString().trim();
+        const rawCombined = [rawCode, rawPrecinct].filter(Boolean).join(' ');
+
+        const candidateTokens = new Set();
+        const addToken = (value) => {
+          const token = (value || '').toString().trim().toUpperCase();
+          if (token) candidateTokens.add(token);
+        };
+        const addRawVariants = (value) => {
+          if (!value) return;
+          addPrecinctAliasVariants(value, addToken);
+          collectPrecinctCodeCandidates(value, countyNorm, countyCodes, countyAliases).forEach(addToken);
+          expandCompositePrecinctCodes(value).forEach(code => {
+            addToken(code);
+            addPrecinctAliasVariants(code, addToken);
+          });
+        };
+
+        [rawPrecinct, rawCode, rawCombined].forEach(addRawVariants);
+        const firstPrecinctToken = extractBaseCodeToken(rawPrecinct);
+        if (firstPrecinctToken && firstPrecinctToken !== rawPrecinct.toUpperCase()) addRawVariants(firstPrecinctToken);
+
+        const exactMatches = new Set();
+        candidateTokens.forEach(token => {
+          const hits = countyInfo.aliasToNorms.get(token);
+          if (!hits) return;
+          hits.forEach(norm => exactMatches.add(norm));
+        });
+        if (exactMatches.size > 0 && exactMatches.size <= 6) return Array.from(exactMatches);
+
+        const fuzzyCandidates = Array.from(candidateTokens)
+          .map(token => normalizePrecinctAliasToken(token))
+          .filter(token => token && token.length >= 4);
+        const fuzzyMatches = new Set();
+        if (fuzzyCandidates.length) {
+          countyInfo.features.forEach(feature => {
+            const matched = Array.from(feature.nameAliases || []).some(alias => (
+              alias &&
+              alias.length >= 4 &&
+              fuzzyCandidates.some(token => token.includes(alias) || alias.includes(token))
+            ));
+            if (matched) fuzzyMatches.add(feature.precinctNorm);
+          });
+        }
+        if (fuzzyMatches.size > 0 && fuzzyMatches.size <= 4) return Array.from(fuzzyMatches);
+        return [];
+      }
+
+      function buildCountyDistrictAreaWeights(crosswalk) {
+        const byCounty = new Map();
+        const statewide = new Map();
+        crosswalk?.byPrecinct?.forEach((entries, precinctKey) => {
+          const countyNorm = normalizeCountyFeatureToken((precinctKey || '').toString().split(' - ', 2)[0] || '');
+          if (!countyNorm) return;
+          if (!byCounty.has(countyNorm)) byCounty.set(countyNorm, new Map());
+          const countyNode = byCounty.get(countyNorm);
+          (entries || []).forEach(({ districtNum, weight }) => {
+            const districtKey = normalizeCarryoverDistrictNumber(districtNum);
+            const amount = Number(weight) || 0;
+            if (!districtKey || !(amount > 0)) return;
+            countyNode.set(districtKey, (countyNode.get(districtKey) || 0) + amount);
+            statewide.set(districtKey, (statewide.get(districtKey) || 0) + amount);
+          });
+        });
+        return { byCounty, statewide };
+      }
+
+      function normalizeWeightMap(mapLike) {
+        const totals = new Map();
+        if (!mapLike) return totals;
+        let sum = 0;
+        mapLike.forEach((value, key) => {
+          const amount = Number(value) || 0;
+          if (!key || !(amount > 0)) return;
+          totals.set(key, amount);
+          sum += amount;
+        });
+        if (!(sum > 0)) return new Map();
+        const normalized = new Map();
+        totals.forEach((value, key) => normalized.set(key, value / sum));
+        return normalized;
+      }
+
+      async function loadLegislativeDistrictOverlaySlice(scope, contestType, year, linesYear = currentDistrictLinesYear) {
+        if (!isLegislativeOverlayScope(scope)) return null;
+        const normalizedLinesYear = normalizeDistrictLinesYear(linesYear);
+        const rawCsvPath = RAW_PRECINCT_RESULTS_CSV[Number(year)] || '';
+        if (!rawCsvPath) return null;
+
+        const crosswalkPath = getCarryoverCrosswalkPath(scope, normalizedLinesYear);
+        if (!crosswalkPath) return null;
+
+        const cacheKey = `${normalizedLinesYear}|${scope}|${contestType}|${year}`;
+        if (legislativeDistrictOverlayCache.has(cacheKey)) return legislativeDistrictOverlayCache.get(cacheKey);
+
+        const [crosswalk, precinctCodeIdx, precinctMatcherIdx, contestCandidates] = await Promise.all([
+          loadDistrictCarryCrosswalk(scope, normalizedLinesYear),
+          ensurePrecinctCodeIndex().catch(() => null),
+          ensurePrecinctMatcherIndex().catch(() => null),
+          getContestCandidates(contestType, year).catch(() => ({ dem: '', rep: '' }))
+        ]);
+        let precinctAliasIdx = null;
+        try { precinctAliasIdx = await ensurePrecinctAliasIndex(); } catch (_) { precinctAliasIdx = null; }
+        try { await ensurePrecinctVariantOverrides(); } catch (_) {}
+
+        if (!crosswalk?.byPrecinct?.size) {
+          legislativeDistrictOverlayCache.set(cacheKey, null);
+          return null;
+        }
+
+        const byCountyArea = buildCountyDistrictAreaWeights(crosswalk);
+        const precinctRows = new Map();
+
+        const consumeRawRow = (rawRow) => {
+          const mapped = mapContestTypeFromRawOffice(rawRow?.office || '', rawRow?.district || '');
+          if (!mapped?.contestType || mapped.contestType !== contestType) return;
+
+          const countyNorm = normalizeCountyFeatureToken(rawRow?.county || rawRow?.county_name || '');
+          const rawPrecinct = (rawRow?.precinct || rawRow?.precinct_name || '').toString().trim();
+          const rawCode = (rawRow?.precinct_code || rawRow?.precinct_id || rawRow?.ward || '').toString().trim();
+          if (!countyNorm || (!rawPrecinct && !rawCode)) return;
+
+          const votes = parseRawVotes(rawRow?.votes);
+          if (!(votes > 0)) return;
+
+          const precinctKey = `${countyNorm}\u001f${rawCode.toUpperCase()}\u001f${rawPrecinct.toUpperCase()}`;
+          if (!precinctRows.has(precinctKey)) {
+            precinctRows.set(precinctKey, {
+              countyNorm,
+              rawPrecinct,
+              rawCode,
+              agg: createVoteAccumulator()
+            });
+          }
+          addVotesToAccumulator(
+            precinctRows.get(precinctKey).agg,
+            rawPartyBucket(rawRow?.party || rawRow?.party_simplified || rawRow?.party_detailed || ''),
+            rawCandidateName(rawRow),
+            votes
+          );
+        };
+
+        const rawDownloadUrl = withCacheBuster(toAbsoluteUrl(rawCsvPath));
+        if (typeof Papa !== 'undefined' && Papa && typeof Papa.parse === 'function') {
+          await new Promise((resolve, reject) => {
+            Papa.parse(rawDownloadUrl, {
+              download: true,
+              header: true,
+              dynamicTyping: true,
+              skipEmptyLines: true,
+              worker: true,
+              chunkSize: 1024 * 256,
+              chunk: (result) => {
+                (result?.data || []).forEach(consumeRawRow);
+              },
+              error: (err) => reject(err),
+              complete: () => resolve()
+            });
+          });
+        } else {
+          const csvText = await loadCSV(rawCsvPath);
+          parseCSV(csvText).forEach(consumeRawRow);
+        }
+
+        if (!precinctRows.size) {
+          legislativeDistrictOverlayCache.set(cacheKey, null);
+          return null;
+        }
+
+        const districtAggById = new Map();
+        const countyMatchedDistrictWeights = new Map();
+        const unmatchedRows = [];
+        const countyFallbackWeightCache = new Map();
+        const statewideFallbackWeights = normalizeWeightMap(byCountyArea.statewide);
+        let totalVotes = 0;
+        let directMatchedVotes = 0;
+
+        precinctRows.forEach(row => {
+          const rowTotalVotes = Number(row?.agg?.demVotes || 0) + Number(row?.agg?.repVotes || 0) + Number(row?.agg?.otherVotes || 0);
+          if (!(rowTotalVotes > 0)) return;
+          totalVotes += rowTotalVotes;
+
+          const countyNorm = row.countyNorm;
+          const countyInfo = precinctMatcherIdx && countyNorm ? precinctMatcherIdx.get(countyNorm) : null;
+          const countyCodes = precinctCodeIdx && countyNorm ? precinctCodeIdx.get(countyNorm) : null;
+          const countyAliases = precinctAliasIdx && countyNorm ? precinctAliasIdx.get(countyNorm) : null;
+
+          const likelyNonGeographic = isNonGeographicPrecinctToken(row.rawPrecinct, countyNorm)
+            || isNonGeographicPrecinctToken(row.rawCode, countyNorm);
+          const matchedPrecinctNorms = likelyNonGeographic
+            ? []
+            : matchPrecinctNormsForRawRow(row, countyNorm, countyInfo, countyCodes, countyAliases);
+
+          const districtWeights = new Map();
+          if (matchedPrecinctNorms.length) {
+            const baseShare = 1 / matchedPrecinctNorms.length;
+            matchedPrecinctNorms.forEach(precinctNorm => {
+              const entries = crosswalk.byPrecinct.get(normalizeCarryoverPrecinctKey(precinctNorm)) || [];
+              entries.forEach(({ districtNum, weight }) => {
+                const districtKey = normalizeCarryoverDistrictNumber(districtNum);
+                const amount = baseShare * (Number(weight) || 0);
+                if (!districtKey || !(amount > 0)) return;
+                districtWeights.set(districtKey, (districtWeights.get(districtKey) || 0) + amount);
+              });
+            });
+          }
+
+          const normalizedDirectWeights = normalizeWeightMap(districtWeights);
+          if (normalizedDirectWeights.size) {
+            directMatchedVotes += rowTotalVotes;
+            if (!countyMatchedDistrictWeights.has(countyNorm)) countyMatchedDistrictWeights.set(countyNorm, new Map());
+            const countyTotals = countyMatchedDistrictWeights.get(countyNorm);
+            normalizedDirectWeights.forEach((share, districtKey) => {
+              const demVotes = (Number(row?.agg?.demVotes || 0) * share);
+              const repVotes = (Number(row?.agg?.repVotes || 0) * share);
+              const otherVotes = (Number(row?.agg?.otherVotes || 0) * share);
+              if (!districtAggById.has(districtKey)) districtAggById.set(districtKey, createVoteAccumulator());
+              addScaledAccumulatorVotes(
+                districtAggById.get(districtKey),
+                demVotes,
+                repVotes,
+                otherVotes,
+                topAccumCandidate(row?.agg?.demCandidates || new Map()),
+                topAccumCandidate(row?.agg?.repCandidates || new Map())
+              );
+              countyTotals.set(districtKey, (countyTotals.get(districtKey) || 0) + (rowTotalVotes * share));
+            });
+            return;
+          }
+
+          unmatchedRows.push(row);
+        });
+
+        unmatchedRows.forEach(row => {
+          const countyNorm = row.countyNorm;
+          if (!countyFallbackWeightCache.has(countyNorm)) {
+            const preferredWeights = normalizeWeightMap(countyMatchedDistrictWeights.get(countyNorm));
+            const fallbackWeights = preferredWeights.size
+              ? preferredWeights
+              : normalizeWeightMap(byCountyArea.byCounty.get(countyNorm));
+            countyFallbackWeightCache.set(countyNorm, fallbackWeights.size ? fallbackWeights : statewideFallbackWeights);
+          }
+          const statewideWeights = countyFallbackWeightCache.get(countyNorm) || statewideFallbackWeights;
+          if (!statewideWeights.size) return;
+          statewideWeights.forEach((share, districtKey) => {
+            if (!districtAggById.has(districtKey)) districtAggById.set(districtKey, createVoteAccumulator());
+            addScaledAccumulatorVotes(
+              districtAggById.get(districtKey),
+              Number(row?.agg?.demVotes || 0) * share,
+              Number(row?.agg?.repVotes || 0) * share,
+              Number(row?.agg?.otherVotes || 0) * share,
+              topAccumCandidate(row?.agg?.demCandidates || new Map()),
+              topAccumCandidate(row?.agg?.repCandidates || new Map())
+            );
+          });
+        });
+
+        if (!districtAggById.size) {
+          legislativeDistrictOverlayCache.set(cacheKey, null);
+          return null;
+        }
+
+        const results = {};
+        Array.from(districtAggById.keys())
+          .sort((a, b) => Number(a) - Number(b))
+          .forEach(districtKey => {
+            results[String(districtKey)] = finalizeAccumulator(
+              districtAggById.get(districtKey),
+              contestCandidates?.dem || '',
+              contestCandidates?.rep || ''
+            );
+          });
+
+        const payload = {
+          meta: {
+            scope,
+            contest_type: contestType,
+            year: Number(year),
+            district_count: Object.keys(results).length,
+            match_coverage_pct: totalVotes > 0 ? roundDistrictOverlayNumber(100) : 0,
+            direct_match_coverage_pct: totalVotes > 0 ? roundDistrictOverlayNumber((directMatchedVotes / totalVotes) * 100) : 0,
+            generated_at: new Date().toISOString(),
+            source_method: 'precinct_vtd_crosswalk'
+          },
+          general: {
+            results
+          }
+        };
+        legislativeDistrictOverlayCache.set(cacheKey, payload);
+        return payload;
+      }
+
     async function loadDistrictSlice(scope, contestType, year) {
       const key = `${scope}_${contestType}_${year}`;
       const linesYear = normalizeDistrictLinesYear(currentDistrictLinesYear);
       const cacheKey = `${linesYear}|${key}`;
       if (districtSliceCache.has(cacheKey)) return districtSliceCache.get(cacheKey);
+
+      if (isLegislativeOverlayScope(scope)) {
+        try {
+          const overlayPayload = await loadLegislativeDistrictOverlaySlice(scope, contestType, year, linesYear);
+          if (overlayPayload?.general?.results && Object.keys(overlayPayload.general.results).length > 0) {
+            districtSliceCache.set(cacheKey, overlayPayload);
+            return overlayPayload;
+          }
+        } catch (err) {
+          console.warn(`Legislative overlay load failed for ${scope} ${contestType} ${year}:`, err?.message || err);
+        }
+      }
 
       const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
       for (const path of candidatePaths) {
@@ -18562,6 +19347,7 @@ document.addEventListener('DOMContentLoaded', function() {
       setStatus('Loading election index...');
       candidateNameCache = new Map();
       contestSliceCache = new Map();
+      legislativeDistrictOverlayCache.clear();
       try {
         const manifest = await loadJSON(`${CONFIG.paths.contests_dir}/manifest.json`);
         contestManifest = manifest?.files || [];
@@ -18616,6 +19402,7 @@ document.addEventListener('DOMContentLoaded', function() {
         districtManifest = getActiveDistrictManifest();
         districtElectionDataJSON = null;
         districtSliceCache = new Map();
+        legislativeDistrictOverlayCache.clear();
         updateDistrictLinesToggleUI();
         if (contestManifest.length > 0 || districtManifest.length > 0) {
           updateContestSelectForCurrentView();
@@ -18626,6 +19413,7 @@ document.addEventListener('DOMContentLoaded', function() {
           districtElectionDataJSON = await loadJSON(CONFIG.paths.district_election);
           debugLog('District election data loaded:', districtElectionDataJSON);
           districtSliceCache = new Map();
+          legislativeDistrictOverlayCache.clear();
           districtManifestByLines = { '2022': [] };
           districtManifest = [];
           updateDistrictLinesToggleUI();
@@ -19235,6 +20023,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function tryLoadDistrictSliceStrict(scope, contestType, year, linesYear = currentDistrictLinesYear) {
+      if (isLegislativeOverlayScope(scope)) {
+        try {
+          const overlayPayload = await loadLegislativeDistrictOverlaySlice(scope, contestType, year, linesYear);
+          if (overlayPayload?.general?.results && Object.keys(overlayPayload.general.results).length) {
+            return overlayPayload;
+          }
+        } catch (_) {}
+      }
       const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
       for (const path of candidatePaths) {
         try {
@@ -20285,16 +21081,24 @@ document.addEventListener('DOMContentLoaded', function() {
           const repPct = totalVotes ? (totalRep / totalVotes) * 100 : 0;
           const totalOther = Math.max(0, totalVotes - totalDem - totalRep);
           const otherPct = totalVotes ? ((totalVotes - totalDem - totalRep) / totalVotes) * 100 : 0;
+          const sourceMethod = (districtNode?.meta?.source_method || '').toString().trim().toLowerCase();
+          const directCoveragePct = districtNode?.meta?.direct_match_coverage_pct;
           const coverageText = (coveragePct !== undefined && coveragePct !== null)
             ? ` | match coverage ${Number(coveragePct).toFixed(2)}%`
+            : '';
+          const directCoverageText = (directCoveragePct !== undefined && directCoveragePct !== null && Number(directCoveragePct) !== Number(coveragePct))
+            ? ` | direct precinct match ${Number(directCoveragePct).toFixed(2)}%`
             : '';
           const linesLabel = getDistrictLinesLabel();
           if (mode === 'demographics') {
             setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
             setStatus(`Applied demographic mode for ${getReadableViewLabel(currentView)} (${linesLabel}).`);
           } else {
-            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - Reallocated to ${linesLabel}${coverageText}`);
-            setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}`);
+            const allocationLabel = sourceMethod === 'precinct_vtd_crosswalk'
+              ? `VTD crosswalk to ${linesLabel}`
+              : `Reallocated to ${linesLabel}`;
+            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${allocationLabel}${coverageText}${directCoverageText}`);
+            setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}${directCoverageText}`);
           }
           setVoteCounterBaselineState(
             'Statewide',
