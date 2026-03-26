@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "auditor",
+    "year": 2010,
+    "district_count": 17,
+    "match_coverage_pct": 54.319581,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 32667,
+        "rep_votes": 50628,
+        "other_votes": 3395,
+        "total_votes": 86690,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 17961,
+        "margin_pct": 20.718653,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 72133,
+        "rep_votes": 14882,
+        "other_votes": 2289,
+        "total_votes": 89304,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -57251,
+        "margin_pct": -64.107991,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 21773,
+        "rep_votes": 37874,
+        "other_votes": 2219,
+        "total_votes": 61866,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 16101,
+        "margin_pct": 26.025604,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 28016,
+        "rep_votes": 41079,
+        "other_votes": 2362,
+        "total_votes": 71457,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 13063,
+        "margin_pct": 18.280924,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 31882,
+        "rep_votes": 14436,
+        "other_votes": 1559,
+        "total_votes": 47877,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -17446,
+        "margin_pct": -36.439209,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 22498,
+        "rep_votes": 29645,
+        "other_votes": 2467,
+        "total_votes": 54610,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 7147,
+        "margin_pct": 13.087347,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 36930,
+        "rep_votes": 7692,
+        "other_votes": 1102,
+        "total_votes": 45724,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -29238,
+        "margin_pct": -63.944537,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 19635,
+        "rep_votes": 32061,
+        "other_votes": 2036,
+        "total_votes": 53732,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 12426,
+        "margin_pct": 23.125884,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 21367,
+        "rep_votes": 27365,
+        "other_votes": 2210,
+        "total_votes": 50942,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 5998,
+        "margin_pct": 11.774175,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 26139,
+        "rep_votes": 49767,
+        "other_votes": 2869,
+        "total_votes": 78775,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 23628,
+        "margin_pct": 29.994288,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 24022,
+        "rep_votes": 27958,
+        "other_votes": 2417,
+        "total_votes": 54397,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 3936,
+        "margin_pct": 7.235693,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 33454,
+        "rep_votes": 26032,
+        "other_votes": 1662,
+        "total_votes": 61148,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -7422,
+        "margin_pct": -12.137764,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 24077,
+        "rep_votes": 38522,
+        "other_votes": 2393,
+        "total_votes": 64992,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 14445,
+        "margin_pct": 22.225812,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 21890,
+        "rep_votes": 35687,
+        "other_votes": 2654,
+        "total_votes": 60231,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 13797,
+        "margin_pct": 22.906809,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 22439,
+        "rep_votes": 28042,
+        "other_votes": 1937,
+        "total_votes": 52418,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 5603,
+        "margin_pct": 10.689076,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 11838,
+        "rep_votes": 37957,
+        "other_votes": 2228,
+        "total_votes": 52023,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 26119,
+        "margin_pct": 50.206639,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 25908,
+        "rep_votes": 27238,
+        "other_votes": 2083,
+        "total_votes": 55229,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 1330,
+        "margin_pct": 2.408155,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

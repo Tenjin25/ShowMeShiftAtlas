@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2016,
+    "district_count": 18,
+    "match_coverage_pct": 52.728645,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 53576,
+        "rep_votes": 37886,
+        "other_votes": 3554,
+        "total_votes": 95016,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -15690,
+        "margin_pct": -16.513008,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 36102,
+        "rep_votes": 44040,
+        "other_votes": 4710,
+        "total_votes": 84852,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 7938,
+        "margin_pct": 9.355112,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 63168,
+        "rep_votes": 18971,
+        "other_votes": 2755,
+        "total_votes": 84894,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -44197,
+        "margin_pct": -52.061394,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 56231,
+        "rep_votes": 7091,
+        "other_votes": 2221,
+        "total_votes": 65543,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -49140,
+        "margin_pct": -74.973681,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 60574,
+        "rep_votes": 23306,
+        "other_votes": 3103,
+        "total_votes": 86983,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -37268,
+        "margin_pct": -42.845154,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 51655,
+        "rep_votes": 9802,
+        "other_votes": 2456,
+        "total_votes": 63913,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -41853,
+        "margin_pct": -65.48433,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 37725,
+        "rep_votes": 29210,
+        "other_votes": 4281,
+        "total_votes": 71216,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -8515,
+        "margin_pct": -11.956583,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 59618,
+        "rep_votes": 13885,
+        "other_votes": 2473,
+        "total_votes": 75976,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -45733,
+        "margin_pct": -60.194009,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 47749,
+        "rep_votes": 50903,
+        "other_votes": 3165,
+        "total_votes": 101817,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 3154,
+        "margin_pct": 3.097715,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 46360,
+        "rep_votes": 37598,
+        "other_votes": 4515,
+        "total_votes": 88473,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -8762,
+        "margin_pct": -9.903586,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 48019,
+        "rep_votes": 38839,
+        "other_votes": 4184,
+        "total_votes": 91042,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -9180,
+        "margin_pct": -10.083258,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 30192,
+        "rep_votes": 42339,
+        "other_votes": 4367,
+        "total_votes": 76898,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 12147,
+        "margin_pct": 15.79625,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 50216,
+        "rep_votes": 54776,
+        "other_votes": 4818,
+        "total_votes": 109810,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 4560,
+        "margin_pct": 4.152627,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 20485,
+        "rep_votes": 42420,
+        "other_votes": 2521,
+        "total_votes": 65426,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 21935,
+        "margin_pct": 33.526427,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 24146,
+        "rep_votes": 51667,
+        "other_votes": 3255,
+        "total_votes": 79068,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 27521,
+        "margin_pct": 34.806749,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 20298,
+        "rep_votes": 55132,
+        "other_votes": 3959,
+        "total_votes": 79389,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 34834,
+        "margin_pct": 43.877615,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 31210,
+        "rep_votes": 47589,
+        "other_votes": 4365,
+        "total_votes": 83164,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 16379,
+        "margin_pct": 19.69482,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 19046,
+        "rep_votes": 51752,
+        "other_votes": 3513,
+        "total_votes": 74311,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 32706,
+        "margin_pct": 44.012327,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

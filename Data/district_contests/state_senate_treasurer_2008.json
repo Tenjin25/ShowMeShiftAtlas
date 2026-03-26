@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "treasurer",
+    "year": 2008,
+    "district_count": 17,
+    "match_coverage_pct": 50.24277,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 45369,
+        "rep_votes": 39509,
+        "other_votes": 1616,
+        "total_votes": 86494,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -5860,
+        "margin_pct": -6.775036,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 43922,
+        "rep_votes": 34434,
+        "other_votes": 2089,
+        "total_votes": 80445,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -9488,
+        "margin_pct": -11.794394,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 55308,
+        "rep_votes": 7955,
+        "other_votes": 1355,
+        "total_votes": 64618,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -47353,
+        "margin_pct": -73.281439,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 41531,
+        "rep_votes": 46570,
+        "other_votes": 1291,
+        "total_votes": 89392,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 5039,
+        "margin_pct": 5.63697,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 55446,
+        "rep_votes": 7394,
+        "other_votes": 1193,
+        "total_votes": 64033,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -48052,
+        "margin_pct": -75.042556,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 47988,
+        "rep_votes": 34174,
+        "other_votes": 2216,
+        "total_votes": 84378,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -13814,
+        "margin_pct": -16.371566,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 65524,
+        "rep_votes": 13909,
+        "other_votes": 1410,
+        "total_votes": 80843,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -51615,
+        "margin_pct": -63.845973,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 48488,
+        "rep_votes": 43351,
+        "other_votes": 1726,
+        "total_votes": 93565,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -5137,
+        "margin_pct": -5.490301,
+        "winner": "DEM",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 46432,
+        "rep_votes": 44512,
+        "other_votes": 2302,
+        "total_votes": 93246,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -1920,
+        "margin_pct": -2.05907,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 47269,
+        "rep_votes": 39444,
+        "other_votes": 2537,
+        "total_votes": 89250,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": -7825,
+        "margin_pct": -8.767507,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 34278,
+        "rep_votes": 37354,
+        "other_votes": 1999,
+        "total_votes": 73631,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 3076,
+        "margin_pct": 4.177588,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 50883,
+        "rep_votes": 52046,
+        "other_votes": 2173,
+        "total_votes": 105102,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 1163,
+        "margin_pct": 1.106544,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 27394,
+        "rep_votes": 36138,
+        "other_votes": 1483,
+        "total_votes": 65015,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 8744,
+        "margin_pct": 13.449204,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 28208,
+        "rep_votes": 45895,
+        "other_votes": 1713,
+        "total_votes": 75816,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 17687,
+        "margin_pct": 23.328849,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 25506,
+        "rep_votes": 50138,
+        "other_votes": 2527,
+        "total_votes": 78171,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 24632,
+        "margin_pct": 31.510407,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 36495,
+        "rep_votes": 46097,
+        "other_votes": 2354,
+        "total_votes": 84946,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 9602,
+        "margin_pct": 11.303652,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 28767,
+        "rep_votes": 48128,
+        "other_votes": 2527,
+        "total_votes": 79422,
+        "dem_candidate": "Charles Zweifel",
+        "rep_candidate": "Brad Lager",
+        "margin": 19361,
+        "margin_pct": 24.377377,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

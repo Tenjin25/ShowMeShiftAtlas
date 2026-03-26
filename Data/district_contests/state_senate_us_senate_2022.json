@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2022,
+    "district_count": 17,
+    "match_coverage_pct": 52.832339,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 33124,
+        "rep_votes": 45428,
+        "other_votes": 1375,
+        "total_votes": 79927,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 12304,
+        "margin_pct": 15.394047,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 53472,
+        "rep_votes": 16058,
+        "other_votes": 1085,
+        "total_votes": 70615,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -37414,
+        "margin_pct": -52.983077,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 18119,
+        "rep_votes": 47623,
+        "other_votes": 1912,
+        "total_votes": 67654,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 29504,
+        "margin_pct": 43.610134,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 37227,
+        "rep_votes": 37686,
+        "other_votes": 1589,
+        "total_votes": 76502,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 459,
+        "margin_pct": 0.599984,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 18627,
+        "rep_votes": 40950,
+        "other_votes": 1571,
+        "total_votes": 61148,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 22323,
+        "margin_pct": 36.506509,
+        "winner": "REP",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 15337,
+        "rep_votes": 47169,
+        "other_votes": 1525,
+        "total_votes": 64031,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 31832,
+        "margin_pct": 49.71342,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 39591,
+        "rep_votes": 11413,
+        "other_votes": 1023,
+        "total_votes": 52027,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -28178,
+        "margin_pct": -54.16034,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 10466,
+        "rep_votes": 36966,
+        "other_votes": 1561,
+        "total_votes": 48993,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 26500,
+        "margin_pct": 54.08936,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 14471,
+        "rep_votes": 41050,
+        "other_votes": 1633,
+        "total_votes": 57154,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 26579,
+        "margin_pct": 46.504182,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 16731,
+        "rep_votes": 44377,
+        "other_votes": 1940,
+        "total_votes": 63048,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 27646,
+        "margin_pct": 43.849131,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 24968,
+        "rep_votes": 40526,
+        "other_votes": 1592,
+        "total_votes": 67086,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 15558,
+        "margin_pct": 23.191128,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 46566,
+        "rep_votes": 33570,
+        "other_votes": 1109,
+        "total_votes": 81245,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -12996,
+        "margin_pct": -15.996061,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 18935,
+        "rep_votes": 46061,
+        "other_votes": 1437,
+        "total_votes": 66433,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 27126,
+        "margin_pct": 40.832117,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 14700,
+        "rep_votes": 46418,
+        "other_votes": 2269,
+        "total_votes": 63387,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 31718,
+        "margin_pct": 50.038651,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 26225,
+        "rep_votes": 27084,
+        "other_votes": 2046,
+        "total_votes": 55355,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 859,
+        "margin_pct": 1.551802,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 12378,
+        "rep_votes": 40748,
+        "other_votes": 1510,
+        "total_votes": 54636,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 28370,
+        "margin_pct": 51.92547,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 28171,
+        "rep_votes": 33464,
+        "other_votes": 1701,
+        "total_votes": 63336,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 5293,
+        "margin_pct": 8.357017,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

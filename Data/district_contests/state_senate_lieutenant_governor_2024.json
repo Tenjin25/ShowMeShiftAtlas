@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2024,
+    "district_count": 17,
+    "match_coverage_pct": 51.866121,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 48426,
+        "rep_votes": 43991,
+        "other_votes": 3115,
+        "total_votes": 95532,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -4435,
+        "margin_pct": -4.642423,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 30703,
+        "rep_votes": 79363,
+        "other_votes": 4779,
+        "total_votes": 114845,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 48660,
+        "margin_pct": 42.370151,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 46980,
+        "rep_votes": 5825,
+        "other_votes": 2544,
+        "total_votes": 55349,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -41155,
+        "margin_pct": -74.355454,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 56462,
+        "rep_votes": 20231,
+        "other_votes": 3323,
+        "total_votes": 80016,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -36231,
+        "margin_pct": -45.279694,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 49384,
+        "rep_votes": 13625,
+        "other_votes": 3207,
+        "total_votes": 66216,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -35759,
+        "margin_pct": -54.003564,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 38399,
+        "rep_votes": 43698,
+        "other_votes": 4570,
+        "total_votes": 86667,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 5299,
+        "margin_pct": 6.114207,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 56473,
+        "rep_votes": 12500,
+        "other_votes": 3098,
+        "total_votes": 72071,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -43973,
+        "margin_pct": -61.013445,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 48402,
+        "rep_votes": 57451,
+        "other_votes": 2993,
+        "total_votes": 108846,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 9049,
+        "margin_pct": 8.313581,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 41449,
+        "rep_votes": 39507,
+        "other_votes": 3370,
+        "total_votes": 84326,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -1942,
+        "margin_pct": -2.302967,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 44671,
+        "rep_votes": 38483,
+        "other_votes": 3602,
+        "total_votes": 86756,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": -6188,
+        "margin_pct": -7.132648,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 28412,
+        "rep_votes": 61338,
+        "other_votes": 3774,
+        "total_votes": 93524,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 32926,
+        "margin_pct": 35.205936,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 57983,
+        "rep_votes": 74743,
+        "other_votes": 5483,
+        "total_votes": 138209,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 16760,
+        "margin_pct": 12.126562,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 12908,
+        "rep_votes": 58381,
+        "other_votes": 3096,
+        "total_votes": 74385,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 45473,
+        "margin_pct": 61.131949,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 17461,
+        "rep_votes": 62726,
+        "other_votes": 3720,
+        "total_votes": 83907,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 45265,
+        "margin_pct": 53.946631,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 17567,
+        "rep_votes": 70905,
+        "other_votes": 3638,
+        "total_votes": 92110,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 53338,
+        "margin_pct": 57.906851,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 26208,
+        "rep_votes": 58236,
+        "other_votes": 4236,
+        "total_votes": 88680,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 32028,
+        "margin_pct": 36.116373,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 14649,
+        "rep_votes": 71399,
+        "other_votes": 3563,
+        "total_votes": 89611,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 56750,
+        "margin_pct": 63.329279,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

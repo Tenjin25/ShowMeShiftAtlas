@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "governor",
+    "year": 2004,
+    "district_count": 17,
+    "match_coverage_pct": 52.411738,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 54367,
+        "rep_votes": 46888,
+        "other_votes": 1240,
+        "total_votes": 102495,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -7479,
+        "margin_pct": -7.296941,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 33222,
+        "rep_votes": 34780,
+        "other_votes": 1081,
+        "total_votes": 69083,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 1558,
+        "margin_pct": 2.255258,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 92748,
+        "rep_votes": 24372,
+        "other_votes": 1822,
+        "total_votes": 118942,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -68376,
+        "margin_pct": -57.486842,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 39258,
+        "rep_votes": 53117,
+        "other_votes": 909,
+        "total_votes": 93284,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 13859,
+        "margin_pct": 14.856781,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 53691,
+        "rep_votes": 9369,
+        "other_votes": 892,
+        "total_votes": 63952,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -44322,
+        "margin_pct": -69.305104,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 46676,
+        "rep_votes": 36656,
+        "other_votes": 1416,
+        "total_votes": 84748,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -10020,
+        "margin_pct": -11.823288,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 57687,
+        "rep_votes": 21136,
+        "other_votes": 833,
+        "total_votes": 79656,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -36551,
+        "margin_pct": -45.88606,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 46786,
+        "rep_votes": 49002,
+        "other_votes": 1158,
+        "total_votes": 96946,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 2216,
+        "margin_pct": 2.285809,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 44886,
+        "rep_votes": 39835,
+        "other_votes": 1355,
+        "total_votes": 86076,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -5051,
+        "margin_pct": -5.86807,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 42628,
+        "rep_votes": 41481,
+        "other_votes": 1327,
+        "total_votes": 85436,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": -1147,
+        "margin_pct": -1.342525,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 33869,
+        "rep_votes": 39691,
+        "other_votes": 995,
+        "total_votes": 74555,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 5822,
+        "margin_pct": 7.809,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 40315,
+        "rep_votes": 49419,
+        "other_votes": 1097,
+        "total_votes": 90831,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 9104,
+        "margin_pct": 10.02301,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 27777,
+        "rep_votes": 38646,
+        "other_votes": 820,
+        "total_votes": 67243,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 10869,
+        "margin_pct": 16.163764,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 27795,
+        "rep_votes": 47203,
+        "other_votes": 876,
+        "total_votes": 75874,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 19408,
+        "margin_pct": 25.57925,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 22685,
+        "rep_votes": 52585,
+        "other_votes": 1014,
+        "total_votes": 76284,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 29900,
+        "margin_pct": 39.195637,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 35390,
+        "rep_votes": 44770,
+        "other_votes": 1298,
+        "total_votes": 81458,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 9380,
+        "margin_pct": 11.515137,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 27650,
+        "rep_votes": 50113,
+        "other_votes": 1076,
+        "total_votes": 78839,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Matthew Blunt",
+        "margin": 22463,
+        "margin_pct": 28.492244,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

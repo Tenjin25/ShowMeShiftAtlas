@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "lieutenant_governor",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 99.997974,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 243160,
+        "rep_votes": 57814,
+        "other_votes": 15777,
+        "total_votes": 316751,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": -185346,
+        "margin_pct": -58.514732,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 183065,
+        "rep_votes": 218362,
+        "other_votes": 15729,
+        "total_votes": 417156,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 35297,
+        "margin_pct": 8.461343,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 136213,
+        "rep_votes": 219246,
+        "other_votes": 17767,
+        "total_votes": 373226,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 83033,
+        "margin_pct": 22.247378,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 113242,
+        "rep_votes": 203315,
+        "other_votes": 17647,
+        "total_votes": 334204,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 90073,
+        "margin_pct": 26.951503,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 182375,
+        "rep_votes": 120419,
+        "other_votes": 18562,
+        "total_votes": 321356,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": -61956,
+        "margin_pct": -19.279553,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 130096,
+        "rep_votes": 201913,
+        "other_votes": 18206,
+        "total_votes": 350215,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 71817,
+        "margin_pct": 20.506546,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 88204,
+        "rep_votes": 232969,
+        "other_votes": 17915,
+        "total_votes": 339088,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 144765,
+        "margin_pct": 42.692457,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 92591,
+        "rep_votes": 205350,
+        "other_votes": 14175,
+        "total_votes": 312116,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 112759,
+        "margin_pct": 36.127273,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "auditor",
+    "year": 2002,
+    "district_count": 17,
+    "match_coverage_pct": 54.234196,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 32730,
+        "rep_votes": 27114,
+        "other_votes": 1913,
+        "total_votes": 61757,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -5616,
+        "margin_pct": -9.093706,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 73535,
+        "rep_votes": 12487,
+        "other_votes": 4482,
+        "total_votes": 90504,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -61048,
+        "margin_pct": -67.453372,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 34394,
+        "rep_votes": 22074,
+        "other_votes": 2287,
+        "total_votes": 58755,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -12320,
+        "margin_pct": -20.968428,
+        "winner": "DEM",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 34651,
+        "rep_votes": 25327,
+        "other_votes": 1446,
+        "total_votes": 61424,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -9324,
+        "margin_pct": -15.179734,
+        "winner": "DEM",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 51499,
+        "rep_votes": 13987,
+        "other_votes": 2162,
+        "total_votes": 67648,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -37512,
+        "margin_pct": -55.45175,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 30995,
+        "rep_votes": 21545,
+        "other_votes": 1843,
+        "total_votes": 54383,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -9450,
+        "margin_pct": -17.376754,
+        "winner": "DEM",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 37360,
+        "rep_votes": 7850,
+        "other_votes": 1653,
+        "total_votes": 46863,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -29510,
+        "margin_pct": -62.970787,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 27765,
+        "rep_votes": 20218,
+        "other_votes": 1799,
+        "total_votes": 49782,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -7547,
+        "margin_pct": -15.160098,
+        "winner": "DEM",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 30259,
+        "rep_votes": 19828,
+        "other_votes": 1652,
+        "total_votes": 51739,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -10431,
+        "margin_pct": -20.160807,
+        "winner": "DEM",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 32794,
+        "rep_votes": 27867,
+        "other_votes": 2307,
+        "total_votes": 62968,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -4927,
+        "margin_pct": -7.824609,
+        "winner": "DEM",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 28711,
+        "rep_votes": 17499,
+        "other_votes": 1653,
+        "total_votes": 47863,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -11212,
+        "margin_pct": -23.425193,
+        "winner": "DEM",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 40953,
+        "rep_votes": 21623,
+        "other_votes": 2613,
+        "total_votes": 65189,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -19330,
+        "margin_pct": -29.652242,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 30963,
+        "rep_votes": 26522,
+        "other_votes": 2116,
+        "total_votes": 59601,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -4441,
+        "margin_pct": -7.451217,
+        "winner": "DEM",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 31399,
+        "rep_votes": 23201,
+        "other_votes": 1800,
+        "total_votes": 56400,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -8198,
+        "margin_pct": -14.535461,
+        "winner": "DEM",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 29836,
+        "rep_votes": 20329,
+        "other_votes": 2112,
+        "total_votes": 52277,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -9507,
+        "margin_pct": -18.185818,
+        "winner": "DEM",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 19090,
+        "rep_votes": 26763,
+        "other_votes": 1664,
+        "total_votes": 47517,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": 7673,
+        "margin_pct": 16.147905,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 32203,
+        "rep_votes": 17706,
+        "other_votes": 1960,
+        "total_votes": 51869,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -14497,
+        "margin_pct": -27.949257,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2020,
+    "district_count": 17,
+    "match_coverage_pct": 50.88484,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 49882,
+        "rep_votes": 45744,
+        "other_votes": 2650,
+        "total_votes": 98276,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -4138,
+        "margin_pct": -4.210591,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 31952,
+        "rep_votes": 71498,
+        "other_votes": 3006,
+        "total_votes": 106456,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 39546,
+        "margin_pct": 37.147742,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 55167,
+        "rep_votes": 8424,
+        "other_votes": 2012,
+        "total_votes": 65603,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -46743,
+        "margin_pct": -71.251315,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 61358,
+        "rep_votes": 24537,
+        "other_votes": 2758,
+        "total_votes": 88653,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -36821,
+        "margin_pct": -41.533845,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 47342,
+        "rep_votes": 9711,
+        "other_votes": 1852,
+        "total_votes": 58905,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -37631,
+        "margin_pct": -63.88422,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 21810,
+        "rep_votes": 25900,
+        "other_votes": 2241,
+        "total_votes": 49951,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 4090,
+        "margin_pct": 8.188024,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 60511,
+        "rep_votes": 15013,
+        "other_votes": 1780,
+        "total_votes": 77304,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -45498,
+        "margin_pct": -58.855945,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 48694,
+        "rep_votes": 61709,
+        "other_votes": 2558,
+        "total_votes": 112961,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 13015,
+        "margin_pct": 11.521676,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 49945,
+        "rep_votes": 51382,
+        "other_votes": 3312,
+        "total_votes": 104639,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 1437,
+        "margin_pct": 1.373293,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 45434,
+        "rep_votes": 49123,
+        "other_votes": 3022,
+        "total_votes": 97579,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 3689,
+        "margin_pct": 3.780527,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 20261,
+        "rep_votes": 57935,
+        "other_votes": 2468,
+        "total_votes": 80664,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 37674,
+        "margin_pct": 46.70485,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 56387,
+        "rep_votes": 76444,
+        "other_votes": 3539,
+        "total_votes": 136370,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 20057,
+        "margin_pct": 14.70778,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 12164,
+        "rep_votes": 51110,
+        "other_votes": 1278,
+        "total_votes": 64552,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 38946,
+        "margin_pct": 60.332755,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 17465,
+        "rep_votes": 63815,
+        "other_votes": 1786,
+        "total_votes": 83066,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 46350,
+        "margin_pct": 55.799003,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 14781,
+        "rep_votes": 68436,
+        "other_votes": 2189,
+        "total_votes": 85406,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 53655,
+        "margin_pct": 62.823455,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 24470,
+        "rep_votes": 62799,
+        "other_votes": 2515,
+        "total_votes": 89784,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 38329,
+        "margin_pct": 42.690234,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 11919,
+        "rep_votes": 64044,
+        "other_votes": 1923,
+        "total_votes": 77886,
+        "dem_candidate": "Alissia Canady",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 52125,
+        "margin_pct": 66.924736,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

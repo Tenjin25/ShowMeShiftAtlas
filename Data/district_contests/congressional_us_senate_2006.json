@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2006,
+    "district_count": 9,
+    "match_coverage_pct": 99.99953,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 146224,
+        "rep_votes": 49253,
+        "other_votes": 3387,
+        "total_votes": 198864,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": -96971,
+        "margin_pct": -48.762471,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 127392,
+        "rep_votes": 162669,
+        "other_votes": 5330,
+        "total_votes": 295391,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": 35277,
+        "margin_pct": 11.942476,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 133869,
+        "rep_votes": 88485,
+        "other_votes": 5382,
+        "total_votes": 227736,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": -45384,
+        "margin_pct": -19.928338,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 99673,
+        "rep_votes": 125629,
+        "other_votes": 11716,
+        "total_votes": 237018,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": 25956,
+        "margin_pct": 10.951067,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 135950,
+        "rep_votes": 74181,
+        "other_votes": 5764,
+        "total_votes": 215895,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": -61769,
+        "margin_pct": -28.610667,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 120724,
+        "rep_votes": 117535,
+        "other_votes": 9036,
+        "total_votes": 247295,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": -3189,
+        "margin_pct": -1.289553,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 90428,
+        "rep_votes": 142880,
+        "other_votes": 9335,
+        "total_votes": 242643,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": 52452,
+        "margin_pct": 21.616943,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 91306,
+        "rep_votes": 118476,
+        "other_votes": 8069,
+        "total_votes": 217851,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": 27170,
+        "margin_pct": 12.471827,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 109780,
+        "rep_votes": 128012,
+        "other_votes": 8228,
+        "total_votes": 246020,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "James Talent",
+        "margin": 18232,
+        "margin_pct": 7.41078,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

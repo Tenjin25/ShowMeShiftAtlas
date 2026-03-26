@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "president",
+    "year": 2024,
+    "district_count": 17,
+    "match_coverage_pct": 51.865122,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 52121,
+        "rep_votes": 43851,
+        "other_votes": 1838,
+        "total_votes": 97810,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -8270,
+        "margin_pct": -8.455168,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 32165,
+        "rep_votes": 85973,
+        "other_votes": 1154,
+        "total_votes": 119292,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 53808,
+        "margin_pct": 45.106126,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 49159,
+        "rep_votes": 6413,
+        "other_votes": 1142,
+        "total_votes": 56714,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -42746,
+        "margin_pct": -75.371161,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 59144,
+        "rep_votes": 20669,
+        "other_votes": 1411,
+        "total_votes": 81224,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -38475,
+        "margin_pct": -47.369004,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 50970,
+        "rep_votes": 15101,
+        "other_votes": 1153,
+        "total_votes": 67224,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -35869,
+        "margin_pct": -53.357432,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 41260,
+        "rep_votes": 47213,
+        "other_votes": 1166,
+        "total_votes": 89639,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 5953,
+        "margin_pct": 6.641083,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 58943,
+        "rep_votes": 13383,
+        "other_votes": 1057,
+        "total_votes": 73383,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -45560,
+        "margin_pct": -62.085224,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 53084,
+        "rep_votes": 55153,
+        "other_votes": 2317,
+        "total_votes": 110554,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 2069,
+        "margin_pct": 1.871484,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 43872,
+        "rep_votes": 40925,
+        "other_votes": 1511,
+        "total_votes": 86308,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -2947,
+        "margin_pct": -3.414515,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 48451,
+        "rep_votes": 39671,
+        "other_votes": 1985,
+        "total_votes": 90107,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -8780,
+        "margin_pct": -9.743971,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 30108,
+        "rep_votes": 64506,
+        "other_votes": 1263,
+        "total_votes": 95877,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 34398,
+        "margin_pct": 35.877218,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 63526,
+        "rep_votes": 77152,
+        "other_votes": 1974,
+        "total_votes": 142652,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 13626,
+        "margin_pct": 9.551917,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 13294,
+        "rep_votes": 63352,
+        "other_votes": 515,
+        "total_votes": 77161,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 50058,
+        "margin_pct": 64.874742,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 18881,
+        "rep_votes": 67377,
+        "other_votes": 831,
+        "total_votes": 87089,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 48496,
+        "margin_pct": 55.685563,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 19394,
+        "rep_votes": 74361,
+        "other_votes": 945,
+        "total_votes": 94700,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 54967,
+        "margin_pct": 58.043295,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 28276,
+        "rep_votes": 61792,
+        "other_votes": 1216,
+        "total_votes": 91284,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 33516,
+        "margin_pct": 36.716182,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 15929,
+        "rep_votes": 75831,
+        "other_votes": 752,
+        "total_votes": 92512,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 59902,
+        "margin_pct": 64.750519,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2012,
+    "district_count": 17,
+    "match_coverage_pct": 48.958971,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 45142,
+        "rep_votes": 40802,
+        "other_votes": 3835,
+        "total_votes": 89779,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -4340,
+        "margin_pct": -4.834093,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 34546,
+        "rep_votes": 38238,
+        "other_votes": 4230,
+        "total_votes": 77014,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 3692,
+        "margin_pct": 4.793934,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 59888,
+        "rep_votes": 8752,
+        "other_votes": 2632,
+        "total_votes": 71272,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -51136,
+        "margin_pct": -71.747671,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 53326,
+        "rep_votes": 25104,
+        "other_votes": 4011,
+        "total_votes": 82441,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -28222,
+        "margin_pct": -34.232967,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 57297,
+        "rep_votes": 11759,
+        "other_votes": 2566,
+        "total_votes": 71622,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -45538,
+        "margin_pct": -63.581023,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 36187,
+        "rep_votes": 30335,
+        "other_votes": 3947,
+        "total_votes": 70469,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -5852,
+        "margin_pct": -8.304361,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 63906,
+        "rep_votes": 17477,
+        "other_votes": 2979,
+        "total_votes": 84362,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -46429,
+        "margin_pct": -55.035442,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 26353,
+        "rep_votes": 35514,
+        "other_votes": 2522,
+        "total_votes": 64389,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 9161,
+        "margin_pct": 14.227585,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 38722,
+        "rep_votes": 38246,
+        "other_votes": 4478,
+        "total_votes": 81446,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -476,
+        "margin_pct": -0.584436,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 39597,
+        "rep_votes": 37490,
+        "other_votes": 5330,
+        "total_votes": 82417,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -2107,
+        "margin_pct": -2.556511,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 29710,
+        "rep_votes": 39767,
+        "other_votes": 4327,
+        "total_votes": 73804,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 10057,
+        "margin_pct": 13.626633,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 40014,
+        "rep_votes": 53995,
+        "other_votes": 7150,
+        "total_votes": 101159,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 13981,
+        "margin_pct": 13.820817,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 20931,
+        "rep_votes": 40185,
+        "other_votes": 2358,
+        "total_votes": 63474,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 19254,
+        "margin_pct": 30.33368,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 21690,
+        "rep_votes": 50909,
+        "other_votes": 2817,
+        "total_votes": 75416,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 29219,
+        "margin_pct": 38.743768,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 21239,
+        "rep_votes": 47993,
+        "other_votes": 4135,
+        "total_votes": 73367,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 26754,
+        "margin_pct": 36.465986,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 28569,
+        "rep_votes": 45914,
+        "other_votes": 4447,
+        "total_votes": 78930,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 17345,
+        "margin_pct": 21.975168,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 22592,
+        "rep_votes": 43136,
+        "other_votes": 4185,
+        "total_votes": 69913,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 20544,
+        "margin_pct": 29.385093,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2024,
+    "district_count": 8,
+    "match_coverage_pct": 99.999764,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 235231,
+        "rep_votes": 69657,
+        "other_votes": 7027,
+        "total_votes": 311915,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -165574,
+        "margin_pct": -53.083051,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 183134,
+        "rep_votes": 239679,
+        "other_votes": 8093,
+        "total_votes": 430906,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 56545,
+        "margin_pct": 13.122352,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 134029,
+        "rep_votes": 258771,
+        "other_votes": 9026,
+        "total_votes": 401826,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 124742,
+        "margin_pct": 31.043785,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 104032,
+        "rep_votes": 258548,
+        "other_votes": 8273,
+        "total_votes": 370853,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 154516,
+        "margin_pct": 41.665026,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 199274,
+        "rep_votes": 126752,
+        "other_votes": 7964,
+        "total_votes": 333990,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": -72522,
+        "margin_pct": -21.713824,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 109226,
+        "rep_votes": 261026,
+        "other_votes": 7824,
+        "total_votes": 378076,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 151800,
+        "margin_pct": 40.150658,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 103950,
+        "rep_votes": 260479,
+        "other_votes": 7553,
+        "total_votes": 371982,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 156529,
+        "margin_pct": 42.079724,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 77296,
+        "rep_votes": 275889,
+        "other_votes": 7524,
+        "total_votes": 360709,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 198593,
+        "margin_pct": 55.056292,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

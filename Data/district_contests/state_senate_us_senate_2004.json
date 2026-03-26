@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2004,
+    "district_count": 17,
+    "match_coverage_pct": 52.368063,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 50949,
+        "rep_votes": 49435,
+        "other_votes": 940,
+        "total_votes": 101324,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": -1514,
+        "margin_pct": -1.494217,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 31519,
+        "rep_votes": 36538,
+        "other_votes": 887,
+        "total_votes": 68944,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 5019,
+        "margin_pct": 7.279821,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 90470,
+        "rep_votes": 25901,
+        "other_votes": 1288,
+        "total_votes": 117659,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": -64569,
+        "margin_pct": -54.87808,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 34660,
+        "rep_votes": 56993,
+        "other_votes": 768,
+        "total_votes": 92421,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 22333,
+        "margin_pct": 24.164422,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 50720,
+        "rep_votes": 12359,
+        "other_votes": 572,
+        "total_votes": 63651,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": -38361,
+        "margin_pct": -60.26771,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 39851,
+        "rep_votes": 43326,
+        "other_votes": 1179,
+        "total_votes": 84356,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 3475,
+        "margin_pct": 4.119446,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 56074,
+        "rep_votes": 22328,
+        "other_votes": 594,
+        "total_votes": 78996,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": -33746,
+        "margin_pct": -42.718619,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 42447,
+        "rep_votes": 52585,
+        "other_votes": 960,
+        "total_votes": 95992,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 10138,
+        "margin_pct": 10.561297,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 36433,
+        "rep_votes": 48174,
+        "other_votes": 1105,
+        "total_votes": 85712,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 11741,
+        "margin_pct": 13.698199,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 34664,
+        "rep_votes": 49038,
+        "other_votes": 1294,
+        "total_votes": 84996,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 14374,
+        "margin_pct": 16.911384,
+        "winner": "REP",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 27369,
+        "rep_votes": 46342,
+        "other_votes": 748,
+        "total_votes": 74459,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 18973,
+        "margin_pct": 25.481137,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 36703,
+        "rep_votes": 52497,
+        "other_votes": 952,
+        "total_votes": 90152,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 15794,
+        "margin_pct": 17.519301,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 23139,
+        "rep_votes": 43108,
+        "other_votes": 728,
+        "total_votes": 66975,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 19969,
+        "margin_pct": 29.815603,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 23573,
+        "rep_votes": 51551,
+        "other_votes": 698,
+        "total_votes": 75822,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 27978,
+        "margin_pct": 36.899581,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 20937,
+        "rep_votes": 54136,
+        "other_votes": 969,
+        "total_votes": 76042,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 33199,
+        "margin_pct": 43.658768,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 28497,
+        "rep_votes": 51752,
+        "other_votes": 1053,
+        "total_votes": 81302,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 23255,
+        "margin_pct": 28.603232,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 23081,
+        "rep_votes": 54440,
+        "other_votes": 993,
+        "total_votes": 78514,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Christopher Bond",
+        "margin": 31359,
+        "margin_pct": 39.940648,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

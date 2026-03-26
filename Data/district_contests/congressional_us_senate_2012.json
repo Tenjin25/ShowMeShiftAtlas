@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 99.779917,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 292329,
+        "rep_votes": 46044,
+        "other_votes": 9811,
+        "total_votes": 348184,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -246285,
+        "margin_pct": -70.734152,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 210270,
+        "rep_votes": 173012,
+        "other_votes": 21282,
+        "total_votes": 404564,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -37258,
+        "margin_pct": -9.209421,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 161509,
+        "rep_votes": 160002,
+        "other_votes": 22366,
+        "total_votes": 343877,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -1507,
+        "margin_pct": -0.438238,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 158211,
+        "rep_votes": 140774,
+        "other_votes": 26243,
+        "total_votes": 325228,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -17437,
+        "margin_pct": -5.361469,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 221364,
+        "rep_votes": 92284,
+        "other_votes": 19674,
+        "total_votes": 333322,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -129080,
+        "margin_pct": -38.725317,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 172569,
+        "rep_votes": 142007,
+        "other_votes": 24768,
+        "total_votes": 339344,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -30562,
+        "margin_pct": -9.0062,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 134535,
+        "rep_votes": 164583,
+        "other_votes": 22980,
+        "total_votes": 322098,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": 30048,
+        "margin_pct": 9.328838,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 140401,
+        "rep_votes": 144757,
+        "other_votes": 18017,
+        "total_votes": 303175,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": 4356,
+        "margin_pct": 1.436794,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

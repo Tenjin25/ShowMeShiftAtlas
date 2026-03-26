@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2000,
+    "district_count": 17,
+    "match_coverage_pct": 49.324868,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 48246,
+        "rep_votes": 29993,
+        "other_votes": 1336,
+        "total_votes": 79575,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -18253,
+        "margin_pct": -22.938109,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 40774,
+        "rep_votes": 16270,
+        "other_votes": 1483,
+        "total_votes": 58527,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -24504,
+        "margin_pct": -41.867856,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 31770,
+        "rep_votes": 2834,
+        "other_votes": 935,
+        "total_votes": 35539,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -28936,
+        "margin_pct": -81.420411,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 42990,
+        "rep_votes": 31297,
+        "other_votes": 1273,
+        "total_votes": 75560,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -11693,
+        "margin_pct": -15.475119,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 43545,
+        "rep_votes": 7668,
+        "other_votes": 894,
+        "total_votes": 52107,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -35877,
+        "margin_pct": -68.852553,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 32548,
+        "rep_votes": 13862,
+        "other_votes": 1793,
+        "total_votes": 48203,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -18686,
+        "margin_pct": -38.765222,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 43549,
+        "rep_votes": 4233,
+        "other_votes": 1076,
+        "total_votes": 48858,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -39316,
+        "margin_pct": -80.469933,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 46600,
+        "rep_votes": 36720,
+        "other_votes": 1584,
+        "total_votes": 84904,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -9880,
+        "margin_pct": -11.636672,
+        "winner": "DEM",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 42561,
+        "rep_votes": 32021,
+        "other_votes": 2551,
+        "total_votes": 77133,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -10540,
+        "margin_pct": -13.664709,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 46757,
+        "rep_votes": 21843,
+        "other_votes": 2972,
+        "total_votes": 71572,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -24914,
+        "margin_pct": -34.809702,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 40528,
+        "rep_votes": 27659,
+        "other_votes": 1671,
+        "total_votes": 69858,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -12869,
+        "margin_pct": -18.421655,
+        "winner": "DEM",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 49024,
+        "rep_votes": 35251,
+        "other_votes": 1554,
+        "total_votes": 85829,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -13773,
+        "margin_pct": -16.047024,
+        "winner": "DEM",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 31940,
+        "rep_votes": 20521,
+        "other_votes": 1302,
+        "total_votes": 53763,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -11419,
+        "margin_pct": -21.239514,
+        "winner": "DEM",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 34462,
+        "rep_votes": 29348,
+        "other_votes": 1489,
+        "total_votes": 65299,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -5114,
+        "margin_pct": -7.831667,
+        "winner": "DEM",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 41663,
+        "rep_votes": 40342,
+        "other_votes": 1850,
+        "total_votes": 83855,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -1321,
+        "margin_pct": -1.575338,
+        "winner": "DEM",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 39923,
+        "rep_votes": 30439,
+        "other_votes": 2185,
+        "total_votes": 72547,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -9484,
+        "margin_pct": -13.072904,
+        "winner": "DEM",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 34786,
+        "rep_votes": 29074,
+        "other_votes": 1342,
+        "total_votes": 65202,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -5712,
+        "margin_pct": -8.760467,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "president",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 99.810989,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 246103,
+        "rep_votes": 60135,
+        "other_votes": 13363,
+        "total_votes": 319601,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": -185968,
+        "margin_pct": -58.187553,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 177620,
+        "rep_votes": 221110,
+        "other_votes": 21694,
+        "total_votes": 420424,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 43490,
+        "margin_pct": 10.344319,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 106164,
+        "rep_votes": 253903,
+        "other_votes": 18519,
+        "total_votes": 378586,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 147739,
+        "margin_pct": 39.023894,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 99860,
+        "rep_votes": 222128,
+        "other_votes": 18732,
+        "total_votes": 340720,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 122268,
+        "margin_pct": 35.885184,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 178733,
+        "rep_votes": 130381,
+        "other_votes": 17496,
+        "total_votes": 326610,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": -48352,
+        "margin_pct": -14.804201,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 111063,
+        "rep_votes": 226394,
+        "other_votes": 18732,
+        "total_votes": 356189,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 115331,
+        "margin_pct": 32.379158,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 84396,
+        "rep_votes": 240632,
+        "other_votes": 17652,
+        "total_votes": 342680,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 156236,
+        "margin_pct": 45.592389,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 67109,
+        "rep_votes": 239802,
+        "other_votes": 11269,
+        "total_votes": 318180,
+        "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+        "rep_candidate": "Donald J. Trump, Michael R. Pence",
+        "margin": 172693,
+        "margin_pct": 54.275253,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

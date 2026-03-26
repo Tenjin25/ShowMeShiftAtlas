@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2024,
+    "district_count": 17,
+    "match_coverage_pct": 51.865473,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 48653,
+        "rep_votes": 44937,
+        "other_votes": 1940,
+        "total_votes": 95530,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -3716,
+        "margin_pct": -3.889878,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 29673,
+        "rep_votes": 82822,
+        "other_votes": 2303,
+        "total_votes": 114798,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 53149,
+        "margin_pct": 46.297845,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 46956,
+        "rep_votes": 6801,
+        "other_votes": 1441,
+        "total_votes": 55198,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -40155,
+        "margin_pct": -72.747201,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 56575,
+        "rep_votes": 21335,
+        "other_votes": 1937,
+        "total_votes": 79847,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -35240,
+        "margin_pct": -44.134407,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 49239,
+        "rep_votes": 14934,
+        "other_votes": 1867,
+        "total_votes": 66040,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -34305,
+        "margin_pct": -51.94579,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 37894,
+        "rep_votes": 46112,
+        "other_votes": 2570,
+        "total_votes": 86576,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 8218,
+        "margin_pct": 9.492238,
+        "winner": "REP",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 56309,
+        "rep_votes": 13970,
+        "other_votes": 1597,
+        "total_votes": 71876,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -42339,
+        "margin_pct": -58.905615,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 48843,
+        "rep_votes": 57848,
+        "other_votes": 1982,
+        "total_votes": 108673,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 9005,
+        "margin_pct": 8.286327,
+        "winner": "REP",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 40665,
+        "rep_votes": 41319,
+        "other_votes": 2244,
+        "total_votes": 84228,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 654,
+        "margin_pct": 0.776464,
+        "winner": "REP",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 44361,
+        "rep_votes": 40005,
+        "other_votes": 2213,
+        "total_votes": 86579,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -4356,
+        "margin_pct": -5.031243,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 27314,
+        "rep_votes": 63858,
+        "other_votes": 2233,
+        "total_votes": 93405,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 36544,
+        "margin_pct": 39.124244,
+        "winner": "REP",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 57767,
+        "rep_votes": 77263,
+        "other_votes": 3093,
+        "total_votes": 138123,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 19496,
+        "margin_pct": 14.114956,
+        "winner": "REP",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 11736,
+        "rep_votes": 61408,
+        "other_votes": 1266,
+        "total_votes": 74410,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 49672,
+        "margin_pct": 66.754468,
+        "winner": "REP",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 16495,
+        "rep_votes": 65756,
+        "other_votes": 1640,
+        "total_votes": 83891,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 49261,
+        "margin_pct": 58.720244,
+        "winner": "REP",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 16740,
+        "rep_votes": 73311,
+        "other_votes": 2010,
+        "total_votes": 92061,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 56571,
+        "margin_pct": 61.449474,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 25169,
+        "rep_votes": 60878,
+        "other_votes": 2406,
+        "total_votes": 88453,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 35709,
+        "margin_pct": 40.370592,
+        "winner": "REP",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 13849,
+        "rep_votes": 73986,
+        "other_votes": 1754,
+        "total_votes": 89589,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 60137,
+        "margin_pct": 67.125428,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

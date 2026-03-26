@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2024,
+    "district_count": 8,
+    "match_coverage_pct": 99.999966,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 233000,
+        "rep_votes": 67252,
+        "other_votes": 7018,
+        "total_votes": 307270,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -165748,
+        "margin_pct": -53.942136,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 181171,
+        "rep_votes": 234235,
+        "other_votes": 8449,
+        "total_votes": 423855,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 53064,
+        "margin_pct": 12.519376,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 130954,
+        "rep_votes": 252977,
+        "other_votes": 9256,
+        "total_votes": 393187,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 122023,
+        "margin_pct": 31.034342,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 95264,
+        "rep_votes": 260125,
+        "other_votes": 9025,
+        "total_votes": 364414,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 164861,
+        "margin_pct": 45.240029,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 192285,
+        "rep_votes": 128026,
+        "other_votes": 9203,
+        "total_votes": 329514,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": -64259,
+        "margin_pct": -19.501144,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 103119,
+        "rep_votes": 259739,
+        "other_votes": 8480,
+        "total_votes": 371338,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 156620,
+        "margin_pct": 42.177208,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 93991,
+        "rep_votes": 264555,
+        "other_votes": 8179,
+        "total_votes": 366725,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 170564,
+        "margin_pct": 46.510055,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 73699,
+        "rep_votes": 272716,
+        "other_votes": 7269,
+        "total_votes": 353684,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 199017,
+        "margin_pct": 56.269721,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

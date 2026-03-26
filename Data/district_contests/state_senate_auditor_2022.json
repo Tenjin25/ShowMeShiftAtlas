@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "auditor",
+    "year": 2022,
+    "district_count": 17,
+    "match_coverage_pct": 52.830395,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 27985,
+        "rep_votes": 48549,
+        "other_votes": 2219,
+        "total_votes": 78753,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 20564,
+        "margin_pct": 26.112021,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 48941,
+        "rep_votes": 18649,
+        "other_votes": 2250,
+        "total_votes": 69840,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": -30292,
+        "margin_pct": -43.373425,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 14840,
+        "rep_votes": 50363,
+        "other_votes": 1981,
+        "total_votes": 67184,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 35523,
+        "margin_pct": 52.874196,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 33242,
+        "rep_votes": 40078,
+        "other_votes": 2520,
+        "total_votes": 75840,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 6836,
+        "margin_pct": 9.013713,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 15198,
+        "rep_votes": 43638,
+        "other_votes": 1907,
+        "total_votes": 60743,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 28440,
+        "margin_pct": 46.82021,
+        "winner": "REP",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 12491,
+        "rep_votes": 49364,
+        "other_votes": 1672,
+        "total_votes": 63527,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 36873,
+        "margin_pct": 58.043037,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 37261,
+        "rep_votes": 12686,
+        "other_votes": 1534,
+        "total_votes": 51481,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": -24575,
+        "margin_pct": -47.736058,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 8858,
+        "rep_votes": 38497,
+        "other_votes": 1470,
+        "total_votes": 48825,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 29639,
+        "margin_pct": 60.704557,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 11947,
+        "rep_votes": 43224,
+        "other_votes": 1655,
+        "total_votes": 56826,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 31277,
+        "margin_pct": 55.039947,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 14368,
+        "rep_votes": 46866,
+        "other_votes": 1586,
+        "total_votes": 62820,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 32498,
+        "margin_pct": 51.731933,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 20946,
+        "rep_votes": 42987,
+        "other_votes": 2353,
+        "total_votes": 66286,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 22041,
+        "margin_pct": 33.251365,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 40045,
+        "rep_votes": 37962,
+        "other_votes": 2428,
+        "total_votes": 80435,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": -2083,
+        "margin_pct": -2.589669,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 15660,
+        "rep_votes": 48445,
+        "other_votes": 1839,
+        "total_votes": 65944,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 32785,
+        "margin_pct": 49.716426,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 11878,
+        "rep_votes": 49172,
+        "other_votes": 1864,
+        "total_votes": 62914,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 37294,
+        "margin_pct": 59.277744,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 23708,
+        "rep_votes": 29529,
+        "other_votes": 1848,
+        "total_votes": 55085,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 5821,
+        "margin_pct": 10.567305,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 11242,
+        "rep_votes": 41879,
+        "other_votes": 1441,
+        "total_votes": 54562,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 30637,
+        "margin_pct": 56.150801,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 25158,
+        "rep_votes": 35851,
+        "other_votes": 1890,
+        "total_votes": 62899,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 10693,
+        "margin_pct": 17.00027,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

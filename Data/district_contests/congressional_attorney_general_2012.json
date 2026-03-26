@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 99.879201,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 281674,
+        "rep_votes": 49887,
+        "other_votes": 8359,
+        "total_votes": 339920,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -231787,
+        "margin_pct": -68.188691,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 203827,
+        "rep_votes": 181808,
+        "other_votes": 10317,
+        "total_votes": 395952,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -22019,
+        "margin_pct": -5.561028,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 169440,
+        "rep_votes": 158617,
+        "other_votes": 12719,
+        "total_votes": 340776,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -10823,
+        "margin_pct": -3.175987,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 165808,
+        "rep_votes": 138824,
+        "other_votes": 13012,
+        "total_votes": 317644,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -26984,
+        "margin_pct": -8.495045,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 219268,
+        "rep_votes": 95494,
+        "other_votes": 11093,
+        "total_votes": 325855,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -123774,
+        "margin_pct": -37.98438,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 168980,
+        "rep_votes": 149244,
+        "other_votes": 12922,
+        "total_votes": 331146,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -19736,
+        "margin_pct": -5.959909,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 138148,
+        "rep_votes": 166139,
+        "other_votes": 13236,
+        "total_votes": 317523,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": 27991,
+        "margin_pct": 8.815424,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 142058,
+        "rep_votes": 142928,
+        "other_votes": 11042,
+        "total_votes": 296028,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": 870,
+        "margin_pct": 0.293891,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

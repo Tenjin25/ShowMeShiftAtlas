@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2024,
+    "district_count": 8,
+    "match_coverage_pct": 99.999765,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 242300,
+        "rep_votes": 60888,
+        "other_votes": 10044,
+        "total_votes": 313232,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": -181412,
+        "margin_pct": -57.916177,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 206067,
+        "rep_votes": 217279,
+        "other_votes": 10074,
+        "total_votes": 433420,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 11212,
+        "margin_pct": 2.586867,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 155240,
+        "rep_votes": 238192,
+        "other_votes": 9775,
+        "total_votes": 403207,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 82952,
+        "margin_pct": 20.573056,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 114833,
+        "rep_votes": 247755,
+        "other_votes": 9714,
+        "total_votes": 372302,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 132922,
+        "margin_pct": 35.702736,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 206294,
+        "rep_votes": 119079,
+        "other_votes": 10174,
+        "total_votes": 335547,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": -87215,
+        "margin_pct": -25.991888,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 122424,
+        "rep_votes": 247844,
+        "other_votes": 9136,
+        "total_votes": 379404,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 125420,
+        "margin_pct": 33.057111,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 108728,
+        "rep_votes": 255177,
+        "other_votes": 9400,
+        "total_votes": 373305,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 146449,
+        "margin_pct": 39.230388,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 87841,
+        "rep_votes": 265694,
+        "other_votes": 8600,
+        "total_votes": 362135,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 177853,
+        "margin_pct": 49.112348,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

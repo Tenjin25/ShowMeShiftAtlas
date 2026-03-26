@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "lieutenant_governor",
+    "year": 2008,
+    "district_count": 9,
+    "match_coverage_pct": 100,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 223842,
+        "rep_votes": 64137,
+        "other_votes": 7338,
+        "total_votes": 295317,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": -159705,
+        "margin_pct": -54.079176,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 153034,
+        "rep_votes": 211748,
+        "other_votes": 8967,
+        "total_votes": 373749,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 58714,
+        "margin_pct": 15.709473,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 171311,
+        "rep_votes": 123409,
+        "other_votes": 8974,
+        "total_votes": 303694,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": -47902,
+        "margin_pct": -15.773114,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 113351,
+        "rep_votes": 177324,
+        "other_votes": 9059,
+        "total_votes": 299734,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 63973,
+        "margin_pct": 21.343258,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 192023,
+        "rep_votes": 104976,
+        "other_votes": 7752,
+        "total_votes": 304751,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": -87047,
+        "margin_pct": -28.563319,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 147242,
+        "rep_votes": 167219,
+        "other_votes": 9968,
+        "total_votes": 324429,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 19977,
+        "margin_pct": 6.157588,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 101324,
+        "rep_votes": 208297,
+        "other_votes": 10105,
+        "total_votes": 319726,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 106973,
+        "margin_pct": 33.457711,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 98975,
+        "rep_votes": 167491,
+        "other_votes": 7484,
+        "total_votes": 273950,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 68516,
+        "margin_pct": 25.010403,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 130076,
+        "rep_votes": 179107,
+        "other_votes": 9369,
+        "total_votes": 318552,
+        "dem_candidate": "Sammy Page",
+        "rep_candidate": "Peter Kinder",
+        "margin": 49031,
+        "margin_pct": 15.391836,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

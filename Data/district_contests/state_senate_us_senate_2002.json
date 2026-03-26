@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2002,
+    "district_count": 17,
+    "match_coverage_pct": 54.287691,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 26375,
+        "rep_votes": 36941,
+        "other_votes": 731,
+        "total_votes": 64047,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 10566,
+        "margin_pct": 16.49726,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 73766,
+        "rep_votes": 19543,
+        "other_votes": 1733,
+        "total_votes": 95042,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -54223,
+        "margin_pct": -57.051619,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 24286,
+        "rep_votes": 35279,
+        "other_votes": 1095,
+        "total_votes": 60660,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 10993,
+        "margin_pct": 18.122321,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 28455,
+        "rep_votes": 33179,
+        "other_votes": 792,
+        "total_votes": 62426,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 4724,
+        "margin_pct": 7.56736,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 47898,
+        "rep_votes": 19430,
+        "other_votes": 926,
+        "total_votes": 68254,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -28468,
+        "margin_pct": -41.708911,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 25904,
+        "rep_votes": 29915,
+        "other_votes": 1164,
+        "total_votes": 56983,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 4011,
+        "margin_pct": 7.038941,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 36264,
+        "rep_votes": 10871,
+        "other_votes": 670,
+        "total_votes": 47805,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -25393,
+        "margin_pct": -53.117875,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 21559,
+        "rep_votes": 29224,
+        "other_votes": 873,
+        "total_votes": 51656,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 7665,
+        "margin_pct": 14.838547,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 25050,
+        "rep_votes": 28643,
+        "other_votes": 708,
+        "total_votes": 54401,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 3593,
+        "margin_pct": 6.604658,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 23100,
+        "rep_votes": 40906,
+        "other_votes": 1174,
+        "total_votes": 65180,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 17806,
+        "margin_pct": 27.318196,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 25422,
+        "rep_votes": 23221,
+        "other_votes": 673,
+        "total_votes": 49316,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -2201,
+        "margin_pct": -4.463055,
+        "winner": "DEM",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 35562,
+        "rep_votes": 30668,
+        "other_votes": 825,
+        "total_votes": 67055,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -4894,
+        "margin_pct": -7.298486,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 24454,
+        "rep_votes": 36520,
+        "other_votes": 716,
+        "total_votes": 61690,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 12066,
+        "margin_pct": 19.559086,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 23832,
+        "rep_votes": 33329,
+        "other_votes": 1148,
+        "total_votes": 58309,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 9497,
+        "margin_pct": 16.287366,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 22445,
+        "rep_votes": 30401,
+        "other_votes": 1079,
+        "total_votes": 53925,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 7956,
+        "margin_pct": 14.753825,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 15046,
+        "rep_votes": 33392,
+        "other_votes": 776,
+        "total_votes": 49214,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": 18346,
+        "margin_pct": 37.27801,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 26530,
+        "rep_votes": 25737,
+        "other_votes": 1086,
+        "total_votes": 53353,
+        "dem_candidate": "Jean Carnahan",
+        "rep_candidate": "Jim Talent",
+        "margin": -793,
+        "margin_pct": -1.486327,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

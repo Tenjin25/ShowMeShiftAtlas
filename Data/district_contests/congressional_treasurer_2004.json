@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2004,
+    "district_count": 9,
+    "match_coverage_pct": 99.999962,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 207274,
+        "rep_votes": 76636,
+        "other_votes": 6165,
+        "total_votes": 290075,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": -130638,
+        "margin_pct": -45.035939,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 135834,
+        "rep_votes": 202716,
+        "other_votes": 7301,
+        "total_votes": 345851,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 66882,
+        "margin_pct": 19.338386,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 164822,
+        "rep_votes": 107594,
+        "other_votes": 7236,
+        "total_votes": 279652,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": -57228,
+        "margin_pct": -20.464005,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 101401,
+        "rep_votes": 174079,
+        "other_votes": 7175,
+        "total_votes": 282655,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 72678,
+        "margin_pct": 25.712618,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 168680,
+        "rep_votes": 108330,
+        "other_votes": 7713,
+        "total_votes": 284723,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": -60350,
+        "margin_pct": -21.19604,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 132785,
+        "rep_votes": 156411,
+        "other_votes": 9556,
+        "total_votes": 298752,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 23626,
+        "margin_pct": 7.908232,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 85016,
+        "rep_votes": 200965,
+        "other_votes": 7778,
+        "total_votes": 293759,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 115949,
+        "margin_pct": 39.470791,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 97930,
+        "rep_votes": 148506,
+        "other_votes": 16170,
+        "total_votes": 262606,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 50576,
+        "margin_pct": 19.259271,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 120058,
+        "rep_votes": 166831,
+        "other_votes": 7906,
+        "total_votes": 294795,
+        "dem_candidate": "Mark Powell",
+        "rep_candidate": "Sarah Steelman",
+        "margin": 46773,
+        "margin_pct": 15.86628,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

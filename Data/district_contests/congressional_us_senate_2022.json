@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2022,
+    "district_count": 8,
+    "match_coverage_pct": 99.998501,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 174973,
+        "rep_votes": 44037,
+        "other_votes": 3834,
+        "total_votes": 222844,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -130936,
+        "margin_pct": -58.756798,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 150945,
+        "rep_votes": 160619,
+        "other_votes": 4944,
+        "total_votes": 316508,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 9674,
+        "margin_pct": 3.056479,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 107113,
+        "rep_votes": 166321,
+        "other_votes": 6324,
+        "total_votes": 279758,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 59208,
+        "margin_pct": 21.164006,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 78328,
+        "rep_votes": 169865,
+        "other_votes": 7844,
+        "total_votes": 256037,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 91537,
+        "margin_pct": 35.751473,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 143167,
+        "rep_votes": 82442,
+        "other_votes": 5232,
+        "total_votes": 230841,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -60725,
+        "margin_pct": -26.305986,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 85887,
+        "rep_votes": 170606,
+        "other_votes": 6890,
+        "total_votes": 263383,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 84719,
+        "margin_pct": 32.165705,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 72064,
+        "rep_votes": 172289,
+        "other_votes": 7920,
+        "total_votes": 252273,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 100225,
+        "margin_pct": 39.728786,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 59869,
+        "rep_votes": 180045,
+        "other_votes": 6419,
+        "total_votes": 246333,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 120176,
+        "margin_pct": 48.785993,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

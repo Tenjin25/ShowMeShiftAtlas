@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2004,
+    "district_count": 17,
+    "match_coverage_pct": 52.388939,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 67194,
+        "rep_votes": 31402,
+        "other_votes": 1788,
+        "total_votes": 100384,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -35792,
+        "margin_pct": -35.655084,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 44072,
+        "rep_votes": 21858,
+        "other_votes": 1641,
+        "total_votes": 67571,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -22214,
+        "margin_pct": -32.87505,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 96727,
+        "rep_votes": 15732,
+        "other_votes": 3468,
+        "total_votes": 115927,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -80995,
+        "margin_pct": -69.867244,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 50109,
+        "rep_votes": 40006,
+        "other_votes": 1290,
+        "total_votes": 91405,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -10103,
+        "margin_pct": -11.053006,
+        "winner": "DEM",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 54438,
+        "rep_votes": 7274,
+        "other_votes": 1304,
+        "total_votes": 63016,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -47164,
+        "margin_pct": -74.844484,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 49543,
+        "rep_votes": 30938,
+        "other_votes": 2454,
+        "total_votes": 82935,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -18605,
+        "margin_pct": -22.433231,
+        "winner": "DEM",
+        "color": ""
+      },
+      "13": {
+        "dem_votes": 63389,
+        "rep_votes": 14043,
+        "other_votes": 1273,
+        "total_votes": 78705,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -49346,
+        "margin_pct": -62.697414,
+        "winner": "DEM",
+        "color": ""
+      },
+      "15": {
+        "dem_votes": 57631,
+        "rep_votes": 35850,
+        "other_votes": 1538,
+        "total_votes": 95019,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -21781,
+        "margin_pct": -22.922784,
+        "winner": "DEM",
+        "color": ""
+      },
+      "17": {
+        "dem_votes": 46207,
+        "rep_votes": 34362,
+        "other_votes": 2758,
+        "total_votes": 83327,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -11845,
+        "margin_pct": -14.21508,
+        "winner": "DEM",
+        "color": ""
+      },
+      "19": {
+        "dem_votes": 54927,
+        "rep_votes": 25621,
+        "other_votes": 2225,
+        "total_votes": 82773,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -29306,
+        "margin_pct": -35.405265,
+        "winner": "DEM",
+        "color": ""
+      },
+      "21": {
+        "dem_votes": 43292,
+        "rep_votes": 27735,
+        "other_votes": 1934,
+        "total_votes": 72961,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -15557,
+        "margin_pct": -21.32235,
+        "winner": "DEM",
+        "color": ""
+      },
+      "23": {
+        "dem_votes": 51530,
+        "rep_votes": 34355,
+        "other_votes": 1721,
+        "total_votes": 87606,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -17175,
+        "margin_pct": -19.604822,
+        "winner": "DEM",
+        "color": ""
+      },
+      "25": {
+        "dem_votes": 34478,
+        "rep_votes": 28812,
+        "other_votes": 1827,
+        "total_votes": 65117,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -5666,
+        "margin_pct": -8.701261,
+        "winner": "DEM",
+        "color": ""
+      },
+      "27": {
+        "dem_votes": 38056,
+        "rep_votes": 34066,
+        "other_votes": 1707,
+        "total_votes": 73829,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -3990,
+        "margin_pct": -5.40438,
+        "winner": "DEM",
+        "color": ""
+      },
+      "29": {
+        "dem_votes": 33271,
+        "rep_votes": 39412,
+        "other_votes": 1961,
+        "total_votes": 74644,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": 6141,
+        "margin_pct": 8.227051,
+        "winner": "REP",
+        "color": ""
+      },
+      "31": {
+        "dem_votes": 41368,
+        "rep_votes": 35767,
+        "other_votes": 2294,
+        "total_votes": 79429,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -5601,
+        "margin_pct": -7.051581,
+        "winner": "DEM",
+        "color": ""
+      },
+      "33": {
+        "dem_votes": 39628,
+        "rep_votes": 35797,
+        "other_votes": 1767,
+        "total_votes": 77192,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -3831,
+        "margin_pct": -4.96295,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

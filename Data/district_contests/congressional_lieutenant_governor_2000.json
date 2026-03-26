@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "lieutenant_governor",
+    "year": 2000,
+    "district_count": 9,
+    "match_coverage_pct": 100,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 156164,
+        "rep_votes": 36123,
+        "other_votes": 6009,
+        "total_votes": 198296,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -120041,
+        "margin_pct": -60.536269,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 136695,
+        "rep_votes": 148772,
+        "other_votes": 10220,
+        "total_votes": 295687,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": 12077,
+        "margin_pct": 4.084387,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 139133,
+        "rep_votes": 100012,
+        "other_votes": 10779,
+        "total_votes": 249924,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -39121,
+        "margin_pct": -15.653159,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 122695,
+        "rep_votes": 135403,
+        "other_votes": 9603,
+        "total_votes": 267701,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": 12708,
+        "margin_pct": 4.747087,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 148327,
+        "rep_votes": 73845,
+        "other_votes": 8257,
+        "total_votes": 230429,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -74482,
+        "margin_pct": -32.323188,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 135225,
+        "rep_votes": 122002,
+        "other_votes": 11753,
+        "total_votes": 268980,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -13223,
+        "margin_pct": -4.915979,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 102623,
+        "rep_votes": 158328,
+        "other_votes": 11907,
+        "total_votes": 272858,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": 55705,
+        "margin_pct": 20.415381,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 105010,
+        "rep_votes": 116016,
+        "other_votes": 8995,
+        "total_votes": 230021,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": 11006,
+        "margin_pct": 4.784781,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 156088,
+        "rep_votes": 123946,
+        "other_votes": 11360,
+        "total_votes": 291394,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -32142,
+        "margin_pct": -11.030426,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

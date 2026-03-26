@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2010,
+    "district_count": 17,
+    "match_coverage_pct": 54.256265,
+    "generated_at": "2026-03-26T02:17:40.151Z",
+    "source_method": "same_year_precinct_reallocation"
+  },
+  "general": {
+    "results": {
+      "2": {
+        "dem_votes": 28732,
+        "rep_votes": 53496,
+        "other_votes": 5323,
+        "total_votes": 87551,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 24764,
+        "margin_pct": 28.285228,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 71890,
+        "rep_votes": 16347,
+        "other_votes": 2441,
+        "total_votes": 90678,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": -55543,
+        "margin_pct": -61.253005,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 18231,
+        "rep_votes": 40331,
+        "other_votes": 3967,
+        "total_votes": 62529,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 22100,
+        "margin_pct": 35.343601,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 26422,
+        "rep_votes": 42540,
+        "other_votes": 3114,
+        "total_votes": 72076,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 16118,
+        "margin_pct": 22.362506,
+        "winner": "REP",
+        "color": ""
+      },
+      "10": {
+        "dem_votes": 31593,
+        "rep_votes": 15631,
+        "other_votes": 1456,
+        "total_votes": 48680,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": -15962,
+        "margin_pct": -32.789647,
+        "winner": "DEM",
+        "color": ""
+      },
+      "12": {
+        "dem_votes": 17000,
+        "rep_votes": 34689,
+        "other_votes": 3609,
+        "total_votes": 55298,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 17689,
+        "margin_pct": 31.988499,
+        "winner": "REP",
+        "color": ""
+      },
+      "14": {
+        "dem_votes": 36783,
+        "rep_votes": 8275,
+        "other_votes": 1296,
+        "total_votes": 46354,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": -28508,
+        "margin_pct": -61.500626,
+        "winner": "DEM",
+        "color": ""
+      },
+      "16": {
+        "dem_votes": 15994,
+        "rep_votes": 34940,
+        "other_votes": 3607,
+        "total_votes": 54541,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 18946,
+        "margin_pct": 34.73717,
+        "winner": "REP",
+        "color": ""
+      },
+      "18": {
+        "dem_votes": 18276,
+        "rep_votes": 31704,
+        "other_votes": 2523,
+        "total_votes": 52503,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 13428,
+        "margin_pct": 25.575681,
+        "winner": "REP",
+        "color": ""
+      },
+      "20": {
+        "dem_votes": 19822,
+        "rep_votes": 54621,
+        "other_votes": 5041,
+        "total_votes": 79484,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 34799,
+        "margin_pct": 43.781138,
+        "winner": "REP",
+        "color": ""
+      },
+      "22": {
+        "dem_votes": 21312,
+        "rep_votes": 29852,
+        "other_votes": 3936,
+        "total_votes": 55100,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 8540,
+        "margin_pct": 15.499093,
+        "winner": "REP",
+        "color": ""
+      },
+      "24": {
+        "dem_votes": 33015,
+        "rep_votes": 27109,
+        "other_votes": 1961,
+        "total_votes": 62085,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": -5906,
+        "margin_pct": -9.512765,
+        "winner": "DEM",
+        "color": ""
+      },
+      "26": {
+        "dem_votes": 20484,
+        "rep_votes": 40970,
+        "other_votes": 4217,
+        "total_votes": 65671,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 20486,
+        "margin_pct": 31.194896,
+        "winner": "REP",
+        "color": ""
+      },
+      "28": {
+        "dem_votes": 17405,
+        "rep_votes": 39644,
+        "other_votes": 4259,
+        "total_votes": 61308,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 22239,
+        "margin_pct": 36.274222,
+        "winner": "REP",
+        "color": ""
+      },
+      "30": {
+        "dem_votes": 19012,
+        "rep_votes": 31002,
+        "other_votes": 2796,
+        "total_votes": 52810,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 11990,
+        "margin_pct": 22.704033,
+        "winner": "REP",
+        "color": ""
+      },
+      "32": {
+        "dem_votes": 11220,
+        "rep_votes": 39306,
+        "other_votes": 2246,
+        "total_votes": 52772,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 28086,
+        "margin_pct": 53.221405,
+        "winner": "REP",
+        "color": ""
+      },
+      "34": {
+        "dem_votes": 21775,
+        "rep_votes": 30723,
+        "other_votes": 2749,
+        "total_votes": 55247,
+        "dem_candidate": "Robin Carnahan",
+        "rep_candidate": "Roy Blunt",
+        "margin": 8948,
+        "margin_pct": 16.196355,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
