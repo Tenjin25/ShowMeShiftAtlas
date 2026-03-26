@@ -11944,7 +11944,10 @@ document.addEventListener('DOMContentLoaded', function() {
       let entries = null;
 
       if (currentView === 'counties' || currentView === 'vtds_2000' || !currentView) {
-        entries = contestManifest || [];
+        // Keep county/precinct views focused on statewide contests.
+        entries = Array.isArray(contestManifest)
+          ? contestManifest.filter(entry => isStatewideContestType(entry?.contest_type))
+          : [];
       } else {
         const scope = currentView === 'districts'
           ? 'congressional'
@@ -12168,6 +12171,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!key) return false;
       if (key === 'state_house' || key === 'state_senate' || key === 'us_house') return false;
       return true;
+    }
+
+    function preferredViewForContestType(contestType) {
+      const key = String(contestType || '').trim().toLowerCase();
+      if (key === 'us_house') return 'districts';
+      if (key === 'state_house') return 'state_house';
+      if (key === 'state_senate') return 'state_senate';
+      return '';
     }
 
     function buildStatewideCloseRaceAlertHTML(contestType, year, marginPct) {
@@ -20168,6 +20179,23 @@ document.addEventListener('DOMContentLoaded', function() {
       const contestType = contestKey.substring(0, lastUnderscoreIndex);
       const year = contestKey.substring(lastUnderscoreIndex + 1);
       currentContestMeta = { contestType, year };
+
+      const requiredView = preferredViewForContestType(contestType);
+      if (requiredView && currentView !== requiredView) {
+        await setMapView(requiredView);
+        const redirectedSelect = document.getElementById('contestSelect');
+        const hasContestOption = !!(
+          redirectedSelect &&
+          Array.from(redirectedSelect.options || []).some(opt => String(opt?.value || '').trim() === contestKey)
+        );
+        if (redirectedSelect && hasContestOption) {
+          redirectedSelect.value = contestKey;
+        }
+        if (hasContestOption && lastCompletedContestSelection !== contestKey) {
+          await applyContest(contestKey, opts);
+        }
+        return;
+      }
       
       if (currentView === 'counties') {
         await applyCountyContest(contestType, year, { selectionSeq, isStaleSelection });
