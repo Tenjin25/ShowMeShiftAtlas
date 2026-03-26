@@ -9059,6 +9059,13 @@ document.addEventListener('DOMContentLoaded', function() {
       ];
     }
 
+    function precinctFeatureCountyExpression() {
+      return [
+        'upcase',
+        ['coalesce', ['get', 'county_nam'], ['get', 'COUNTYNAME'], ['get', 'CountyName'], ['get', 'NAME20'], ['get', 'NAMELSAD20'], ['get', 'NAME'], ['get', 'name']]
+      ];
+    }
+
     function countyDisplayNameExpression() {
       return [
         'case',
@@ -20845,6 +20852,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const expr = ['case'];
+      const countyColorByNorm = {};
       let countiesProcessed = 0;
       
       for (const countyName of Object.keys(countyAgg)) {
@@ -20898,6 +20906,7 @@ document.addEventListener('DOMContentLoaded', function() {
           countyName
         ]);
         expr.push(color);
+        countyColorByNorm[countyName] = color;
         countiesProcessed++;
       }
       expr.push('#e0e0e0'); // default color
@@ -21005,6 +21014,23 @@ document.addEventListener('DOMContentLoaded', function() {
             currentPrecinctTurnoutTotals.set(precinctName, totalVotes);
           });
         }
+        // Fill unmatched precinct polygons with their county-level color so older-year
+        // precinct-key gaps don't leave large gray holes.
+        const precinctCountyExpr = precinctFeatureCountyExpression();
+        const seenCountyTokens = new Set();
+        Object.keys(countyColorByNorm).forEach(countyNorm => {
+          const countyColor = countyColorByNorm[countyNorm];
+          if (!countyColor) return;
+          const tokens = getCountyLookupTokens(countyNorm);
+          tokens.forEach(token => {
+            const normToken = normalizeCountyToken(token);
+            if (!normToken) return;
+            if (seenCountyTokens.has(normToken)) return;
+            seenCountyTokens.add(normToken);
+            exprPrecinct.push(['==', precinctCountyExpr, normToken]);
+            exprPrecinct.push(countyColor);
+          });
+        });
         exprPrecinct.push('#d1d5db');
         if (staleCheck()) return;
         // Cache for later, in case precinct overlay loads after the contest is applied.
