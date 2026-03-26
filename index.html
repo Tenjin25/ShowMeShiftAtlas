@@ -12406,6 +12406,99 @@ document.addEventListener('DOMContentLoaded', function() {
       return node;
     }
 
+    async function buildWeightedDistrictFallbackSlice(scope, contestType, year, contestRows) {
+      if (!scope || !contestType || !Array.isArray(contestRows) || contestRows.length === 0) return null;
+
+      let crosswalk = null;
+      try {
+        crosswalk = await loadDistrictCarryCrosswalk(scope, currentDistrictLinesYear);
+      } catch (_) {
+        crosswalk = null;
+      }
+      if (!crosswalk?.byPrecinct?.size) return null;
+
+      const countyAreaWeights = buildCountyDistrictAreaWeights(crosswalk);
+      const statewideWeights = normalizeWeightMap(countyAreaWeights.statewide);
+      if (!statewideWeights.size) return null;
+
+      const districtAgg = new Map();
+      let sourceTotalVotes = 0;
+      let allocatedVotes = 0;
+
+      contestRows.forEach(row => {
+        const countyNorm = normalizeCountyToken(row?.county || '');
+        const fallbackTotal = (Number(row?.[`${contestType}_dem`]) || 0) + (Number(row?.[`${contestType}_rep`]) || 0);
+        const adjusted = applyScenarioShiftToVotes(
+          countyNorm,
+          Number(row?.[`${contestType}_dem`]) || 0,
+          Number(row?.[`${contestType}_rep`]) || 0,
+          Number(row?.[`${contestType}_other`]) || 0,
+          Number(row?.[`${contestType}_total`]) || fallbackTotal
+        );
+        const demVotes = Number(adjusted.dem || 0);
+        const repVotes = Number(adjusted.rep || 0);
+        const otherVotes = Number(adjusted.other || 0);
+        const totalVotes = Number(adjusted.total || 0);
+        if (totalVotes <= 0) return;
+        sourceTotalVotes += totalVotes;
+
+        let weights = normalizeWeightMap(countyAreaWeights.byCounty.get(countyNorm));
+        if (!weights.size) weights = statewideWeights;
+        if (!weights.size) return;
+
+        const demCandidate = (row?.[`${contestType}_dem_candidate`] || '').toString().trim();
+        const repCandidate = (row?.[`${contestType}_rep_candidate`] || '').toString().trim();
+        weights.forEach((share, rawDistrict) => {
+          const districtKey = normalizeCarryoverDistrictNumber(rawDistrict);
+          if (!districtKey) return;
+          if (!districtAgg.has(districtKey)) districtAgg.set(districtKey, createVoteAccumulator());
+          addScaledAccumulatorVotes(
+            districtAgg.get(districtKey),
+            demVotes * share,
+            repVotes * share,
+            otherVotes * share,
+            demCandidate,
+            repCandidate
+          );
+          allocatedVotes += totalVotes * share;
+        });
+      });
+
+      if (!districtAgg.size) return null;
+
+      const results = {};
+      Array.from(districtAgg.keys())
+        .sort((a, b) => {
+          const na = Number(a);
+          const nb = Number(b);
+          if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+          return String(a).localeCompare(String(b));
+        })
+        .forEach(districtKey => {
+          const numericKey = Number(districtKey);
+          const outKey = Number.isFinite(numericKey) ? String(numericKey) : String(districtKey);
+          results[outKey] = finalizeAccumulator(districtAgg.get(districtKey));
+        });
+
+      const coveragePct = sourceTotalVotes > 0
+        ? roundDistrictOverlayNumber((allocatedVotes / sourceTotalVotes) * 100)
+        : 0;
+
+      return {
+        meta: {
+          scope,
+          contest_type: contestType,
+          year: Number(year),
+          district_count: Object.keys(results).length,
+          match_coverage_pct: coveragePct,
+          source_method: 'county_precinct_overlap_fallback'
+        },
+        general: {
+          results
+        }
+      };
+    }
+
     async function mapDistrictSelectionAcrossScopes(sourceScope, sourceDistrictNum, targetScope, year = null) {
       const sourceDistrictKey = normalizeCarryoverDistrictNumber(sourceDistrictNum);
       if (!sourceDistrictKey) return null;
@@ -21047,9 +21140,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const districtScope = currentView === 'districts'
           ? 'congressional'
           : (currentView === 'state_house' ? 'state_house' : 'state_senate');
-        const districtNode = await loadDistrictSlice(districtScope, contestType, year);
-        const districtResults = districtNode?.general?.results || null;
-        const coveragePct = districtNode?.meta?.match_coverage_pct;
+        let districtNode = await loadDistrictSlice(districtScope, contestType, year);
+        let districtResults = districtNode?.general?.results || null;
+        let coveragePct = districtNode?.meta?.match_coverage_pct;
+
+        if (!districtResults || Object.keys(districtResults).length === 0) {
+          try {
+            const countyRows = await loadContestSlice(contestType, year);
+            const weightedFallback = await buildWeightedDistrictFallbackSlice(districtScope, contestType, year, countyRows);
+            if (weightedFallback?.general?.results && Object.keys(weightedFallback.general.results).length > 0) {
+              districtNode = weightedFallback;
+              districtResults = weightedFallback.general.results;
+              coveragePct = weightedFallback?.meta?.match_coverage_pct;
+            }
+          } catch (_) {}
+        }
 
         if (districtResults && Object.keys(districtResults).length > 0) {
           let mode = (currentVizMode || 'margins');
@@ -21189,7 +21294,9 @@ document.addEventListener('DOMContentLoaded', function() {
           } else {
             const allocationLabel = sourceMethod === 'precinct_vtd_crosswalk'
               ? `VTD crosswalk to ${linesLabel}`
-              : `Reallocated to ${linesLabel}`;
+              : (sourceMethod === 'county_precinct_overlap_fallback'
+                ? `Precinct-overlap weighted to ${linesLabel}`
+                : `Reallocated to ${linesLabel}`);
             setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${allocationLabel}${coverageText}${directCoverageText}`);
             setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}${directCoverageText}`);
           }
@@ -21207,7 +21314,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // For statewide contests in district views, we need to aggregate county data by district
-      const contestData = electionData.filter(row => row.year == year);
+      const contestData = await loadContestSlice(contestType, year);
       currentDistrictTurnoutTotals = {};
       currentCountyTurnoutTotals = {};
       currentPrecinctTurnoutTotals = new Map();
