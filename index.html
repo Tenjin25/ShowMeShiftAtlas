@@ -16102,15 +16102,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const chips = [];
       let prevSignedForFlip = null;
       let prevYearForFlip = null;
-      try {
-        const prevCached = await ensurePrevDistrictCache(scope, contestType, Number(year));
-        prevYearForFlip = prevCached?.prevYear || null;
-        const prevResults = prevCached?.prevNode?.general?.results || null;
-        if (prevResults) {
-          const prevRow = prevResults[String(districtNum)] || prevResults[String(Number(districtNum))] || null;
-          if (prevRow) prevSignedForFlip = Number(prevRow.margin_pct || 0);
-        }
-      } catch (_) {}
+      if (currentVizMode === 'shift' || currentVizMode === 'flips') {
+        try {
+          const prevCached = await ensurePrevDistrictCache(scope, contestType, Number(year));
+          prevYearForFlip = prevCached?.prevYear || null;
+          const prevResults = prevCached?.prevNode?.general?.results || null;
+          if (prevResults) {
+            const prevRow = prevResults[String(districtNum)] || prevResults[String(Number(districtNum))] || null;
+            if (prevRow) prevSignedForFlip = Number(prevRow.margin_pct || 0);
+          }
+        } catch (_) {}
+      }
 
       if (currentVizMode === 'shift' && prevSignedForFlip !== null && prevYearForFlip) {
         chips.push(shiftChipHTML(signedMarginPct - prevSignedForFlip, prevYearForFlip, Number(year)));
@@ -20201,18 +20203,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function tryLoadDistrictSliceStrict(scope, contestType, year, linesYear = currentDistrictLinesYear) {
+      const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
+      for (const path of candidatePaths) {
+        try {
+          return await loadJSON(path);
+        } catch (_) {}
+      }
+
       if (isLegislativeOverlayScope(scope)) {
         try {
           const overlayPayload = await loadLegislativeDistrictOverlaySlice(scope, contestType, year, linesYear);
           if (overlayPayload?.general?.results && Object.keys(overlayPayload.general.results).length) {
             return overlayPayload;
           }
-        } catch (_) {}
-      }
-      const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
-      for (const path of candidatePaths) {
-        try {
-          return await loadJSON(path);
         } catch (_) {}
       }
       return null;
@@ -21192,11 +21195,14 @@ document.addEventListener('DOMContentLoaded', function() {
           // Preload previous-year results for shift/flip detection.
           let prevYear = null;
           let prevResults = null;
-          try {
-            const prevCached = await ensurePrevDistrictCache(districtScope, contestType, Number(year));
-            prevYear = prevCached?.prevYear || null;
-            prevResults = prevCached?.prevNode?.general?.results || null;
-          } catch (_) {}
+          const needsPrevDistrictData = (mode === 'shift' || mode === 'flips');
+          if (needsPrevDistrictData) {
+            try {
+              const prevCached = await ensurePrevDistrictCache(districtScope, contestType, Number(year));
+              prevYear = prevCached?.prevYear || null;
+              prevResults = prevCached?.prevNode?.general?.results || null;
+            } catch (_) {}
+          }
           if (mode === 'shift' && !prevYear) {
             setStatus(`Shift mode needs a prior year for ${formatContestName(contestType, year)} in ${districtScope}. Falling back to Margins.`);
             mode = 'margins';
