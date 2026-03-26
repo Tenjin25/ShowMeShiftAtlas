@@ -12122,6 +12122,11 @@ document.addEventListener('DOMContentLoaded', function() {
           return expandLegacyCandidateShorthand(left || raw);
         }
       }
+      const wordSepMatch = raw.match(/^(.*?)\s+\b(?:AND|WITH)\b\s+.+$/i);
+      if (wordSepMatch) {
+        const left = (wordSepMatch[1] || '').trim();
+        return expandLegacyCandidateShorthand(left || raw);
+      }
       // Legacy "GORE-LIEBERMAN" style.
       if (raw.includes('-')) {
         const [left, right] = raw.split('-', 2).map(s => (s || '').trim());
