@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 393757,
-      "rep_votes": 263333,
-      "other_votes": 13525,
-      "total_votes": 670615,
+      "dem_votes": 285667,
+      "rep_votes": 235807,
+      "other_votes": 9374,
+      "total_votes": 530848,
       "dem_candidate": "Rebecca Cook",
       "rep_candidate": "Peter Kinder",
-      "margin": -130424,
-      "margin_pct": -19.448417,
+      "margin": -49860,
+      "margin_pct": -9.392519,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 108090,
+      "rep_votes": 27526,
+      "other_votes": 4151,
+      "total_votes": 139767,
+      "dem_candidate": "Rebecca Cook",
+      "rep_candidate": "Peter Kinder",
+      "margin": -80564,
+      "margin_pct": -57.641646,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -275,7 +275,7 @@
       "dem_candidate": "Nancy Farmer",
       "rep_candidate": "Todd Graves",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 357841,
-      "rep_votes": 227889,
-      "other_votes": 14639,
-      "total_votes": 600369,
+      "dem_votes": 261237,
+      "rep_votes": 206180,
+      "other_votes": 10924,
+      "total_votes": 478341,
       "dem_candidate": "Nancy Farmer",
       "rep_candidate": "Todd Graves",
-      "margin": -129952,
-      "margin_pct": -21.645355,
+      "margin": -55057,
+      "margin_pct": -11.50999,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 96604,
+      "rep_votes": 21709,
+      "other_votes": 3715,
+      "total_votes": 122028,
+      "dem_candidate": "Nancy Farmer",
+      "rep_candidate": "Todd Graves",
+      "margin": -74895,
+      "margin_pct": -61.375258,
       "winner": "DEM",
       "color": ""
     },

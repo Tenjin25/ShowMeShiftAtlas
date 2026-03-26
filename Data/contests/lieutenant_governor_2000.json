@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 355154,
-      "rep_votes": 224010,
-      "other_votes": 20677,
-      "total_votes": 599841,
+      "dem_votes": 258842,
+      "rep_votes": 202950,
+      "other_votes": 15895,
+      "total_votes": 477687,
       "dem_candidate": "Joe Maxwell",
       "rep_candidate": "Wendell Bailey",
-      "margin": -131144,
-      "margin_pct": -21.863127,
+      "margin": -55892,
+      "margin_pct": -11.700549,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 96312,
+      "rep_votes": 21060,
+      "other_votes": 4782,
+      "total_votes": 122154,
+      "dem_candidate": "Joe Maxwell",
+      "rep_candidate": "Wendell Bailey",
+      "margin": -75252,
+      "margin_pct": -61.604205,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 442769,
-      "rep_votes": 191858,
-      "other_votes": 15836,
-      "total_votes": 650463,
+      "dem_votes": 325170,
+      "rep_votes": 174343,
+      "other_votes": 12028,
+      "total_votes": 511541,
       "dem_candidate": "Chris Koster",
       "rep_candidate": "Ed Martin",
-      "margin": -250911,
-      "margin_pct": -38.574216,
+      "margin": -150827,
+      "margin_pct": -29.484831,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 117599,
+      "rep_votes": 17515,
+      "other_votes": 3808,
+      "total_votes": 138922,
+      "dem_candidate": "Chris Koster",
+      "rep_candidate": "Ed Martin",
+      "margin": -100084,
+      "margin_pct": -72.043305,
       "winner": "DEM",
       "color": ""
     },

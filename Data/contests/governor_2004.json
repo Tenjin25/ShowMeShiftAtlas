@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 408564,
-      "rep_votes": 268450,
-      "other_votes": 8364,
-      "total_votes": 685378,
+      "dem_votes": 296624,
+      "rep_votes": 238783,
+      "other_votes": 6143,
+      "total_votes": 541550,
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "Matthew Blunt",
-      "margin": -140114,
-      "margin_pct": -20.443317,
+      "margin": -57841,
+      "margin_pct": -10.680639,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 111940,
+      "rep_votes": 29667,
+      "other_votes": 2221,
+      "total_votes": 143828,
+      "dem_candidate": "Claire McCaskill",
+      "rep_candidate": "Matthew Blunt",
+      "margin": -82273,
+      "margin_pct": -57.202353,
       "winner": "DEM",
       "color": ""
     },

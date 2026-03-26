@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 441536,
-      "rep_votes": 182189,
-      "other_votes": 46951,
-      "total_votes": 670676,
+      "dem_votes": 311990,
+      "rep_votes": 167919,
+      "other_votes": 39293,
+      "total_votes": 519202,
       "dem_candidate": "William Clay",
       "rep_candidate": "Todd Akin",
-      "margin": -259347,
-      "margin_pct": -38.669492,
+      "margin": -144071,
+      "margin_pct": -27.748545,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 129546,
+      "rep_votes": 14270,
+      "other_votes": 7658,
+      "total_votes": 151474,
+      "dem_candidate": "William Clay",
+      "rep_candidate": "Christopher Sander",
+      "margin": -115276,
+      "margin_pct": -76.10283,
       "winner": "DEM",
       "color": ""
     },

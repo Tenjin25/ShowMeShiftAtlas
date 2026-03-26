@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 466048,
-      "rep_votes": 246367,
-      "other_votes": 6297,
-      "total_votes": 718712,
+      "dem_votes": 333123,
+      "rep_votes": 221705,
+      "other_votes": 5026,
+      "total_votes": 559854,
       "dem_candidate": "Barack Obama",
       "rep_candidate": "John McCain",
-      "margin": -219681,
-      "margin_pct": -30.565929,
+      "margin": -111418,
+      "margin_pct": -19.90126,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 132925,
+      "rep_votes": 24662,
+      "other_votes": 1271,
+      "total_votes": 158858,
+      "dem_candidate": "Barack Obama",
+      "rep_candidate": "John McCain",
+      "margin": -108263,
+      "margin_pct": -68.150801,
       "winner": "DEM",
       "color": ""
     },

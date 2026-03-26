@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 458573,
-      "rep_votes": 179652,
-      "other_votes": 25582,
-      "total_votes": 663807,
+      "dem_votes": 335573,
+      "rep_votes": 164267,
+      "other_votes": 21499,
+      "total_votes": 521339,
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "Todd Akin",
-      "margin": -278921,
-      "margin_pct": -42.018388,
+      "margin": -171306,
+      "margin_pct": -32.85885,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 123000,
+      "rep_votes": 15385,
+      "other_votes": 4083,
+      "total_votes": 142468,
+      "dem_candidate": "Claire McCaskill",
+      "rep_candidate": "Todd Akin",
+      "margin": -107615,
+      "margin_pct": -75.536261,
       "winner": "DEM",
       "color": ""
     },

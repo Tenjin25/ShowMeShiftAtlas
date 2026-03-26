@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2006,
-    "rows": 67,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 68,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -814,14 +814,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 131709,
+      "dem_votes": 90743,
       "rep_votes": 41350,
       "other_votes": 0,
-      "total_votes": 173059,
+      "total_votes": 132093,
       "dem_candidate": "Rita Days",
       "rep_candidate": "John Maupin",
-      "margin": -90359,
-      "margin_pct": -52.212829,
+      "margin": -49393,
+      "margin_pct": -37.392595,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 40966,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "total_votes": 40966,
+      "dem_candidate": "Jeffrey Smith",
+      "rep_candidate": "",
+      "margin": -40966,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },

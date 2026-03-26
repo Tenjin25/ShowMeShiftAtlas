@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 362396,
-      "rep_votes": 246425,
-      "other_votes": 25650,
-      "total_votes": 634471,
+      "dem_votes": 263722,
+      "rep_votes": 223472,
+      "other_votes": 19361,
+      "total_votes": 506555,
       "dem_candidate": "Lacy Clay",
       "rep_candidate": "Ann Wagner",
-      "margin": -115971,
-      "margin_pct": -18.278377,
+      "margin": -40250,
+      "margin_pct": -7.94583,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 98674,
+      "rep_votes": 22953,
+      "other_votes": 6289,
+      "total_votes": 127916,
+      "dem_candidate": "Lacy Clay",
+      "rep_candidate": "Steven G. Bailey",
+      "margin": -75721,
+      "margin_pct": -59.195879,
       "winner": "DEM",
       "color": ""
     },

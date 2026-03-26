@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "auditor",
     "year": 2006,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 301283,
-      "rep_votes": 176227,
-      "other_votes": 15750,
-      "total_votes": 493260,
+      "dem_votes": 228439,
+      "rep_votes": 160573,
+      "other_votes": 12329,
+      "total_votes": 401341,
       "dem_candidate": "Susan Montee",
       "rep_candidate": "Sandra Thomas",
-      "margin": -125056,
-      "margin_pct": -25.352958,
+      "margin": -67866,
+      "margin_pct": -16.90981,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 72844,
+      "rep_votes": 15654,
+      "other_votes": 3421,
+      "total_votes": 91919,
+      "dem_candidate": "Susan Montee",
+      "rep_candidate": "Sandra Thomas",
+      "margin": -57190,
+      "margin_pct": -62.217822,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2010,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 9275,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kelley",
       "margin": 4053,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -119,7 +119,7 @@
       "dem_candidate": "",
       "rep_candidate": "Shelley Keeney",
       "margin": 3566,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sue Entlicher",
       "margin": 4086,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kelley",
       "margin": 2610,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "Casey Guernsey",
       "margin": 2463,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Smith",
       "margin": 4508,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tony Dugger",
       "margin": 4341,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Casey Guernsey",
       "margin": 2768,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "Casey Guernsey",
       "margin": 2542,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -587,7 +587,7 @@
       "dem_candidate": "Paul Quinn",
       "rep_candidate": "",
       "margin": -3020,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -691,7 +691,7 @@
       "dem_candidate": "",
       "rep_candidate": "Darrell Pollock",
       "margin": 10790,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -795,7 +795,7 @@
       "dem_candidate": "",
       "rep_candidate": "Shelley Keeney",
       "margin": 2991,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -834,7 +834,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bill Lant",
       "margin": 4732,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -847,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "Casey Guernsey",
       "margin": 1097,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1016,7 +1016,7 @@
       "dem_candidate": "Terry Swinger",
       "rep_candidate": "",
       "margin": -2851,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1094,7 +1094,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sue Entlicher",
       "margin": 8725,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1107,7 +1107,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Day",
       "margin": 8060,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 240577,
-      "rep_votes": 175588,
-      "other_votes": 4409,
-      "total_votes": 420574,
+      "dem_votes": 165693,
+      "rep_votes": 168301,
+      "other_votes": 4236,
+      "total_votes": 338230,
       "dem_candidate": "Steve Webb",
       "rep_candidate": "Don Gosen",
-      "margin": -64989,
-      "margin_pct": -15.452453,
+      "margin": 2608,
+      "margin_pct": 0.771073,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 74884,
+      "rep_votes": 7287,
+      "other_votes": 173,
+      "total_votes": 82344,
+      "dem_candidate": "Michele Kratky",
+      "rep_candidate": "Joe Rusch",
+      "margin": -67597,
+      "margin_pct": -82.090984,
       "winner": "DEM",
       "color": ""
     },
@@ -1393,7 +1406,7 @@
       "dem_candidate": "",
       "rep_candidate": "Don Wells",
       "margin": 7166,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1406,7 +1419,7 @@
       "dem_candidate": "",
       "rep_candidate": "Barney Fisher",
       "margin": 5852,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "Lyndall Fraker",
       "margin": 10146,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tony Dugger",
       "margin": 5368,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

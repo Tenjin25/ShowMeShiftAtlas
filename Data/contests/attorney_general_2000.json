@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 401599,
-      "rep_votes": 181633,
-      "other_votes": 12179,
-      "total_votes": 595411,
+      "dem_votes": 302424,
+      "rep_votes": 164018,
+      "other_votes": 9032,
+      "total_votes": 475474,
       "dem_candidate": "Jeremiah W. (Jay) Nixon",
       "rep_candidate": "Sam Jones",
-      "margin": -219966,
-      "margin_pct": -36.943557,
+      "margin": -138406,
+      "margin_pct": -29.109057,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 99175,
+      "rep_votes": 17615,
+      "other_votes": 3147,
+      "total_votes": 119937,
+      "dem_candidate": "Jeremiah W. (Jay) Nixon",
+      "rep_candidate": "Sam Jones",
+      "margin": -81560,
+      "margin_pct": -68.002368,
       "winner": "DEM",
       "color": ""
     },

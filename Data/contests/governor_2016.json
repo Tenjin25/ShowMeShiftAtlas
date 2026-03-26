@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 406357,
-      "rep_votes": 221212,
-      "other_votes": 18594,
-      "total_votes": 646163,
+      "dem_votes": 301115,
+      "rep_votes": 199827,
+      "other_votes": 14312,
+      "total_votes": 515254,
       "dem_candidate": "Chris Koster",
       "rep_candidate": "Eric Greitens",
-      "margin": -185145,
-      "margin_pct": -28.652987,
+      "margin": -101288,
+      "margin_pct": -19.657877,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 105242,
+      "rep_votes": 21385,
+      "other_votes": 4282,
+      "total_votes": 130909,
+      "dem_candidate": "Chris Koster",
+      "rep_candidate": "Eric Greitens",
+      "margin": -83857,
+      "margin_pct": -64.057475,
       "winner": "DEM",
       "color": ""
     },

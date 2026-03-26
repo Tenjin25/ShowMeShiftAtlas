@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -561,7 +561,7 @@
       "dem_candidate": "Kamala D. Harris",
       "rep_candidate": "Donald J. Trump",
       "margin": 3130,
-      "margin_pct": 61.132812,
+      "margin_pct": 61.132813,
       "winner": "REP",
       "color": ""
     },
@@ -1003,7 +1003,7 @@
       "dem_candidate": "Kamala D. Harris",
       "rep_candidate": "Donald J. Trump",
       "margin": 3346,
-      "margin_pct": 70.0,
+      "margin_pct": 70,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 400093,
-      "rep_votes": 207324,
-      "other_votes": 11592,
-      "total_votes": 619009,
+      "dem_votes": 305635,
+      "rep_votes": 187982,
+      "other_votes": 9121,
+      "total_votes": 502738,
       "dem_candidate": "KAMALA D. HARRIS AND TIM WALZ",
       "rep_candidate": "DONALD J. TRUMP AND JD VANCE",
-      "margin": -192769,
-      "margin_pct": -31.14155,
+      "margin": -117653,
+      "margin_pct": -23.402448,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 94458,
+      "rep_votes": 19342,
+      "other_votes": 2471,
+      "total_votes": 116271,
+      "dem_candidate": "Kamala D. Harris",
+      "rep_candidate": "Donald J. Trump",
+      "margin": -75116,
+      "margin_pct": -64.604244,
       "winner": "DEM",
       "color": ""
     },

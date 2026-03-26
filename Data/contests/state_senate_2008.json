@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2008,
-    "rows": 51,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 52,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 11895,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "Victor Callahan",
       "rep_candidate": "",
       "margin": -121717,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 14447,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 6592,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 3630,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -541,14 +541,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 249691,
-      "rep_votes": 150292,
-      "other_votes": 11487,
-      "total_votes": 411470,
+      "dem_votes": 184117,
+      "rep_votes": 146142,
+      "other_votes": 6239,
+      "total_votes": 336498,
       "dem_candidate": "Timothy Green",
       "rep_candidate": "Jane Cunningham",
-      "margin": -99399,
-      "margin_pct": -24.157047,
+      "margin": -37975,
+      "margin_pct": -11.285357,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 65574,
+      "rep_votes": 4150,
+      "other_votes": 5248,
+      "total_votes": 74972,
+      "dem_candidate": "Robin Wright-Jones",
+      "rep_candidate": "James Lembke",
+      "margin": -61424,
+      "margin_pct": -81.929254,
       "winner": "DEM",
       "color": ""
     },
@@ -587,7 +600,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 13484,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -600,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jack Goodman",
       "margin": 17564,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

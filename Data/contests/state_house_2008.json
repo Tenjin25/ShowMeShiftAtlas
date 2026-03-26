@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 12390,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Thomas Self",
       "margin": 7931,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Dethrow",
       "margin": 2393,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Parson",
       "margin": 5276,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Kenneth Jones",
       "margin": 6846,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 6473,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 4498,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -587,7 +587,7 @@
       "dem_candidate": "James Quinn",
       "rep_candidate": "",
       "margin": -4031,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -652,7 +652,7 @@
       "dem_candidate": "Ronald Casey",
       "rep_candidate": "",
       "margin": -82539,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -691,7 +691,7 @@
       "dem_candidate": "",
       "rep_candidate": "Darrell Pollock",
       "margin": 14455,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -834,7 +834,7 @@
       "dem_candidate": "",
       "rep_candidate": "Marilyn Ruestman",
       "margin": 6947,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -873,7 +873,7 @@
       "dem_candidate": "James Hodges",
       "rep_candidate": "Ellen Brandom",
       "margin": -4626,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -886,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Kenneth Jones",
       "margin": 5773,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -951,7 +951,7 @@
       "dem_candidate": "",
       "rep_candidate": "Kevin Wilson",
       "margin": 22125,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -977,7 +977,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Dethrow",
       "margin": 3954,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1016,7 +1016,7 @@
       "dem_candidate": "Terrence Swinger",
       "rep_candidate": "",
       "margin": -6114,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1107,7 +1107,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Day",
       "margin": 11316,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1133,7 +1133,7 @@
       "dem_candidate": "Rachel Bringer",
       "rep_candidate": "Gary Linnenbringer",
       "margin": -4646,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1185,7 +1185,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Dethrow",
       "margin": 4703,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1289,7 +1289,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 4343,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 453536,
-      "rep_votes": 179713,
-      "other_votes": 8220,
-      "total_votes": 641469,
+      "dem_votes": 319487,
+      "rep_votes": 177999,
+      "other_votes": 3968,
+      "total_votes": 501454,
       "dem_candidate": "Steven Webb",
       "rep_candidate": "Allen Icet",
-      "margin": -273823,
-      "margin_pct": -42.686864,
+      "margin": -141488,
+      "margin_pct": -28.215549,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 134049,
+      "rep_votes": 1714,
+      "other_votes": 4252,
+      "total_votes": 140015,
+      "dem_candidate": "Jamilah Nasheed",
+      "rep_candidate": "Gerald Morgan",
+      "margin": -132335,
+      "margin_pct": -94.514873,
       "winner": "DEM",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Cunningham",
       "margin": 14286,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

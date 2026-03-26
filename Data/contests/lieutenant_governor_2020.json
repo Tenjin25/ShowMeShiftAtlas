@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2020,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 403707,
-      "rep_votes": 239058,
-      "other_votes": 16825,
-      "total_votes": 659590,
+      "dem_votes": 299848,
+      "rep_votes": 215375,
+      "other_votes": 12955,
+      "total_votes": 528178,
       "dem_candidate": "Alissia Canady",
       "rep_candidate": "Mike Kehoe",
-      "margin": -164649,
-      "margin_pct": -24.962325,
+      "margin": -84473,
+      "margin_pct": -15.993283,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 103859,
+      "rep_votes": 23683,
+      "other_votes": 3870,
+      "total_votes": 131412,
+      "dem_candidate": "Alissia Canady",
+      "rep_candidate": "Mike Kehoe",
+      "margin": -80176,
+      "margin_pct": -61.011171,
       "winner": "DEM",
       "color": ""
     },

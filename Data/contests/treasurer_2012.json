@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 422975,
-      "rep_votes": 201889,
-      "other_votes": 20234,
-      "total_votes": 645098,
+      "dem_votes": 308331,
+      "rep_votes": 183249,
+      "other_votes": 15585,
+      "total_votes": 507165,
       "dem_candidate": "Clint Zweifel",
       "rep_candidate": "Cole McNary",
-      "margin": -221086,
-      "margin_pct": -34.271692,
+      "margin": -125082,
+      "margin_pct": -24.66298,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 114644,
+      "rep_votes": 18640,
+      "other_votes": 4649,
+      "total_votes": 137933,
+      "dem_candidate": "Clint Zweifel",
+      "rep_candidate": "Cole McNary",
+      "margin": -96004,
+      "margin_pct": -69.601908,
       "winner": "DEM",
       "color": ""
     },

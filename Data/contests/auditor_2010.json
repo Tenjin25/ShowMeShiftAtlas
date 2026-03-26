@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "auditor",
     "year": 2010,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -899,7 +899,7 @@
       "dem_candidate": "Susan Montee",
       "rep_candidate": "Tom Schweich",
       "margin": 153,
-      "margin_pct": 5.0,
+      "margin_pct": 5,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 275994,
-      "rep_votes": 172649,
-      "other_votes": 11730,
-      "total_votes": 460373,
+      "dem_votes": 203814,
+      "rep_votes": 157761,
+      "other_votes": 9441,
+      "total_votes": 371016,
       "dem_candidate": "Susan Montee",
       "rep_candidate": "Tom Schweich",
-      "margin": -103345,
-      "margin_pct": -22.448102,
+      "margin": -46053,
+      "margin_pct": -12.412672,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 72180,
+      "rep_votes": 14888,
+      "other_votes": 2289,
+      "total_votes": 89357,
+      "dem_candidate": "Susan Montee",
+      "rep_candidate": "Tom Schweich",
+      "margin": -57292,
+      "margin_pct": -64.11585,
       "winner": "DEM",
       "color": ""
     },
@@ -1445,7 +1458,7 @@
       "dem_candidate": "Susan Montee",
       "rep_candidate": "Tom Schweich",
       "margin": 1053,
-      "margin_pct": 26.0,
+      "margin_pct": 26,
       "winner": "REP",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "auditor",
     "year": 2022,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 268601,
-      "rep_votes": 167564,
-      "other_votes": 13120,
-      "total_votes": 449285,
+      "dem_votes": 202506,
+      "rep_votes": 152902,
+      "other_votes": 10681,
+      "total_votes": 366089,
       "dem_candidate": "Alan Green",
       "rep_candidate": "Scott Fitzpatrick",
-      "margin": -101037,
-      "margin_pct": -22.488398,
+      "margin": -49604,
+      "margin_pct": -13.549711,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 66095,
+      "rep_votes": 14662,
+      "other_votes": 2439,
+      "total_votes": 83196,
+      "dem_candidate": "Alan Green",
+      "rep_candidate": "Scott Fitzpatrick",
+      "margin": -51433,
+      "margin_pct": -61.821482,
       "winner": "DEM",
       "color": ""
     },

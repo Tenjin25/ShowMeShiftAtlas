@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 389299,
-      "rep_votes": 222800,
-      "other_votes": 27272,
-      "total_votes": 639371,
+      "dem_votes": 287607,
+      "rep_votes": 202160,
+      "other_votes": 20065,
+      "total_votes": 509832,
       "dem_candidate": "Russ Carnahan",
       "rep_candidate": "Mike Parson",
-      "margin": -166499,
-      "margin_pct": -26.041062,
+      "margin": -85447,
+      "margin_pct": -16.759835,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 101692,
+      "rep_votes": 20640,
+      "other_votes": 7207,
+      "total_votes": 129539,
+      "dem_candidate": "Russ Carnahan",
+      "rep_candidate": "Mike Parson",
+      "margin": -81052,
+      "margin_pct": -62.569574,
       "winner": "DEM",
       "color": ""
     },

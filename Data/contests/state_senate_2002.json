@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2002,
-    "rows": 67,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 68,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 4260,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 1885,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 2150,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 4321,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "Gary Nodler",
       "margin": 2102,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 2438,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -249,7 +249,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 2632,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 1937,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 3195,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 2567,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 1507,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Gary Nodler",
       "margin": 21559,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -483,7 +483,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 2757,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 3220,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 1147,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Gary Nodler",
       "margin": 13332,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -626,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 5309,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -814,14 +814,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 120225,
+      "dem_votes": 78645,
       "rep_votes": 44063,
       "other_votes": 1130,
-      "total_votes": 165418,
-      "dem_candidate": "J. Dougherty",
+      "total_votes": 123838,
+      "dem_candidate": "Rita Days",
       "rep_candidate": "John Lewis",
-      "margin": -76162,
-      "margin_pct": -46.042148,
+      "margin": -34582,
+      "margin_pct": -27.925193,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 41580,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "total_votes": 41580,
+      "dem_candidate": "J. Dougherty",
+      "rep_candidate": "",
+      "margin": -41580,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -834,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 1749,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -873,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Klindt",
       "margin": 647,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 371060,
-      "rep_votes": 272949,
-      "other_votes": 12009,
-      "total_votes": 656018,
+      "dem_votes": 273848,
+      "rep_votes": 246959,
+      "other_votes": 9213,
+      "total_votes": 530020,
       "dem_candidate": "William Clay",
       "rep_candidate": "W. Akin",
-      "margin": -98111,
-      "margin_pct": -14.955535,
+      "margin": -26889,
+      "margin_pct": -5.073205,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 97212,
+      "rep_votes": 25990,
+      "other_votes": 2796,
+      "total_votes": 125998,
+      "dem_candidate": "William Clay",
+      "rep_candidate": "William Federer",
+      "margin": -71222,
+      "margin_pct": -56.526294,
       "winner": "DEM",
       "color": ""
     },

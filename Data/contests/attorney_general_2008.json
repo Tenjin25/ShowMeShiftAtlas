@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 441399,
-      "rep_votes": 239306,
+      "dem_votes": 316190,
+      "rep_votes": 213914,
       "other_votes": 0,
-      "total_votes": 680705,
+      "total_votes": 530104,
       "dem_candidate": "Christopher Koster",
       "rep_candidate": "Michael Gibbons",
-      "margin": -202093,
-      "margin_pct": -29.688779,
+      "margin": -102276,
+      "margin_pct": -19.293573,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 125209,
+      "rep_votes": 25392,
+      "other_votes": 0,
+      "total_votes": 150601,
+      "dem_candidate": "Christopher Koster",
+      "rep_candidate": "Michael Gibbons",
+      "margin": -99817,
+      "margin_pct": -66.279108,
       "winner": "DEM",
       "color": ""
     },

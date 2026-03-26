@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 403347,
-      "rep_votes": 197696,
-      "other_votes": 17123,
-      "total_votes": 618166,
+      "dem_votes": 309428,
+      "rep_votes": 179628,
+      "other_votes": 13438,
+      "total_votes": 502494,
       "dem_candidate": "LUCAS KUNCE",
       "rep_candidate": "JOSH HAWLEY",
-      "margin": -205651,
-      "margin_pct": -33.267925,
+      "margin": -129800,
+      "margin_pct": -25.831154,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 93919,
+      "rep_votes": 18068,
+      "other_votes": 3685,
+      "total_votes": 115672,
+      "dem_candidate": "Lucas Kunce",
+      "rep_candidate": "Josh Hawley",
+      "margin": -75851,
+      "margin_pct": -65.57421,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2006,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Thomas Self",
       "margin": 6061,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Parson",
       "margin": 4187,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 4482,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "John Kuessner",
       "rep_candidate": "",
       "margin": -3341,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -769,7 +769,7 @@
       "dem_candidate": "Karl Rice",
       "rep_candidate": "John Quinn",
       "margin": 2168,
-      "margin_pct": 40.0,
+      "margin_pct": 40,
       "winner": "REP",
       "color": ""
     },
@@ -1016,7 +1016,7 @@
       "dem_candidate": "Terrence Swinger",
       "rep_candidate": "",
       "margin": -3666,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1029,7 +1029,7 @@
       "dem_candidate": "",
       "rep_candidate": "Steven Tilley",
       "margin": 5445,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 318995,
-      "rep_votes": 138927,
-      "other_votes": 2809,
-      "total_votes": 460731,
+      "dem_votes": 238516,
+      "rep_votes": 137266,
+      "other_votes": 415,
+      "total_votes": 376197,
       "dem_candidate": "Susan Schoemehl",
       "rep_candidate": "Allen Icet",
-      "margin": -180068,
-      "margin_pct": -39.083109,
+      "margin": -101250,
+      "margin_pct": -26.91409,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 80479,
+      "rep_votes": 1661,
+      "other_votes": 2394,
+      "total_votes": 84534,
+      "dem_candidate": "Frederick Kratky",
+      "rep_candidate": "Arthur Gansner",
+      "margin": -78818,
+      "margin_pct": -93.238224,
       "winner": "DEM",
       "color": ""
     },
@@ -1432,7 +1445,7 @@
       "dem_candidate": "Belinda Harris",
       "rep_candidate": "",
       "margin": -6247,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Cunningham",
       "margin": 10759,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 5869,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

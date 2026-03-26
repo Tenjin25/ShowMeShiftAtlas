@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2000,
-    "rows": 43,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 44,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 9194,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 3750,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -2606,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 22620,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -132,7 +132,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -2680,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -145,7 +145,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 18392,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -184,7 +184,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 4006,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 11305,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -288,7 +288,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -11294,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 3053,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 3140,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 3302,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 5612,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -12070,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -7573,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "James L. (Jim) Mathewson",
       "rep_candidate": "",
       "margin": -7648,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Peter D. Kinder",
       "margin": 11266,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -476,14 +476,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 178012,
-      "rep_votes": 174736,
-      "other_votes": 4691,
-      "total_votes": 357439,
+      "dem_votes": 120136,
+      "rep_votes": 161492,
+      "other_votes": 2517,
+      "total_votes": 284145,
       "dem_candidate": "Wayne Goode",
       "rep_candidate": "John Loudon",
-      "margin": -3276,
-      "margin_pct": -0.91652,
+      "margin": 41356,
+      "margin_pct": 14.554541,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 57876,
+      "rep_votes": 13244,
+      "other_votes": 2174,
+      "total_votes": 73294,
+      "dem_candidate": "Paula J. Carter",
+      "rep_candidate": "Leonard F. Arons",
+      "margin": -44632,
+      "margin_pct": -60.89448,
       "winner": "DEM",
       "color": ""
     },
@@ -509,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 9356,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "Doyle Childers",
       "margin": 12022,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

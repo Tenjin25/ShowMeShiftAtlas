@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dean A VanSchoiack",
       "margin": 8459,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Farnan",
       "margin": 2340,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mazzie Christensen",
       "margin": 4032,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Knight",
       "margin": 7445,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mazzie Christensen",
       "margin": 3449,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dean A VanSchoiack",
       "margin": 4157,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -483,7 +483,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bruce Sassmann",
       "margin": 6863,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Farnan",
       "margin": 2894,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mazzie Christensen",
       "margin": 3933,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mazzie Christensen",
       "margin": 3505,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Farnan",
       "margin": 2116,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -717,7 +717,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mitch Boggs",
       "margin": 15504,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -821,7 +821,7 @@
       "dem_candidate": "",
       "rep_candidate": "Louis Riggs",
       "margin": 11439,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -847,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "Danny Busick",
       "margin": 1604,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -873,7 +873,7 @@
       "dem_candidate": "",
       "rep_candidate": "Donnie Brown",
       "margin": 3771,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -886,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Willard Haley",
       "margin": 6374,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -925,7 +925,7 @@
       "dem_candidate": "",
       "rep_candidate": "Willard Haley",
       "margin": 8209,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -938,7 +938,7 @@
       "dem_candidate": "",
       "rep_candidate": "Donnie Brown",
       "margin": 5935,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -964,7 +964,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Farnan",
       "margin": 8420,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -990,7 +990,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bruce Sassmann",
       "margin": 6999,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1029,7 +1029,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bryant Wolfin",
       "margin": 7744,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1120,7 +1120,7 @@
       "dem_candidate": "",
       "rep_candidate": "Danny Busick",
       "margin": 2198,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1133,7 +1133,7 @@
       "dem_candidate": "",
       "rep_candidate": "Louis Riggs",
       "margin": 5007,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1237,7 +1237,7 @@
       "dem_candidate": "",
       "rep_candidate": "David A Dolan",
       "margin": 15168,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 403125,
-      "rep_votes": 148949,
-      "other_votes": 12164,
-      "total_votes": 564238,
+      "dem_votes": 309211,
+      "rep_votes": 135255,
+      "other_votes": 11017,
+      "total_votes": 455483,
       "dem_candidate": "JO DOLL",
       "rep_candidate": "JUSTIN SPARKS",
-      "margin": -254176,
-      "margin_pct": -45.047657,
+      "margin": -173956,
+      "margin_pct": -38.191546,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 93914,
+      "rep_votes": 13694,
+      "other_votes": 1147,
+      "total_votes": 108755,
+      "dem_candidate": "Nick Kimble",
+      "rep_candidate": "Donald W. Flecke",
+      "margin": -80220,
+      "margin_pct": -73.762126,
       "winner": "DEM",
       "color": ""
     },
@@ -1328,7 +1341,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bryant Wolfin",
       "margin": 7823,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1367,7 +1380,7 @@
       "dem_candidate": "",
       "rep_candidate": "Danny Busick",
       "margin": 2253,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1471,7 +1484,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mazzie Christensen",
       "margin": 954,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

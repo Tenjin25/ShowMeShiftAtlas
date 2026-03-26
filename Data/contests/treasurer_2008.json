@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 438261,
-      "rep_votes": 226102,
-      "other_votes": 12381,
-      "total_votes": 676744,
+      "dem_votes": 314173,
+      "rep_votes": 203000,
+      "other_votes": 9306,
+      "total_votes": 526479,
       "dem_candidate": "Charles Zweifel",
       "rep_candidate": "Brad Lager",
-      "margin": -212159,
-      "margin_pct": -31.349964,
+      "margin": -111173,
+      "margin_pct": -21.116322,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 124088,
+      "rep_votes": 23102,
+      "other_votes": 3075,
+      "total_votes": 150265,
+      "dem_candidate": "Charles Zweifel",
+      "rep_candidate": "Brad Lager",
+      "margin": -100986,
+      "margin_pct": -67.205271,
       "winner": "DEM",
       "color": ""
     },

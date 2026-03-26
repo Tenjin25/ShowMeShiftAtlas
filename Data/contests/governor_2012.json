@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 442727,
-      "rep_votes": 205182,
-      "other_votes": 14212,
-      "total_votes": 662121,
+      "dem_votes": 324748,
+      "rep_votes": 185704,
+      "other_votes": 10546,
+      "total_votes": 520998,
       "dem_candidate": "Jeremiah W. (Jay) Nixon",
       "rep_candidate": "David (Dave) Spence",
-      "margin": -237545,
-      "margin_pct": -35.876373,
+      "margin": -139044,
+      "margin_pct": -26.68801,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 117979,
+      "rep_votes": 19478,
+      "other_votes": 3666,
+      "total_votes": 141123,
+      "dem_candidate": "Jeremiah W. (Jay) Nixon",
+      "rep_candidate": "David (Dave) Spence",
+      "margin": -98501,
+      "margin_pct": -69.797978,
       "winner": "DEM",
       "color": ""
     },

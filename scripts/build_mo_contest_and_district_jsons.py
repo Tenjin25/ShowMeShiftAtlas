@@ -124,6 +124,25 @@ def normalize_county_key(value: str) -> str:
     return token
 
 
+def county_canonical_from_feature(props: Dict[str, object]) -> str:
+    name = str(props.get("NAME20") or "").strip()
+    if not name:
+        return ""
+
+    namelsad = str(props.get("NAMELSAD20") or "").strip().upper()
+    classfp = str(props.get("CLASSFP20") or "").strip().upper()
+    name_upper = name.upper()
+
+    # Missouri's independent City of St. Louis shares NAME20 with St. Louis County,
+    # so NAME20 alone is ambiguous here.
+    if namelsad.endswith(" CITY") or classfp == "C7":
+        if normalize_county_key(name_upper) == normalize_county_key("ST LOUIS"):
+            return "ST. LOUIS CITY"
+        return f"{name_upper} CITY"
+
+    return name_upper
+
+
 def build_county_lookup() -> Dict[str, str]:
     lookup: Dict[str, str] = {}
     if not COUNTY_GEOJSON_PATH.exists():
@@ -133,17 +152,30 @@ def build_county_lookup() -> Dict[str, str]:
         payload = json.load(f)
     for feature in payload.get("features", []):
         props = feature.get("properties", {}) or {}
-        name = (props.get("NAME20") or "").strip()
-        if not name:
+        canonical = county_canonical_from_feature(props)
+        if not canonical:
             continue
-        canonical = name.upper()
+        namelsad = str(props.get("NAMELSAD20") or "").strip().upper()
         key = normalize_county_key(canonical)
         lookup[key] = canonical
+        if namelsad:
+            lookup.setdefault(normalize_county_key(namelsad), canonical)
+
         # Extra aliases for historical naming variants in election CSV files.
-        lookup.setdefault(normalize_county_key(canonical + " COUNTY"), canonical)
         if canonical == "ST. LOUIS":
-            lookup.setdefault(normalize_county_key("ST LOUIS CITY"), canonical)
             lookup.setdefault(normalize_county_key("ST LOUIS"), canonical)
+            lookup.setdefault(normalize_county_key("ST LOUIS COUNTY"), canonical)
+            lookup.setdefault(normalize_county_key("SAINT LOUIS"), canonical)
+            lookup.setdefault(normalize_county_key("SAINT LOUIS COUNTY"), canonical)
+        elif canonical == "ST. LOUIS CITY":
+            lookup.setdefault(normalize_county_key("ST LOUIS CITY"), canonical)
+            lookup.setdefault(normalize_county_key("ST. LOUIS CITY"), canonical)
+            lookup.setdefault(normalize_county_key("SAINT LOUIS CITY"), canonical)
+            lookup.setdefault(normalize_county_key("CITY OF ST LOUIS"), canonical)
+            lookup.setdefault(normalize_county_key("CITY OF ST. LOUIS"), canonical)
+            lookup.setdefault(normalize_county_key("CITY OF SAINT LOUIS"), canonical)
+        else:
+            lookup.setdefault(normalize_county_key(canonical + " COUNTY"), canonical)
 
     # Election board jurisdiction labels that should aggregate into county geography.
     # Kansas City Election Board totals should roll up into Jackson County for county maps.

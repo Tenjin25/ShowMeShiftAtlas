@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Robert Schaaf",
       "margin": 6563,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2642,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 11187,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Thomas Self",
       "margin": 6981,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Kenneth Jones",
       "margin": 6027,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 5941,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 5171,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 3966,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2233,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -886,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Kenneth Jones",
       "margin": 5383,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -964,7 +964,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 8288,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1133,7 +1133,7 @@
       "dem_candidate": "Rachel Bringer",
       "rep_candidate": "",
       "margin": -4125,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1289,7 +1289,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Wilson",
       "margin": 3982,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 380680,
-      "rep_votes": 223424,
-      "other_votes": 10594,
-      "total_votes": 614698,
+      "dem_votes": 261559,
+      "rep_votes": 212267,
+      "other_votes": 8471,
+      "total_votes": 482297,
       "dem_candidate": "Maria Chappelle-Nadal",
       "rep_candidate": "Allen Icet",
-      "margin": -157256,
-      "margin_pct": -25.582644,
+      "margin": -49292,
+      "margin_pct": -10.220258,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 119121,
+      "rep_votes": 11157,
+      "other_votes": 2123,
+      "total_votes": 132401,
+      "dem_candidate": "Amber Boykins",
+      "rep_candidate": "Christopher Zoellner",
+      "margin": -107964,
+      "margin_pct": -81.543191,
       "winner": "DEM",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "Michael Cunningham",
       "margin": 12892,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 7144,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

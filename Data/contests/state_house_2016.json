@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "Nate Walker",
       "margin": 8620,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Delus Johnson",
       "margin": 8001,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Allen Andrews",
       "margin": 2431,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "Scott Fitzpatrick",
       "margin": 13239,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "James W. (Jim) Neely",
       "margin": 3837,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -197,7 +197,7 @@
       "dem_candidate": "",
       "rep_candidate": "Diane Franklin",
       "margin": 19442,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -223,7 +223,7 @@
       "dem_candidate": "",
       "rep_candidate": "Joe Don McGaugh",
       "margin": 3957,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "",
       "rep_candidate": "Craig Redmon",
       "margin": 2818,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -327,7 +327,7 @@
       "dem_candidate": "",
       "rep_candidate": "James W. (Jim) Neely",
       "margin": 8665,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Chipman",
       "margin": 8625,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "J. Eggleston",
       "margin": 3294,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "J. Eggleston",
       "margin": 4107,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeffrey Pogue",
       "margin": 5863,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Lyle Rowland",
       "margin": 5641,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "J. Eggleston",
       "margin": 2659,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Rusty Black",
       "margin": 4049,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "J. Eggleston",
       "margin": 3282,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Warren D. Love",
       "margin": 3977,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Allen Andrews",
       "margin": 2133,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Paul Fitzwater",
       "margin": 3753,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -678,7 +678,7 @@
       "dem_candidate": "",
       "rep_candidate": "Craig Redmon",
       "margin": 1612,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -730,7 +730,7 @@
       "dem_candidate": "",
       "rep_candidate": "Craig Redmon",
       "margin": 3998,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -756,7 +756,7 @@
       "dem_candidate": "",
       "rep_candidate": "Rusty Black",
       "margin": 4847,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -769,7 +769,7 @@
       "dem_candidate": "",
       "rep_candidate": "Rusty Black",
       "margin": 5883,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -782,7 +782,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tim Remole",
       "margin": 6682,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -808,7 +808,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tom Hurst",
       "margin": 4043,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -834,7 +834,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bill Lant",
       "margin": 7290,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -847,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "Nate Walker",
       "margin": 1510,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -912,7 +912,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bart Korman",
       "margin": 4802,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -951,7 +951,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bill Reiboldt",
       "margin": 23803,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -964,7 +964,7 @@
       "dem_candidate": "",
       "rep_candidate": "Allen Andrews",
       "margin": 8488,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -977,7 +977,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeffrey Pogue",
       "margin": 3801,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1003,7 +1003,7 @@
       "dem_candidate": "",
       "rep_candidate": "Lyle Rowland",
       "margin": 3799,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1068,7 +1068,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jim Hansen",
       "margin": 6301,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1120,7 +1120,7 @@
       "dem_candidate": "",
       "rep_candidate": "Nate Walker",
       "margin": 2067,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1133,7 +1133,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jim Hansen",
       "margin": 4492,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1159,7 +1159,7 @@
       "dem_candidate": "",
       "rep_candidate": "Joe Don McGaugh",
       "margin": 9035,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1172,7 +1172,7 @@
       "dem_candidate": "",
       "rep_candidate": "Paul Fitzwater",
       "margin": 2553,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1211,7 +1211,7 @@
       "dem_candidate": "",
       "rep_candidate": "Craig Redmon",
       "margin": 1575,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1224,7 +1224,7 @@
       "dem_candidate": "",
       "rep_candidate": "Craig Redmon",
       "margin": 1677,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1250,7 +1250,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeffrey Pogue",
       "margin": 3057,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1289,7 +1289,7 @@
       "dem_candidate": "",
       "rep_candidate": "Warren D. Love",
       "margin": 3965,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 375110,
-      "rep_votes": 187724,
-      "other_votes": 23280,
-      "total_votes": 586114,
+      "dem_votes": 268094,
+      "rep_votes": 179582,
+      "other_votes": 18264,
+      "total_votes": 465940,
       "dem_candidate": "Alan Green",
       "rep_candidate": "David J Gregory",
-      "margin": -187386,
-      "margin_pct": -31.970914,
+      "margin": -88512,
+      "margin_pct": -18.996437,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 107016,
+      "rep_votes": 8142,
+      "other_votes": 5016,
+      "total_votes": 120174,
+      "dem_candidate": "Karla May",
+      "rep_candidate": "Robert J. Crump",
+      "margin": -98874,
+      "margin_pct": -82.2757,
       "winner": "DEM",
       "color": ""
     },
@@ -1341,7 +1354,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tila Rowland Hubrecht",
       "margin": 11655,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1354,7 +1367,7 @@
       "dem_candidate": "",
       "rep_candidate": "Don Phillips",
       "margin": 14359,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1367,7 +1380,7 @@
       "dem_candidate": "",
       "rep_candidate": "Nate Walker",
       "margin": 2152,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1380,7 +1393,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jeff Justus",
       "margin": 20484,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1406,7 +1419,7 @@
       "dem_candidate": "",
       "rep_candidate": "Patricia Pike",
       "margin": 7836,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "Lyndall Fraker",
       "margin": 14678,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1471,7 +1484,7 @@
       "dem_candidate": "",
       "rep_candidate": "Allen Andrews",
       "margin": 970,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "Hannah Kelly",
       "margin": 6910,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

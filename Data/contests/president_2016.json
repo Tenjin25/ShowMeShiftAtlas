@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 390939,
-      "rep_votes": 223266,
-      "other_votes": 31537,
-      "total_votes": 645742,
+      "dem_votes": 286704,
+      "rep_votes": 202434,
+      "other_votes": 25720,
+      "total_votes": 514858,
       "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
       "rep_candidate": "Donald J. Trump, Michael R. Pence",
-      "margin": -167673,
-      "margin_pct": -25.965943,
+      "margin": -84270,
+      "margin_pct": -16.36762,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 104235,
+      "rep_votes": 20832,
+      "other_votes": 5817,
+      "total_votes": 130884,
+      "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
+      "rep_candidate": "Donald J. Trump, Michael R. Pence",
+      "margin": -83403,
+      "margin_pct": -63.722839,
       "winner": "DEM",
       "color": ""
     },

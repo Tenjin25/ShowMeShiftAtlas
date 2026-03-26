@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 363537,
-      "rep_votes": 246589,
-      "other_votes": 23891,
-      "total_votes": 634017,
+      "dem_votes": 264911,
+      "rep_votes": 222918,
+      "other_votes": 17886,
+      "total_votes": 505715,
       "dem_candidate": "Judy Baker",
       "rep_candidate": "Eric Schmitt",
-      "margin": -116948,
-      "margin_pct": -18.445562,
+      "margin": -41993,
+      "margin_pct": -8.303689,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 98626,
+      "rep_votes": 23671,
+      "other_votes": 6005,
+      "total_votes": 128302,
+      "dem_candidate": "Judy Baker",
+      "rep_candidate": "Eric Schmitt",
+      "margin": -74955,
+      "margin_pct": -58.420757,
       "winner": "DEM",
       "color": ""
     },

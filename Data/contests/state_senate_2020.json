@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2020,
-    "rows": 52,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 53,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Moon",
       "margin": 13499,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 16168,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -132,7 +132,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 2528,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -197,7 +197,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 9234,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -249,7 +249,7 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 3713,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -275,7 +275,7 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 20578,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Moon",
       "margin": 15489,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Moon",
       "margin": 8044,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 4017,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 6201,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 4718,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -457,7 +457,7 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 2555,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -509,7 +509,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 3151,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,20 +535,33 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 23058,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 226796,
-      "rep_votes": 113016,
+      "dem_votes": 170417,
+      "rep_votes": 104667,
       "other_votes": 9122,
-      "total_votes": 348934,
+      "total_votes": 284206,
       "dem_candidate": "Angela Walton Mosley",
       "rep_candidate": "Andrew Koenig",
-      "margin": -113780,
-      "margin_pct": -32.607886,
+      "margin": -65750,
+      "margin_pct": -23.134628,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 56379,
+      "rep_votes": 8349,
+      "other_votes": 0,
+      "total_votes": 64728,
+      "dem_candidate": "Steve Roberts",
+      "rep_candidate": "Michael Hebron",
+      "margin": -48030,
+      "margin_pct": -74.202818,
       "winner": "DEM",
       "color": ""
     },
@@ -561,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 7342,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +587,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jason Bean",
       "margin": 12198,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -587,7 +600,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Moon",
       "margin": 16039,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -600,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Moon",
       "margin": 22511,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -639,7 +652,7 @@
       "dem_candidate": "",
       "rep_candidate": "Elaine Freeman Gannon",
       "margin": 8440,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

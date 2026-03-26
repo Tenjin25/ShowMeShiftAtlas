@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2018,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -54,7 +54,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -93,7 +93,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -119,7 +119,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -132,7 +132,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -145,7 +145,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -158,7 +158,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -184,7 +184,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -197,7 +197,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -223,7 +223,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -249,7 +249,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -275,7 +275,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -288,7 +288,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -327,7 +327,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -457,7 +457,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -470,7 +470,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -483,7 +483,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -509,7 +509,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -548,7 +548,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -587,7 +587,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -600,7 +600,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -626,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -639,7 +639,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -652,7 +652,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -665,7 +665,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -678,7 +678,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -691,7 +691,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -704,7 +704,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -717,7 +717,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -730,7 +730,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -743,7 +743,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -756,7 +756,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -769,7 +769,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -782,7 +782,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -795,7 +795,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -808,7 +808,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -821,7 +821,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -834,7 +834,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -847,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -860,7 +860,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -873,7 +873,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -886,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -899,7 +899,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -912,7 +912,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -925,7 +925,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -938,7 +938,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -951,7 +951,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -964,7 +964,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -977,7 +977,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -990,7 +990,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1003,7 +1003,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1016,7 +1016,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1029,7 +1029,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1042,7 +1042,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1055,7 +1055,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1068,7 +1068,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1081,7 +1081,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1094,7 +1094,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1107,7 +1107,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1120,7 +1120,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1133,7 +1133,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1146,7 +1146,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1159,7 +1159,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1172,7 +1172,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1185,7 +1185,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1198,7 +1198,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1211,7 +1211,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1224,7 +1224,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1237,7 +1237,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1250,7 +1250,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1263,7 +1263,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1276,7 +1276,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1289,7 +1289,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1302,7 +1302,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1310,12 +1310,25 @@
       "county": "ST. LOUIS",
       "dem_votes": 0,
       "rep_votes": 0,
-      "other_votes": 567381,
-      "total_votes": 567381,
+      "other_votes": 454449,
+      "total_votes": 454449,
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
+      "winner": "TIE",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 0,
+      "rep_votes": 0,
+      "other_votes": 112932,
+      "total_votes": 112932,
+      "dem_candidate": "",
+      "rep_candidate": "",
+      "margin": 0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1328,7 +1341,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1341,7 +1354,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1354,7 +1367,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1367,7 +1380,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1380,7 +1393,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1393,7 +1406,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1406,7 +1419,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1419,7 +1432,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1432,7 +1445,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1445,7 +1458,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1458,7 +1471,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1471,7 +1484,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "",
       "margin": 0,
-      "margin_pct": 0.0,
+      "margin_pct": 0,
       "winner": "TIE",
       "color": ""
     }

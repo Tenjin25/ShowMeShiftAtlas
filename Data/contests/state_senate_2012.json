@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2012,
-    "rows": 52,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 53,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 12144,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -54,7 +54,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 4315,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 29734,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -184,7 +184,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 5478,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 13700,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "Jason Holsman",
       "rep_candidate": "",
       "margin": -178462,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 13580,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 3925,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 6575,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 3428,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 3608,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 6332,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -470,7 +470,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 4410,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 13255,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Tom Dempsey",
       "margin": 72310,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -541,14 +541,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 177430,
+      "dem_votes": 113404,
       "rep_votes": 137043,
       "other_votes": 0,
-      "total_votes": 314473,
+      "total_votes": 250447,
       "dem_candidate": "Gina Walsh",
       "rep_candidate": "Eric Schmitt",
-      "margin": -40387,
-      "margin_pct": -12.842756,
+      "margin": 23639,
+      "margin_pct": 9.438724,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 64026,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "total_votes": 64026,
+      "dem_candidate": "Jamilah Nasheed",
+      "rep_candidate": "",
+      "margin": -64026,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -587,7 +600,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 13503,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -600,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "David Sater",
       "margin": 18209,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 8997,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -652,7 +665,7 @@
       "dem_candidate": "",
       "rep_candidate": "Wayne Wallingford",
       "margin": 4330,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -665,7 +678,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 13404,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -678,7 +691,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Cunningham",
       "margin": 6834,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

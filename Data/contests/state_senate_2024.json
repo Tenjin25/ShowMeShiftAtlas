@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2024,
-    "rows": 46,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 47,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 5443,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 33106,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 6283,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 16225,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -223,7 +223,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 3759,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 4982,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 4064,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 7783,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 2451,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -457,7 +457,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jamie Burger",
       "margin": 15105,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -470,7 +470,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 3301,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -502,14 +502,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 214850,
-      "rep_votes": 103842,
+      "dem_votes": 167180,
+      "rep_votes": 97691,
       "other_votes": 1733,
-      "total_votes": 320425,
+      "total_votes": 266604,
       "dem_candidate": "ANGELA WALTON MOSLEY",
       "rep_candidate": "DAVID GREGORY",
-      "margin": -111008,
-      "margin_pct": -34.643988,
+      "margin": -69489,
+      "margin_pct": -26.0645,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 47670,
+      "rep_votes": 6151,
+      "other_votes": 0,
+      "total_votes": 53821,
+      "dem_candidate": "Steve Roberts",
+      "rep_candidate": "Robert Vroman",
+      "margin": -41519,
+      "margin_pct": -77.142751,
       "winner": "DEM",
       "color": ""
     },
@@ -548,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 16717,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 22974,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +587,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Hudson",
       "margin": 10250,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },

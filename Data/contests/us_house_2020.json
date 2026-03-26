@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2020,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 414613,
-      "rep_votes": 234216,
-      "other_votes": 14547,
-      "total_votes": 663376,
-      "dem_candidate": "Cori Bush",
+      "dem_votes": 309846,
+      "rep_votes": 211037,
+      "other_votes": 11599,
+      "total_votes": 532482,
+      "dem_candidate": "Jill Schupp",
       "rep_candidate": "Ann Wagner",
-      "margin": -180397,
-      "margin_pct": -27.193778,
+      "margin": -98809,
+      "margin_pct": -18.556308,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 104767,
+      "rep_votes": 23179,
+      "other_votes": 2948,
+      "total_votes": 130894,
+      "dem_candidate": "Cori Bush",
+      "rep_candidate": "Anthony Rogers",
+      "margin": -81588,
+      "margin_pct": -62.331352,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 368792,
-      "rep_votes": 217468,
-      "other_votes": 19803,
-      "total_votes": 606063,
+      "dem_votes": 280190,
+      "rep_votes": 197310,
+      "other_votes": 15285,
+      "total_votes": 492785,
       "dem_candidate": "MARK OSMACK",
       "rep_candidate": "VIVEK MALEK",
-      "margin": -151324,
-      "margin_pct": -24.968361,
+      "margin": -82880,
+      "margin_pct": -16.818694,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 88602,
+      "rep_votes": 20158,
+      "other_votes": 4518,
+      "total_votes": 113278,
+      "dem_candidate": "Mark Osmack",
+      "rep_candidate": "Vivek Malek",
+      "margin": -68444,
+      "margin_pct": -60.421264,
       "winner": "DEM",
       "color": ""
     },

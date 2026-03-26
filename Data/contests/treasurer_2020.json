@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2020,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 395370,
-      "rep_votes": 244302,
-      "other_votes": 17701,
-      "total_votes": 657373,
+      "dem_votes": 293444,
+      "rep_votes": 219422,
+      "other_votes": 13611,
+      "total_votes": 526477,
       "dem_candidate": "Vicki Lorenz Englund",
       "rep_candidate": "Scott Fitzpatrick",
-      "margin": -151068,
-      "margin_pct": -22.980561,
+      "margin": -74022,
+      "margin_pct": -14.059873,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 101926,
+      "rep_votes": 24880,
+      "other_votes": 4090,
+      "total_votes": 130896,
+      "dem_candidate": "Vicki Lorenz Englund",
+      "rep_candidate": "Scott Fitzpatrick",
+      "margin": -77046,
+      "margin_pct": -58.860469,
       "winner": "DEM",
       "color": ""
     },

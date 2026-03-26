@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 329021,
-      "rep_votes": 258741,
-      "other_votes": 21448,
-      "total_votes": 609210,
+      "dem_votes": 239341,
+      "rep_votes": 233031,
+      "other_votes": 12997,
+      "total_votes": 485369,
       "dem_candidate": "Bob Holden",
       "rep_candidate": "Jim Talent",
-      "margin": -70280,
-      "margin_pct": -11.536252,
+      "margin": -6310,
+      "margin_pct": -1.300042,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 89680,
+      "rep_votes": 25710,
+      "other_votes": 8451,
+      "total_votes": 123841,
+      "dem_candidate": "Bob Holden",
+      "rep_candidate": "Jim Talent",
+      "margin": -63970,
+      "margin_pct": -51.654945,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2002,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -925,7 +925,7 @@
       "dem_candidate": "Ike Skelton",
       "rep_candidate": "James Noland",
       "margin": -2415,
-      "margin_pct": -35.0,
+      "margin_pct": -35,
       "winner": "DEM",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 258888,
-      "rep_votes": 208389,
-      "other_votes": 10505,
-      "total_votes": 477782,
+      "dem_votes": 184619,
+      "rep_votes": 191464,
+      "other_votes": 8309,
+      "total_votes": 384392,
       "dem_candidate": "William Clay",
       "rep_candidate": "W. Akin",
-      "margin": -50499,
-      "margin_pct": -10.569465,
+      "margin": 6845,
+      "margin_pct": 1.780734,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 74269,
+      "rep_votes": 16925,
+      "other_votes": 2196,
+      "total_votes": 93390,
+      "dem_candidate": "William Clay",
+      "rep_candidate": "Catherine Enz",
+      "margin": -57344,
+      "margin_pct": -61.40272,
       "winner": "DEM",
       "color": ""
     },

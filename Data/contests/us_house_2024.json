@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 377423,
-      "rep_votes": 206914,
-      "other_votes": 25695,
-      "total_votes": 610032,
+      "dem_votes": 290408,
+      "rep_votes": 190058,
+      "other_votes": 17843,
+      "total_votes": 498309,
       "dem_candidate": "WESLEY BELL",
       "rep_candidate": "ANN WAGNER",
-      "margin": -170509,
-      "margin_pct": -27.950829,
+      "margin": -100350,
+      "margin_pct": -20.138107,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 87015,
+      "rep_votes": 16856,
+      "other_votes": 7852,
+      "total_votes": 111723,
+      "dem_candidate": "Wesley Bell",
+      "rep_candidate": "Andrew Jones",
+      "margin": -70159,
+      "margin_pct": -62.797275,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 377228,
-      "rep_votes": 215951,
-      "other_votes": 12674,
-      "total_votes": 605853,
+      "dem_votes": 286847,
+      "rep_votes": 195717,
+      "other_votes": 9900,
+      "total_votes": 492464,
       "dem_candidate": "ELAD JONATHAN GROSS",
       "rep_candidate": "ANDREW BAILEY",
-      "margin": -161277,
-      "margin_pct": -26.619824,
+      "margin": -91130,
+      "margin_pct": -18.504906,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 90381,
+      "rep_votes": 20234,
+      "other_votes": 2774,
+      "total_votes": 113389,
+      "dem_candidate": "Elad Jonathan Gross",
+      "rep_candidate": "Andrew Bailey",
+      "margin": -70147,
+      "margin_pct": -61.864026,
       "winner": "DEM",
       "color": ""
     },

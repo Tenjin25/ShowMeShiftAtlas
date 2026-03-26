@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_house",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 5943,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sam Gaskill",
       "margin": 9635,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "Martin (Bubs) Hohulin",
       "margin": 4524,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Delbert L. Scott",
       "margin": 5754,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "Don Koller",
       "rep_candidate": "",
       "margin": -1762,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ronnie Miller",
       "margin": 4509,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -301,7 +301,7 @@
       "dem_candidate": "Sam Berkowitz",
       "rep_candidate": "",
       "margin": -3312,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -327,7 +327,7 @@
       "dem_candidate": "Randall H. Relford",
       "rep_candidate": "",
       "margin": -6626,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Crawford",
       "margin": 5489,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ronnie Miller",
       "margin": 2906,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "David G. Klindt",
       "margin": 2852,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 4122,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -457,7 +457,7 @@
       "dem_candidate": "Phillip Britt",
       "rep_candidate": "",
       "margin": -7730,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 2479,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "David G. Klindt",
       "margin": 4016,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "David G. Klindt",
       "margin": 3049,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Delbert L. Scott",
       "margin": 3240,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 2236,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "Wayne Crump",
       "rep_candidate": "",
       "margin": -3494,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -678,7 +678,7 @@
       "dem_candidate": "Sam Berkowitz",
       "rep_candidate": "",
       "margin": -1662,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -704,7 +704,7 @@
       "dem_candidate": "D. J. Davis",
       "rep_candidate": "",
       "margin": -11479,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -717,7 +717,7 @@
       "dem_candidate": "",
       "rep_candidate": "Linda Bartelsmeyer",
       "margin": 10596,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -730,7 +730,7 @@
       "dem_candidate": "Sam Berkowitz",
       "rep_candidate": "",
       "margin": -3644,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -808,7 +808,7 @@
       "dem_candidate": "",
       "rep_candidate": "Merrill Townley",
       "margin": 2809,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -847,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "David G. Klindt",
       "margin": 1444,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -860,7 +860,7 @@
       "dem_candidate": "",
       "rep_candidate": "Blaine Luetkemeyer",
       "margin": 7692,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -886,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Larry Crawford",
       "margin": 5187,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -977,7 +977,7 @@
       "dem_candidate": "Don Koller",
       "rep_candidate": "",
       "margin": -3346,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -990,7 +990,7 @@
       "dem_candidate": "",
       "rep_candidate": "Merrill Townley",
       "margin": 5055,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1003,7 +1003,7 @@
       "dem_candidate": "",
       "rep_candidate": "Estel Boyd Robirds",
       "margin": 3402,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1016,7 +1016,7 @@
       "dem_candidate": "Denny J. Merideth, III",
       "rep_candidate": "",
       "margin": -5046,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1042,7 +1042,7 @@
       "dem_candidate": "",
       "rep_candidate": "Matt Boatright",
       "margin": 12733,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1198,7 +1198,7 @@
       "dem_candidate": "Jim Seigfreid",
       "rep_candidate": "",
       "margin": -7722,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1211,7 +1211,7 @@
       "dem_candidate": "Sam Berkowitz",
       "rep_candidate": "",
       "margin": -1540,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1224,7 +1224,7 @@
       "dem_candidate": "Sam Berkowitz",
       "rep_candidate": "",
       "margin": -1699,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1250,7 +1250,7 @@
       "dem_candidate": "Don Koller",
       "rep_candidate": "",
       "margin": -2672,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 301832,
-      "rep_votes": 207103,
-      "other_votes": 6765,
-      "total_votes": 515700,
+      "dem_votes": 202729,
+      "rep_votes": 196966,
+      "other_votes": 4543,
+      "total_votes": 404238,
       "dem_candidate": "Thomas (Tom) George",
       "rep_candidate": "William (Bill) Linton",
-      "margin": -94729,
-      "margin_pct": -18.369013,
+      "margin": -5763,
+      "margin_pct": -1.425645,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 99103,
+      "rep_votes": 10137,
+      "other_votes": 2222,
+      "total_votes": 111462,
+      "dem_candidate": "Amber Holly Boykins",
+      "rep_candidate": "Joe Hodes",
+      "margin": -88966,
+      "margin_pct": -79.817337,
       "winner": "DEM",
       "color": ""
     },
@@ -1354,7 +1367,7 @@
       "dem_candidate": "",
       "rep_candidate": "Judy Berkstresser",
       "margin": 9504,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1380,7 +1393,7 @@
       "dem_candidate": "",
       "rep_candidate": "Estel Boyd Robirds",
       "margin": 11654,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -1393,7 +1406,7 @@
       "dem_candidate": "Mark Hampton",
       "rep_candidate": "",
       "margin": -7870,
-      "margin_pct": -100.0,
+      "margin_pct": -100,
       "winner": "DEM",
       "color": ""
     },
@@ -1484,7 +1497,7 @@
       "dem_candidate": "",
       "rep_candidate": "Van Kelly",
       "margin": 6232,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

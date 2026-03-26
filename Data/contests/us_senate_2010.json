@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2010,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 267167,
-      "rep_votes": 183811,
-      "other_votes": 15188,
-      "total_votes": 466166,
+      "dem_votes": 195229,
+      "rep_votes": 167458,
+      "other_votes": 12747,
+      "total_votes": 375434,
       "dem_candidate": "Robin Carnahan",
       "rep_candidate": "Roy Blunt",
-      "margin": -83356,
-      "margin_pct": -17.881184,
+      "margin": -27771,
+      "margin_pct": -7.397039,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 71938,
+      "rep_votes": 16353,
+      "other_votes": 2441,
+      "total_votes": 90732,
+      "dem_candidate": "Robin Carnahan",
+      "rep_candidate": "Roy Blunt",
+      "margin": -55585,
+      "margin_pct": -61.26284,
       "winner": "DEM",
       "color": ""
     },

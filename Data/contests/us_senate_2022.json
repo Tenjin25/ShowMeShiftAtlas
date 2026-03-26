@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2022,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 296611,
-      "rep_votes": 150032,
-      "other_votes": 7081,
-      "total_votes": 453724,
+      "dem_votes": 226772,
+      "rep_votes": 137197,
+      "other_votes": 5659,
+      "total_votes": 369628,
       "dem_candidate": "Trudy Busch Valentine",
       "rep_candidate": "Eric Schmitt",
-      "margin": -146579,
-      "margin_pct": -32.305763,
+      "margin": -89575,
+      "margin_pct": -24.233824,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 69839,
+      "rep_votes": 12835,
+      "other_votes": 1422,
+      "total_votes": 84096,
+      "dem_candidate": "Trudy Busch Valentine",
+      "rep_candidate": "Eric Schmitt",
+      "margin": -57004,
+      "margin_pct": -67.784437,
       "winner": "DEM",
       "color": ""
     },

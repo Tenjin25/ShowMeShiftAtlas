@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1211,7 +1211,7 @@
       "dem_candidate": "Nancy Farmer",
       "rep_candidate": "Christopher Bond",
       "margin": 640,
-      "margin_pct": 32.0,
+      "margin_pct": 32,
       "winner": "REP",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 386731,
-      "rep_votes": 285753,
-      "other_votes": 6214,
-      "total_votes": 678698,
+      "dem_votes": 277503,
+      "rep_votes": 254285,
+      "other_votes": 4642,
+      "total_votes": 536430,
       "dem_candidate": "Nancy Farmer",
       "rep_candidate": "Christopher Bond",
-      "margin": -100978,
-      "margin_pct": -14.878193,
+      "margin": -23218,
+      "margin_pct": -4.328244,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 109228,
+      "rep_votes": 31468,
+      "other_votes": 1572,
+      "total_votes": 142268,
+      "dem_candidate": "Nancy Farmer",
+      "rep_candidate": "Christopher Bond",
+      "margin": -77760,
+      "margin_pct": -54.657407,
       "winner": "DEM",
       "color": ""
     },

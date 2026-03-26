@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2016,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 378924,
-      "rep_votes": 255517,
+      "dem_votes": 276552,
+      "rep_votes": 229765,
       "other_votes": 0,
-      "total_votes": 634441,
+      "total_votes": 506317,
       "dem_candidate": "Teresa Hensley",
       "rep_candidate": "Josh Hawley",
-      "margin": -123407,
-      "margin_pct": -19.451296,
+      "margin": -46787,
+      "margin_pct": -9.240654,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 102372,
+      "rep_votes": 25752,
+      "other_votes": 0,
+      "total_votes": 128124,
+      "dem_candidate": "Teresa Hensley",
+      "rep_candidate": "Josh Hawley",
+      "margin": -76620,
+      "margin_pct": -59.801442,
       "winner": "DEM",
       "color": ""
     },

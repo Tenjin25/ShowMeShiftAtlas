@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "attorney_general",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 466866,
-      "rep_votes": 192102,
-      "other_votes": 12941,
-      "total_votes": 671909,
+      "dem_votes": 349965,
+      "rep_votes": 173010,
+      "other_votes": 8734,
+      "total_votes": 531709,
       "dem_candidate": "Jeremiah Nixon",
       "rep_candidate": "Christopher Byrd",
-      "margin": -274764,
-      "margin_pct": -40.893038,
+      "margin": -176955,
+      "margin_pct": -33.280422,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 116901,
+      "rep_votes": 19092,
+      "other_votes": 4207,
+      "total_votes": 140200,
+      "dem_candidate": "Jeremiah Nixon",
+      "rep_candidate": "Christopher Byrd",
+      "margin": -97809,
+      "margin_pct": -69.763909,
       "winner": "DEM",
       "color": ""
     },

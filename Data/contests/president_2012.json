@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 415877,
-      "rep_votes": 247685,
-      "other_votes": 8721,
-      "total_votes": 672283,
+      "dem_votes": 297097,
+      "rep_votes": 224742,
+      "other_votes": 6837,
+      "total_votes": 528676,
       "dem_candidate": "Barack Obama, Joe Biden",
       "rep_candidate": "Mitt Romney, Paul Ryan",
-      "margin": -168192,
-      "margin_pct": -25.018036,
+      "margin": -72355,
+      "margin_pct": -13.686076,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 118780,
+      "rep_votes": 22943,
+      "other_votes": 1884,
+      "total_votes": 143607,
+      "dem_candidate": "Barack Obama, Joe Biden",
+      "rep_candidate": "Mitt Romney, Paul Ryan",
+      "margin": -95837,
+      "margin_pct": -66.735605,
       "winner": "DEM",
       "color": ""
     },

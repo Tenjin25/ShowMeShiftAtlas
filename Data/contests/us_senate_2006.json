@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2006,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 304447,
-      "rep_votes": 196855,
-      "other_votes": 8888,
-      "total_votes": 510190,
+      "dem_votes": 229264,
+      "rep_votes": 178720,
+      "other_votes": 7160,
+      "total_votes": 415144,
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "James Talent",
-      "margin": -107592,
-      "margin_pct": -21.088614,
+      "margin": -50544,
+      "margin_pct": -12.175053,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 75183,
+      "rep_votes": 18135,
+      "other_votes": 1728,
+      "total_votes": 95046,
+      "dem_candidate": "Claire McCaskill",
+      "rep_candidate": "James Talent",
+      "margin": -57048,
+      "margin_pct": -60.021463,
       "winner": "DEM",
       "color": ""
     },

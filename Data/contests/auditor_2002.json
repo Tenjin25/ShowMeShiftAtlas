@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "auditor",
     "year": 2002,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -990,7 +990,7 @@
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "Allen Hanson",
       "margin": -1414,
-      "margin_pct": -27.617188,
+      "margin_pct": -27.617187,
       "winner": "DEM",
       "color": ""
     },
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 310522,
-      "rep_votes": 143726,
-      "other_votes": 17275,
-      "total_votes": 471523,
+      "dem_votes": 236935,
+      "rep_votes": 131235,
+      "other_votes": 12792,
+      "total_votes": 380962,
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "Allen Hanson",
-      "margin": -166796,
-      "margin_pct": -35.373884,
+      "margin": -105700,
+      "margin_pct": -27.745549,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 73587,
+      "rep_votes": 12491,
+      "other_votes": 4483,
+      "total_votes": 90561,
+      "dem_candidate": "Claire McCaskill",
+      "rep_candidate": "Allen Hanson",
+      "margin": -61096,
+      "margin_pct": -67.463919,
       "winner": "DEM",
       "color": ""
     },

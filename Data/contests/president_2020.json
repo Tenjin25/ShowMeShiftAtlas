@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2020,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 438228,
-      "rep_votes": 220758,
-      "other_votes": 10879,
-      "total_votes": 669865,
+      "dem_votes": 328139,
+      "rep_votes": 199284,
+      "other_votes": 8575,
+      "total_votes": 535998,
       "dem_candidate": "Joseph R. Biden",
       "rep_candidate": "Donald J. Trump",
-      "margin": -217470,
-      "margin_pct": -32.46475,
+      "margin": -128855,
+      "margin_pct": -24.040202,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 110089,
+      "rep_votes": 21474,
+      "other_votes": 2304,
+      "total_votes": 133867,
+      "dem_candidate": "Joseph R. Biden",
+      "rep_candidate": "Donald J. Trump",
+      "margin": -88615,
+      "margin_pct": -66.196299,
       "winner": "DEM",
       "color": ""
     },

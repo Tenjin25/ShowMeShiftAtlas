@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2014,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 181539,
-      "rep_votes": 153210,
-      "other_votes": 14477,
-      "total_votes": 349226,
+      "dem_votes": 137031,
+      "rep_votes": 142613,
+      "other_votes": 10814,
+      "total_votes": 290458,
       "dem_candidate": "Lacy Clay",
       "rep_candidate": "Ann Wagner",
-      "margin": -28329,
-      "margin_pct": -8.111939,
+      "margin": 5582,
+      "margin_pct": 1.921792,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 44508,
+      "rep_votes": 10597,
+      "other_votes": 3663,
+      "total_votes": 58768,
+      "dem_candidate": "Lacy Clay",
+      "rep_candidate": "Daniel J. Elder",
+      "margin": -33911,
+      "margin_pct": -57.703172,
       "winner": "DEM",
       "color": ""
     },

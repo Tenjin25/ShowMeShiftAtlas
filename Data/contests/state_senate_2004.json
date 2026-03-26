@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2004,
-    "rows": 51,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 52,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -541,14 +541,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 232244,
-      "rep_votes": 160567,
-      "other_votes": 7472,
-      "total_votes": 400283,
+      "dem_votes": 176491,
+      "rep_votes": 157122,
+      "other_votes": 2655,
+      "total_votes": 336268,
       "dem_candidate": "Timothy Green",
       "rep_candidate": "John Loudon",
-      "margin": -71677,
-      "margin_pct": -17.906581,
+      "margin": -19369,
+      "margin_pct": -5.759989,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 55753,
+      "rep_votes": 3445,
+      "other_votes": 4817,
+      "total_votes": 64015,
+      "dem_candidate": "Maida Coleman",
+      "rep_candidate": "Robert Yeckel",
+      "margin": -52308,
+      "margin_pct": -81.712099,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2018,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 380843,
-      "rep_votes": 179909,
-      "other_votes": 12003,
-      "total_votes": 572755,
+      "dem_votes": 284015,
+      "rep_votes": 163972,
+      "other_votes": 9622,
+      "total_votes": 457609,
       "dem_candidate": "Claire McCaskill",
       "rep_candidate": "Josh Hawley",
-      "margin": -200934,
-      "margin_pct": -35.082016,
+      "margin": -120043,
+      "margin_pct": -26.232657,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 96828,
+      "rep_votes": 15937,
+      "other_votes": 2381,
+      "total_votes": 115146,
+      "dem_candidate": "Claire McCaskill",
+      "rep_candidate": "Josh Hawley",
+      "margin": -80891,
+      "margin_pct": -70.250812,
       "winner": "DEM",
       "color": ""
     },

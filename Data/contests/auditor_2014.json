@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "auditor",
     "year": 2014,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1309,13 +1309,26 @@
     {
       "county": "ST. LOUIS",
       "dem_votes": 0,
-      "rep_votes": 202529,
-      "other_votes": 94250,
-      "total_votes": 296779,
+      "rep_votes": 181710,
+      "other_votes": 68960,
+      "total_votes": 250670,
       "dem_candidate": "",
       "rep_candidate": "Tom Schweich",
-      "margin": 202529,
-      "margin_pct": 68.242362,
+      "margin": 181710,
+      "margin_pct": 72.489728,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 0,
+      "rep_votes": 20819,
+      "other_votes": 25290,
+      "total_votes": 46109,
+      "dem_candidate": "",
+      "rep_candidate": "Tom Schweich",
+      "margin": 20819,
+      "margin_pct": 45.151706,
       "winner": "REP",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 395098,
-      "rep_votes": 229925,
-      "other_votes": 24938,
-      "total_votes": 649961,
+      "dem_votes": 284267,
+      "rep_votes": 206918,
+      "other_votes": 19697,
+      "total_votes": 510882,
       "dem_candidate": "Susan Montee",
       "rep_candidate": "Peter Kinder",
-      "margin": -165173,
-      "margin_pct": -25.412756,
+      "margin": -77349,
+      "margin_pct": -15.140287,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 110831,
+      "rep_votes": 23007,
+      "other_votes": 5241,
+      "total_votes": 139079,
+      "dem_candidate": "Susan Montee",
+      "rep_candidate": "Peter Kinder",
+      "margin": -87824,
+      "margin_pct": -63.146845,
       "winner": "DEM",
       "color": ""
     },

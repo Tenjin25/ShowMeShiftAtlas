@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2000,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 344339,
-      "rep_votes": 244083,
-      "other_votes": 16623,
-      "total_votes": 605045,
-      "dem_candidate": "William Lacy Clay",
+      "dem_votes": 247298,
+      "rep_votes": 221758,
+      "other_votes": 13103,
+      "total_votes": 482159,
+      "dem_candidate": "Ted House",
       "rep_candidate": "Todd Akin",
-      "margin": -100256,
-      "margin_pct": -16.570007,
+      "margin": -25540,
+      "margin_pct": -5.297008,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 97041,
+      "rep_votes": 22325,
+      "other_votes": 3520,
+      "total_votes": 122886,
+      "dem_candidate": "William Lacy Clay",
+      "rep_candidate": "Bill Federer",
+      "margin": -74716,
+      "margin_pct": -60.801068,
       "winner": "DEM",
       "color": ""
     },

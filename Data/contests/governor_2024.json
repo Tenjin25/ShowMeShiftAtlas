@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 379980,
-      "rep_votes": 222574,
-      "other_votes": 12508,
-      "total_votes": 615062,
+      "dem_votes": 288946,
+      "rep_votes": 201181,
+      "other_votes": 9694,
+      "total_votes": 499821,
       "dem_candidate": "CRYSTAL QUADE",
       "rep_candidate": "MIKE KEHOE",
-      "margin": -157406,
-      "margin_pct": -25.591892,
+      "margin": -87765,
+      "margin_pct": -17.559286,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 91034,
+      "rep_votes": 21393,
+      "other_votes": 2814,
+      "total_votes": 115241,
+      "dem_candidate": "Crystal Quade",
+      "rep_candidate": "Mike Kehoe",
+      "margin": -69641,
+      "margin_pct": -60.430749,
       "winner": "DEM",
       "color": ""
     },

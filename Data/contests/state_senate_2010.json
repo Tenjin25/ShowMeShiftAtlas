@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2010,
-    "rows": 67,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 68,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 4916,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 1904,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2789,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -119,7 +119,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kehoe",
       "margin": 11617,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 5720,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -184,7 +184,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kehoe",
       "margin": 23789,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 2571,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2463,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -249,7 +249,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2978,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 1955,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2782,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 2486,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 1587,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 27152,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -483,7 +483,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 3426,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 3839,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 1082,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -548,7 +548,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kehoe",
       "margin": 6812,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -561,7 +561,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kehoe",
       "margin": 4336,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -600,7 +600,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Kehoe",
       "margin": 5848,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 15467,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -626,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 6044,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -814,14 +814,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 109536,
+      "dem_votes": 73873,
       "rep_votes": 45460,
-      "other_votes": 7058,
-      "total_votes": 162054,
+      "other_votes": 546,
+      "total_votes": 119879,
       "dem_candidate": "Maria Chappelle-Nadal",
       "rep_candidate": "John Lamping",
-      "margin": -64076,
-      "margin_pct": -39.539906,
+      "margin": -28413,
+      "margin_pct": -23.701399,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 35663,
+      "rep_votes": 0,
+      "other_votes": 6512,
+      "total_votes": 42175,
+      "dem_candidate": "Joe Keaveny",
+      "rep_candidate": "",
+      "margin": -35663,
+      "margin_pct": -84.559573,
       "winner": "DEM",
       "color": ""
     },
@@ -834,7 +847,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 1908,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -873,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brad Lager",
       "margin": 869,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

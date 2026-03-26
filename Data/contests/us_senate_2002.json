@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_senate",
     "year": 2002,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 274807,
-      "rep_votes": 205469,
-      "other_votes": 6013,
-      "total_votes": 486289,
+      "dem_votes": 200985,
+      "rep_votes": 185923,
+      "other_votes": 4278,
+      "total_votes": 391186,
       "dem_candidate": "Jean Carnahan",
       "rep_candidate": "Jim Talent",
-      "margin": -69338,
-      "margin_pct": -14.258599,
+      "margin": -15062,
+      "margin_pct": -3.850342,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 73822,
+      "rep_votes": 19546,
+      "other_votes": 1735,
+      "total_votes": 95103,
+      "dem_candidate": "Jean Carnahan",
+      "rep_candidate": "Jim Talent",
+      "margin": -54276,
+      "margin_pct": -57.070755,
       "winner": "DEM",
       "color": ""
     },

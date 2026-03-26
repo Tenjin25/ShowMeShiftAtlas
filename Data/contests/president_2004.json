@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "president",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 411417,
-      "rep_votes": 272762,
-      "other_votes": 3442,
-      "total_votes": 687621,
+      "dem_votes": 295284,
+      "rep_votes": 244969,
+      "other_votes": 2730,
+      "total_votes": 542983,
       "dem_candidate": "John F. Kerry",
       "rep_candidate": "George W. Bush",
-      "margin": -138655,
-      "margin_pct": -20.164451,
+      "margin": -50315,
+      "margin_pct": -9.266404,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 116133,
+      "rep_votes": 27793,
+      "other_votes": 712,
+      "total_votes": 144638,
+      "dem_candidate": "John F. Kerry",
+      "rep_candidate": "George W. Bush",
+      "margin": -88340,
+      "margin_pct": -61.076619,
       "winner": "DEM",
       "color": ""
     },

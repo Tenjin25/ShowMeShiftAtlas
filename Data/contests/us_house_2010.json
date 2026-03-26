@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2010,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 250630,
-      "rep_votes": 197785,
-      "other_votes": 13243,
-      "total_votes": 461658,
+      "dem_votes": 180213,
+      "rep_votes": 180584,
+      "other_votes": 10677,
+      "total_votes": 371474,
       "dem_candidate": "Lacy Clay",
       "rep_candidate": "Todd Akin",
-      "margin": -52845,
-      "margin_pct": -11.446785,
+      "margin": 371,
+      "margin_pct": 0.099872,
+      "winner": "REP",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 70417,
+      "rep_votes": 17201,
+      "other_votes": 2566,
+      "total_votes": 90184,
+      "dem_candidate": "Lacy Clay",
+      "rep_candidate": "Ed Martin",
+      "margin": -53216,
+      "margin_pct": -59.00825,
       "winner": "DEM",
       "color": ""
     },

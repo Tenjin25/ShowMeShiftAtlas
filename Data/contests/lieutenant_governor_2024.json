@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "lieutenant_governor",
     "year": 2024,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 375374,
-      "rep_votes": 209865,
-      "other_votes": 21574,
-      "total_votes": 606813,
+      "dem_votes": 285224,
+      "rep_votes": 191288,
+      "other_votes": 16721,
+      "total_votes": 493233,
       "dem_candidate": "RICHARD BROWN",
       "rep_candidate": "DAVE WASINGER",
-      "margin": -165509,
-      "margin_pct": -27.275124,
+      "margin": -93936,
+      "margin_pct": -19.044954,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 90150,
+      "rep_votes": 18577,
+      "other_votes": 4853,
+      "total_votes": 113580,
+      "dem_candidate": "Richard Brown",
+      "rep_candidate": "Dave Wasinger",
+      "margin": -71573,
+      "margin_pct": -63.015496,
       "winner": "DEM",
       "color": ""
     },

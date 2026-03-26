@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2012,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 384185,
-      "rep_votes": 245246,
-      "other_votes": 20117,
-      "total_votes": 649548,
+      "dem_votes": 272062,
+      "rep_votes": 224159,
+      "other_votes": 15045,
+      "total_votes": 511266,
       "dem_candidate": "Lacy Clay",
       "rep_candidate": "Ann Wagner",
-      "margin": -138939,
-      "margin_pct": -21.390105,
+      "margin": -47903,
+      "margin_pct": -9.369487,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 112123,
+      "rep_votes": 21087,
+      "other_votes": 5072,
+      "total_votes": 138282,
+      "dem_candidate": "Lacy Clay",
+      "rep_candidate": "Robyn Hamlin",
+      "margin": -91036,
+      "margin_pct": -65.833586,
       "winner": "DEM",
       "color": ""
     },

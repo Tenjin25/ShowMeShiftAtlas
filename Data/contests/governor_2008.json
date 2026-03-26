@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2008,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 489549,
-      "rep_votes": 200483,
-      "other_votes": 12658,
-      "total_votes": 702690,
+      "dem_votes": 357649,
+      "rep_votes": 180278,
+      "other_votes": 9400,
+      "total_votes": 547327,
       "dem_candidate": "Jeremiah Nixon",
       "rep_candidate": "Kenny Hulshof",
-      "margin": -289066,
-      "margin_pct": -41.137059,
+      "margin": -177371,
+      "margin_pct": -32.40677,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 131900,
+      "rep_votes": 20205,
+      "other_votes": 3258,
+      "total_votes": 155363,
+      "dem_candidate": "Jeremiah Nixon",
+      "rep_candidate": "Kenny Hulshof",
+      "margin": -111695,
+      "margin_pct": -71.892922,
       "winner": "DEM",
       "color": ""
     },

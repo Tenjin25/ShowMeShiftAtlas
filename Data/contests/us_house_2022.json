@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2022,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 271248,
-      "rep_votes": 169783,
-      "other_votes": 10484,
-      "total_votes": 451515,
-      "dem_candidate": "Cori Bush",
+      "dem_votes": 207508,
+      "rep_votes": 152610,
+      "other_votes": 8070,
+      "total_votes": 368188,
+      "dem_candidate": "Trish Gunby",
       "rep_candidate": "Ann Wagner",
-      "margin": -101465,
-      "margin_pct": -22.472122,
+      "margin": -54898,
+      "margin_pct": -14.910318,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 63740,
+      "rep_votes": 17173,
+      "other_votes": 2414,
+      "total_votes": 83327,
+      "dem_candidate": "Cori Bush",
+      "rep_candidate": "Andrew Jones",
+      "margin": -46567,
+      "margin_pct": -55.884647,
       "winner": "DEM",
       "color": ""
     },

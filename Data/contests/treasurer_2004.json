@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "treasurer",
     "year": 2004,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 388023,
-      "rep_votes": 261560,
-      "other_votes": 14129,
-      "total_votes": 663712,
+      "dem_votes": 279943,
+      "rep_votes": 234805,
+      "other_votes": 10150,
+      "total_votes": 524898,
       "dem_candidate": "Mark Powell",
       "rep_candidate": "Sarah Steelman",
-      "margin": -126463,
-      "margin_pct": -19.053897,
+      "margin": -45138,
+      "margin_pct": -8.599385,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 108080,
+      "rep_votes": 26755,
+      "other_votes": 3979,
+      "total_votes": 138814,
+      "dem_candidate": "Mark Powell",
+      "rep_candidate": "Sarah Steelman",
+      "margin": -81325,
+      "margin_pct": -58.585589,
       "winner": "DEM",
       "color": ""
     },

@@ -8736,16 +8736,17 @@ document.addEventListener('DOMContentLoaded', function() {
       return expr;
     }
 
-    function buildDistrictTurnoutOpacityExpression(baseOpacity) {
+    function buildDistrictTurnoutOpacityExpression(baseOpacity, scopeOrView = currentView) {
       const entries = Object.entries(currentDistrictTurnoutTotals || {});
       if (!turnoutBivariateEnabled || !entries.length) return baseOpacity;
       const meta = buildTurnoutOpacityMeta(entries.map(([, total]) => total));
       if (!meta) return baseOpacity;
+      const districtExpr = districtNumberExpression(scopeOrView);
       const expr = ['case'];
       entries.forEach(([districtId, totalVotes]) => {
         const districtNum = Number(districtId);
         if (!Number.isFinite(districtNum)) return;
-        expr.push(['==', ['to-number', ['coalesce', ['get', 'DISTRICT'], ['get', 'CD118FP'], ['get', 'CD119FP'], ['get', 'SLDLST'], ['get', 'SLDUST'], ['get', 'district_id'], ['get', 'district']]], districtNum]);
+        expr.push(['==', districtExpr, districtNum]);
         expr.push(opacityFromTurnout(totalVotes, meta, baseOpacity));
       });
       expr.push(Math.max(0.18, baseOpacity - 0.20));
@@ -8904,17 +8905,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (map.getLayer('district-fill')) {
         try {
-          map.setPaintProperty('district-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(districtBaseOpacity) : districtBaseOpacity);
+          map.setPaintProperty('district-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(districtBaseOpacity, 'congressional') : districtBaseOpacity);
         } catch (_) {}
       }
       if (map.getLayer('state-house-fill')) {
         try {
-          map.setPaintProperty('state-house-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(houseBaseOpacity) : houseBaseOpacity);
+          map.setPaintProperty('state-house-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(houseBaseOpacity, 'state_house') : houseBaseOpacity);
         } catch (_) {}
       }
       if (map.getLayer('state-senate-fill')) {
         try {
-          map.setPaintProperty('state-senate-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(senateBaseOpacity) : senateBaseOpacity);
+          map.setPaintProperty('state-senate-fill', 'fill-opacity', useTurnoutOpacity ? buildDistrictTurnoutOpacityExpression(senateBaseOpacity, 'state_senate') : senateBaseOpacity);
         } catch (_) {}
       }
       if (map.getLayer('precinct-fill')) {
@@ -11799,6 +11800,25 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!m) return s;
       const n = Number(m[0]);
       return Number.isFinite(n) ? String(n) : m[0];
+    }
+
+    function normalizeDistrictScopeName(scopeOrView) {
+      const value = (scopeOrView || '').toString().trim();
+      if (value === 'districts' || value === 'congressional') return 'congressional';
+      if (value === 'state_house' || value === 'state-house' || value === 'house') return 'state_house';
+      if (value === 'state_senate' || value === 'state-senate' || value === 'senate') return 'state_senate';
+      return value || 'congressional';
+    }
+
+    function districtNumberExpression(scopeOrView = currentView) {
+      const scope = normalizeDistrictScopeName(scopeOrView);
+      if (scope === 'state_house') {
+        return ['to-number', ['coalesce', ['get', 'SLDLST'], ['get', 'DISTRICT'], ['get', 'district_id'], ['get', 'district']]];
+      }
+      if (scope === 'state_senate') {
+        return ['to-number', ['coalesce', ['get', 'SLDUST'], ['get', 'DISTRICT'], ['get', 'district_id'], ['get', 'district']]];
+      }
+      return ['to-number', ['coalesce', ['get', 'DISTRICT'], ['get', 'CD118FP'], ['get', 'CD119FP'], ['get', 'district_id'], ['get', 'district']]];
     }
 
     function getDistrictNumberFromPropsCandidates(props, candidates) {
@@ -20080,7 +20100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         expr.push([
           '==',
-          ['to-number', ['coalesce', ['get', 'DISTRICT'], ['get', 'CD118FP'], ['get', 'CD119FP'], ['get', 'district_id'], ['get', 'district']]],
+          districtNumberExpression('congressional'),
           Number(district)
         ]);
         expr.push(color);
@@ -20165,6 +20185,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
 
           const expr = ['case'];
+          const districtExpr = districtNumberExpression(districtScope);
           let totalDem = 0;
           let totalRep = 0;
           let totalVotes = 0;
@@ -20222,7 +20243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (!isNaN(districtNum)) {
-              expr.push(['==', ['to-number', ['coalesce', ['get', 'DISTRICT'], ['get', 'CD118FP'], ['get', 'CD119FP'], ['get', 'SLDLST'], ['get', 'SLDUST'], ['get', 'district_id'], ['get', 'district']]], districtNum]);
+              expr.push(['==', districtExpr, districtNum]);
               expr.push(color);
             }
           });
@@ -20301,6 +20322,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const sourceRows = currentView === 'districts'
           ? (districtsInfo || [])
           : (currentView === 'state_house' ? (stateHouseInfo || []) : (stateSenateInfo || []));
+        const districtExpr = districtNumberExpression(currentView);
         const expr = ['case'];
         let mapped = 0;
         sourceRows.forEach(row => {
@@ -20315,7 +20337,7 @@ document.addEventListener('DOMContentLoaded', function() {
             row?.pacific_vap_pct ?? row?.pacific_pct ?? row?.Pacific,
             row?.multiracial_vap_pct ?? row?.multiracial_pct ?? row?.Multiracial
           );
-          expr.push(['==', ['to-number', ['coalesce', ['get', 'DISTRICT'], ['get', 'CD118FP'], ['get', 'CD119FP'], ['get', 'SLDLST'], ['get', 'SLDUST'], ['get', 'district_id'], ['get', 'district']]], districtNum]);
+          expr.push(['==', districtExpr, districtNum]);
           expr.push(color);
           mapped += 1;
         });

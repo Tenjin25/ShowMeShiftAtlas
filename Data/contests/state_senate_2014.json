@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2014,
-    "rows": 67,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 68,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -15,7 +15,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 4699,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -28,7 +28,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 4228,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -41,7 +41,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1601,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 3956,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -106,7 +106,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Brown",
       "margin": 8760,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -119,7 +119,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 2969,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -132,7 +132,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1781,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -145,7 +145,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jay Wasson",
       "margin": 16395,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -158,7 +158,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1837,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -171,7 +171,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 9718,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -184,7 +184,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 4430,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Brown",
       "margin": 4741,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -223,7 +223,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 1799,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 3132,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -249,7 +249,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1460,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -262,7 +262,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 2300,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -275,7 +275,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Brown",
       "margin": 3297,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -314,7 +314,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1322,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -327,7 +327,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bob Dixon",
       "margin": 51003,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -340,7 +340,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 2166,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -353,7 +353,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 2051,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 2075,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1120,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -392,7 +392,7 @@
       "dem_candidate": "",
       "rep_candidate": "Will Kraus",
       "margin": 31432,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -405,7 +405,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 19362,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -431,7 +431,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1174,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -444,7 +444,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 6050,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -457,7 +457,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 2363,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -483,7 +483,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 2648,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -496,7 +496,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 4221,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -522,7 +522,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 5630,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -535,7 +535,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 986,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -613,7 +613,7 @@
       "dem_candidate": "",
       "rep_candidate": "Ron Richard",
       "margin": 11397,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -626,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 4743,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -652,7 +652,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 7943,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -665,7 +665,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Brown",
       "margin": 9043,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -678,7 +678,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 3287,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -704,7 +704,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 5832,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -717,7 +717,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Brown",
       "margin": 5988,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -730,7 +730,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1036,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -743,7 +743,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 2498,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -756,7 +756,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 5479,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -769,7 +769,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1224,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -782,7 +782,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1244,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -795,7 +795,7 @@
       "dem_candidate": "",
       "rep_candidate": "Brian Munzlinger",
       "margin": 1375,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -808,7 +808,7 @@
       "dem_candidate": "",
       "rep_candidate": "Bob Onder",
       "margin": 37607,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -821,20 +821,33 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Parson",
       "margin": 2616,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 94360,
-      "rep_votes": 55869,
+      "dem_votes": 71223,
+      "rep_votes": 49086,
       "other_votes": 3596,
-      "total_votes": 153825,
+      "total_votes": 123905,
       "dem_candidate": "Maria N. Chappelle-Nadal",
       "rep_candidate": "John R. Ashcroft",
-      "margin": -38491,
-      "margin_pct": -25.022591,
+      "margin": -22137,
+      "margin_pct": -17.866107,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 23137,
+      "rep_votes": 6783,
+      "other_votes": 0,
+      "total_votes": 29920,
+      "dem_candidate": "Joseph (Joe) Keaveny",
+      "rep_candidate": "Courtney Blunt",
+      "margin": -16354,
+      "margin_pct": -54.659091,
       "winner": "DEM",
       "color": ""
     },
@@ -847,7 +860,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 1227,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -873,7 +886,7 @@
       "dem_candidate": "",
       "rep_candidate": "Dan Hegeman",
       "margin": 618,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     }

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "governor",
     "year": 2020,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 424614,
-      "rep_votes": 230906,
-      "other_votes": 13127,
-      "total_votes": 668647,
+      "dem_votes": 317318,
+      "rep_votes": 207526,
+      "other_votes": 10412,
+      "total_votes": 535256,
       "dem_candidate": "Nicole Galloway",
       "rep_candidate": "Mike Parson",
-      "margin": -193708,
-      "margin_pct": -28.970144,
+      "margin": -109792,
+      "margin_pct": -20.512054,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 107296,
+      "rep_votes": 23380,
+      "other_votes": 2715,
+      "total_votes": 133391,
+      "dem_candidate": "Nicole Galloway",
+      "rep_candidate": "Mike Parson",
+      "margin": -83916,
+      "margin_pct": -62.909792,
       "winner": "DEM",
       "color": ""
     },

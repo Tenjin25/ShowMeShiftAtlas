@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "us_house",
     "year": 2006,
-    "rows": 114,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 115,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -1308,14 +1308,27 @@
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 293098,
-      "rep_votes": 192336,
-      "other_votes": 11833,
-      "total_votes": 497267,
+      "dem_votes": 216496,
+      "rep_votes": 178662,
+      "other_votes": 9156,
+      "total_votes": 404314,
       "dem_candidate": "William Clay",
       "rep_candidate": "W. Akin",
-      "margin": -100762,
-      "margin_pct": -20.263158,
+      "margin": -37834,
+      "margin_pct": -9.357579,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 76602,
+      "rep_votes": 13674,
+      "other_votes": 2677,
+      "total_votes": 92953,
+      "dem_candidate": "John Carnahan",
+      "rep_candidate": "David Bertelsen",
+      "margin": -62928,
+      "margin_pct": -67.698729,
       "winner": "DEM",
       "color": ""
     },

@@ -2,8 +2,8 @@
   "meta": {
     "contest_type": "state_senate",
     "year": 2022,
-    "rows": 72,
-    "generated_at": "2026-03-22T22:17:05.456349+00:00"
+    "rows": 73,
+    "generated_at": "2026-03-26T02:45:38.652Z"
   },
   "rows": [
     {
@@ -67,7 +67,7 @@
       "dem_candidate": "",
       "rep_candidate": "Curtis Trent",
       "margin": 3840,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -80,7 +80,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 6683,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -132,7 +132,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Bernskoetter",
       "margin": 15127,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -158,7 +158,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 4528,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -210,7 +210,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Bernskoetter",
       "margin": 23302,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -223,7 +223,7 @@
       "dem_candidate": "",
       "rep_candidate": "Curtis Trent",
       "margin": 2578,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -236,7 +236,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 5144,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -366,7 +366,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 6240,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -379,7 +379,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 3218,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -418,7 +418,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jill Carter",
       "margin": 29378,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -574,7 +574,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Bernskoetter",
       "margin": 7573,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -587,7 +587,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Bernskoetter",
       "margin": 4516,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -626,7 +626,7 @@
       "dem_candidate": "",
       "rep_candidate": "Mike Bernskoetter",
       "margin": 5921,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -639,7 +639,7 @@
       "dem_candidate": "",
       "rep_candidate": "Jill Carter",
       "margin": 17385,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -678,7 +678,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 11192,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -730,7 +730,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 9419,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -847,20 +847,33 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 3219,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
     {
       "county": "ST. LOUIS",
-      "dem_votes": 138095,
-      "rep_votes": 57171,
+      "dem_votes": 104177,
+      "rep_votes": 47000,
       "other_votes": 1505,
-      "total_votes": 196771,
-      "dem_candidate": "Karla May",
+      "total_votes": 152682,
+      "dem_candidate": "Tracy Mccreery",
       "rep_candidate": "George J Hruza",
-      "margin": -80924,
-      "margin_pct": -41.125979,
+      "margin": -57177,
+      "margin_pct": -37.448422,
+      "winner": "DEM",
+      "color": ""
+    },
+    {
+      "county": "ST. LOUIS CITY",
+      "dem_votes": 33918,
+      "rep_votes": 10171,
+      "other_votes": 0,
+      "total_votes": 44089,
+      "dem_candidate": "Karla May",
+      "rep_candidate": "Mary Theresa Mclean",
+      "margin": -23747,
+      "margin_pct": -53.861507,
       "winner": "DEM",
       "color": ""
     },
@@ -886,7 +899,7 @@
       "dem_candidate": "",
       "rep_candidate": "Sandy Crawford",
       "margin": 5419,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
@@ -912,7 +925,7 @@
       "dem_candidate": "",
       "rep_candidate": "Curtis Trent",
       "margin": 11251,
-      "margin_pct": 100.0,
+      "margin_pct": 100,
       "winner": "REP",
       "color": ""
     },
