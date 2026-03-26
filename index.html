@@ -11441,6 +11441,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const cacheKey = `${linesYear}|${key}`;
       if (districtSliceCache.has(cacheKey)) return districtSliceCache.get(cacheKey);
 
+      // Fast path: prefer precomputed district JSON over runtime overlay synthesis.
+      const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
+      for (const path of candidatePaths) {
+        try {
+          const payload = await loadJSON(path);
+          districtSliceCache.set(cacheKey, payload);
+          return payload;
+        } catch (_) {}
+      }
+
+      // Slow path fallback for legislative scopes when precomputed files are unavailable.
       if (isLegislativeOverlayScope(scope)) {
         try {
           const overlayPayload = await loadLegislativeDistrictOverlaySlice(scope, contestType, year, linesYear);
@@ -11451,15 +11462,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (err) {
           console.warn(`Legislative overlay load failed for ${scope} ${contestType} ${year}:`, err?.message || err);
         }
-      }
-
-      const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
-      for (const path of candidatePaths) {
-        try {
-          const payload = await loadJSON(path);
-          districtSliceCache.set(cacheKey, payload);
-          return payload;
-        } catch (_) {}
       }
 
       const fallback = linesYear === 2022
