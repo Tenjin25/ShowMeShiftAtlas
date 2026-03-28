@@ -6823,7 +6823,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (districtLines2022Btn) {
     districtLines2022Btn.onclick = function() {
       if (typeof setDistrictLinesMode === 'function') {
+        districtLinesLockedByUser = true;
         setDistrictLinesMode(2022).catch(() => {});
+      }
+    };
+  }
+  const districtLines2008Btn = document.getElementById('district-lines-2008');
+  if (districtLines2008Btn) {
+    districtLines2008Btn.onclick = function() {
+      if (typeof setDistrictLinesMode === 'function') {
+        districtLinesLockedByUser = true;
+        setDistrictLinesMode(2008).catch(() => {});
       }
     };
   }
@@ -7215,6 +7225,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="control-group" style="margin-bottom:10px;">
                 <span class="section-kicker">District Lines</span>
                 <div class="view-toggle-row" style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button id="district-lines-2008" class="view-toggle-btn" type="button" data-testid="lines-2008" aria-label="Using 2008 district lines" aria-pressed="false">2008 Lines</button>
                   <button id="district-lines-2022" class="view-toggle-btn active" type="button" data-testid="lines-2022" aria-label="Using 2022 district lines" aria-pressed="true">2022 Lines</button>
                 </div>
             </div>
@@ -7637,16 +7648,20 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_variant_overrides: '',
         districts: withBase('./Data/mo_congressional_districts_2022.geojson'),
         districts_2022: withBase('./Data/mo_congressional_districts_2022.geojson'),
+        districts_2008: withBase('./Data/mo_congressional_districts_2008.geojson'),
         state_house: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_house_2022: withBase('./Data/mo_state_house_districts_2022.geojson'),
+        state_house_2008: withBase('./Data/mo_state_house_districts_2008.geojson'),
         state_senate: withBase('./Data/mo_state_senate_districts_2022.geojson'),
         state_senate_2022: withBase('./Data/mo_state_senate_districts_2022.geojson'),
+        state_senate_2008: withBase('./Data/mo_state_senate_districts_2008.geojson'),
         county_demographics: withBase('./Data/county_demographics_2020_dp1.json'),
         precinct_demographics: withBase('./Data/precinct_demographics_2020_vap.csv'),
         election: withBase('./Data/mo_elections_aggregated.json'),
         district_election: withBase('./Data/mo_district_results_2022_lines.json'),
         district_contests_dir: withBase('./Data/district_contests'),
         district_contests_dirs: {
+          '2008': withBase('./Data/district_contests'),
           '2022': withBase('./Data/district_contests')
         },
         districts_info: withBase('./Data/empty.csv'),
@@ -7947,8 +7962,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let electionData = null; // Flattened array for compatibility
     let contestManifest = [];
     let districtManifest = [];
-    let districtManifestByLines = { '2022': [] };
+    let districtManifestByLines = { '2008': [], '2022': [] };
     let currentDistrictLinesYear = 2022;
+    let districtLinesLockedByUser = false;
     const districtGeometryCache = new Map();
     let congressionalData = []; // Optional legacy district-level table
     let candidateNameCache = new Map();
@@ -8225,6 +8241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (state.lines !== null && state.lines !== normalizeDistrictLinesYear(currentDistrictLinesYear)) {
           await setDistrictLinesMode(state.lines);
+          districtLinesLockedByUser = true;
         }
 
         if (state.view && state.view !== currentView) {
@@ -8267,24 +8284,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function normalizeDistrictLinesYear(raw) {
+      const y = Number(raw);
+      if (y === 2008) return 2008;
       return 2022;
     }
 
     function getDistrictLinesLabel(linesYear = currentDistrictLinesYear) {
-      return '2022 lines';
+      return `${normalizeDistrictLinesYear(linesYear)} lines`;
     }
 
     function getActiveDistrictContestsDir(linesYear = currentDistrictLinesYear) {
-      return CONFIG.paths.district_contests_dir;
+      const y = normalizeDistrictLinesYear(linesYear);
+      return CONFIG.paths.district_contests_dirs?.[String(y)] || CONFIG.paths.district_contests_dir;
     }
 
     function getPreferredDistrictSlicePaths(scope, contestType, year, linesYear = currentDistrictLinesYear) {
       const key = `${scope}_${contestType}_${year}`;
       const out = [];
       const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
+      const normalizedLines = normalizeDistrictLinesYear(linesYear);
 
       const y = Number(year);
       const wantsOverlapSlice = new Set(['state_house', 'state_senate', 'congressional']).has(scope)
+        && normalizedLines === 2022
         && (y === 2020 || y === 2024)
         && new Set([
           'president',
@@ -8308,18 +8330,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getActiveDistrictManifest(linesYear = currentDistrictLinesYear) {
-      return districtManifestByLines?.['2022'] || [];
+      const y = normalizeDistrictLinesYear(linesYear);
+      return districtManifestByLines?.[String(y)] || districtManifestByLines?.['2022'] || [];
     }
 
     function getDistrictGeometryPath(scope, linesYear = currentDistrictLinesYear) {
+      const y = normalizeDistrictLinesYear(linesYear);
       if (scope === 'congressional') {
-        return CONFIG.paths.districts_2022 || CONFIG.paths.districts;
+        return CONFIG.paths[`districts_${y}`] || CONFIG.paths.districts_2022 || CONFIG.paths.districts;
       }
       if (scope === 'state_house') {
-        return CONFIG.paths.state_house_2022 || CONFIG.paths.state_house;
+        return CONFIG.paths[`state_house_${y}`] || CONFIG.paths.state_house_2022 || CONFIG.paths.state_house;
       }
       if (scope === 'state_senate') {
-        return CONFIG.paths.state_senate_2022 || CONFIG.paths.state_senate;
+        return CONFIG.paths[`state_senate_${y}`] || CONFIG.paths.state_senate_2022 || CONFIG.paths.state_senate;
       }
       return '';
     }
@@ -8334,9 +8358,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateDistrictLinesToggleUI() {
       const y = normalizeDistrictLinesYear(currentDistrictLinesYear);
       const btn2022 = document.getElementById('district-lines-2022');
+      const btn2008 = document.getElementById('district-lines-2008');
       if (btn2022) {
         btn2022.classList.toggle('active', y === 2022);
         btn2022.setAttribute('aria-pressed', y === 2022 ? 'true' : 'false');
+      }
+      if (btn2008) {
+        btn2008.classList.toggle('active', y === 2008);
+        btn2008.setAttribute('aria-pressed', y === 2008 ? 'true' : 'false');
       }
     }
 
@@ -8373,12 +8402,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }));
     }
 
-    async function setDistrictLinesMode(linesYear) {
+    async function setDistrictLinesMode(linesYear, opts = {}) {
       const nextYear = normalizeDistrictLinesYear(linesYear);
       if (nextYear === normalizeDistrictLinesYear(currentDistrictLinesYear)) {
         updateDistrictLinesToggleUI();
         return;
       }
+      const shouldReapplyContest = opts?.reapplyContest !== false;
       const contestSelect = document.getElementById('contestSelect');
       const previousContestValue = (contestSelect?.value || '').toString().trim();
 
@@ -8409,7 +8439,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (canPreserveContest) {
         nextContestSelect.value = previousContestValue;
-        if (appReady) {
+        if (appReady && shouldReapplyContest) {
           try {
             await applyContest(previousContestValue);
           } catch (err) {
@@ -19577,8 +19607,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       try {
         let loadedAnyDistrictManifest = false;
-        districtManifestByLines = { '2022': [] };
-        for (const linesYear of [2022]) {
+        districtManifestByLines = { '2008': [], '2022': [] };
+        for (const linesYear of [2008, 2022]) {
           const dir = getActiveDistrictContestsDir(linesYear);
           if (!dir) continue;
           try {
@@ -19613,7 +19643,7 @@ document.addEventListener('DOMContentLoaded', function() {
           debugLog('District election data loaded:', districtElectionDataJSON);
           districtSliceCache = new Map();
           legislativeDistrictOverlayCache.clear();
-          districtManifestByLines = { '2022': [] };
+          districtManifestByLines = { '2008': [], '2022': [] };
           districtManifest = [];
           updateDistrictLinesToggleUI();
         } catch (err) {
@@ -20319,6 +20349,15 @@ document.addEventListener('DOMContentLoaded', function() {
           await applyContest(contestKey, opts);
         }
         return;
+      }
+
+      // Auto-select old district lines for early years unless the user has pinned a lines mode.
+      if (!districtLinesLockedByUser && currentView !== 'counties') {
+        const yNum = Number(year);
+        const recommendedLines = (Number.isFinite(yNum) && yNum <= 2010) ? 2008 : 2022;
+        if (recommendedLines !== normalizeDistrictLinesYear(currentDistrictLinesYear)) {
+          await setDistrictLinesMode(recommendedLines, { reapplyContest: false });
+        }
       }
       
       if (currentView === 'counties') {
