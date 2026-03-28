@@ -476,6 +476,25 @@ function mapContestType(rawOffice) {
   return null;
 }
 
+function normalizeDistrictNumber(rawDistrict) {
+  const s = String(rawDistrict || '').trim();
+  if (!s) return '';
+  const digits = s.replace(/[^0-9]/g, '');
+  if (digits) {
+    const n = Number(digits);
+    if (Number.isFinite(n)) return String(n);
+  }
+  return s.toUpperCase();
+}
+
+function mapDistrictContestScope(rawOffice) {
+  const office = normalizeOffice(rawOffice);
+  if (office.startsWith('US HOUSE') || office.startsWith('US REPRESENTATIVE')) return 'congressional';
+  if (office.startsWith('STATE HOUSE') || office.startsWith('STATE REPRESENTATIVE')) return 'state_house';
+  if (office.startsWith('STATE SENATE') || office.startsWith('STATE SENATOR')) return 'state_senate';
+  return '';
+}
+
 function parseCsvLine(line) {
   const out = [];
   let current = '';
@@ -635,6 +654,11 @@ function ensureVoteAgg(map, key) {
   return map.get(key);
 }
 
+function ensureNestedMap(map, key) {
+  if (!map.has(key)) map.set(key, new Map());
+  return map.get(key);
+}
+
 function readCrosswalkByPrecinct(csvPath) {
   const text = fs.readFileSync(csvPath, 'utf8');
   const lines = text.split(/\r?\n/).filter(Boolean);
@@ -670,7 +694,7 @@ function buildCountyWeightFallbacks(crosswalkByPrecinct) {
   const byCounty = new Map();
   const statewide = new Map();
   for (const [precinctKey, weights] of crosswalkByPrecinct.entries()) {
-    const county = String(precinctKey.split(' - ', 2)[0] || '').trim();
+    const county = normalizeCounty((precinctKey.split(' - ', 2)[0] || '').toString());
     if (!county) continue;
     if (!byCounty.has(county)) byCounty.set(county, new Map());
     const countyNode = byCounty.get(county);
@@ -840,7 +864,7 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
   return [];
 }
 
-async function readPrecinctCsvYear(year, precinctAggByContestYear, candidateTotalsByContestYear) {
+async function readPrecinctCsvYear(year, scope, precinctAggByContestYear, candidateTotalsByContestYear, districtTurnoutByLabelKey) {
   const file = path.join(DATA_DIR, `${year}1103__mo__general__precinct.csv`);
   const alt = path.join(DATA_DIR, `${year}1105__mo__general__precinct.csv`);
   const csvPath = fs.existsSync(file) ? file : (fs.existsSync(alt) ? alt : '');
@@ -863,25 +887,39 @@ async function readPrecinctCsvYear(year, precinctAggByContestYear, candidateTota
     const row = {};
     for (let i = 0; i < header.length; i += 1) row[header[i]] = parts[i];
 
-    const contestType = mapContestType(row.office);
-    if (!contestType || !STATEWIDE_CONTEST_TYPES.has(contestType)) continue;
-
     const precinctKey = buildRawPrecinctBucketKey(row);
     if (!precinctKey) continue;
 
     const votes = parseVotes(row.votes);
     if (!votes) continue;
 
+    const contestType = mapContestType(row.office);
     const bucket = partyBucket(row.party);
     const candidate = candidateName(row);
-    const contestYearKey = makeKey(contestType, String(year));
+    const contestYearKey = contestType ? makeKey(contestType, String(year)) : makeKey('unknown', String(year));
 
-    ensureVoteAgg(precinctAggByContestYear, makeKey(contestType, String(year), precinctKey))
-      .addByParty(bucket, candidate, votes);
+    if (contestType && STATEWIDE_CONTEST_TYPES.has(contestType)) {
+      ensureVoteAgg(precinctAggByContestYear, makeKey(contestType, String(year), precinctKey))
+        .addByParty(bucket, candidate, votes);
 
-    if (bucket === 'dem' || bucket === 'rep') {
-      const k = makeKey(contestType, String(year), bucket, candidate || '(unknown)');
-      candidateTotalsByContestYear.set(k, (candidateTotalsByContestYear.get(k) || 0) + votes);
+      if (bucket === 'dem' || bucket === 'rep') {
+        const k = makeKey(contestType, String(year), bucket, candidate || '(unknown)');
+        candidateTotalsByContestYear.set(k, (candidateTotalsByContestYear.get(k) || 0) + votes);
+      }
+    }
+
+    // Capture same-year district contest totals by (county, precinct_code, precinct) label.
+    // This is especially useful for non-geographic buckets like ABSENTEE / early vote that
+    // are already reported by district in the precinct CSV.
+    const districtScope = mapDistrictContestScope(row.office);
+    if (districtScope && districtScope === scope) {
+      const districtNum = normalizeDistrictNumber(row.district);
+      if (districtNum) {
+        const [countyNorm, rawCode, rawPrecinct] = splitKey(precinctKey);
+        const labelKey = makeKey(String(year), countyNorm, rawCode, rawPrecinct);
+        const districtTotals = ensureNestedMap(districtTurnoutByLabelKey, labelKey);
+        districtTotals.set(districtNum, (districtTotals.get(districtNum) || 0) + votes);
+      }
     }
 
     rowCount += 1;
@@ -938,13 +976,14 @@ async function main() {
 
   const precinctAggByContestYear = new Map();
   const candidateTotalsByContestYear = new Map();
+  const districtTurnoutByLabelKey = new Map(); // year|county|rawCode|rawPrecinct -> Map(district -> totalVotes)
   const reportEnabled = String(process.env.REPORT_MATCH || '').trim() === '1';
   const reportContest = String(process.env.REPORT_CONTEST || '').trim().toLowerCase();
   const reportYear = Number(process.env.REPORT_YEAR || 0) || null;
   const reportCounty = String(process.env.REPORT_COUNTY || '').trim().toUpperCase();
 
   for (const year of years) {
-    await readPrecinctCsvYear(year, precinctAggByContestYear, candidateTotalsByContestYear);
+    await readPrecinctCsvYear(year, scope, precinctAggByContestYear, candidateTotalsByContestYear, districtTurnoutByLabelKey);
   }
 
   // Group precinct aggs by contest/year.
@@ -973,6 +1012,7 @@ async function main() {
     const countyTotalsByCounty = reportByCounty ? new Map() : null;
     const countyDirectByCounty = reportByCounty ? new Map() : null;
     const topUnmatchedByCounty = reportByCounty ? new Map() : null;
+    const resolvedReportLabelKeys = reportByCounty ? new Set() : null;
 
     let totalVotes = 0;
     let directMatchedVotes = 0;
@@ -1036,6 +1076,7 @@ async function main() {
         const list = topUnmatchedByCounty.get(county);
         list.push({
           county,
+          label_key: makeKey(String(year), county, normalizePrecinctCodeToken(rawCode), normalizePrecinctCodeToken(rawPrecinct)),
           raw_code: String(rawCode || '').trim(),
           raw_precinct: String(rawPrecinct || '').trim(),
           votes: precinctTotal
@@ -1044,6 +1085,40 @@ async function main() {
     }
 
     for (const { county, rawCode, rawPrecinct, agg } of unmatched) {
+      const nonGeo = isNonGeographicPrecinctLabel(rawCode, rawPrecinct);
+      const sameLinesEligible = Number(year) >= 2022;
+
+      if (nonGeo && sameLinesEligible) {
+        const labelKey = makeKey(String(year), county, normalizePrecinctCodeToken(rawCode), normalizePrecinctCodeToken(rawPrecinct));
+        const districtTotals = districtTurnoutByLabelKey.get(labelKey) || null;
+        const labelWeights = districtTotals ? normalizeWeights(districtTotals) : new Map();
+        if (labelWeights.size) {
+          if (reportByCounty && resolvedReportLabelKeys) resolvedReportLabelKeys.add(labelKey);
+          const precinctTotal = agg.totalVotes;
+          directMatchedVotes += precinctTotal;
+          countyDirectAll.set(county, (countyDirectAll.get(county) || 0) + precinctTotal);
+          if (reportByCounty) {
+            countyDirectByCounty.set(county, (countyDirectByCounty.get(county) || 0) + precinctTotal);
+          }
+
+          if (!countyMatchedDistrictWeights.has(county)) countyMatchedDistrictWeights.set(county, new Map());
+          const countyTotals = countyMatchedDistrictWeights.get(county);
+
+          for (const [district, share] of labelWeights.entries()) {
+            if (!districtAgg.has(district)) districtAgg.set(district, new VoteAgg());
+            districtAgg.get(district).addScaledVotes(
+              agg.demVotes * share,
+              agg.repVotes * share,
+              agg.otherVotes * share,
+              demCandidate,
+              repCandidate
+            );
+            countyTotals.set(district, (countyTotals.get(district) || 0) + (precinctTotal * share));
+          }
+          continue;
+        }
+      }
+
       if (!countyFallbackCache.has(county)) {
         const preferred = normalizeWeights(countyMatchedDistrictWeights.get(county)); // vote-weighted from matched VTDs
         const areaFallback = normalizeWeights(countyArea.byCounty.get(county)); // area-weighted from full VTD set
@@ -1059,7 +1134,6 @@ async function main() {
         });
       }
       const node = countyFallbackCache.get(county);
-      const nonGeo = isNonGeographicPrecinctLabel(rawCode, rawPrecinct);
       const preferPreferredForNonGeo = nonGeo && node && node.preferred && node.preferred.size && (node.alpha >= 0.5);
       const fallbackWeights =
         (preferPreferredForNonGeo ? node.preferred : (node && node.blended && node.blended.size ? node.blended : null))
@@ -1099,6 +1173,7 @@ async function main() {
         if (node) {
           console.log(`REPORT ${contestType} ${year}: ${reportCounty} direct-match ${roundNumber(node.pct, 3)}% (direct=${Math.round(node.direct)}, total=${Math.round(node.total)})`);
           const list = (topUnmatchedByCounty.get(reportCounty) || [])
+            .filter(item => !(resolvedReportLabelKeys && resolvedReportLabelKeys.has(item.label_key)))
             .sort((a, b) => b.votes - a.votes)
             .slice(0, 30);
           console.log(`Top unmatched precinct labels for ${reportCounty} (${list.length}):`);
