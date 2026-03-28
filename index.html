@@ -21349,9 +21349,11 @@ document.addEventListener('DOMContentLoaded', function() {
               ? `VTD crosswalk to ${linesLabel}`
               : (sourceMethod === 'precinct_overlap_crosswalk'
                 ? `Precinct overlap crosswalk to ${linesLabel}`
+              : (sourceMethod === 'calibrated_district_stats_csv'
+                ? `Calibrated to district stats (${linesLabel})`
               : (sourceMethod === 'county_precinct_overlap_fallback'
                 ? `Precinct-overlap weighted to ${linesLabel}`
-                : `Reallocated to ${linesLabel}`));
+                : `Reallocated to ${linesLabel}`)));
             setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${allocationLabel}${coverageText}${directCoverageText}`);
             setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}${directCoverageText}`);
           }

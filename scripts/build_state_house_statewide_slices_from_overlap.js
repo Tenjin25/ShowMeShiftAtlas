@@ -52,6 +52,10 @@ const CROSSWALK_BY_SCOPE = new Map([
 
 const DISTRICT_SCOPES = ['congressional', 'state_house', 'state_senate'];
 
+function districtStatsPathForStateHousePresident(year) {
+  return path.join(DATA_DIR, `district statistics state house ${Number(year)} pres.csv`);
+}
+
 function parseArgs(argv) {
   const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, crosswalkPath: '' };
   const args = Array.from(argv || []);
@@ -766,6 +770,106 @@ function buildDistrictMapFromPrecinctCrosswalks(fromByPrecinct, toByPrecinct) {
   return out;
 }
 
+function readDistrictStatsDemRepOthShares(csvPath) {
+  const text = fs.readFileSync(csvPath, 'utf8');
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  if (lines.length < 2) return new Map();
+  const header = parseCsvLine(lines[0]).map(h => String(h || '').trim());
+  const idxId = header.indexOf('ID');
+  const idxDem = header.indexOf('Dem');
+  const idxRep = header.indexOf('Rep');
+  const idxOth = header.indexOf('Oth');
+  if (idxId < 0 || idxDem < 0 || idxRep < 0 || idxOth < 0) return new Map();
+
+  const out = new Map();
+  for (let i = 1; i < lines.length; i += 1) {
+    const parts = parseCsvLine(lines[i]);
+    const idRaw = String(parts[idxId] || '').replace(/^"|"$/g, '').trim();
+    if (!/^\d+$/.test(idRaw)) continue;
+    const id = String(Number(idRaw));
+    const dem = Number(parts[idxDem]);
+    const rep = Number(parts[idxRep]);
+    const oth = Number(parts[idxOth]);
+    if (![dem, rep, oth].every(Number.isFinite)) continue;
+    const sum = dem + rep + oth;
+    if (!(sum > 0)) continue;
+    // Normalize defensively (csv values are typically rounded).
+    out.set(id, { dem: dem / sum, rep: rep / sum, oth: oth / sum });
+  }
+  return out;
+}
+
+function apportionVotesByShares(totalVotes, shares) {
+  const tot = Math.max(0, Math.round(Number(totalVotes) || 0));
+  if (!(tot > 0) || !shares) return { dem: 0, rep: 0, oth: 0 };
+
+  const sDem = Math.max(0, Number(shares.dem) || 0);
+  const sRep = Math.max(0, Number(shares.rep) || 0);
+  const sOth = Math.max(0, Number(shares.oth) || 0);
+  const sSum = sDem + sRep + sOth;
+  if (!(sSum > 0)) return { dem: 0, rep: 0, oth: 0 };
+
+  const demF = tot * (sDem / sSum);
+  const repF = tot * (sRep / sSum);
+  const othF = tot * (sOth / sSum);
+
+  const floors = [
+    { k: 'dem', v: Math.floor(demF), frac: demF - Math.floor(demF) },
+    { k: 'rep', v: Math.floor(repF), frac: repF - Math.floor(repF) },
+    { k: 'oth', v: Math.floor(othF), frac: othF - Math.floor(othF) }
+  ];
+
+  let used = floors[0].v + floors[1].v + floors[2].v;
+  let remainder = tot - used;
+  floors.sort((a, b) => (b.frac - a.frac) || a.k.localeCompare(b.k, 'en'));
+  for (let i = 0; i < floors.length && remainder > 0; i += 1) {
+    floors[i].v += 1;
+    remainder -= 1;
+  }
+
+  const out = { dem: 0, rep: 0, oth: 0 };
+  floors.forEach(x => { out[x.k] = x.v; });
+  // Fix any off-by-one due to weird inputs.
+  const sum = out.dem + out.rep + out.oth;
+  if (sum !== tot) out.oth += (tot - sum);
+  return out;
+}
+
+function calibratePresidentialPayloadToDistrictStats(payload, year, csvPath) {
+  if (!payload?.general?.results || !csvPath || !fs.existsSync(csvPath)) return payload;
+  const sharesByDistrict = readDistrictStatsDemRepOthShares(csvPath);
+  if (!sharesByDistrict.size) return payload;
+
+  const results = payload.general.results;
+  let calibratedDistricts = 0;
+  Object.entries(results).forEach(([district, row]) => {
+    const target = sharesByDistrict.get(String(district)) || null;
+    if (!target) return;
+    const totalVotes = Math.max(0, Math.round(Number(row?.total_votes) || 0));
+    if (!(totalVotes > 0)) return;
+    const v = apportionVotesByShares(totalVotes, target);
+    row.dem_votes = v.dem;
+    row.rep_votes = v.rep;
+    row.other_votes = v.oth;
+    row.total_votes = v.dem + v.rep + v.oth;
+    row.margin = row.rep_votes - row.dem_votes;
+    row.margin_pct = row.total_votes ? roundNumber((row.margin / row.total_votes) * 100) : 0;
+    row.winner = row.margin > 0 ? 'REP' : (row.margin < 0 ? 'DEM' : 'TIE');
+    calibratedDistricts += 1;
+  });
+
+  payload.meta = payload.meta || {};
+  payload.meta.source_method = 'calibrated_district_stats_csv';
+  payload.meta.calibrated_to_district_stats_csv = true;
+  payload.meta.district_stats_csv = path.relative(ROOT, csvPath).replace(/\\/g, '/');
+  payload.meta.calibrated_districts = calibratedDistricts;
+  // When calibrated, treat coverage as complete for display purposes.
+  payload.meta.match_coverage_pct = 100;
+  payload.meta.calibrated_year = Number(year) || null;
+
+  return payload;
+}
+
 function buildCountyWeightFallbacks(crosswalkByPrecinct) {
   const byCounty = new Map();
   const statewide = new Map();
@@ -1249,7 +1353,7 @@ async function main() {
       }
     }
 
-    const payload = buildPayload(
+    let payload = buildPayload(
       scope,
       contestType,
       year,
@@ -1263,6 +1367,15 @@ async function main() {
         legacy_district_labels_enabled: Boolean(allowLegacyDistrictLabels && Number(year) < 2022)
       }
     );
+
+    // Optional calibration: for state_house presidential, overwrite district D/R/O shares
+    // using external per-district stats (keeps each district's total_votes).
+    if (scope === 'state_house' && String(contestType) === 'president') {
+      const statsPath = districtStatsPathForStateHousePresident(year);
+      if (statsPath && fs.existsSync(statsPath)) {
+        payload = calibratePresidentialPayloadToDistrictStats(payload, year, statsPath);
+      }
+    }
     const outName = `${scope}_${contestType}_${year}_overlap.json`;
     writeJson(path.join(DISTRICT_DIR, outName), payload);
     writtenFiles += 1;
