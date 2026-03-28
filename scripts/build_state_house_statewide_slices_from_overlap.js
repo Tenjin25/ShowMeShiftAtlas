@@ -57,7 +57,7 @@ function districtStatsPathForStateHousePresident(year) {
 }
 
 function parseArgs(argv) {
-  const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, crosswalkPath: '' };
+  const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, crosswalkPath: '', vtdGeojsonPath: '' };
   const args = Array.from(argv || []);
   for (let i = 0; i < args.length; i += 1) {
     const a = String(args[i] || '');
@@ -81,11 +81,17 @@ function parseArgs(argv) {
       i += 1;
       continue;
     }
+    if (a === '--vtd') {
+      out.vtdGeojsonPath = String(args[i + 1] || '').trim();
+      i += 1;
+      continue;
+    }
   }
   if (!out.crosswalkPath) out.crosswalkPath = CROSSWALK_BY_SCOPE.get(out.scope) || '';
   if (!out.crosswalkPath) {
     throw new Error(`Unknown scope "${out.scope}". Expected one of: ${Array.from(CROSSWALK_BY_SCOPE.keys()).join(', ')}`);
   }
+  if (!out.vtdGeojsonPath) out.vtdGeojsonPath = VTD20_PRECINCTS_GEOJSON;
   return out;
 }
 
@@ -138,6 +144,7 @@ function normalizeCounty(rawCounty) {
     .replace(/\u00a0/g, ' ')
     .trim()
     .toUpperCase()
+    .replace(/[.\u2019']/g, '')
     .replace(/\s+/g, ' ');
   if (!county) return '';
 
@@ -1045,9 +1052,13 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
 }
 
 async function readPrecinctCsvYear(year, scope, precinctAggByContestYear, candidateTotalsByContestYear, districtTurnoutByLabelKeyByScope) {
-  const file = path.join(DATA_DIR, `${year}1103__mo__general__precinct.csv`);
-  const alt = path.join(DATA_DIR, `${year}1105__mo__general__precinct.csv`);
-  const csvPath = fs.existsSync(file) ? file : (fs.existsSync(alt) ? alt : '');
+  const prefix = String(Number(year));
+  const csvCandidates = fs.readdirSync(DATA_DIR)
+    .filter(name => new RegExp(`^${prefix}\\d{4}__mo__general__precinct\\.csv$`, 'i').test(name))
+    .sort()
+    .map(name => path.join(DATA_DIR, name));
+
+  const csvPath = csvCandidates.length ? csvCandidates[0] : '';
   if (!csvPath) throw new Error(`Missing precinct CSV for ${year}`);
 
   const rl = readline.createInterface({
@@ -1153,9 +1164,9 @@ function buildPayload(scope, contestType, year, districtAgg, totalVotes, directM
 }
 
 async function main() {
-  const { scope, years, crosswalkPath } = parseArgs(process.argv.slice(2));
+  const { scope, years, crosswalkPath, vtdGeojsonPath } = parseArgs(process.argv.slice(2));
   const crosswalkByPrecinct = readCrosswalkByPrecinct(crosswalkPath);
-  const matcherIdx = buildPrecinctMatcherIndex(VTD20_PRECINCTS_GEOJSON);
+  const matcherIdx = buildPrecinctMatcherIndex(vtdGeojsonPath);
   const countyArea = buildCountyWeightFallbacks(crosswalkByPrecinct);
   const statewideFallbackWeights = normalizeWeights(countyArea.statewide);
 

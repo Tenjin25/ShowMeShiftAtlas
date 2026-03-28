@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2008,
+    "district_count": 9,
+    "match_coverage_pct": 100,
+    "generated_at": "2026-03-28T04:41:36.437Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 779842,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 278691,
+        "rep_votes": 144779,
+        "other_votes": 0,
+        "total_votes": 423470,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": -133912,
+        "margin_pct": -31.622547,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 208834,
+        "rep_votes": 167593,
+        "other_votes": 0,
+        "total_votes": 376427,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": -41241,
+        "margin_pct": -10.955909,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 191467,
+        "rep_votes": 171441,
+        "other_votes": 0,
+        "total_votes": 362908,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": -20026,
+        "margin_pct": -5.518203,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 153675,
+        "rep_votes": 169336,
+        "other_votes": 0,
+        "total_votes": 323011,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": 15661,
+        "margin_pct": 4.848442,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 206933,
+        "rep_votes": 116882,
+        "other_votes": 0,
+        "total_votes": 323815,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": -90051,
+        "margin_pct": -27.809397,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 160291,
+        "rep_votes": 163022,
+        "other_votes": 0,
+        "total_votes": 323313,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": 2731,
+        "margin_pct": 0.844692,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 118516,
+        "rep_votes": 203984,
+        "other_votes": 0,
+        "total_votes": 322500,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": 85468,
+        "margin_pct": 26.501705,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 125206,
+        "rep_votes": 144444,
+        "other_votes": 0,
+        "total_votes": 269650,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": 19238,
+        "margin_pct": 7.134434,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 28034,
+        "rep_votes": 31240,
+        "other_votes": 0,
+        "total_votes": 59274,
+        "dem_candidate": "Christopher Koster",
+        "rep_candidate": "Michael Gibbons",
+        "margin": 3206,
+        "margin_pct": 5.40878,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

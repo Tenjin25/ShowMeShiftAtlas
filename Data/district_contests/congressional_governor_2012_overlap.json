@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 99.997141,
+    "generated_at": "2026-03-28T04:44:20.422Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 969109,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 283211,
+        "rep_votes": 60449,
+        "other_votes": 8407,
+        "total_votes": 352067,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -222762,
+        "margin_pct": -63.272616,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 207759,
+        "rep_votes": 195525,
+        "other_votes": 8275,
+        "total_votes": 411559,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -12234,
+        "margin_pct": -2.972599,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 159810,
+        "rep_votes": 156512,
+        "other_votes": 8941,
+        "total_votes": 325263,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -3298,
+        "margin_pct": -1.013949,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 171495,
+        "rep_votes": 163236,
+        "other_votes": 11621,
+        "total_votes": 346352,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -8259,
+        "margin_pct": -2.384568,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 215186,
+        "rep_votes": 105246,
+        "other_votes": 8976,
+        "total_votes": 329408,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -109940,
+        "margin_pct": -33.375024,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 163860,
+        "rep_votes": 154408,
+        "other_votes": 9839,
+        "total_votes": 328107,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -9452,
+        "margin_pct": -2.880768,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 138623,
+        "rep_votes": 169055,
+        "other_votes": 9006,
+        "total_votes": 316684,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": 30432,
+        "margin_pct": 9.609579,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 154112,
+        "rep_votes": 155834,
+        "other_votes": 8497,
+        "total_votes": 318443,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": 1722,
+        "margin_pct": 0.540756,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

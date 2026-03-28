@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "auditor",
+    "year": 2006,
+    "district_count": 9,
+    "match_coverage_pct": 100,
+    "generated_at": "2026-03-28T04:41:10.657Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 463451,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 212168,
+        "rep_votes": 116848,
+        "other_votes": 10946,
+        "total_votes": 339962,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -95320,
+        "margin_pct": -28.038428,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 127509,
+        "rep_votes": 98342,
+        "other_votes": 7757,
+        "total_votes": 233608,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -29167,
+        "margin_pct": -12.485446,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 128483,
+        "rep_votes": 115442,
+        "other_votes": 9950,
+        "total_votes": 253875,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -13041,
+        "margin_pct": -5.13678,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 112163,
+        "rep_votes": 108922,
+        "other_votes": 9663,
+        "total_votes": 230748,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -3241,
+        "margin_pct": -1.404563,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 140184,
+        "rep_votes": 73134,
+        "other_votes": 8243,
+        "total_votes": 221561,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -67050,
+        "margin_pct": -30.262546,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 138151,
+        "rep_votes": 111273,
+        "other_votes": 10374,
+        "total_votes": 259798,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -26878,
+        "margin_pct": -10.34573,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 95714,
+        "rep_votes": 136864,
+        "other_votes": 9299,
+        "total_votes": 241877,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": 41150,
+        "margin_pct": 17.012779,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 101725,
+        "rep_votes": 105116,
+        "other_votes": 8929,
+        "total_votes": 215770,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": 3391,
+        "margin_pct": 1.571581,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 35735,
+        "rep_votes": 26638,
+        "other_votes": 2670,
+        "total_votes": 65043,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Sandra Thomas",
+        "margin": -9097,
+        "margin_pct": -13.986132,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

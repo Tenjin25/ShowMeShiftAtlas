@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "lieutenant_governor",
+    "year": 2004,
+    "district_count": 9,
+    "match_coverage_pct": 99.999962,
+    "generated_at": "2026-03-28T04:40:37.130Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 550866,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 281500,
+        "rep_votes": 184075,
+        "other_votes": 9737,
+        "total_votes": 475312,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": -97425,
+        "margin_pct": -20.497063,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 154360,
+        "rep_votes": 133265,
+        "other_votes": 6083,
+        "total_votes": 293708,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": -21095,
+        "margin_pct": -7.182304,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 116546,
+        "rep_votes": 146644,
+        "other_votes": 6960,
+        "total_votes": 270150,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": 30098,
+        "margin_pct": 11.141218,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 118545,
+        "rep_votes": 154067,
+        "other_votes": 8253,
+        "total_votes": 280865,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": 35522,
+        "margin_pct": 12.647357,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 193942,
+        "rep_votes": 116257,
+        "other_votes": 9195,
+        "total_votes": 319394,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": -77685,
+        "margin_pct": -24.322623,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 145620,
+        "rep_votes": 162001,
+        "other_votes": 9487,
+        "total_votes": 317108,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": 16381,
+        "margin_pct": 5.165748,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 99017,
+        "rep_votes": 193137,
+        "other_votes": 8630,
+        "total_votes": 300784,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": 94120,
+        "margin_pct": 31.291558,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 137592,
+        "rep_votes": 173559,
+        "other_votes": 9008,
+        "total_votes": 320159,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": 35967,
+        "margin_pct": 11.234106,
+        "winner": "REP",
+        "color": ""
+      },
+      "9": {
+        "dem_votes": 39163,
+        "rep_votes": 37111,
+        "other_votes": 2352,
+        "total_votes": 78626,
+        "dem_candidate": "Rebecca Cook",
+        "rep_candidate": "Peter Kinder",
+        "margin": -2052,
+        "margin_pct": -2.609824,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

@@ -8304,10 +8304,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
       const normalizedLines = normalizeDistrictLinesYear(linesYear);
 
-      const y = Number(year);
       const wantsOverlapSlice = new Set(['state_house', 'state_senate', 'congressional']).has(scope)
         && normalizedLines === 2022
-        && (y === 2020 || y === 2024)
         && new Set([
           'president',
           'us_senate',
@@ -20351,15 +20349,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      // Auto-select old district lines for early years unless the user has pinned a lines mode.
-      if (!districtLinesLockedByUser && currentView !== 'counties') {
-        const yNum = Number(year);
-        const recommendedLines = (Number.isFinite(yNum) && yNum <= 2010) ? 2008 : 2022;
-        if (recommendedLines !== normalizeDistrictLinesYear(currentDistrictLinesYear)) {
-          await setDistrictLinesMode(recommendedLines, { reapplyContest: false });
-        }
-      }
-      
       if (currentView === 'counties') {
         await applyCountyContest(contestType, year, { selectionSeq, isStaleSelection });
       } else if (currentView === 'districts' && contestType === 'us_house') {

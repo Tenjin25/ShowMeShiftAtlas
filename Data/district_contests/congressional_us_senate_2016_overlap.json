@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 99.997645,
+    "generated_at": "2026-03-28T04:44:51.600Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 823177,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 339248,
+        "rep_votes": 144265,
+        "other_votes": 16485,
+        "total_votes": 499998,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -194983,
+        "margin_pct": -38.996756,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 127816,
+        "rep_votes": 134446,
+        "other_votes": 10731,
+        "total_votes": 272993,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 6630,
+        "margin_pct": 2.428634,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 149343,
+        "rep_votes": 191666,
+        "other_votes": 16380,
+        "total_votes": 357389,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 42323,
+        "margin_pct": 11.842278,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 127384,
+        "rep_votes": 191220,
+        "other_votes": 17017,
+        "total_votes": 335621,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 63836,
+        "margin_pct": 19.020264,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 207205,
+        "rep_votes": 117132,
+        "other_votes": 15972,
+        "total_votes": 340309,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -90073,
+        "margin_pct": -26.468004,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 139987,
+        "rep_votes": 191636,
+        "other_votes": 17108,
+        "total_votes": 348731,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 51649,
+        "margin_pct": 14.810556,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 105790,
+        "rep_votes": 212104,
+        "other_votes": 15925,
+        "total_votes": 333819,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 106314,
+        "margin_pct": 31.847798,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 103426,
+        "rep_votes": 195989,
+        "other_votes": 14359,
+        "total_votes": 313774,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 92563,
+        "margin_pct": 29.499895,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
