@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2020,
+    "district_count": 8,
+    "match_coverage_pct": 72.697392,
+    "generated_at": "2026-03-28T02:59:10.313Z",
+    "source_method": "precinct_overlap_crosswalk"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 203623,
+        "rep_votes": 65853,
+        "other_votes": 6403,
+        "total_votes": 275879,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -137770,
+        "margin_pct": -49.93856,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 229341,
+        "rep_votes": 264228,
+        "other_votes": 10412,
+        "total_votes": 503981,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 34887,
+        "margin_pct": 6.922285,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 126683,
+        "rep_votes": 257040,
+        "other_votes": 10516,
+        "total_votes": 394239,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 130357,
+        "margin_pct": 33.065476,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 107204,
+        "rep_votes": 252143,
+        "other_votes": 12097,
+        "total_votes": 371444,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 144939,
+        "margin_pct": 39.020418,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 153789,
+        "rep_votes": 123080,
+        "other_votes": 10704,
+        "total_votes": 287573,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -30709,
+        "margin_pct": -10.67868,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 101444,
+        "rep_votes": 242720,
+        "other_votes": 11170,
+        "total_votes": 355334,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 141276,
+        "margin_pct": 39.75865,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 88637,
+        "rep_votes": 259089,
+        "other_votes": 10084,
+        "total_votes": 357810,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 170452,
+        "margin_pct": 47.637573,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 73568,
+        "rep_votes": 264616,
+        "other_votes": 8538,
+        "total_votes": 346722,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 191048,
+        "margin_pct": 55.101205,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

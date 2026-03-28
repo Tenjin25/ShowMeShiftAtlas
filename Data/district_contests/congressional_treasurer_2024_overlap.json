@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2024,
+    "district_count": 8,
+    "match_coverage_pct": 70.148115,
+    "generated_at": "2026-03-28T02:59:14.658Z",
+    "source_method": "precinct_overlap_crosswalk"
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 232149,
+        "rep_votes": 70650,
+        "other_votes": 11546,
+        "total_votes": 314345,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": -161499,
+        "margin_pct": -51.376354,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 180259,
+        "rep_votes": 235996,
+        "other_votes": 14013,
+        "total_votes": 430268,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 55737,
+        "margin_pct": 12.954019,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 124299,
+        "rep_votes": 234043,
+        "other_votes": 14786,
+        "total_votes": 373128,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 109744,
+        "margin_pct": 29.411891,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 93109,
+        "rep_votes": 236974,
+        "other_votes": 16689,
+        "total_votes": 346772,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 143865,
+        "margin_pct": 41.486914,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 182231,
+        "rep_votes": 129617,
+        "other_votes": 14142,
+        "total_votes": 325990,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": -52614,
+        "margin_pct": -16.139759,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 120219,
+        "rep_votes": 249996,
+        "other_votes": 17330,
+        "total_votes": 387545,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 129777,
+        "margin_pct": 33.48695,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 94864,
+        "rep_votes": 259292,
+        "other_votes": 13340,
+        "total_votes": 367496,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 164428,
+        "margin_pct": 44.7428,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 79106,
+        "rep_votes": 268146,
+        "other_votes": 15341,
+        "total_votes": 362593,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 189040,
+        "margin_pct": 52.13559,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
