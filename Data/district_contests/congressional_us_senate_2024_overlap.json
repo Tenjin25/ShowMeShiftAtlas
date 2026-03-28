@@ -4,10 +4,11 @@
     "contest_type": "us_senate",
     "year": 2024,
     "district_count": 8,
-    "match_coverage_pct": 99.999832,
-    "generated_at": "2026-03-28T03:37:20.174Z",
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 99.999832,
+    "generated_at": "2026-03-28T05:28:43.819Z",
     "source_method": "precinct_overlap_crosswalk",
-    "label_match_votes": 888229,
+    "label_match_votes": 1003901,
     "legacy_district_labels_enabled": false
   },
   "general": {

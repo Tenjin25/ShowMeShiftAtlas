@@ -153,7 +153,6 @@ function normalizeCounty(rawCounty) {
   if (county === 'KANSAS CITY') return 'JACKSON';
 
   county = county.replace(/\s+COUNTY$/i, '');
-  county = county.replace(/\s+CITY$/i, '');
   if (county === 'DE KALB') county = 'DEKALB';
 
   return county;
@@ -1142,19 +1141,32 @@ function writeJson(filePath, payload) {
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 }
 
-function buildPayload(scope, contestType, year, districtAgg, totalVotes, directMatchedVotes, demCandidate, repCandidate, extraMeta = null) {
+function buildPayload(
+  scope,
+  contestType,
+  year,
+  districtAgg,
+  totalVotes,
+  allocatedVotes,
+  directMatchedVotes,
+  demCandidate,
+  repCandidate,
+  extraMeta = null
+) {
   const results = {};
   const districts = Array.from(districtAgg.keys()).sort((a, b) => Number(a) - Number(b));
   for (const d of districts) results[String(d)] = districtAgg.get(d).toResult(demCandidate, repCandidate);
 
-  const coveragePct = totalVotes > 0 ? (directMatchedVotes / totalVotes) * 100 : 0;
+  const matchCoveragePct = totalVotes > 0 ? (allocatedVotes / totalVotes) * 100 : 0;
+  const directCoveragePct = totalVotes > 0 ? (directMatchedVotes / totalVotes) * 100 : 0;
   return {
     meta: {
       scope,
       contest_type: contestType,
       year: Number(year),
       district_count: Object.keys(results).length,
-      match_coverage_pct: roundNumber(coveragePct),
+      match_coverage_pct: roundNumber(matchCoveragePct),
+      direct_match_coverage_pct: roundNumber(directCoveragePct),
       generated_at: new Date().toISOString(),
       source_method: 'precinct_overlap_crosswalk',
       ...(extraMeta && typeof extraMeta === 'object' ? extraMeta : {})
@@ -1226,6 +1238,7 @@ async function main() {
     const resolvedReportLabelKeys = reportByCounty ? new Set() : null;
 
     let totalVotes = 0;
+    let allocatedVotes = 0;
     let directMatchedVotes = 0;
     let labelMatchedVotes = 0;
 
@@ -1262,6 +1275,7 @@ async function main() {
       }
       const normalizedDirect = normalizeWeights(districtWeights);
       if (normalizedDirect.size) {
+        allocatedVotes += precinctTotal;
         directMatchedVotes += precinctTotal;
         countyDirectAll.set(county, (countyDirectAll.get(county) || 0) + precinctTotal);
         if (reportByCounty) {
@@ -1299,13 +1313,14 @@ async function main() {
     for (const { county, rawCode, rawPrecinct, agg } of unmatched) {
       const nonGeo = isNonGeographicPrecinctLabel(rawCode, rawPrecinct);
 
-      const allowLabelAllocation = Number(year) >= 2022 || scope === 'congressional' || allowLegacyDistrictLabels;
+      const allowLabelAllocation = Number(year) >= 2022 || allowLegacyDistrictLabels;
       if (allowLabelAllocation) {
         const labelKey = normalizeLabelKey(year, county, rawCode, rawPrecinct);
         const labelWeights = districtLabelWeightsFor(scope, year, county, rawCode, rawPrecinct, districtTurnoutByLabelKeyByScope, houseToSenate);
         if (labelWeights.size) {
           if (reportByCounty && resolvedReportLabelKeys) resolvedReportLabelKeys.add(labelKey);
           const precinctTotal = agg.totalVotes;
+          allocatedVotes += precinctTotal;
           directMatchedVotes += precinctTotal;
           labelMatchedVotes += precinctTotal;
           countyDirectAll.set(county, (countyDirectAll.get(county) || 0) + precinctTotal);
@@ -1352,6 +1367,7 @@ async function main() {
         || (node && node.area && node.area.size ? node.area : null)
         || statewideFallbackWeights;
       if (!fallbackWeights.size) continue;
+      allocatedVotes += agg.totalVotes;
       for (const [district, share] of fallbackWeights.entries()) {
         if (!districtAgg.has(district)) districtAgg.set(district, new VoteAgg());
         districtAgg.get(district).addScaledVotes(
@@ -1370,6 +1386,7 @@ async function main() {
       year,
       districtAgg,
       totalVotes,
+      allocatedVotes,
       directMatchedVotes,
       demCandidate,
       repCandidate,
@@ -1390,7 +1407,7 @@ async function main() {
     const outName = `${scope}_${contestType}_${year}_overlap.json`;
     writeJson(path.join(DISTRICT_DIR, outName), payload);
     writtenFiles += 1;
-    writtenFiles && console.log(`Wrote ${outName} (coverage ${payload.meta.match_coverage_pct}%)`);
+    writtenFiles && console.log(`Wrote ${outName} (coverage ${payload.meta.match_coverage_pct}%, direct ${payload.meta.direct_match_coverage_pct}%)`);
 
     if (reportByCounty) {
       const rows = [];

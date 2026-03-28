@@ -4,23 +4,24 @@
     "contest_type": "president",
     "year": 2024,
     "district_count": 8,
-    "match_coverage_pct": 99.99546,
-    "generated_at": "2026-03-28T03:37:19.109Z",
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 99.99546,
+    "generated_at": "2026-03-28T05:28:43.141Z",
     "source_method": "precinct_overlap_crosswalk",
-    "label_match_votes": 895723,
+    "label_match_votes": 1011994,
     "legacy_district_labels_enabled": false
   },
   "general": {
     "results": {
       "1": {
-        "dem_votes": 247853,
-        "rep_votes": 67951,
+        "dem_votes": 247852,
+        "rep_votes": 67950,
         "other_votes": 5859,
-        "total_votes": 321663,
+        "total_votes": 321661,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
         "margin": -179902,
-        "margin_pct": -55.92872,
+        "margin_pct": -55.929068,
         "winner": "DEM",
         "color": ""
       },

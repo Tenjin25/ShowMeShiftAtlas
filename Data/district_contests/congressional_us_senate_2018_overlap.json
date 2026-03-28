@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2018,
+    "district_count": 8,
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 66.832288,
+    "generated_at": "2026-03-28T05:26:35.063Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 0,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 150777,
+        "rep_votes": 63333,
+        "other_votes": 4562,
+        "total_votes": 218672,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": -87444,
+        "margin_pct": -39.988659,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 206586,
+        "rep_votes": 163652,
+        "other_votes": 9057,
+        "total_votes": 379295,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": -42934,
+        "margin_pct": -11.319422,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 140525,
+        "rep_votes": 181444,
+        "other_votes": 10105,
+        "total_votes": 332074,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 40919,
+        "margin_pct": 12.322253,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 114792,
+        "rep_votes": 180658,
+        "other_votes": 11251,
+        "total_votes": 306701,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 65866,
+        "margin_pct": 21.475639,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 177453,
+        "rep_votes": 100475,
+        "other_votes": 8127,
+        "total_votes": 286055,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": -76978,
+        "margin_pct": -26.91021,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 128460,
+        "rep_votes": 180473,
+        "other_votes": 11648,
+        "total_votes": 320581,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 52013,
+        "margin_pct": 16.224605,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 97062,
+        "rep_votes": 189209,
+        "other_votes": 10787,
+        "total_votes": 297058,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 92147,
+        "margin_pct": 31.019868,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 97289,
+        "rep_votes": 195697,
+        "other_votes": 8891,
+        "total_votes": 301877,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 98408,
+        "margin_pct": 32.598707,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

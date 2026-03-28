@@ -4,10 +4,11 @@
     "contest_type": "attorney_general",
     "year": 2024,
     "district_count": 8,
-    "match_coverage_pct": 99.999966,
-    "generated_at": "2026-03-28T03:37:25.679Z",
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 99.999966,
+    "generated_at": "2026-03-28T05:28:47.036Z",
     "source_method": "precinct_overlap_crosswalk",
-    "label_match_votes": 869048,
+    "label_match_votes": 982437,
     "legacy_district_labels_enabled": false
   },
   "general": {

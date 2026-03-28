@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2000,
+    "district_count": 8,
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 83.304152,
+    "generated_at": "2026-03-28T05:22:16.584Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 0,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 172787,
+        "rep_votes": 144191,
+        "other_votes": 9966,
+        "total_votes": 326944,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": -28596,
+        "margin_pct": -8.746452,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 113343,
+        "rep_votes": 133214,
+        "other_votes": 6949,
+        "total_votes": 253506,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": 19871,
+        "margin_pct": 7.838473,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 135643,
+        "rep_votes": 152851,
+        "other_votes": 9093,
+        "total_votes": 297587,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": 17208,
+        "margin_pct": 5.782511,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 136598,
+        "rep_votes": 141975,
+        "other_votes": 7829,
+        "total_votes": 286402,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": 5377,
+        "margin_pct": 1.877431,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 184287,
+        "rep_votes": 108354,
+        "other_votes": 7679,
+        "total_votes": 300320,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": -75933,
+        "margin_pct": -25.28403,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 160361,
+        "rep_votes": 153041,
+        "other_votes": 7915,
+        "total_votes": 321317,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": -7320,
+        "margin_pct": -2.278124,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 106054,
+        "rep_votes": 146990,
+        "other_votes": 5500,
+        "total_votes": 258544,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": 40936,
+        "margin_pct": 15.833282,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 143679,
+        "rep_votes": 150691,
+        "other_votes": 7839,
+        "total_votes": 302209,
+        "dem_candidate": "Bob Holden",
+        "rep_candidate": "Jim Talent",
+        "margin": 7012,
+        "margin_pct": 2.320249,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

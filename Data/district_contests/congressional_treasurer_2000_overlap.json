@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2000,
+    "district_count": 8,
+    "match_coverage_pct": 100,
+    "direct_match_coverage_pct": 83.309043,
+    "generated_at": "2026-03-28T05:22:23.057Z",
+    "source_method": "precinct_overlap_crosswalk",
+    "label_match_votes": 0,
+    "legacy_district_labels_enabled": false
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 187843,
+        "rep_votes": 127246,
+        "other_votes": 7564,
+        "total_votes": 322653,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -60597,
+        "margin_pct": -18.780857,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 125391,
+        "rep_votes": 117578,
+        "other_votes": 6056,
+        "total_votes": 249025,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -7813,
+        "margin_pct": -3.137436,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 142514,
+        "rep_votes": 141287,
+        "other_votes": 7410,
+        "total_votes": 291211,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -1227,
+        "margin_pct": -0.421344,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 135995,
+        "rep_votes": 137742,
+        "other_votes": 7682,
+        "total_votes": 281419,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": 1747,
+        "margin_pct": 0.620783,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 180783,
+        "rep_votes": 106861,
+        "other_votes": 8227,
+        "total_votes": 295871,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -73922,
+        "margin_pct": -24.984537,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 157956,
+        "rep_votes": 148468,
+        "other_votes": 8116,
+        "total_votes": 314540,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -9488,
+        "margin_pct": -3.016468,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 108220,
+        "rep_votes": 139912,
+        "other_votes": 6567,
+        "total_votes": 254699,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": 31692,
+        "margin_pct": 12.442923,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 147925,
+        "rep_votes": 138260,
+        "other_votes": 7757,
+        "total_votes": 293942,
+        "dem_candidate": "Nancy Farmer",
+        "rep_candidate": "Todd Graves",
+        "margin": -9665,
+        "margin_pct": -3.288064,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}
