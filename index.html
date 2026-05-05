@@ -3265,6 +3265,7 @@ body { height: var(--app-height); }
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: break-word;
@@ -4152,6 +4153,7 @@ body { height: var(--app-height); }
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
+      line-clamp: 2;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       max-height: calc(1.2em * 2);
@@ -5270,6 +5272,7 @@ body { height: var(--app-height); }
   .vote-item.layout-stacked .vote-label.candidate {
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     white-space: normal;
     overflow-wrap: anywhere;
@@ -10514,6 +10517,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const demVotes = Number(row[`${contestType}_dem`] || 0);
       const repVotes = Number(row[`${contestType}_rep`] || 0);
       const otherVotes = Number(row[`${contestType}_other`] || 0);
+      const countyNorm = normalizeCountyFeatureToken(row.county || meta.county || lookupCounty);
       const countyDisplay = displayCountyName(row.county || meta.county || lookupCounty);
       const countyLabel = formatCountyJurisdictionLabel(row.county || meta.county || lookupCounty);
 
@@ -10526,7 +10530,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           ...meta,
           kind: 'county',
-          county: countyDisplay.toUpperCase(),
+          county: countyNorm || meta.county || lookupCounty,
           contestType,
           year: Number(year)
         },
@@ -13955,7 +13959,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .slice()
         .sort((a, b) => Number(a.year) - Number(b.year));
 
-      const target = (countyName || '').toString().trim().toUpperCase();
+      const target = normalizeCountyFeatureToken(countyName);
+      if (!target) return [];
       const out = [];
       for (const e of entries) {
         const year = Number(e.year);
@@ -13964,8 +13969,9 @@ document.addEventListener('DOMContentLoaded', function() {
         let dem = 0, rep = 0, oth = 0, tot = 0;
         let demCand = '', repCand = '';
         rows.forEach(r => {
-          const rowName = (r.county || '').toString().trim().toUpperCase();
-          const countyOnly = rowName.includes(' - ') ? rowName.split(' - ')[0].trim().toUpperCase() : rowName;
+          const rowName = (r.county || '').toString().trim();
+          const countyOnlyRaw = rowName.includes(' - ') ? rowName.split(' - ')[0].trim() : rowName;
+          const countyOnly = normalizeCountyFeatureToken(countyOnlyRaw);
           if (countyOnly !== target) return;
           dem += Number(r[`${contestType}_dem`]) || 0;
           rep += Number(r[`${contestType}_rep`]) || 0;
@@ -15804,7 +15810,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repVotes,
         otherVotes,
         { demCandidate, repCandidate },
-        { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year) }
+        { kind: 'county', county: countyNorm, contestType, year: Number(year) }
       );
 
       const signedMarginPct = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
@@ -16947,7 +16953,7 @@ document.addEventListener('DOMContentLoaded', function() {
         demVotes,
         repVotes,
         otherVotes,
-        { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year) },
+        { kind: 'county', county: norm, contestType, year: Number(year) },
         { demCandidate, repCandidate }
       );
       if (!sidebarReady) return;
