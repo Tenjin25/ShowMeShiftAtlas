@@ -104,9 +104,9 @@
       "year": 2018,
       "file": "auditor_2018.json",
       "rows": 115,
-      "dem_total": 0,
-      "rep_total": 0,
-      "major_party_contested": false
+      "dem_total": 1209883,
+      "rep_total": 1070715,
+      "major_party_contested": true
     },
     {
       "contest_type": "auditor",
@@ -446,9 +446,9 @@
       "year": 2018,
       "file": "state_house_2018.json",
       "rows": 115,
-      "dem_total": 0,
-      "rep_total": 0,
-      "major_party_contested": false
+      "dem_total": 709661,
+      "rep_total": 1148349,
+      "major_party_contested": true
     },
     {
       "contest_type": "state_house",
@@ -563,9 +563,9 @@
       "year": 2018,
       "file": "state_senate_2018.json",
       "rows": 68,
-      "dem_total": 0,
-      "rep_total": 0,
-      "major_party_contested": false
+      "dem_total": 446358,
+      "rep_total": 707694,
+      "major_party_contested": true
     },
     {
       "contest_type": "state_senate",
@@ -743,9 +743,9 @@
       "year": 2018,
       "file": "us_house_2018.json",
       "rows": 115,
-      "dem_total": 0,
-      "rep_total": 0,
-      "major_party_contested": false
+      "dem_total": 938054,
+      "rep_total": 1330992,
+      "major_party_contested": true
     },
     {
       "contest_type": "us_house",

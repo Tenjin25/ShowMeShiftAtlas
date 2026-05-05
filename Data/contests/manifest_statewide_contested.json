@@ -92,6 +92,15 @@
     },
     {
       "contest_type": "auditor",
+      "year": 2018,
+      "file": "auditor_2018.json",
+      "rows": 115,
+      "dem_total": 1209883,
+      "rep_total": 1070715,
+      "major_party_contested": true
+    },
+    {
+      "contest_type": "auditor",
       "year": 2022,
       "file": "auditor_2022.json",
       "rows": 115,

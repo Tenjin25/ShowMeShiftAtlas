@@ -114,6 +114,12 @@ class VoteAgg:
         }
 
 
+@dataclass
+class RaceCandidateInfo:
+    first_seen: int
+    has_explicit_party: bool = False
+
+
 def normalize_county_key(value: str) -> str:
     token = (value or "").upper()
     token = token.replace("&", " AND ")
@@ -230,6 +236,55 @@ def candidate_name(row: Dict[str, str]) -> str:
     return ""
 
 
+def race_key(year: int, contest_type: str, scope: Optional[str], district: str) -> Tuple[int, str, str, str]:
+    return int(year), contest_type, scope or "", district if scope else ""
+
+
+def build_blank_party_inference() -> Dict[Tuple[Tuple[int, str, str, str], str], str]:
+    race_candidates: Dict[Tuple[int, str, str, str], Dict[str, RaceCandidateInfo]] = defaultdict(dict)
+    sequence = 0
+
+    for year, csv_path in iter_missouri_general_csvs():
+        with csv_path.open("r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                contest_type, scope, district = map_contest_type(
+                    row.get("office", ""),
+                    row.get("district", ""),
+                )
+                if not contest_type:
+                    continue
+
+                candidate = candidate_name(row)
+                if not candidate:
+                    continue
+
+                key = race_key(year, contest_type, scope, district)
+                info = race_candidates[key].get(candidate)
+                if info is None:
+                    info = RaceCandidateInfo(first_seen=sequence)
+                    race_candidates[key][candidate] = info
+                    sequence += 1
+
+                if normalize_party(
+                    row.get("party") or row.get("party_simplified") or row.get("party_detailed") or ""
+                ):
+                    info.has_explicit_party = True
+
+    inferred: Dict[Tuple[Tuple[int, str, str, str], str], str] = {}
+    for key, candidates in race_candidates.items():
+        if len(candidates) < 2:
+            continue
+        if any(info.has_explicit_party for info in candidates.values()):
+            continue
+
+        ordered = sorted(candidates.items(), key=lambda item: item[1].first_seen)
+        inferred[(key, ordered[0][0])] = "rep"
+        inferred[(key, ordered[1][0])] = "dem"
+
+    return inferred
+
+
 def normalize_office(raw_office: str) -> str:
     office = (raw_office or "").strip().upper()
     office = office.replace("U.S.", "US")
@@ -305,6 +360,7 @@ def aggregate_data() -> Tuple[
     Dict[Tuple[str, str, int, str], VoteAgg],
 ]:
     county_lookup = build_county_lookup()
+    inferred_buckets = build_blank_party_inference()
     contest_agg: Dict[Tuple[str, int, str], VoteAgg] = defaultdict(VoteAgg)
     district_agg: Dict[Tuple[str, str, int, str], VoteAgg] = defaultdict(VoteAgg)
 
@@ -329,8 +385,10 @@ def aggregate_data() -> Tuple[
                     continue
 
                 party = row.get("party") or row.get("party_simplified") or row.get("party_detailed") or ""
-                bucket = party_bucket(party)
                 candidate = candidate_name(row)
+                bucket = party_bucket(party)
+                if bucket == "other" and not normalize_party(party) and candidate:
+                    bucket = inferred_buckets.get((race_key(year, contest_type, scope, district), candidate), bucket)
 
                 contest_agg[(contest_type, year, county)].add(bucket, candidate, votes)
 
