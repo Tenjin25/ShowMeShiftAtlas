@@ -16429,6 +16429,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const props = e.features[0].properties || {};
       const districtNum = getDistrictNumberFromPropsCandidates(props, districtFieldCandidates);
       if (!districtNum) return;
+      const districtTitleLabel = scope === 'congressional'
+        ? `MO-${String(Number(districtNum) || districtNum).padStart(2, '0')}`
+        : `${districtLabel} ${districtNum}`;
       const requestId = ++districtHoverRequestId;
       setDistrictHoverOutline(scope, districtNum);
 
@@ -16436,7 +16439,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const _demoRow = getDistrictDemographics(scope, districtNum);
       const _demoHTML = buildDemoHTML(_demoRow);
       if (!contestValue) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${districtLabel} ${districtNum}`,
+        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
           _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">Select a contest to see results</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
         return;
@@ -16459,7 +16462,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (!row) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${districtLabel} ${districtNum}`,
+        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
           _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
         return;
@@ -16470,7 +16473,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const otherVotes = Number(row.other_votes || 0);
       const totalVotes = Number(row.total_votes || 0);
       if (totalVotes <= 0) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${districtLabel} ${districtNum}`,
+        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
           _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
         return;
@@ -16542,7 +16545,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ? (Math.abs(shiftDelta) < 0.01 ? 'tie' : (shiftDelta > 0 ? 'rep' : 'dem'))
         : 'tie';
       const votehubCore = buildVotehubResultsTooltip({
-        title: `${districtLabel} ${districtNum}`,
+        title: districtTitleLabel,
         subtitle,
         demName: demCandidate,
         repName: repCandidate,
@@ -16570,7 +16573,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ${desc ? `<div style="margin-top:6px;font-size:12px;color:#94a3b8;"><strong style="color:#e2e8f0;">Area:</strong> ${desc}</div>` : ''}
         ${_demoHTML}
       `;
-      showHoverTooltip(e.point.x, e.point.y, inner, { force: !!forceTooltip, context: 'votehub-results', copyText: `${districtLabel} ${districtNum}` });
+      showHoverTooltip(e.point.x, e.point.y, inner, { force: !!forceTooltip, context: 'votehub-results', copyText: districtTitleLabel });
       wireTooltipButtons();
     }
 
