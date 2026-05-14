@@ -13051,6 +13051,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const norm = normalizeCountyFeatureToken(raw);
       if (!norm) return 'Unknown County';
       if (norm === 'ST. LOUIS CITY') return 'City of St. Louis';
+      if (norm === 'ST LOUIS CITY') return 'City of St. Louis';
       if (norm === 'CITY OF ST. LOUIS') return 'City of St. Louis';
       const cleaned = norm.replace(/\s+COUNTY$/i, '').trim();
       return toTitleCaseName(cleaned);
@@ -13559,8 +13560,8 @@ document.addEventListener('DOMContentLoaded', function() {
       };
 
       const rows = [];
-      const demLabel = shortCandidateLabel(demName, 'Democratic');
-      const repLabel = shortCandidateLabel(repName, 'Republican');
+      const demLabel = fullCandidateLabel(demName, 'Democratic');
+      const repLabel = fullCandidateLabel(repName, 'Republican');
       const otherLabel = (otherName || 'Other').toString().trim() || 'Other';
       const candidateRows = [
         { partyClass: 'rep', label: repLabel, votes: rVotes, pct: repPct },
@@ -13576,8 +13577,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerToneClass = winnerPartyKey === 'rep' ? 'rep' : (winnerPartyKey === 'dem' ? 'dem' : 'tie');
       const winnerText = (winnerName || (winnerPartyKey === 'tie' ? 'Tie' : '')).toString().trim();
       const voteMargin = Math.abs(rVotes - dVotes);
+      const winnerDisplayText = winnerPartyKey === 'tie'
+        ? 'Tie'
+        : `${winnerText} +${marginFormatter(marginAbs)}%`;
+      const voteLeadStyle = winnerToneClass === 'rep'
+        ? 'font-size:12px;font-weight:800;opacity:0.96;color:#fecaca;font-family:"JetBrains Mono","Consolas","SFMono-Regular",monospace;'
+        : (winnerToneClass === 'dem'
+          ? 'font-size:12px;font-weight:800;opacity:0.96;color:#bfdbfe;font-family:"JetBrains Mono","Consolas","SFMono-Regular",monospace;'
+          : 'font-size:12px;font-weight:800;opacity:0.92;color:#e2e8f0;font-family:"JetBrains Mono","Consolas","SFMono-Regular",monospace;');
       const winnerLine = showWinnerLine
-        ? `<div class="vhr-winner ${winnerToneClass}">${escapeHtml(winnerText)}${winnerPartyKey === 'tie' ? '' : ` <span class="vhr-margin-pct">+${escapeHtml(marginFormatter(marginAbs))}%</span> <span class="vhr-votes">(${escapeHtml(formatVotehubVotes(voteMargin))} votes)</span>`}</div>`
+        ? `<div class="vhr-winner ${winnerToneClass}" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;"><span>${escapeHtml(winnerDisplayText)}</span>${winnerPartyKey === 'tie' ? '' : `<span class="vhr-raw-lead ${winnerToneClass}" style="${voteLeadStyle}">${escapeHtml(`${formatVotehubVotes(voteMargin)} votes`)}</span>`}</div>`
         : '';
 
       const prevSigned = Number(prevSignedMarginPct);
@@ -16068,9 +16077,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const props = e.features[0].properties || {};
       const countyName = (props.NAMELSAD20 || props.NameLSAD20 || getCountyNameFromProps(props) || 'Unknown County').toString().trim();
-      const countyDisplay = (countyName && countyName !== 'Unknown County')
-        ? toTitleCaseName(countyName)
-        : displayCountyName(countyName);
+      const countyDisplay = displayCountyName(countyName);
       const countyLabel = formatCountyJurisdictionLabel(countyName);
       const localityLabelRaw = (countyName || '').toString().trim();
       const countyFpRaw = (props.COUNTYFP20 || props.COUNTYFP || props.countyfp || '').toString().replace(/[^0-9]/g, '');
