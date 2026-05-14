@@ -13051,6 +13051,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const norm = normalizeCountyFeatureToken(raw);
       if (!norm) return 'Unknown County';
       if (norm === 'ST. LOUIS CITY') return 'City of St. Louis';
+      if (norm === 'CITY OF ST. LOUIS') return 'City of St. Louis';
       const cleaned = norm.replace(/\s+COUNTY$/i, '').trim();
       return toTitleCaseName(cleaned);
     }
