@@ -13520,6 +13520,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return Math.round(n).toLocaleString();
     }
 
+    function formatShiftLabel(shiftPct) {
+      const s = Number(shiftPct);
+      if (!Number.isFinite(s) || Math.abs(s) < 0.005) return 'Even';
+      const side = s > 0 ? 'R' : 'D';
+      return `${side}+${Math.abs(s).toFixed(2)}%`;
+    }
+
     function buildVotehubResultsTooltip({
       title,
       subtitle,
