@@ -13628,6 +13628,16 @@ document.addEventListener('DOMContentLoaded', function() {
       `.trim();
     }
 
+    function buildVotehubMessageTooltip(title, subtitle, message) {
+      return `
+        <div class="votehub-results-card">
+          <div class="vhr-title">${escapeHtml((title || '').toString())}</div>
+          ${subtitle ? `<div class="vhr-subtitle">${escapeHtml(String(subtitle))}</div>` : ''}
+          <div style="color:#94a3b8;font-size:12px;font-weight:700;padding:4px 0;">${escapeHtml(String(message || 'No data available'))}</div>
+        </div>
+      `.trim();
+    }
+
     function compactCompetitivenessLabel(marginPct, party) {
       const side = party === 'rep' ? 'R' : (party === 'dem' ? 'D' : '');
       if (marginPct >= 40) return side ? `Annihilation ${side}` : 'Annihilation';
@@ -16099,7 +16109,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (!contestValue || !row) {
         const hoverTitle = buildTooltipTitleWithTier(countyLabel);
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">Select a contest to see results</div>'), { force: !!forceTooltip });
+        showHoverTooltip(
+          e.point.x,
+          e.point.y,
+          buildVotehubMessageTooltip(hoverTitle, localityTypeLabel, 'Select a contest to see results'),
+          { force: !!forceTooltip, context: 'votehub-results', copyText: hoverTitle }
+        );
         wireTooltipButtons();
         return;
       }
@@ -16113,7 +16128,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const totalVotes = Number(row[`${contestType}_total`] || 0);
       if (totalVotes <= 0) {
         const hoverTitle = buildTooltipTitleWithTier(countyLabel);
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">No data available</div>'), { force: !!forceTooltip });
+        showHoverTooltip(
+          e.point.x,
+          e.point.y,
+          buildVotehubMessageTooltip(hoverTitle, localityTypeLabel, 'No data available'),
+          { force: !!forceTooltip, context: 'votehub-results', copyText: hoverTitle }
+        );
         wireTooltipButtons();
         return;
       }
@@ -16239,7 +16259,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const [contestType, year] = parseContestValue(contestValue);
       if (!contestType || !year) {
         const hoverTitle = buildTooltipTitleWithTier(title);
-        showHoverTooltip(point.x, point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">Select a contest to see results</div>'), { force: !!forceTooltip });
+        showHoverTooltip(
+          point.x,
+          point.y,
+          buildVotehubMessageTooltip(hoverTitle, 'Precinct', 'Select a contest to see results'),
+          { force: !!forceTooltip, context: 'votehub-results', copyText: hoverTitle }
+        );
         wireTooltipButtons();
         return;
       }
@@ -16247,7 +16272,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const row = currentPrecinctResults ? currentPrecinctResults.get(precinctNorm) : null;
       if (!row) {
         const hoverTitle = buildTooltipTitleWithTier(title);
-        showHoverTooltip(point.x, point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">No precinct results loaded for this contest in this view. Switch to Counties and pick the contest.</div>'), { force: !!forceTooltip });
+        showHoverTooltip(
+          point.x,
+          point.y,
+          buildVotehubMessageTooltip(hoverTitle, 'Precinct', 'No precinct results loaded for this contest in this view. Switch to Counties and pick the contest.'),
+          { force: !!forceTooltip, context: 'votehub-results', copyText: hoverTitle }
+        );
         wireTooltipButtons();
         return;
       }
@@ -16335,7 +16365,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ${demoLine}
       `;
       const hoverTitle = buildTooltipTitleWithTier(title);
-      showHoverTooltip(point.x, point.y, buildTooltipShell(hoverTitle, inner), { force: !!forceTooltip });
+      showHoverTooltip(point.x, point.y, inner, { force: !!forceTooltip, context: 'votehub-results', copyText: hoverTitle });
       wireTooltipButtons();
       const precinctMeta = { kind: 'precinct', county: countyName, precinct: title, precinctNorm, contestType, year: Number(year) };
       const precinctCandidates = { demCandidate, repCandidate };
@@ -16439,8 +16469,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const _demoRow = getDistrictDemographics(scope, districtNum);
       const _demoHTML = buildDemoHTML(_demoRow);
       if (!contestValue) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
-          _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">Select a contest to see results</div>'), { force: !!forceTooltip });
+        const scopeSubtitle = scope === 'congressional' ? 'Congressional District' : (scope === 'state_house' ? 'State House District' : 'State Senate District');
+        const msgCard = buildVotehubMessageTooltip(districtTitleLabel, scopeSubtitle, 'Select a contest to see results');
+        showHoverTooltip(e.point.x, e.point.y, `${msgCard}${_demoHTML}`, { force: !!forceTooltip, context: 'votehub-results', copyText: districtTitleLabel });
         wireTooltipButtons();
         return;
       }
@@ -16462,8 +16493,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (!row) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
-          _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>'), { force: !!forceTooltip });
+        const scopeSubtitle = scope === 'congressional' ? 'Congressional District' : (scope === 'state_house' ? 'State House District' : 'State Senate District');
+        const msgCard = buildVotehubMessageTooltip(districtTitleLabel, scopeSubtitle, 'No data for this contest');
+        showHoverTooltip(e.point.x, e.point.y, `${msgCard}${_demoHTML}`, { force: !!forceTooltip, context: 'votehub-results', copyText: districtTitleLabel });
         wireTooltipButtons();
         return;
       }
@@ -16473,8 +16505,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const otherVotes = Number(row.other_votes || 0);
       const totalVotes = Number(row.total_votes || 0);
       if (totalVotes <= 0) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(districtTitleLabel,
-          _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>'), { force: !!forceTooltip });
+        const scopeSubtitle = scope === 'congressional' ? 'Congressional District' : (scope === 'state_house' ? 'State House District' : 'State Senate District');
+        const msgCard = buildVotehubMessageTooltip(districtTitleLabel, scopeSubtitle, 'No data for this contest');
+        showHoverTooltip(e.point.x, e.point.y, `${msgCard}${_demoHTML}`, { force: !!forceTooltip, context: 'votehub-results', copyText: districtTitleLabel });
         wireTooltipButtons();
         return;
       }
