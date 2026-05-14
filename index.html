@@ -13015,7 +13015,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Prefer the surname in compact labels; ignore trailing suffixes like Jr./III.
       let idx = parts.length - 1;
       while (idx > 0 && isNameSuffixToken(parts[idx])) idx -= 1;
-      return toTitleCaseName(parts[idx]);
+      return parts[idx];
     }
 
     function fullCandidateLabel(name, fallback = '') {
@@ -13559,8 +13559,8 @@ document.addEventListener('DOMContentLoaded', function() {
       };
 
       const rows = [];
-      const demLabel = shortCandidateLabel(demName, 'Democratic');
-      const repLabel = shortCandidateLabel(repName, 'Republican');
+      const demLabel = (demName || 'Democratic').toString().trim() || 'Democratic';
+      const repLabel = (repName || 'Republican').toString().trim() || 'Republican';
       const otherLabel = (otherName || 'Other').toString().trim() || 'Other';
       const candidateRows = [
         { partyClass: 'rep', label: repLabel, votes: rVotes, pct: repPct },
@@ -13575,9 +13575,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerPartyKey = String(winnerParty || '').toLowerCase();
       const winnerToneClass = winnerPartyKey === 'rep' ? 'rep' : (winnerPartyKey === 'dem' ? 'dem' : 'tie');
       const winnerText = (winnerName || (winnerPartyKey === 'tie' ? 'Tie' : '')).toString().trim();
-      const winnerVotes = winnerPartyKey === 'rep' ? rVotes : (winnerPartyKey === 'dem' ? dVotes : 0);
       const winnerLine = showWinnerLine
-        ? `<div class="vhr-winner ${winnerToneClass}">${escapeHtml(winnerText)}${winnerPartyKey === 'tie' ? '' : ` <span class="vhr-votes">${escapeHtml(formatVotehubVotes(winnerVotes))}</span> <span class="vhr-margin-pct">+${escapeHtml(marginFormatter(marginAbs))}%</span>`}</div>`
+        ? `<div class="vhr-winner ${winnerToneClass}">${escapeHtml(winnerText)}${winnerPartyKey === 'tie' ? '' : ` <span class="vhr-margin-pct">+${escapeHtml(marginFormatter(marginAbs))}%</span>`}</div>`
         : '';
 
       const prevSigned = Number(prevSignedMarginPct);
