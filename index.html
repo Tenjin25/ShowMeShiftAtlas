@@ -16532,14 +16532,45 @@ document.addEventListener('DOMContentLoaded', function() {
         if (flipChip) chips.push(flipChip);
       }
 
+      const marginCall = winnerMarginCall(repVotes, demVotes, totalVotes, repCandidate, demCandidate);
+      const winnerParty = winner === 'R' ? 'rep' : (winner === 'D' ? 'dem' : 'tie');
+      let shiftDelta = NaN;
+      if (currentVizMode === 'shift' && Number.isFinite(Number(prevSignedForFlip)) && prevYearForFlip) {
+        shiftDelta = Number(signedMarginPct) - Number(prevSignedForFlip);
+      }
+      const shiftClass = Number.isFinite(shiftDelta)
+        ? (Math.abs(shiftDelta) < 0.01 ? 'tie' : (shiftDelta > 0 ? 'rep' : 'dem'))
+        : 'tie';
+      const votehubCore = buildVotehubResultsTooltip({
+        title: `${districtLabel} ${districtNum}`,
+        subtitle,
+        demName: demCandidate,
+        repName: repCandidate,
+        otherName: 'Other',
+        demVotes,
+        repVotes,
+        otherVotes,
+        totalVotes,
+        winnerName: marginCall.shortLabel,
+        winnerParty,
+        marginPct: Math.abs(signedMarginPct),
+        prevSignedMarginPct: prevSignedForFlip,
+        currentSignedMarginPct: signedMarginPct,
+        flipYearLabel: prevYearForFlip || null,
+        showWinnerLine: true,
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!prevYearForFlip,
+        shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
+        shiftToneClass: shiftClass,
+        shiftYearLabel: (prevYearForFlip && year) ? `${prevYearForFlip}→${year}` : ''
+      });
       const desc = getDistrictDescription(scope, districtNum);
       const inner = `
+        ${votehubCore}
         <div class="hover-meta">${chips.join('')}</div>
         ${desc ? `<div style="margin-top:6px;font-size:12px;color:#94a3b8;"><strong style="color:#e2e8f0;">Area:</strong> ${desc}</div>` : ''}
         ${_demoHTML}
-        ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
       `;
-      showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${districtLabel} ${districtNum}`, inner), { force: !!forceTooltip });
+      showHoverTooltip(e.point.x, e.point.y, inner, { force: !!forceTooltip, context: 'votehub-results', copyText: `${districtLabel} ${districtNum}` });
       wireTooltipButtons();
     }
 
