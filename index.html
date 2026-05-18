@@ -16097,14 +16097,39 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (_) {}
 
       const props = e.features[0].properties || {};
-      const countyName = (props.NAMELSAD20 || props.NameLSAD20 || getCountyNameFromProps(props) || 'Unknown County').toString().trim();
+      const countyName = (
+        props.NAMELSAD20
+        || props.NameLSAD20
+        || props.NAMELSAD
+        || props.NameLSAD
+        || props.NAME20
+        || props.CountyName
+        || props.COUNTYNAME
+        || props.county_nam
+        || props.NAME
+        || props.name
+        || getCountyNameFromProps(props)
+        || 'Unknown County'
+      ).toString().trim();
       const countyDisplay = displayCountyName(countyName);
       const countyLabel = formatCountyJurisdictionLabel(countyName);
-      const localityLabelRaw = (countyName || '').toString().trim();
+      const localityLabelRaw = (
+        props.NAMELSAD20
+        || props.NameLSAD20
+        || props.NAMELSAD
+        || props.NameLSAD
+        || props.NAME20
+        || props.CountyName
+        || props.COUNTYNAME
+        || props.county_nam
+        || props.NAME
+        || props.name
+        || ''
+      ).toString().trim();
       const countyFpRaw = (props.COUNTYFP20 || props.COUNTYFP || props.countyfp || '').toString().replace(/[^0-9]/g, '');
       const countyFp = Number(countyFpRaw);
       const isIndependentCityByCode = Number.isFinite(countyFp) && countyFp >= 500;
-      const isIndependentCityByName = /^city of\s+/i.test(localityLabelRaw) || /\bindependent city\b/i.test(localityLabelRaw) || /\scity$/i.test(localityLabelRaw);
+      const isIndependentCityByName = /^city of\s+/i.test(localityLabelRaw) || /\bindependent city\b/i.test(localityLabelRaw);
       const localityTypeLabel = (isIndependentCityByCode || isIndependentCityByName) ? 'Independent City' : 'County';
       setCountyHoverOutline(countyName);
       const norm = normalizeCountyFeatureToken(countyName);
