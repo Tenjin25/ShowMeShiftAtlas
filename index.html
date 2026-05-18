@@ -13057,15 +13057,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (norm === 'ST. LOUIS CITY') return 'City of St. Louis';
       if (norm === 'ST LOUIS CITY') return 'City of St. Louis';
       if (norm === 'CITY OF ST. LOUIS') return 'City of St. Louis';
-      const cleaned = norm.replace(/\s+COUNTY$/i, '').trim();
-      return toTitleCaseName(cleaned);
+      const isCity = /\s+CITY$/i.test(norm);
+      const base = norm.replace(/\s+(COUNTY|CITY)$/i, '').trim();
+      const titled = toTitleCaseName(base);
+      if (!titled) return 'Unknown County';
+      return isCity ? `City of ${titled}` : `${titled} County`;
     }
 
     function formatCountyJurisdictionLabel(raw) {
       const display = displayCountyName(raw);
       if (!display || display === 'Unknown County') return 'Unknown County';
-      if (display === 'City of St. Louis') return display;
-      return /\bCity$/i.test(display) ? display : `${display} County`;
+      return display;
     }
 
     function numericOrNull(value) {
