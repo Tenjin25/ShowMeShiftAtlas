@@ -35,6 +35,12 @@
       canonical = 'ST. LOUIS CITY';
     } else if (/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(\s+COUNTY)?$/i.test(jurisdiction)) {
       canonical = 'ST. LOUIS COUNTY';
+    } else if (/^DE\s*KALB(\s+COUNTY)?$/i.test(jurisdiction)) {
+      // OpenElections uses "DE KALB"; Census/geojson use "DeKalb".
+      canonical = 'DEKALB';
+    } else if (/^KANSAS\s+CITY(\s+COUNTY)?$/i.test(jurisdiction)) {
+      // Kansas City Election Board totals roll into Jackson County on the county map.
+      canonical = 'JACKSON';
     }
 
     return scopedSuffix ? `${canonical} - ${scopedSuffix}` : canonical;

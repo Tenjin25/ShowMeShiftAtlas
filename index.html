@@ -10236,8 +10236,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2';
-    const APP_BUILD_ID = '2026-07-23-mo-v2';
+    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2c';
+    const APP_BUILD_ID = '2026-07-23-mo-v2c';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -12907,6 +12907,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (norm === 'ST. LOUIS COUNTY') {
         return ['ST. LOUIS COUNTY', 'ST LOUIS COUNTY', 'SAINT LOUIS COUNTY', 'ST. LOUIS', 'ST LOUIS', 'SAINT LOUIS'];
+      }
+      if (norm === 'DEKALB' || norm === 'DEKALB COUNTY') {
+        return ['DEKALB COUNTY', 'DEKALB', 'DE KALB COUNTY', 'DE KALB'];
+      }
+      if (norm === 'JACKSON' || norm === 'JACKSON COUNTY') {
+        return ['JACKSON COUNTY', 'JACKSON', 'KANSAS CITY', 'KANSAS CITY COUNTY'];
       }
       if (/\s+COUNTY$/i.test(norm)) return [norm, norm.replace(/\s+COUNTY$/i, '')];
       if (/\s+CITY$/i.test(norm)) return [norm];
@@ -18631,8 +18637,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       async function loadCountyContestSlice(contestType, year) {
-        // Pre-county_contests path: county mode uses full contest slices
-        // (plus county_totals when present). Compact data/county_contests/ is unused.
+        // County map mode should use the pre-aggregated contest JSON (KC→Jackson,
+        // DEKALB spelling, etc.) rather than raw OpenElections precinct CSVs.
         const modeledDef = getModeledContestDefinition(contestType, year);
         if (modeledDef) {
           const modeledSignature = getModeledDefSignature(modeledDef);
@@ -18652,7 +18658,40 @@ document.addEventListener('DOMContentLoaded', function() {
             countyContestSliceInflight.delete(key);
           }
         }
-        return loadContestSlice(contestType, year);
+
+        const key = `${contestType}_${year}`;
+        const countyKey = `countyjson:${key}`;
+        if (countyContestSliceCache.has(countyKey)) return countyContestSliceCache.get(countyKey);
+        if (countyContestSliceInflight.has(countyKey)) return countyContestSliceInflight.get(countyKey);
+
+        const p = atlasPerf(`slice.countyjson:${key}`, async () => {
+          const manifestHasEntries = Array.isArray(contestManifest) && contestManifest.length > 0;
+          const manifestEntry = manifestHasEntries
+            ? (contestManifest.find(e => e && e.contest_type === contestType && Number(e.year) === Number(year) && !e.scope) || null)
+            : null;
+          const manifestFile = (manifestEntry?.file || '').toString().trim();
+          if (manifestHasEntries && !manifestEntry) {
+            throw new Error(`No county contest manifest entry for ${key}`);
+          }
+          const payloadPath = manifestFile
+            ? `${CONFIG.paths.contests_dir}/${manifestFile}`
+            : `${CONFIG.paths.contests_dir}/${key}.json`;
+          const payload = await loadJSON(payloadPath);
+          const rows = mapContestPayloadRows(payload, contestType, year);
+          attachOfficialCountyTotalsToRows(rows, payload);
+          if (!rows?.length) throw new Error(`Empty county contest slice for ${key}`);
+          countyContestSliceCache.set(countyKey, rows);
+          return rows;
+        });
+        countyContestSliceInflight.set(countyKey, p);
+        try {
+          return await p;
+        } catch (err) {
+          console.warn('County contest JSON unavailable, falling back to full slice:', err?.message || err);
+          return loadContestSlice(contestType, year);
+        } finally {
+          countyContestSliceInflight.delete(countyKey);
+        }
       }
 
 	    async function loadContestSlice(contestType, year, opts = null) {
@@ -18681,13 +18720,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const p = atlasPerf(`slice.contest:${key}`, async () => {
 
+          // Prefer pre-aggregated contest JSON (includes KC→Jackson and DEKALB).
+          // Fall back to OpenElections precinct CSV only when JSON is missing.
           const manifestHasEntries = Array.isArray(contestManifest) && contestManifest.length > 0;
           const manifestEntry = manifestHasEntries
             ? (contestManifest.find(e => e && e.contest_type === contestType && Number(e.year) === Number(year) && !e.scope) || null)
             : null;
           const manifestFile = (manifestEntry?.file || '').toString().trim();
 
-          // Prefer OpenElections CSV for older presidential cycles to avoid a known-missing JSON fetch (and console 404 noise).
+	        try {
+            if (manifestHasEntries && !manifestEntry) {
+              // Manifest is present but this contest/year isn't indexed: don't guess a JSON filename that will 404.
+              // Fall through to OpenElections presidential CSV when configured.
+            } else {
+              const payloadPath = manifestFile
+                ? `${CONFIG.paths.contests_dir}/${manifestFile}`
+                : `${CONFIG.paths.contests_dir}/${key}.json`;
+	            const payload = await loadJSON(payloadPath);
+	            const rows = mapContestPayloadRows(payload, contestType, year);
+	            attachOfficialCountyTotalsToRows(rows, payload);
+	            contestSliceCache.set(key, rows);
+	            return rows;
+            }
+	        } catch (_) {
+            // JSON missing/unreadable — try OpenElections or electionData fallback below.
+	        }
+
           if (contestType === 'president' && PRESIDENT_OPEN_ELECTIONS_CSV[Number(year)]) {
             try {
               const rows = await loadPresidentSliceFromOpenElectionsCSV(Number(year));
@@ -18698,27 +18756,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
 
-	        try {
-            if (manifestHasEntries && !manifestEntry) {
-              // Manifest is present but this contest/year isn't indexed: don't guess a JSON filename that will 404.
-              const fallback = (electionData || []).filter(row => row.year == year);
-              contestSliceCache.set(key, fallback);
-              return fallback;
-            }
+          if (manifestHasEntries && !manifestEntry) {
+            const fallback = (electionData || []).filter(row => row.year == year);
+            contestSliceCache.set(key, fallback);
+            return fallback;
+          }
 
-            const payloadPath = manifestFile
-              ? `${CONFIG.paths.contests_dir}/${manifestFile}`
-              : `${CONFIG.paths.contests_dir}/${key}.json`;
-	          const payload = await loadJSON(payloadPath);
-	          const rows = mapContestPayloadRows(payload, contestType, year);
-	          attachOfficialCountyTotalsToRows(rows, payload);
-	          contestSliceCache.set(key, rows);
-	          return rows;
-	        } catch (_) {
-	          const fallback = (electionData || []).filter(row => row.year == year);
-	          contestSliceCache.set(key, fallback);
-	          return fallback;
-	        }
+          const fallback = (electionData || []).filter(row => row.year == year);
+          contestSliceCache.set(key, fallback);
+          return fallback;
         });
 
         contestSliceInflight.set(key, p);
@@ -20344,7 +20390,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Prefer the surname in compact labels; ignore trailing suffixes like Jr./III.
       let idx = parts.length - 1;
       while (idx > 0 && isNameSuffixToken(parts[idx])) idx -= 1;
-      return parts[idx];
+      return toTitleCaseName(parts[idx]);
     }
 
     // Shared candidate/last-name resolver for hover, selected results, county trend + timeline, and trajectory.
@@ -32833,6 +32879,31 @@ document.addEventListener('DOMContentLoaded', function() {
         : null;
       const manifestFile = (manifestEntry?.file || '').toString().trim();
 
+      if (!(manifestHasEntries && !manifestEntry)) {
+        try {
+          const payloadPath = manifestFile
+            ? `${CONFIG.paths.contests_dir}/${manifestFile}`
+            : `${CONFIG.paths.contests_dir}/${key}.json`;
+          const payload = await loadJSON(payloadPath);
+          return (payload.rows || []).map(r => ({
+            year: Number(year),
+            county: r.county,
+            [`${contestType}_dem`]: Number(r.dem_votes) || 0,
+            [`${contestType}_rep`]: Number(r.rep_votes) || 0,
+            [`${contestType}_other`]: Number(r.other_votes) || 0,
+            [`${contestType}_total`]: Number(r.total_votes) || 0,
+            [`${contestType}_dem_candidate`]: r.dem_candidate || '',
+            [`${contestType}_rep_candidate`]: r.rep_candidate || '',
+            [`${contestType}_margin`]: Number(r.margin) || 0,
+            [`${contestType}_margin_pct`]: Number(r.margin_pct) || 0,
+            [`${contestType}_winner`]: r.winner || '',
+            [`${contestType}_color`]: r.color || ''
+          }));
+        } catch (_) {
+          // Fall through to OpenElections when JSON is unavailable.
+        }
+      }
+
       if (contestType === 'president' && PRESIDENT_OPEN_ELECTIONS_CSV[Number(year)]) {
         try {
           return await loadPresidentSliceFromOpenElectionsCSV(Number(year));
@@ -32841,32 +32912,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      if (manifestHasEntries && !manifestEntry) {
-        return null;
-      }
-
-      try {
-        const payloadPath = manifestFile
-          ? `${CONFIG.paths.contests_dir}/${manifestFile}`
-          : `${CONFIG.paths.contests_dir}/${key}.json`;
-        const payload = await loadJSON(payloadPath);
-        return (payload.rows || []).map(r => ({
-          year: Number(year),
-          county: r.county,
-          [`${contestType}_dem`]: Number(r.dem_votes) || 0,
-          [`${contestType}_rep`]: Number(r.rep_votes) || 0,
-          [`${contestType}_other`]: Number(r.other_votes) || 0,
-          [`${contestType}_total`]: Number(r.total_votes) || 0,
-          [`${contestType}_dem_candidate`]: r.dem_candidate || '',
-          [`${contestType}_rep_candidate`]: r.rep_candidate || '',
-          [`${contestType}_margin`]: Number(r.margin) || 0,
-          [`${contestType}_margin_pct`]: Number(r.margin_pct) || 0,
-          [`${contestType}_winner`]: r.winner || '',
-          [`${contestType}_color`]: r.color || ''
-        }));
-      } catch (_) {
-        return null;
-      }
+      return null;
     }
 
     async function getPreviousContestSlice(contestType, year, options = {}) {
