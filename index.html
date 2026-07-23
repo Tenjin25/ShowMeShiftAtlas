@@ -10236,8 +10236,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2c';
-    const APP_BUILD_ID = '2026-07-23-mo-v2c';
+    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2e';
+    const APP_BUILD_ID = '2026-07-23-mo-v2e';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -12008,10 +12008,31 @@ document.addEventListener('DOMContentLoaded', function() {
       const key = `${scope}_${contestType}_${year}`;
       const out = [];
       const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
-      if (baseDir) {
-        out.push(`${baseDir}/${key}.json`);
-        out.push(`${baseDir}/${key}_overlap.json`);
-      }
+      const normalizedLines = normalizeDistrictLinesYear(linesYear);
+
+      // Statewide contests reallocated onto legislative/congressional lines must use the
+      // *_overlap.json slices. Non-overlap senate files only cover the ~17 seats on the ballot
+      // that cycle (odd/even stagger), which leaves half the map empty.
+      const wantsOverlapSlice = new Set(['state_house', 'state_senate', 'congressional']).has(scope)
+        && normalizedLines === 2022
+        && new Set([
+          'president',
+          'us_senate',
+          'governor',
+          'lieutenant_governor',
+          'attorney_general',
+          'secretary_of_state',
+          'treasurer',
+          'auditor',
+          'labor_commissioner',
+          'insurance_commissioner',
+          'agriculture_commissioner',
+          'superintendent'
+        ]).has(String(contestType || '').trim().toLowerCase());
+
+      if (baseDir && wantsOverlapSlice) out.push(`${baseDir}/${key}_overlap.json`);
+      if (baseDir) out.push(`${baseDir}/${key}.json`);
+
       return Array.from(new Set(out));
     }
 
@@ -34601,12 +34622,14 @@ document.addEventListener('DOMContentLoaded', function() {
       function legislativeLeaderCandidateOverrides(ct, y) {
         const key = String(ct || '').trim().toLowerCase();
         const yearNum = Number(y);
+        // Chamber leaders for the General Assembly seated after that election.
         if (key === 'state_house') {
-          if (yearNum === 2022) return { repCandidate: 'Speaker Tim Moore', demCandidate: 'House Democrats' };
-          if (yearNum === 2024) return { repCandidate: 'Speaker Destin Hall', demCandidate: 'House Democrats' };
+          if (yearNum === 2022) return { repCandidate: 'Speaker Dean Plocher', demCandidate: 'House Democrats' };
+          if (yearNum === 2024) return { repCandidate: 'Speaker Jon Patterson', demCandidate: 'House Democrats' };
         }
         if (key === 'state_senate') {
-          if (yearNum === 2022 || yearNum === 2024) return { repCandidate: 'Phil Berger', demCandidate: 'Senate Democrats' };
+          if (yearNum === 2022) return { repCandidate: 'Caleb Rowden', demCandidate: 'Senate Democrats' };
+          if (yearNum === 2024) return { repCandidate: "Cindy O'Laughlin", demCandidate: 'Senate Democrats' };
         }
         return null;
       }
