@@ -9404,14 +9404,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
   }
-  const districtLines2024Btn = document.getElementById('district-lines-2024');
-  if (districtLines2024Btn) {
-    districtLines2024Btn.onclick = function() {
-      if (typeof setDistrictLinesMode === 'function') {
-        setDistrictLinesMode(2024).catch(() => {});
-      }
-    };
-  }
   const districtLines2026Btn = document.getElementById('district-lines-2026');
   if (districtLines2026Btn) {
     districtLines2026Btn.onclick = function() {
@@ -9864,11 +9856,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="section-kicker">District Lines</span>
                 <div class="view-toggle-row" style="display:flex;gap:6px;flex-wrap:wrap;">
                   <button id="district-lines-2022" class="view-toggle-btn active" type="button" data-testid="lines-2022" aria-label="Use 2022 district lines" aria-pressed="true">2022 Lines</button>
-                  <button id="district-lines-2024" class="view-toggle-btn" type="button" data-testid="lines-2024" aria-label="Use 2024 district lines" aria-pressed="false" style="display:none;">2024 Lines</button>
-                  <button id="district-lines-2026" class="view-toggle-btn" type="button" data-testid="lines-2026" aria-label="Use 2026 district lines" aria-pressed="false" style="display:none;">2026 Lines</button>
+                  <button id="district-lines-2026" class="view-toggle-btn" type="button" data-testid="lines-2026" aria-label="Use 2026 congressional lines" aria-pressed="false" style="display:none;">2026 Lines</button>
                 </div>
                 <div style="margin-top:4px;font-size:11px;color:#6b7280;">
-                  Missouri district views use the 2022 lines.
+                  Missouri district views use the 2022 lines. 2026 congressional lines can be enabled later.
                 </div>
                 <div id="district-lines-loading-hint" class="district-lines-loading-hint" aria-live="polite" aria-atomic="true"></div>
             </div>
@@ -10276,14 +10267,11 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_variant_overrides: '',
         districts: withBase('./Data/mo_congressional_districts_2022.geojson'),
         districts_2022: withBase('./Data/mo_congressional_districts_2022.geojson'),
-        districts_2024: '',
-        districts_2026: '',
+        districts_2026: '', // reserved for future 2026 congressional lines
         state_house: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_house_2022: withBase('./Data/mo_state_house_districts_2022.geojson'),
-        state_house_2024: '',
         state_senate: withBase('./Data/mo_state_senate_districts_2022.geojson'),
         state_senate_2022: withBase('./Data/mo_state_senate_districts_2022.geojson'),
-        state_senate_2024: '',
         county_demographics: withBase('./Data/county_demographics_2020_dp1.json'),
         county_population_estimates: '',
         precinct_demographics: withBase('./Data/precinct_demographics_2020_vap.csv'),
@@ -10292,9 +10280,9 @@ document.addEventListener('DOMContentLoaded', function() {
         county_contests_dir: withBase('./Data/contests'),
         district_election: withBase('./Data/mo_district_results_2022_lines.json'),
         district_contests_dir: withBase('./Data/district_contests'),
-        district_contests_2020_2024_dir: '',
         district_contests_dirs: {
-          '2022': withBase('./Data/district_contests')
+          '2022': withBase('./Data/district_contests'),
+          '2026': '' // reserved for future 2026 congressional contest slices
         },
         districts_info: withBase('./Data/empty.csv'),
         state_house_info: withBase('./Data/empty.csv'),
@@ -10670,7 +10658,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let electionData = null; // Flattened array for compatibility
     let contestManifest = [];
     let districtManifest = [];
-    let districtManifestByLines = { '2022': [], '2024': [], '2026': [] };
+    let districtManifestByLines = { '2022': [], '2026': [] };
     let currentDistrictLinesYear = 2022;
     const districtGeometryCache = new Map();
     const districtGeometrySourceKeyById = new Map(); // sourceId -> `${scope}:${path}` currently installed on the map
@@ -11326,9 +11314,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let cvapCountyTotalsByNorm = null; // Map<string countyNorm, number CVAP_TOT24>
     let cvapPrecinctTotalsByNorm = null; // Map<string precinct_norm, number CVAP_TOT24>
     const cvapDistrictTotalsByScopeYear = {
-      congressional: { '2022': null, '2024': null, '2026': null }, // Map<string districtNum, number>
-      state_house: { '2022': null, '2024': null, '2026': null },
-      state_senate: { '2022': null, '2024': null, '2026': null }
+      congressional: { '2022': null, '2026': null }, // Map<string districtNum, number>
+      state_house: { '2022': null, '2026': null },
+      state_senate: { '2022': null, '2026': null }
     };
     let cvapCountyTotalsLoadPromise = null;
     let cvapPrecinctTotalsLoadPromise = null;
@@ -11444,6 +11432,27 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!String(out.countyBehaviorMode || '').trim()) out.countyBehaviorMode = 'balanced';
       if (!Number.isFinite(Number(out.uncertaintyBoost))) out.uncertaintyBoost = 1;
       return out;
+    }
+
+    function getModeledContestDefinition(contestType, year) {
+      const base = getBaseModeledContestDefinition(contestType, year);
+      if (!base) return null;
+      const key = String(contestType || '').trim();
+      const overrides = MODELED_CONTEST_OVERRIDES_BY_TYPE.get(key) || null;
+      if (!overrides) return base;
+      return { ...base, ...overrides };
+    }
+
+    function getModeledContestDefinitionByType(contestType) {
+      const key = String(contestType || '').trim();
+      if (!key) return null;
+      try {
+        const match = Object.values(MODELED_CONTEST_DEFINITIONS || {}).find(def => String(def?.contestType || '').trim() === key);
+        if (!match) return null;
+        return getModeledContestDefinition(match.contestType, match.year);
+      } catch (_) {
+        return null;
+      }
     }
 
     // --- Modeled contest signature + derived slice helpers ---
@@ -11978,31 +11987,52 @@ document.addEventListener('DOMContentLoaded', function() {
       return merged;
     }
 
+    function normalizeDistrictLinesYear(raw) {
+      const y = Number(raw);
+      // Missouri currently ships 2022 lines; 2026 is reserved for future congressional lines.
+      if (y === 2026) return 2026;
+      return 2022;
+    }
+
+    function getDistrictLinesLabel(linesYear = currentDistrictLinesYear) {
+      return `${normalizeDistrictLinesYear(linesYear)} lines`;
+    }
+
+    function getActiveDistrictContestsDir(linesYear = currentDistrictLinesYear) {
+      const y = String(normalizeDistrictLinesYear(linesYear));
+      const dirs = CONFIG.paths?.district_contests_dirs || {};
+      return (dirs[y] || CONFIG.paths?.district_contests_dir || '').toString().trim();
+    }
+
+    function getPreferredDistrictSlicePaths(scope, contestType, year, linesYear = currentDistrictLinesYear) {
+      const key = `${scope}_${contestType}_${year}`;
+      const out = [];
+      const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
+      if (baseDir) {
+        out.push(`${baseDir}/${key}.json`);
+        out.push(`${baseDir}/${key}_overlap.json`);
+      }
+      return Array.from(new Set(out));
+    }
+
+    function getActiveDistrictManifest(linesYear = currentDistrictLinesYear) {
+      const y = String(normalizeDistrictLinesYear(linesYear));
+      return districtManifestByLines?.[y] || districtManifestByLines?.['2022'] || [];
+    }
+
     function getDistrictGeometryPath(scope, linesYear = currentDistrictLinesYear) {
       const y = normalizeDistrictLinesYear(linesYear);
       if (scope === 'congressional') {
         if (y === 2026) {
-          return CONFIG.paths.districts_2026 || CONFIG.paths.districts_2024 || CONFIG.paths.districts;
+          return CONFIG.paths.districts_2026 || CONFIG.paths.districts_2022 || CONFIG.paths.districts;
         }
-        return y === 2024
-          ? (CONFIG.paths.districts_2024 || CONFIG.paths.districts)
-          : (CONFIG.paths.districts_2022 || CONFIG.paths.districts);
+        return CONFIG.paths.districts_2022 || CONFIG.paths.districts;
       }
       if (scope === 'state_house') {
-        if (y === 2026) {
-          return CONFIG.paths.state_house_2024 || CONFIG.paths.state_house;
-        }
-        return y === 2024
-          ? (CONFIG.paths.state_house_2024 || CONFIG.paths.state_house)
-          : (CONFIG.paths.state_house_2022 || CONFIG.paths.state_house);
+        return CONFIG.paths.state_house_2022 || CONFIG.paths.state_house;
       }
       if (scope === 'state_senate') {
-        if (y === 2026) {
-          return CONFIG.paths.state_senate_2024 || CONFIG.paths.state_senate;
-        }
-        return y === 2024
-          ? (CONFIG.paths.state_senate_2024 || CONFIG.paths.state_senate)
-          : (CONFIG.paths.state_senate_2022 || CONFIG.paths.state_senate);
+        return CONFIG.paths.state_senate_2022 || CONFIG.paths.state_senate;
       }
       return '';
     }
@@ -12018,21 +12048,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const y = normalizeDistrictLinesYear(currentDistrictLinesYear);
       const group = document.getElementById('district-lines-control-group');
       const btn2022 = document.getElementById('district-lines-2022');
-      const btn2024 = document.getElementById('district-lines-2024');
       const btn2026 = document.getElementById('district-lines-2026');
       const showLinesControls = currentView !== 'counties';
+      const has2026CongressLines = !!(CONFIG.paths?.districts_2026 || '').toString().trim();
       if (group) group.style.display = showLinesControls ? '' : 'none';
       if (btn2022) {
         btn2022.classList.toggle('active', y === 2022);
         btn2022.setAttribute('aria-pressed', y === 2022 ? 'true' : 'false');
       }
-      if (btn2024) {
-        btn2024.classList.toggle('active', y === 2024);
-        btn2024.setAttribute('aria-pressed', y === 2024 ? 'true' : 'false');
-      }
       if (btn2026) {
         const congressView = currentView === 'districts';
-        btn2026.style.display = congressView ? '' : 'none';
+        btn2026.style.display = (congressView && has2026CongressLines) ? '' : 'none';
         btn2026.classList.toggle('active', y === 2026);
         btn2026.setAttribute('aria-pressed', y === 2026 ? 'true' : 'false');
       }
@@ -12112,14 +12138,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function shouldWarnDistrictLinesLoad(linesYear) {
       const y = normalizeDistrictLinesYear(linesYear);
-      if (y !== 2024 && y !== 2026) return false;
-      const scopes = ['congressional', 'state_house', 'state_senate'];
-      return scopes.some(scope => {
-        const path = getDistrictGeometryPath(scope, y);
-        if (!path) return false;
-        const cacheKey = `${scope}:${path}`;
-        return !districtGeometryCache.has(cacheKey);
-      });
+      if (y !== 2026) return false;
+      const path = getDistrictGeometryPath('congressional', y);
+      if (!path) return false;
+      const cacheKey = `congressional:${path}`;
+      return !districtGeometryCache.has(cacheKey);
     }
 
     async function setDistrictLinesMode(linesYear) {
@@ -12145,7 +12168,7 @@ document.addEventListener('DOMContentLoaded', function() {
       updateDistrictLinesToggleUI();
 
       if (appReady) {
-        const showLoading = (nextYear === 2024 || nextYear === 2026) && shouldWarnDistrictLinesLoad(nextYear);
+        const showLoading = nextYear === 2026 && shouldWarnDistrictLinesLoad(nextYear);
         try {
           if (showLoading) showDistrictLinesLoadingModal();
           await refreshDistrictGeometrySources(nextYear);
@@ -19930,11 +19953,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const linesYear = normalizeDistrictLinesYear(linesYearOverride);
       if (scope === 'congressional') {
         if (linesYear === 2026) {
-          return (crosswalks.congressional_2026 || crosswalks.congressional_2024 || crosswalks.congressional_2022 || crosswalks.congressional) || '';
+          return (crosswalks.congressional_2026 || crosswalks.congressional_2022 || crosswalks.congressional) || '';
         }
-        return (linesYear === 2024
-          ? (crosswalks.congressional_2024 || crosswalks.congressional_2022 || crosswalks.congressional)
-          : (crosswalks.congressional_2022 || crosswalks.congressional)) || '';
+        return (crosswalks.congressional_2022 || crosswalks.congressional) || '';
       }
       if (scope === 'state_house') {
         return crosswalks[`state_house_${linesYear}`] || crosswalks.state_house_2022 || '';
@@ -20148,7 +20169,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } : null;
       currentView = view;
       if (currentView !== 'districts' && normalizeDistrictLinesYear(currentDistrictLinesYear) === 2026) {
-        currentDistrictLinesYear = 2024;
+        currentDistrictLinesYear = 2022;
       }
       updateDistrictLinesToggleUI();
 
@@ -20613,9 +20634,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function cvapDistrictPathFor(scope, linesYear) {
       const y = normalizeDistrictLinesYear(linesYear);
       const paths = cvapAggPaths();
-      if (scope === 'congressional') return y === 2026 ? (paths.cd119_2024 || paths.cd118_2022) : (y === 2024 ? paths.cd119_2024 : paths.cd118_2022);
-      if (scope === 'state_house') return y === 2026 ? (paths.state_house_2024 || paths.state_house_2022) : (y === 2024 ? paths.state_house_2024 : paths.state_house_2022);
-      if (scope === 'state_senate') return y === 2026 ? (paths.state_senate_2024 || paths.state_senate_2022) : (y === 2024 ? paths.state_senate_2024 : paths.state_senate_2022);
+      if (scope === 'congressional') return y === 2026 ? (paths.cd2026 || paths.cd118_2022) : paths.cd118_2022;
+      if (scope === 'state_house') return paths.state_house_2022;
+      if (scope === 'state_senate') return paths.state_senate_2022;
       return '';
     }
 
@@ -20688,7 +20709,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try { void ensureCvapCountyTotalsLoaded(); } catch (_) {}
       try { void ensureCvapPrecinctTotalsLoaded(); } catch (_) {}
       try {
-        for (const y of [2022, 2024, 2026]) {
+        for (const y of [2022, 2026]) {
           void ensureCvapDistrictTotalsLoaded('congressional', y);
           void ensureCvapDistrictTotalsLoaded('state_house', y);
           void ensureCvapDistrictTotalsLoaded('state_senate', y);
@@ -32274,8 +32295,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       try {
         let loadedAnyDistrictManifest = false;
-        districtManifestByLines = { '2022': [], '2024': [], '2026': [] };
-        const manifestLoads = await Promise.all([2022, 2024, 2026].map(async (linesYear) => {
+        districtManifestByLines = { '2022': [], '2026': [] };
+        const manifestLoads = await Promise.all([2022, 2026].map(async (linesYear) => {
           const dir = getActiveDistrictContestsDir(linesYear);
           if (!dir) return { linesYear, files: [], err: null };
           try {
@@ -32311,7 +32332,7 @@ document.addEventListener('DOMContentLoaded', function() {
         districtElectionDataJSON = null;
         districtElectionDataLoadInflight = null;
         districtElectionDataLoadFailed = false;
-        districtManifestByLines = { '2022': [], '2024': [], '2026': [] };
+        districtManifestByLines = { '2022': [], '2026': [] };
         districtManifest = [];
         updateDistrictLinesToggleUI();
       }
