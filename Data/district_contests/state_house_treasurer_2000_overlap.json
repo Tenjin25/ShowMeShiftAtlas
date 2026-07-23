@@ -6,7 +6,7 @@
     "district_count": 163,
     "match_coverage_pct": 100,
     "direct_match_coverage_pct": 83.309043,
-    "generated_at": "2026-03-28T05:23:41.422Z",
+    "generated_at": "2026-06-05T18:15:33.993Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
     "legacy_district_labels_enabled": false

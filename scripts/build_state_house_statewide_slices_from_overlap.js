@@ -52,8 +52,63 @@ const CROSSWALK_BY_SCOPE = new Map([
 
 const DISTRICT_SCOPES = ['congressional', 'state_house', 'state_senate'];
 
-function districtStatsPathForStateHousePresident(year) {
-  return path.join(DATA_DIR, `district statistics state house ${Number(year)} pres.csv`);
+function normalizeCalibrationToken(s) {
+  return String(s || '')
+    .toLowerCase()
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function districtStatsPathForLegislativeCalibration(scope, year, contestType) {
+  const y = Number(year);
+  const ct = String(contestType || '').toLowerCase().trim();
+  const normalizedScope = String(scope || '').toLowerCase().trim();
+  if (!y || !ct) return '';
+
+  // Back-compat: older local naming used by the original presidential calibrator.
+  if (normalizedScope === 'state_house' && ct === 'president') {
+    const legacy = path.join(DATA_DIR, `district statistics state house ${y} pres.csv`);
+    if (fs.existsSync(legacy)) return legacy;
+  }
+
+  const calDir = path.join(DATA_DIR, 'calibration csvs');
+  if (!fs.existsSync(calDir)) return '';
+
+  const scopeTokensByScope = new Map([
+    ['state_house', ['state house']],
+    ['state_senate', ['state senate']]
+  ]);
+
+  const officeTokensByContestType = new Map([
+    ['president', ['pres', 'president']],
+    ['governor', ['gov', 'governor']],
+    ['lieutenant_governor', ['lt gov', 'lieutenant governor', 'lt governor']],
+    ['attorney_general', ['ag', 'attorney general']],
+    ['secretary_of_state', ['sos', 'secretary of state']],
+    ['treasurer', ['treasurer', 'state treasurer']],
+    ['us_senate', ['us senate', 'u.s. senate', 'senate']]
+  ]);
+
+  const scopeTokens = scopeTokensByScope.get(normalizedScope) || [];
+  if (!scopeTokens.length) return '';
+  const officeTokens = officeTokensByContestType.get(ct) || [ct];
+  const wantYear = String(y);
+  const wantParts = [
+    normalizeCalibrationToken(`district-statistics ${wantYear}`),
+    ...scopeTokens.map(normalizeCalibrationToken)
+  ];
+
+  const entries = fs.readdirSync(calDir).filter(name => /\.csv$/i.test(name));
+  for (const name of entries) {
+    const norm = normalizeCalibrationToken(name);
+    if (!wantParts.every(p => norm.includes(p))) continue;
+    const matchesOffice = officeTokens.some(tok => norm.includes(normalizeCalibrationToken(tok)));
+    if (!matchesOffice) continue;
+    return path.join(calDir, name);
+  }
+
+  return '';
 }
 
 function parseArgs(argv) {
@@ -841,7 +896,7 @@ function apportionVotesByShares(totalVotes, shares) {
   return out;
 }
 
-function calibratePresidentialPayloadToDistrictStats(payload, year, csvPath) {
+function calibratePayloadToDistrictStats(payload, year, csvPath) {
   if (!payload?.general?.results || !csvPath || !fs.existsSync(csvPath)) return payload;
   const sharesByDistrict = readDistrictStatsDemRepOthShares(csvPath);
   if (!sharesByDistrict.size) return payload;
@@ -1396,12 +1451,12 @@ async function main() {
       }
     );
 
-    // Optional calibration: for state_house presidential, overwrite district D/R/O shares
+    // Optional calibration: for state legislative statewide contests, overwrite district D/R/O shares
     // using external per-district stats (keeps each district's total_votes).
-    if (scope === 'state_house' && String(contestType) === 'president') {
-      const statsPath = districtStatsPathForStateHousePresident(year);
+    if (scope === 'state_house' || scope === 'state_senate') {
+      const statsPath = districtStatsPathForLegislativeCalibration(scope, year, contestType);
       if (statsPath && fs.existsSync(statsPath)) {
-        payload = calibratePresidentialPayloadToDistrictStats(payload, year, statsPath);
+        payload = calibratePayloadToDistrictStats(payload, year, statsPath);
       }
     }
     const outName = `${scope}_${contestType}_${year}_overlap.json`;
