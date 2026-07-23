@@ -10236,8 +10236,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2h';
-    const APP_BUILD_ID = '2026-07-23-mo-v2h';
+    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2j';
+    const APP_BUILD_ID = '2026-07-23-mo-v2j';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -11113,6 +11113,17 @@ document.addEventListener('DOMContentLoaded', function() {
       return Array.from(years).filter(Number.isFinite).sort((a, b) => a - b);
     }
 
+    function getMissouriUsSenateSeatClassYears(year) {
+      const y = Number(year);
+      // Missouri Class I includes the 2002 special for Mel Carnahan's seat
+      // (Jean Carnahan appointed after 2000; Talent won the 2002 special).
+      const classI = [2002, 2006, 2012, 2018, 2024];
+      const classIII = [2004, 2010, 2016, 2022];
+      if (classI.includes(y)) return classI;
+      if (classIII.includes(y)) return classIII;
+      return null;
+    }
+
     function getPriorContestYearsFromAvailableYears(contestType, year, availableYears) {
       const ct = String(contestType || '').trim();
       const y = Number(year);
@@ -11121,6 +11132,15 @@ document.addEventListener('DOMContentLoaded', function() {
         : [];
       if (!years.length) return [];
       if (ct === 'us_senate') {
+        // Prefer the previous election for the same Missouri Senate class.
+        // Blind y-6 skips the 2002 Class I special and can land on the other seat
+        // (e.g. 2006 → 2004) when 2000 is missing from the archive.
+        const seatYears = getMissouriUsSenateSeatClassYears(y);
+        if (seatYears && seatYears.length) {
+          const priorInSeat = seatYears.filter(v => v < y && years.includes(v)).sort((a, b) => b - a);
+          const rest = years.filter(v => !priorInSeat.includes(v)).sort((a, b) => b - a);
+          return [...priorInSeat, ...rest];
+        }
         const preferred = [y - 6, y - 12].filter(v => years.includes(v));
         const rest = years.filter(v => !preferred.includes(v)).sort((a, b) => b - a);
         return [...preferred, ...rest];
@@ -21015,6 +21035,15 @@ document.addEventListener('DOMContentLoaded', function() {
       if (key === 'OBAMA' || key === 'B. OBAMA' || key === 'B OBAMA') return 'Barack Obama';
       if (key === 'ROMNEY' || key === 'M. ROMNEY' || key === 'M ROMNEY') return 'Mitt Romney';
       if (key === 'MCCAIN' || key === 'J. MCCAIN' || key === 'J MCCAIN') return 'John McCain';
+      if (
+        key === 'JERIMIAH NIXON'
+        || key === 'JEREMIAH NIXON'
+        || key === 'JEREMIAH W. NIXON'
+        || key === 'JEREMIAH W NIXON'
+        || key === 'JERIMIAH W. NIXON'
+        || key === 'JERIMIAH W NIXON'
+      ) return 'Jay Nixon';
+      if (key === 'DAVID SPENCE' || key === 'DAVID R. SPENCE' || key === 'DAVID R SPENCE') return 'Dave Spence';
       return raw;
     }
 
@@ -33248,7 +33277,7 @@ document.addEventListener('DOMContentLoaded', function() {
       (prevMeta.rows || []).forEach(r => {
         const rowName = (r.county || '').toString();
         const countyOnly = rowName.includes(' - ') ? rowName.split(' - ')[0] : rowName;
-        const countyNorm = (countyOnly || '').toString().replace(/[^a-z0-9 .\-]/gi, '').replace(/\s+/g, ' ').trim().toUpperCase();
+        const countyNorm = normalizeCountyFeatureToken(countyOnly);
         if (!countyNorm) return;
         const prevType = String(prevMeta.contestType || contestType).trim() || contestType;
         const dem = Number(r[`${prevType}_dem`] ?? r.dem_votes ?? 0);
@@ -33261,7 +33290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (includePrecinctMargins) {
           const mPct = Number(r[`${prevType}_margin_pct`] ?? r.margin_pct ?? 0);
-          const primaryNorm = normalizeCountyName(rowName);
+          const primaryNorm = normalizeCountyResultKey(rowName);
           precinctNormVariantsLite(rowName).forEach(n => {
             const key = (n || '').toString().trim().toUpperCase();
             if (!key) return;
@@ -34467,11 +34496,18 @@ document.addEventListener('DOMContentLoaded', function() {
           flipWidthExpr.push(['==', countyFeatureNameExpression(), countyNorm]);
           flipWidthExpr.push(3);
         }
-        flipColorExpr.push('rgba(15,23,42,0.35)');
-        flipWidthExpr.push(1);
         try {
-          map.setPaintProperty('county-stroke', 'line-color', flipColorExpr);
-          map.setPaintProperty('county-stroke', 'line-width', flipWidthExpr);
+          // Mapbox `case` requires at least one condition pair + default. With zero flips,
+          // ['case', default] is invalid and throws (breaking stroke paint for the mode).
+          if (flipColorExpr.length >= 3) {
+            flipColorExpr.push('rgba(15,23,42,0.35)');
+            flipWidthExpr.push(1);
+            map.setPaintProperty('county-stroke', 'line-color', flipColorExpr);
+            map.setPaintProperty('county-stroke', 'line-width', flipWidthExpr);
+          } else {
+            map.setPaintProperty('county-stroke', 'line-color', 'rgba(15,23,42,0.35)');
+            map.setPaintProperty('county-stroke', 'line-width', 1);
+          }
         } catch (_) {}
       } else if (map.getLayer('county-stroke')) {
         try {
