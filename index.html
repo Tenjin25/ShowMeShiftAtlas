@@ -10236,8 +10236,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2e';
-    const APP_BUILD_ID = '2026-07-23-mo-v2e';
+    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2g';
+    const APP_BUILD_ID = '2026-07-23-mo-v2g';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -19624,6 +19624,37 @@ document.addEventListener('DOMContentLoaded', function() {
 	      wireContestSelectHandlers(sel);
 	    }
 
+    function filterManifestEntriesForCurrentView(entries, view = currentView) {
+      const list = Array.isArray(entries) ? entries : [];
+      const viewKey = String(view || 'counties').trim().toLowerCase();
+      const chamberYears = new Set([2022, 2024]);
+
+      return list.filter(entry => {
+        if (!entry) return false;
+        const contestType = String(entry.contest_type || '').trim().toLowerCase();
+        const year = Number(entry.year);
+        const statewide = isStatewideContestType(contestType);
+
+        // County layer: keep statewide contests; hide chamber races that belong on district layers.
+        if (viewKey === 'counties' || viewKey === 'vtds_2000' || !viewKey) {
+          return contestType !== 'state_house' && contestType !== 'state_senate';
+        }
+
+        // District layers keep all statewide contests, plus that layer's own chamber races for 2022/2024.
+        if (viewKey === 'state_house') {
+          return statewide || (contestType === 'state_house' && chamberYears.has(year));
+        }
+        if (viewKey === 'state_senate') {
+          return statewide || (contestType === 'state_senate' && chamberYears.has(year));
+        }
+        if (viewKey === 'districts') {
+          return statewide || (contestType === 'us_house' && chamberYears.has(year));
+        }
+
+        return true;
+      });
+    }
+
     function updateContestSelectForCurrentView() {
       const activeDistrictManifest = getActiveDistrictManifest();
       // In manifest mode, district views must use district slices; otherwise selections can appear but won't load.
@@ -19645,7 +19676,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      const entriesWithModels = mergeManifestEntriesWithModeled(entries, currentView);
+      const entriesWithModels = filterManifestEntriesForCurrentView(
+        mergeManifestEntriesWithModeled(entries, currentView),
+        currentView
+      );
       if (Array.isArray(entriesWithModels) && entriesWithModels.length > 0) {
         populateContestSelectFromManifest(entriesWithModels);
         return;
