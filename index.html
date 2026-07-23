@@ -4393,11 +4393,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     word-break: break-word;
   }
 
-  /* Winner stays half-grid beside Lead (long-name 2-line clamp, not full-width). */
-  #focus-winner.focus-pill-value {
-    font-size: 14px;
-    line-height: 1.2;
-  }
+
 
   .focus-pill-value.dem {
     color: #1d4ed8;
@@ -10236,8 +10232,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2j';
-    const APP_BUILD_ID = '2026-07-23-mo-v2j';
+    const DATA_CACHE_BUSTER = '2026-07-23-winner-pill-size';
+    const APP_BUILD_ID = '2026-07-23-winner-pill-size';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
