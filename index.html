@@ -525,7 +525,7 @@
       const normTarget = normalizeCountyName(countyName);
       const countyFeature = counties.find(f => {
         const props = f.properties || {};
-        const name = normalizeCountyName(props.NAME20 || props.County || props.COUNTYNAME || props.NAME || '');
+        const name = normalizeCountyName(props.NAMELSAD20 || props.NAME20 || props.County || props.COUNTYNAME || props.NAME || '');
         return name === normTarget;
       });
       if (!countyFeature) return;
@@ -10754,7 +10754,7 @@ document.addEventListener('DOMContentLoaded', function() {
       (rows || []).forEach(r => {
         const rowName = (r?.county || '').toString();
         const countyOnly = rowName.includes(' - ') ? rowName.split(' - ')[0] : rowName;
-        const countyNorm = normalizeCountyToken(countyOnly);
+        const countyNorm = normalizeCountyFeatureToken(countyOnly);
         if (!countyNorm) return;
         const dem = Number(r?.[`${ct}_dem`] || 0);
         const rep = Number(r?.[`${ct}_rep`] || 0);
@@ -10778,7 +10778,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const officialCountyTotals = getOfficialCountyTotalsFromRows(rows);
       if (officialCountyTotals) {
         Object.entries(officialCountyTotals).forEach(([countyName, totals]) => {
-          const countyNorm = normalizeCountyToken(countyName);
+          const countyNorm = normalizeCountyFeatureToken(countyName);
           if (!countyNorm) return;
           totalsByCounty.set(countyNorm, {
             dem: Number(totals?.dem_votes || 0),
@@ -12837,7 +12837,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function isStLouisCityAliasToken(name) {
       const norm = normalizeCountyToken(name);
-      return norm === 'ST. LOUIS CITY';
+      return !!norm && (
+        norm === 'ST. LOUIS CITY'
+        || /^CITY OF (ST\.?\s+LOUIS|SAINT\s+LOUIS)$/i.test(norm)
+        || /^(ST\.?\s+LOUIS|SAINT\s+LOUIS)\s+(CITY|INDEPENDENT CITY)$/i.test(norm)
+      );
     }
 
     function getCountyNameFromProps(props = {}) {
@@ -12854,9 +12858,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function normalizeCountyFeatureToken(name) {
-      const norm = normalizeCountyToken(name);
+      let norm = normalizeCountyToken(name);
       if (!norm) return '';
-      if (norm === 'ST. LOUIS CITY' || norm === 'ST. LOUIS COUNTY') return norm;
+      if (isStLouisCityAliasToken(norm) || norm === 'ST. LOUIS CITY') return 'ST. LOUIS CITY';
+      if (norm === 'ST. LOUIS COUNTY') return 'ST. LOUIS COUNTY';
+      const stLouis = norm.match(/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(.*)$/i);
+      if (stLouis) {
+        const suffix = (stLouis[2] || '').toString().toUpperCase();
+        if (!suffix || /^\s*(COUNTY)?$/i.test(suffix)) return 'ST. LOUIS COUNTY';
+        if (/^\s*(CITY|INDEPENDENT CITY)$/i.test(suffix)) return 'ST. LOUIS CITY';
+        norm = `ST. LOUIS${suffix}`;
+      }
       if (/\s+(COUNTY|CITY)$/i.test(norm)) return norm;
       return `${norm} COUNTY`;
     }
@@ -12904,11 +12916,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function getCountyResultRow(resultMap, countyNameOrNorm) {
       if (!resultMap || typeof resultMap !== 'object') return null;
       const lookup = getCountyLookupTokens(countyNameOrNorm);
+      const featureKey = normalizeCountyFeatureToken(countyNameOrNorm);
+      if (featureKey && !lookup.includes(featureKey)) lookup.push(featureKey);
       for (const key of lookup) {
         if (Object.prototype.hasOwnProperty.call(resultMap, key)) return resultMap[key];
       }
       for (const key of Object.keys(resultMap)) {
-        if (lookup.includes(normalizeCountyToken(key))) return resultMap[key];
+        const keyFeature = normalizeCountyFeatureToken(key);
+        if (lookup.includes(key) || lookup.includes(keyFeature) || (featureKey && keyFeature === featureKey)) {
+          return resultMap[key];
+        }
       }
       return null;
     }
@@ -19081,7 +19098,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   boundaryGeoJSON.features.forEach(f => {
     const p = f.properties || {};
-    let name = normalizeCountyName(p.precinct_name || p.county_nam || p[countyKey] || p.NAME20 || p.COUNTYNAME || p.NAME || p.County || p.name || '');
+    let name = normalizeCountyName(getCountyNameFromProps(p) || p.precinct_name || p.county_nam || p[countyKey] || p.NAME || p.County || p.name || '');
     const electionRow = electionMap[name];
     if (electionRow) {
       Object.assign(f.properties, electionRow);
@@ -19102,7 +19119,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       geojson.features.forEach(f => {
         const p = f.properties || {};
-        const name = normalizeCountyName(p.precinct_name || p.county_nam || p.NAME20 || p.COUNTYNAME || p.NAME || p.County || p.name || p.NAMELSAD || '');
+        const name = normalizeCountyName(getCountyNameFromProps(p) || p.precinct_name || p.county_nam || p.NAME || p.County || p.name || p.NAMELSAD || '');
         if (name) map[name] = name;
       });
       return map;
@@ -20899,13 +20916,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function stripRunningMateName(name) {
       const raw = (name || '').toString().trim();
       if (!raw) return '';
-      // Common presidential ticket separators.
-      const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', ' â€“ ', ' â€” '];
+      // Common presidential ticket separators (MO OpenElections uses "A, B" tickets).
+      const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', ' – ', ' — ', ', ', ','];
       for (const sep of seps) {
         if (raw.includes(sep)) {
           const left = raw.split(sep, 1)[0].trim();
           return expandLegacyCandidateShorthand(left || raw);
         }
+      }
+      const wordSepMatch = raw.match(/^(.*?)\s+\b(?:AND|WITH)\b\s+.+$/i);
+      if (wordSepMatch) {
+        const left = (wordSepMatch[1] || '').trim();
+        return expandLegacyCandidateShorthand(left || raw);
       }
       // Legacy "GORE-LIEBERMAN" style.
       if (raw.includes('-')) {
@@ -20914,7 +20936,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return expandLegacyCandidateShorthand(raw);
     }
-
     function isNameSuffixToken(token) {
       const normalized = (token || '')
         .toString()
@@ -21708,6 +21729,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (repShareFill) repShareFill.style.width = `${repPct.toFixed(2)}%`;
       if (otherShareFill) otherShareFill.style.width = `${otherPct.toFixed(2)}%`;
     }
+    // Missouri does not ship modeled-senate UX overlays; keep symbols defined so contest apply cannot throw.
+    const MODELED_SENATE_UX_FEATURES = {
+      historicalAnalogEnabled: false,
+      baselineVsCandidateEnabled: false
+    };
+    const MODELED_SENATE_ANALOG_YEARS = Object.freeze([]);
+    const MODELED_SENATE_ANALOG_METRO_COUNTIES = new Set();
+
     function isModeledSenateEnhancementContest(contestType, year) {
       if (!MODELED_SENATE_UX_FEATURES.historicalAnalogEnabled && !MODELED_SENATE_UX_FEATURES.baselineVsCandidateEnabled) return false;
       const ct = String(contestType || '').trim();
@@ -22259,15 +22288,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const entries = getTrendManifestEntriesForContestType(contestType);
 
-      const target = normalizeCountyToken(countyName);
+      const target = normalizeCountyFeatureToken(countyName);
       if (!target) return [];
+      const targetAliases = new Set(
+        getCountyLookupTokens(countyName)
+          .map(normalizeCountyFeatureToken)
+          .filter(Boolean)
+      );
+      targetAliases.add(target);
       const out = [];
       const loaded = await mapWithConcurrency(entries, 4, async (e) => {
         const year = Number(e?.year);
         const entryType = String(e?.contest_type || contestType).trim() || contestType;
         if (!Number.isFinite(year)) return null;
         const bundle = await ensureCountyAggregateBundle(entryType, year);
-        let totals = (bundle && bundle.totalsByCounty) ? bundle.totalsByCounty.get(target) : null;
+        let totals = null;
+        if (bundle && bundle.totalsByCounty) {
+          for (const alias of targetAliases) {
+            const hit = bundle.totalsByCounty.get(alias);
+            if (hit && Number(hit.total || 0) > 0) { totals = hit; break; }
+          }
+        }
         if (!totals || !(Number(totals.total || 0) > 0)) {
           // Fallback (modeled / missing bundles): aggregate just this county from rows.
           try {
@@ -22276,8 +22317,8 @@ document.addEventListener('DOMContentLoaded', function() {
             (rows || []).forEach(r => {
               const rowName = (r?.county || '').toString();
               const countyOnly = rowName.includes(' - ') ? rowName.split(' - ')[0] : rowName;
-              const countyNorm = normalizeCountyToken(countyOnly);
-              if (countyNorm !== target) return;
+              const countyNorm = normalizeCountyFeatureToken(countyOnly);
+              if (!targetAliases.has(countyNorm)) return;
               const d = Number(r?.[`${entryType}_dem`] || 0);
               const rp = Number(r?.[`${entryType}_rep`] || 0);
               const o = Number(r?.[`${entryType}_other`] || 0);
@@ -24077,10 +24118,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function setCountyHoverOutline(countyName) {
       const name = (countyName || '').toString().trim();
       if (!name) return clearHoverOutline();
+      // Prefer NAMELSAD20-style tokens so St. Louis city vs county stay distinct
+      // (both share NAME20 "St. Louis").
+      const target = normalizeCountyFeatureToken(name);
+      if (!target) return clearHoverOutline();
       showHoverOutline(
         'county-stroke-hover',
-        ['==', ['coalesce', ['get', 'NAME20'], ['get', 'CountyName'], ['get', 'COUNTYNAME'], ['get', 'county_nam'], ['get', 'NAME'], ['get', 'name']], name],
-        `county:${name}`
+        ['==', countyFeatureNameExpression(), target],
+        `county:${target}`
       );
     }
 
@@ -24288,9 +24333,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (meta.kind === 'district') {
         const d = Number(meta.districtNum);
         if (!Number.isFinite(d)) return getReadableFocusLabel();
-        if (meta.scope === 'congressional') return `CD ${d}`;
-        if (meta.scope === 'state_house') return `HD ${d}`;
-        if (meta.scope === 'state_senate') return `SD ${d}`;
+        const padded = String(d).padStart(2, '0');
+        if (meta.scope === 'congressional') return `MO-${padded}`;
+        if (meta.scope === 'state_house') return `HD-${padded}`;
+        if (meta.scope === 'state_senate') return `SD-${padded}`;
       }
       if (meta.kind === 'county' && meta.county) return formatCountyJurisdictionLabel(meta.county);
       if (meta.kind === 'precinct' && meta.precinct) return meta.precinct;
@@ -27539,24 +27585,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return;
       }
-      // Normalize and find county data
-      function normalizeCountyName(name) {
-        return (name || '')
-          .replace(/[^a-z0-9 .\-]/gi, '')  // Keep periods for St. names and hyphens for Miami-Dade
-          .replace(/\s+/g, ' ')
-          .trim()
-          .toUpperCase();
-      }
-      let norm = normalizeCountyName(countyName);
-      let countyData = currentElectionResults[norm];
-      if (!countyData) {
-        for (const key in currentElectionResults) {
-          if (normalizeCountyName(key) === norm) {
-            countyData = currentElectionResults[key];
-            break;
-          }
-        }
-      }
+      // Normalize and find county data (NAMELSAD20-style + St. Louis aliases)
+      const countyData = getCountyResultRow(currentElectionResults, countyName);
       if (!countyData) {
         if (sidebarReady) {
           contentEl.innerHTML = '<p>No results found for this county in the selected contest.</p>';
@@ -30578,7 +30608,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!countiesGeoJSON || !Array.isArray(countiesGeoJSON.features)) return [];
       const out = countiesGeoJSON.features.map(f => {
         const p = f.properties || {};
-        return (p.NAME20 || p.County || p.COUNTYNAME || p.NAME || '').toString().trim();
+        return (p.NAMELSAD20 || p.NAME20 || p.County || p.COUNTYNAME || p.NAME || '').toString().trim();
       }).filter(Boolean);
       return Array.from(new Set(out)).sort((a, b) => b.length - a.length || a.localeCompare(b));
     }
@@ -30909,7 +30939,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const counties = countiesGeoJSON && countiesGeoJSON.features
         ? countiesGeoJSON.features.map(f => {
             const p = f.properties || {};
-            return p.NAME20 || p.County || p.COUNTYNAME || p.NAME || '';
+            return p.NAMELSAD20 || p.NAME20 || p.County || p.COUNTYNAME || p.NAME || '';
           }).filter(Boolean).sort()
         : [];
 
@@ -31138,10 +31168,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         const normTarget = normalize(countyName);
         let found = false;
-        // First try exact match
+        // First try exact match (NAMELSAD20 first so St. Louis city != county)
         src.features.forEach(f => {
           const props = f.properties || {};
-          const rawName = props.NAME20 || props.NAMELSAD20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
+          const rawName = props.NAMELSAD20 || props.NAME20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
           const n = normalize(rawName);
           if (n === normTarget) {
             found = f;
@@ -31151,7 +31181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!found) {
           src.features.forEach(f => {
             const props = f.properties || {};
-            const rawName = props.NAME20 || props.NAMELSAD20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
+            const rawName = props.NAMELSAD20 || props.NAME20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name || '';
             const n = normalize(rawName);
             if (n.indexOf(normTarget) !== -1 || normTarget.indexOf(n) !== -1) {
               if (!found) found = f; // pick first sensible hit
@@ -31161,7 +31191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (found) {
           const props = found.properties || {};
-          lastSelectedCounty = props.NAME20 || props.NAMELSAD20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name;
+          lastSelectedCounty = props.NAMELSAD20 || props.NAME20 || props.county_name || props.County || props.COUNTYNAME || props.NAME || props.name;
           const bbox = turf.bbox(found);
           debugLog('[DIAGNOSTIC] Matched county for', countyName, '->', lastSelectedCounty, 'bbox:', bbox);
           syncFlySearchInputs(lastSelectedCounty);
@@ -33329,11 +33359,7 @@ document.addEventListener('DOMContentLoaded', function() {
       lastContestSliceMeta = { contestType, year: Number(year), rows: contestData };
 
 	      function normalizeCountyName(name) {
-	        return (name || '')
-	          .replace(/[^a-z0-9 .\-]/gi, '')
-	          .replace(/\s+/g, ' ')
-	          .trim()
-	          .toUpperCase();
+	        return normalizeCountyResultKey(name);
 	      }
 
       // Precinct key matching needs to tolerate (a) non-geographic buckets in results
