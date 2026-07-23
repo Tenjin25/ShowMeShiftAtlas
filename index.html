@@ -551,7 +551,7 @@
     <title>Show-Me Shift Atlas | Missouri Election Atlas (2000-2024)</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover'>
     <meta name="author" content="Shamar Davis">
-    <meta name="copyright" content="Â© 2026 Shamar Does Elections. All Rights Reserved.">
+    <meta name="copyright" content="© 2026 Shamar Does Elections. All Rights Reserved.">
     <!-- Watermark: SDE Creator Attribution | Created by Shamar Davis | Copyright 2026 Shamar Does Elections -->
     <meta property="og:title" content="Show-Me Shift Atlas | Missouri Election Atlas (2000-2024)">
     <meta property="og:description" content="Interactive visualization of Missouri election trends from 2000 to 2024, with county, precinct, and district views.">
@@ -1940,7 +1940,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   padding-left: 14px;
 }
 .focus-glance-bullets li::before {
-  content: "â€¢";
+  content: "•";
   position: absolute;
   left: 0;
   top: 0.05em;
@@ -6470,7 +6470,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   }
 
   .controls-disclosure > .controls-disclosure-summary::after {
-    content: 'â–¾';
+    content: '▾';
     color: #64748b;
     font-size: 12px;
     font-weight: 900;
@@ -9716,7 +9716,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Floating Status Panel -->
   <div class="status-panel" id="status-panel" style="display:none;position:fixed;top:20px;right:90px;z-index:10002;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);padding:18px 24px 18px 18px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);border:1px solid #e5e7eb;max-width:340px;min-width:200px;font-size:15px;color:#34495e;">
     <span id="status-message"></span>
-    <button id="status-exit" title="Close" style="position:absolute;top:10px;right:10px;padding:4px 10px;border-radius:6px;border:none;background:#eee;cursor:pointer;font-weight:bold;font-size:18px;">Ã—</button>
+    <button id="status-exit" title="Close" style="position:absolute;top:10px;right:10px;padding:4px 10px;border-radius:6px;border:none;background:#eee;cursor:pointer;font-weight:bold;font-size:18px;">×</button>
   </div>
 
 
@@ -9765,7 +9765,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <span class="contest-onboard-kicker">Start here</span>
                   <span class="contest-onboard-copy" id="contest-onboard-copy">Choose a contest, then hover or tap a county. Click/tap to pin details.</span>
                 </div>
-                <div class="contest-loading-indicator" id="contest-loading-indicator" aria-live="polite" aria-atomic="true" hidden>Loadingâ€¦</div>
+                <div class="contest-loading-indicator" id="contest-loading-indicator" aria-live="polite" aria-atomic="true" hidden>Loading…</div>
                 <div class="model-inputs-inline" id="model-inputs-inline" role="note" hidden></div>
                 <div class="contest-search-wrap contest-search-wrap-secondary">
                   <input id="contestSearch" type="search" placeholder="Search contests (e.g., President, Senate, 2008)..." autocomplete="off" spellcheck="false" data-testid="contest-search" aria-label="Search contests" />
@@ -9916,8 +9916,8 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="scenario-row" style="display:none;">
                 <label for="pop-change-metric">Pop change metric</label>
                 <select id="pop-change-metric" data-testid="pop-change-metric" aria-label="Population change metric">
-                  <option value="pct">Percent (2020â†’2025)</option>
-                  <option value="abs">Absolute count (2020â†’2025)</option>
+                  <option value="pct">Percent (2020→2025)</option>
+                  <option value="abs">Absolute count (2020→2025)</option>
                 </select>
                 <span class="scenario-value" aria-hidden="true"></span>
                 <div class="scenario-help">Used by Pop Change mode in county view.</div>
@@ -10007,7 +10007,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="legend-footer" id="legend-footer">Darker shades indicate larger two-party leads in the current contest.</div>
         <div class="legend-context-chips" id="legend-context-chips">
-          <span class="legend-context-chip" id="legend-bellwether-chip" data-testid="legend-bellwether-chip" title="Barometer counties are the best statewide-margin mirrors across the last 2â€“3 available cycles (closest to the statewide two-party margin).">Barometer</span>
+          <span class="legend-context-chip" id="legend-bellwether-chip" data-testid="legend-bellwether-chip" title="Barometer counties are the best statewide-margin mirrors across the last 2“3 available cycles (closest to the statewide two-party margin).">Barometer</span>
           <span class="legend-context-chip" id="legend-split-chip" data-testid="legend-split-chip" title="Pres-Gov mode keeps President as the base contest and overlays Governor margins on top." style="display:none;"></span>
           <span class="legend-context-chip" id="legend-popmetric-chip" data-testid="legend-popmetric-chip" title="Active population metric for Pop Change mode." style="display:none;"></span>
           <span class="legend-context-chip" id="filters-active-chip" data-testid="filters-active-chip" title="Active toggles" style="display:none;"></span>
@@ -10154,23 +10154,23 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="modal-body">
           <h3>Modes</h3>
-          <p><strong>Margins</strong>: colors show the <strong>two-party margin</strong> (Rep% âˆ’ Dem%). Red shades = Republican lead; blue shades = Democratic lead. Darker = a larger lead (less competitive).</p>
+          <p><strong>Margins</strong>: colors show the <strong>two-party margin</strong> (Rep% − Dem%). Red shades = Republican lead; blue shades = Democratic lead. Darker = a larger lead (less competitive).</p>
           <p><strong>Winners</strong>: solid color by winner (D/R), regardless of margin size.</p>
-          <p><strong>Shift</strong>: change in <strong>signed</strong> margin vs the nearest available prior election for that contest (e.g. 2020â†’2024). Positive = more Republican; negative = more Democratic.</p>
+          <p><strong>Shift</strong>: change in <strong>signed</strong> margin vs the nearest available prior election for that contest (e.g. 2020→2024). Positive = more Republican; negative = more Democratic.</p>
 
           <h3>Margin Categories</h3>
-          <p>Category names are just shorthand for <strong>absolute</strong> margin ranges (|Rep% âˆ’ Dem%|):</p>
+          <p>Category names are just shorthand for <strong>absolute</strong> margin ranges (|Rep% − Dem%|):</p>
           <ul>
             <li><strong>Annihilation</strong>: &ge;40%</li>
-            <li><strong>Dominant</strong>: 30â€“39.99%</li>
-            <li><strong>Stronghold</strong>: 20â€“29.99%</li>
-            <li><strong>Safe</strong>: 10â€“19.99%</li>
-            <li><strong>Likely</strong>: 5.50â€“9.99%</li>
-            <li><strong>Lean</strong>: 1.00â€“5.49%</li>
-            <li><strong>Tilt</strong>: 0.50â€“0.99%</li>
+            <li><strong>Dominant</strong>: 30“39.99%</li>
+            <li><strong>Stronghold</strong>: 20“29.99%</li>
+            <li><strong>Safe</strong>: 10“19.99%</li>
+            <li><strong>Likely</strong>: 5.50“9.99%</li>
+            <li><strong>Lean</strong>: 1.00“5.49%</li>
+            <li><strong>Tilt</strong>: 0.50“0.99%</li>
             <li><strong>Tossup</strong>: &lt;0.50%</li>
           </ul>
-          <p class="meta-subtle">Example: â€œSafe Republican (10â€“19.99%)â€ means the Republican candidate leads by 10â€“19.99 percentage points (two-party margin).</p>
+          <p class="meta-subtle">Example: “Safe Republican (10“19.99%)” means the Republican candidate leads by 10“19.99 percentage points (two-party margin).</p>
 
           <h3>Hover + Select</h3>
           <ul>
@@ -10183,12 +10183,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <ul>
             <li><span class="kbd">P</span> toggles precinct overlay (dots at statewide zoom; polygons when zoomed in).</li>
             <li><span class="kbd">L</span> toggles county labels.</li>
-            <li><strong>â™¿</strong> toggles colorblind-friendly colors.</li>
+            <li><strong>♿</strong> toggles colorblind-friendly colors.</li>
             <li><strong>Clear</strong> (in the vote counter) unpins a selected area.</li>
           </ul>
 
           <h3>Notes</h3>
-          <p class="meta-subtle">If Shift canâ€™t find a prior year for the selected contest, it falls back to Margins.</p>
+          <p class="meta-subtle">If Shift can’t find a prior year for the selected contest, it falls back to Margins.</p>
         </div>
       </div>
     </div>
@@ -10236,8 +10236,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2g';
-    const APP_BUILD_ID = '2026-07-23-mo-v2g';
+    const DATA_CACHE_BUSTER = '2026-07-23-mo-v2h';
+    const APP_BUILD_ID = '2026-07-23-mo-v2h';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -10724,7 +10724,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let districtsInfo = null;
     let stateHouseInfo = null;
     let stateSenateInfo = null;
-    let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concordâ€“Harrisburg"
+    let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concord“Harrisburg"
     let countyDemographics = null; // County-level VAP (18+) + total-pop race/ethnicity from DP1 (includes AIAN/native)
     let countyPopulationEstimatesByNorm = null; // Map<string countyNorm, growth/estimate summary from Vintage 2025 county estimates>
     let countyPopulationEstimateStatewide = null; // Statewide NC summary from the same file
@@ -10979,7 +10979,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return window.AtlasManifest.getVisibleManifestEntries(entries);
     }
 
-    // Named pre-2018 judicial files â†’ Wikipedia seat numbers (Hunter COA is year-aware).
+    // Named pre-2018 judicial files → Wikipedia seat numbers (Hunter COA is year-aware).
     function getJudicialSeatFamilyKey(contestType, year = NaN) {
       return window.AtlasManifest.getJudicialSeatFamilyKey(contestType, year);
     }
@@ -11264,7 +11264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cache.set(countyNorm, { repDelta, demDelta, totalDelta });
           });
         } catch (err) {
-          console.warn(`County ${fy}â†’${ty} vote delta cache failed for`, ct, err?.message || err);
+          console.warn(`County ${fy}→${ty} vote delta cache failed for`, ct, err?.message || err);
         }
         countyVoteDeltaCacheByPair.set(key, cache);
       })();
@@ -11739,9 +11739,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const tf = Number(modeledDef?.turnoutFactor);
       if (Number.isFinite(tf) && tf > 0 && modeledDef?.turnoutContestType && Number.isFinite(Number(modeledDef?.turnoutYear))) {
         try {
-          bits.push(`Expected turnout: ${formatContestName(modeledDef.turnoutContestType, modeledDef.turnoutYear)}Ã—${tf.toFixed(3)}`);
+          bits.push(`Expected turnout: ${formatContestName(modeledDef.turnoutContestType, modeledDef.turnoutYear)}×${tf.toFixed(3)}`);
         } catch (_) {
-          bits.push(`Expected turnout: ${String(modeledDef.turnoutContestType)} ${String(modeledDef.turnoutYear)}Ã—${tf.toFixed(3)}`);
+          bits.push(`Expected turnout: ${String(modeledDef.turnoutContestType)} ${String(modeledDef.turnoutYear)}×${tf.toFixed(3)}`);
         }
       }
 
@@ -11772,7 +11772,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       bits.push(`County mode: ${behaviorLabelMap[behaviorMode] || 'Balanced counties'}`);
 
-      el.textContent = `Model inputs: ${bits.join(' â€¢ ')}`;
+      el.textContent = `Model inputs: ${bits.join(' • ')}`;
       el.hidden = false;
     }
 
@@ -11822,14 +11822,14 @@ document.addEventListener('DOMContentLoaded', function() {
           <span><strong>Baseline:</strong> Weighted county baseline anchored to statewide environment</span>
           ${
             (String(modeled?.contestType || '').trim() === 'us_senate_model' && modeled?.secondaryBaseContestType && Number.isFinite(Number(modeled?.secondaryBaseYear)))
-              ? `<span><strong>Anchors:</strong> Senate ${escapeHtml(String(modeled?.baseYear))}/${escapeHtml(String(modeled?.secondaryBaseYear))} â€¢ Climate ${escapeHtml(String(modeled?.climateYear))}</span>`
+              ? `<span><strong>Anchors:</strong> Senate ${escapeHtml(String(modeled?.baseYear))}/${escapeHtml(String(modeled?.secondaryBaseYear))} • Climate ${escapeHtml(String(modeled?.climateYear))}</span>`
               : ''
           }
           <span><strong>Weighting:</strong> Recent/second/long-run = ${escapeHtml(weightLabel)}</span>
           <span><strong>History vs fundamentals:</strong> ${Number.isFinite(bw) ? `${Math.round(bw * 100)}%` : 'n/a'}</span>
           <span><strong>Expected turnout:</strong> ${Number.isFinite(turnout) ? `${(turnout * 100).toFixed(1)}%` : 'n/a'}</span>
           <span><strong>Candidate overperformance:</strong> ${Number.isFinite(bonus) ? `${bonus.toFixed(1)}x` : 'n/a'}</span>
-          ${baselineSummary ? `<span><strong>Baseline vs candidate:</strong> ${escapeHtml(baselineSummary.baselineLabel)} â†’ ${escapeHtml(baselineSummary.withCandidatesLabel)} (${escapeHtml(baselineSummary.effectLabel)})</span>` : ''}
+          ${baselineSummary ? `<span><strong>Baseline vs candidate:</strong> ${escapeHtml(baselineSummary.baselineLabel)} → ${escapeHtml(baselineSummary.withCandidatesLabel)} (${escapeHtml(baselineSummary.effectLabel)})</span>` : ''}
           ${analogSummary ? `<span><strong>Historical analog:</strong> ${escapeHtml(analogSummary.label)} (${escapeHtml(analogSummary.confidence)})</span>` : ''}
           <span><strong>County behavior mode:</strong> ${escapeHtml(behavior)}</span>
           <span><strong>Confidence:</strong> ${escapeHtml(confidence.label)} (${escapeHtml(confidence.range)})</span>
@@ -12146,7 +12146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class="spinner" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;">
           <svg width="14" height="14" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-dasharray="31.4 31.4" transform="rotate(-90 25 25)"/></svg>
         </span>
-        <span>Loading ${y} lines (first-time load can take <b>10â€“30s</b>)â€¦</span>
+        <span>Loading ${y} lines (first-time load can take <b>10“30s</b>)…</span>
       `;
     }
 
@@ -13377,6 +13377,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatVoteCounterCandidateLabel(name, partyCode, fallbackText) {
+      if (isMissingCandidatePlaceholder(name)) return String(name).trim();
       const full = fullCandidateLabel(name, '');
       if (!full || full.toUpperCase() === partyCode.toUpperCase()) return fallbackText;
       return `${full} (${partyCode})`;
@@ -13384,6 +13385,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function formatVoteCounterWinnerLabel(name, partyCode, fallbackText) {
       // Keep first+last name beside Lead; half-grid CSS clamp wraps long labels.
+      if (isMissingCandidatePlaceholder(name)) return String(name).trim();
       const full = fullCandidateLabel(name, '');
       if (!full || full.toUpperCase() === partyCode.toUpperCase()) return fallbackText;
       return `${full} (${partyCode})`;
@@ -13575,12 +13577,12 @@ document.addEventListener('DOMContentLoaded', function() {
           const demPctEl = document.getElementById('dem-percent');
           const repPctEl = document.getElementById('rep-percent');
           const otherPctEl = document.getElementById('other-percent');
-          if (demCountEl) demCountEl.textContent = 'â€”';
-          if (repCountEl) repCountEl.textContent = 'â€”';
-          if (otherCountEl) otherCountEl.textContent = 'â€”';
-          if (demPctEl) demPctEl.textContent = 'â€”';
-          if (repPctEl) repPctEl.textContent = 'â€”';
-          if (otherPctEl) otherPctEl.textContent = 'â€”';
+          if (demCountEl) demCountEl.textContent = '”';
+          if (repCountEl) repCountEl.textContent = '”';
+          if (otherCountEl) otherCountEl.textContent = '”';
+          if (demPctEl) demPctEl.textContent = '”';
+          if (repPctEl) repPctEl.textContent = '”';
+          if (otherPctEl) otherPctEl.textContent = '”';
           const demFill = document.getElementById('dem-share-fill');
           const repFill = document.getElementById('rep-share-fill');
           const otherFill = document.getElementById('other-share-fill');
@@ -13857,7 +13859,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (![vote.repDelta, vote.demDelta, vote.totalDelta].every(n => Number.isFinite(Number(n)))) return;
         voteLines.push({
-          label: `${shortYearLabel(fy)}â†’${shortYearLabel(ty)}`,
+          label: `${shortYearLabel(fy)}→${shortYearLabel(ty)}`,
           repDelta: formatSignedCompactDelta(vote.repDelta),
           demDelta: formatSignedCompactDelta(vote.demDelta),
           totalDelta: formatSignedCompactDelta(vote.totalDelta)
@@ -13883,20 +13885,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isDesktopTooltipMode()) {
         const collapsed = presentation === 'desktop-collapsed';
         const pop2025Line = hasPopDelta
-          ? `Population (20â†’25): <span style="font-weight:800;">${escapeHtml(popDelta)}${popPct ? ` (${escapeHtml(popPct)})` : ''}</span>`
+          ? `Population (20→25): <span style="font-weight:800;">${escapeHtml(popDelta)}${popPct ? ` (${escapeHtml(popPct)})` : ''}</span>`
           : '';
         const pop2024Line = (hasPopDelta && popDelta2024)
-          ? `Population (20â†’24): <span style="font-weight:800;">${escapeHtml(popDelta2024)}${popPct2024 ? ` (${escapeHtml(popPct2024)})` : ''}</span>`
+          ? `Population (20→24): <span style="font-weight:800;">${escapeHtml(popDelta2024)}${popPct2024 ? ` (${escapeHtml(popPct2024)})` : ''}</span>`
           : '';
         const pop2425Line = (hasPopDelta && popDelta2425)
-          ? `Population (24â†’25): <span style="font-weight:800;">${escapeHtml(popDelta2425)}${popPct2425 ? ` (${escapeHtml(popPct2425)})` : ''}</span>`
+          ? `Population (24→25): <span style="font-weight:800;">${escapeHtml(popDelta2425)}${popPct2425 ? ` (${escapeHtml(popPct2425)})` : ''}</span>`
           : '';
 
         const votesParts = hasVote
           ? voteLines.map(v => (
             `Raw votes (${escapeHtml(v.label)}): ` +
-            `<span style="color:#fecaca;font-weight:800;">R ${escapeHtml(v.repDelta)}</span> â€¢ ` +
-            `<span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(v.demDelta)}</span> â€¢ ` +
+            `<span style="color:#fecaca;font-weight:800;">R ${escapeHtml(v.repDelta)}</span> • ` +
+            `<span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(v.demDelta)}</span> • ` +
             `<span style="font-weight:800;">Total ${escapeHtml(v.totalDelta)}</span>`
           ))
           : [];
@@ -13910,7 +13912,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // In collapsed hover mode, still show a compact vote line if it's available.
         if (collapsed && primaryVote) {
-          lines.push(`Votes (${escapeHtml(primaryVote.label)}): <span style="color:#fecaca;font-weight:800;">R ${escapeHtml(repDelta)}</span> â€¢ <span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(demDelta)}</span> â€¢ <span style="font-weight:800;">Total ${escapeHtml(totalDelta)}</span>`);
+          lines.push(`Votes (${escapeHtml(primaryVote.label)}): <span style="color:#fecaca;font-weight:800;">R ${escapeHtml(repDelta)}</span> • <span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(demDelta)}</span> • <span style="font-weight:800;">Total ${escapeHtml(totalDelta)}</span>`);
         }
 
         return `
@@ -13922,10 +13924,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
       return `
         <div class="tooltip-delta" aria-label="County delta mechanics">
-          ${hasPopDelta ? `<div class="tooltip-delta-line">Population (20â†’25): <span style="font-weight:800;">${escapeHtml(popDelta)}${popPct ? ` (${escapeHtml(popPct)})` : ''}</span></div>` : ''}
-          ${(hasPopDelta && popDelta2024) ? `<div class="tooltip-delta-line">Population (20â†’24): <span style="font-weight:800;">${escapeHtml(popDelta2024)}${popPct2024 ? ` (${escapeHtml(popPct2024)})` : ''}</span></div>` : ''}
-          ${(hasPopDelta && popDelta2425) ? `<div class="tooltip-delta-line">Population (24â†’25): <span style="font-weight:800;">${escapeHtml(popDelta2425)}${popPct2425 ? ` (${escapeHtml(popPct2425)})` : ''}</span></div>` : ''}
-          ${hasVote ? voteLines.map(v => `<div class="tooltip-delta-line">Raw votes (${escapeHtml(v.label)}): <span style="color:#fecaca;font-weight:800;">R ${escapeHtml(v.repDelta)}</span> â€¢ <span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(v.demDelta)}</span> â€¢ <span style="font-weight:800;">Total ${escapeHtml(v.totalDelta)}</span></div>`).join('') : ''}
+          ${hasPopDelta ? `<div class="tooltip-delta-line">Population (20→25): <span style="font-weight:800;">${escapeHtml(popDelta)}${popPct ? ` (${escapeHtml(popPct)})` : ''}</span></div>` : ''}
+          ${(hasPopDelta && popDelta2024) ? `<div class="tooltip-delta-line">Population (20→24): <span style="font-weight:800;">${escapeHtml(popDelta2024)}${popPct2024 ? ` (${escapeHtml(popPct2024)})` : ''}</span></div>` : ''}
+          ${(hasPopDelta && popDelta2425) ? `<div class="tooltip-delta-line">Population (24→25): <span style="font-weight:800;">${escapeHtml(popDelta2425)}${popPct2425 ? ` (${escapeHtml(popPct2425)})` : ''}</span></div>` : ''}
+          ${hasVote ? voteLines.map(v => `<div class="tooltip-delta-line">Raw votes (${escapeHtml(v.label)}): <span style="color:#fecaca;font-weight:800;">R ${escapeHtml(v.repDelta)}</span> • <span style="color:#bfdbfe;font-weight:800;">D ${escapeHtml(v.demDelta)}</span> • <span style="font-weight:800;">Total ${escapeHtml(v.totalDelta)}</span></div>`).join('') : ''}
         </div>
       `.trim();
     }
@@ -14107,7 +14109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = String(options?.trajectoryMeta?.censusCheck || '').trim();
         if (!text) return '';
         const trendText = String(options?.trajectoryMeta?.trend || '');
-        let tone = trendText.includes('â†') ? 'dem' : (trendText.includes('â†’') ? 'rep' : 'neutral');
+        let tone = trendText.includes('←') ? 'dem' : (trendText.includes('→') ? 'rep' : 'neutral');
         if (tone === 'neutral') {
           const windowShift = Number(options?.trajectoryMeta?.recentWindowShiftTowardGop);
           const longShift = Number(options?.trajectoryMeta?.longShiftTowardGop);
@@ -14785,7 +14787,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const micro = glance.querySelector('.focus-glance-micro')?.textContent?.trim() || '';
           const watch = document.getElementById('county-watch')?.textContent?.trim() || '';
           text = [
-            [name, sub].filter(Boolean).join(' â€” '),
+            [name, sub].filter(Boolean).join(' ” '),
             headline,
             '',
             ...bullets,
@@ -17484,7 +17486,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   && typeof modeledDef.senateRecenterProtectedLeakByCounty === 'object'
                 ) ? modeledDef.senateRecenterProtectedLeakByCounty : null;
                 // Only damp R-ward recentering on protected counties (the wash that undoes Dem locals).
-                // Dem-ward steps still apply everywhere. No amplify onto unprotected â€” retune adj instead.
+                // Dem-ward steps still apply everywhere. No amplify onto unprotected ” retune adj instead.
                 const dampProtected = exemptNamed && rawRecenterStep > 0;
                 map.forEach((node, county) => {
                   if (!node) return;
@@ -17509,7 +17511,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
 
-          // Correction role 6: Trump ceilings after recentering â€” named caps first, then a soft global ceiling.
+          // Correction role 6: Trump ceilings after recentering ” named caps first, then a soft global ceiling.
           if (isSenateDeviationModel && !!modeledDef?.senateMaxOverPresEnabled && map.size) {
             const byCountyCaps = (modeledDef?.senateMaxOverPresByCountyPts && typeof modeledDef.senateMaxOverPresByCountyPts === 'object')
               ? modeledDef.senateMaxOverPresByCountyPts
@@ -19400,18 +19402,18 @@ document.addEventListener('DOMContentLoaded', function() {
           contestLoadingSpinnerTimer = null;
           indicator.hidden = true;
           try { delete indicator.dataset.variant; } catch (_) {}
-          indicator.textContent = 'Loadingâ€¦';
+          indicator.textContent = 'Loading…';
           return;
         }
 
         const key = (contestKey || '').toString().trim();
-        let label = 'Loadingâ€¦';
+        let label = 'Loading…';
         if (key) {
           const idx = key.lastIndexOf('_');
           const ct = idx > 0 ? key.substring(0, idx) : key;
           const y = idx > 0 ? key.substring(idx + 1) : '';
           const display = (typeof formatContestName === 'function' && ct && y) ? `${formatContestName(ct, y)} ${y}` : key;
-          label = `Loading ${display}â€¦`;
+          label = `Loading ${display}…`;
         }
         indicator.textContent = label;
         let modeledLoading = false;
@@ -20436,6 +20438,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function shortCandidateLabel(name, fallback) {
       const raw = (name || '').toString().trim();
       if (!raw) return fallback;
+      if (isMissingCandidatePlaceholder(raw)) return raw;
       const ticketLead = stripRunningMateName(raw);
       const nickPreferred = applyParentheticalNickname(ticketLead);
       const cleaned = nickPreferred.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z .'-]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -20573,6 +20576,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function fullCandidateLabel(name, fallback = '') {
       const raw = (name || '').toString().trim();
       if (!raw) return fallback;
+      if (isMissingCandidatePlaceholder(raw)) return raw;
       const ticketLead = stripRunningMateName(raw);
       const nickPreferred = applyParentheticalNickname(ticketLead);
       const cleaned = nickPreferred.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z .,\'-]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -20857,7 +20861,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="demo-hover-card">
           <div class="demo-hover-metric">${metricLabel} ${Math.round(metricValue).toLocaleString()}</div>
           ${races}
-          <div class="demo-hover-note">${Number.isFinite(Number(cvap)) ? 'CVAP totals from ACS special tabulation (2020â€“2024). ' : ''}Race/ethnicity reflects total population (DP1), not VAP-by-race.</div>
+          <div class="demo-hover-note">${Number.isFinite(Number(cvap)) ? 'CVAP totals from ACS special tabulation (2020“2024). ' : ''}Race/ethnicity reflects total population (DP1), not VAP-by-race.</div>
         </div>
       `;
     }
@@ -21014,9 +21018,54 @@ document.addEventListener('DOMContentLoaded', function() {
       return raw;
     }
 
+    function isMissingCandidatePlaceholder(name) {
+      return /no\s+(dem|rep|democrat(?:ic)?|republican)\s+candidate/i.test((name || '').toString().trim());
+    }
+
+    function missingLegislativeCandidateLabel(party) {
+      const key = String(party || '').trim().toLowerCase();
+      if (key === 'dem' || key === 'd' || key === 'democrat' || key === 'democratic') return 'No Dem candidate';
+      if (key === 'rep' || key === 'r' || key === 'republican' || key === 'gop') return 'No Rep candidate';
+      return 'No candidate';
+    }
+
+    function resolveDistrictCandidateNames(contestType, row, fallbackCandidates = null) {
+      const ct = String(contestType || '').trim().toLowerCase();
+      const isLegislative = ct === 'state_house' || ct === 'state_senate';
+      let demCandidate = stripRunningMateName((row?.dem_candidate || '').toString().trim());
+      let repCandidate = stripRunningMateName((row?.rep_candidate || '').toString().trim());
+      const demVotes = Number(row?.dem_votes || 0);
+      const repVotes = Number(row?.rep_votes || 0);
+      const otherVotes = Number(row?.other_votes || 0);
+      const totalVotes = Number(row?.total_votes || (demVotes + repVotes + otherVotes));
+
+      if (!isLegislative) {
+        if (!demCandidate) demCandidate = stripRunningMateName((fallbackCandidates?.dem || fallbackCandidates?.demCandidate || '').toString().trim());
+        if (!repCandidate) repCandidate = stripRunningMateName((fallbackCandidates?.rep || fallbackCandidates?.repCandidate || '').toString().trim());
+        return { demCandidate, repCandidate };
+      }
+
+      // Legislative seats: never backfill missing names from statewide/chamber leaders.
+      // Uncontested races should read as "No Dem/Rep candidate".
+      const demMissingByVotes = totalVotes > 0 && demVotes <= 0 && repVotes > 0;
+      const repMissingByVotes = totalVotes > 0 && repVotes <= 0 && demVotes > 0;
+      if (demMissingByVotes || (!demCandidate && demVotes <= 0 && repVotes > 0)) {
+        demCandidate = missingLegislativeCandidateLabel('dem');
+      } else if (!demCandidate) {
+        demCandidate = 'Dem';
+      }
+      if (repMissingByVotes || (!repCandidate && repVotes <= 0 && demVotes > 0)) {
+        repCandidate = missingLegislativeCandidateLabel('rep');
+      } else if (!repCandidate) {
+        repCandidate = 'Rep';
+      }
+      return { demCandidate, repCandidate };
+    }
+
     function stripRunningMateName(name) {
       const raw = (name || '').toString().trim();
       if (!raw) return '';
+      if (isMissingCandidatePlaceholder(raw)) return raw;
       // Common presidential ticket separators (MO OpenElections uses "A, B" tickets).
       const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', ' – ', ' — ', ', ', ','];
       for (const sep of seps) {
@@ -21126,8 +21175,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function countyMarginPctDisplayValue(repVotes, demVotes, totalVotes) {
-      // Match candidate % labels: margin = rounded Trump% âˆ’ rounded Harris%.
-      // Raw vote margin (e.g. Scotland 6.925 â†’ 6.93) drifts from the familiar share-diff (6.92).
+      // Match candidate % labels: margin = rounded Trump% − rounded Harris%.
+      // Raw vote margin (e.g. Scotland 6.925 → 6.93) drifts from the familiar share-diff (6.92).
       return window.AtlasDisplay.countyMarginPctDisplayValue(repVotes, demVotes, totalVotes);
     }
 
@@ -21315,8 +21364,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const totalVoteNum = Number(totalVotes) || 0;
       const repName = (repCandidate || '').toString().trim();
       const demName = (demCandidate || '').toString().trim();
-      const repMissing = !repName || /no\s+republican\s+candidate/i.test(repName);
-      const demMissing = !demName || /no\s+democratic\s+candidate/i.test(demName);
+      const repMissing = !repName || /no\s+(rep|republican)\s+candidate/i.test(repName);
+      const demMissing = !demName || /no\s+(dem|democrat(?:ic)?)\s+candidate/i.test(demName);
       const repMissingByVotes = totalVoteNum > 0 && repVoteNum <= 0 && demVoteNum > 0;
       const demMissingByVotes = totalVoteNum > 0 && demVoteNum <= 0 && repVoteNum > 0;
       const repMissingAny = repMissing || repMissingByVotes;
@@ -21498,19 +21547,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function buildMarginsLegendHTML() {
       const tiers = [
         { label: 'Annihilation', range: '40+', color: colorForMarginMode(40, 'R'), party: 'rep' },
-        { label: 'Dominant', range: '30â€“39.9', color: colorForMarginMode(30, 'R'), party: 'rep' },
-        { label: 'Stronghold', range: '20â€“29.9', color: colorForMarginMode(20, 'R'), party: 'rep' },
-        { label: 'Safe', range: '10â€“19.9', color: colorForMarginMode(10, 'R'), party: 'rep' },
-        { label: 'Likely', range: '5.5â€“9.9', color: colorForMarginMode(5.5, 'R'), party: 'rep' },
-        { label: 'Lean', range: '1â€“5.49', color: colorForMarginMode(1, 'R'), party: 'rep' },
-        { label: 'Tilt', range: '0.5â€“0.99', color: colorForMarginMode(0.5, 'R'), party: 'rep' },
+        { label: 'Dominant', range: '30“39.9', color: colorForMarginMode(30, 'R'), party: 'rep' },
+        { label: 'Stronghold', range: '20“29.9', color: colorForMarginMode(20, 'R'), party: 'rep' },
+        { label: 'Safe', range: '10“19.9', color: colorForMarginMode(10, 'R'), party: 'rep' },
+        { label: 'Likely', range: '5.5“9.9', color: colorForMarginMode(5.5, 'R'), party: 'rep' },
+        { label: 'Lean', range: '1“5.49', color: colorForMarginMode(1, 'R'), party: 'rep' },
+        { label: 'Tilt', range: '0.5“0.99', color: colorForMarginMode(0.5, 'R'), party: 'rep' },
         { label: 'Tossup', range: '<0.5', color: colorForMarginMode(0, 'R'), party: 'tie' },
-        { label: 'Tilt', range: '0.5â€“0.99', color: colorForMarginMode(0.5, 'D'), party: 'dem' },
-        { label: 'Lean', range: '1â€“5.49', color: colorForMarginMode(1, 'D'), party: 'dem' },
-        { label: 'Likely', range: '5.5â€“9.9', color: colorForMarginMode(5.5, 'D'), party: 'dem' },
-        { label: 'Safe', range: '10â€“19.9', color: colorForMarginMode(10, 'D'), party: 'dem' },
-        { label: 'Stronghold', range: '20â€“29.9', color: colorForMarginMode(20, 'D'), party: 'dem' },
-        { label: 'Dominant', range: '30â€“39.9', color: colorForMarginMode(30, 'D'), party: 'dem' },
+        { label: 'Tilt', range: '0.5“0.99', color: colorForMarginMode(0.5, 'D'), party: 'dem' },
+        { label: 'Lean', range: '1“5.49', color: colorForMarginMode(1, 'D'), party: 'dem' },
+        { label: 'Likely', range: '5.5“9.9', color: colorForMarginMode(5.5, 'D'), party: 'dem' },
+        { label: 'Safe', range: '10“19.9', color: colorForMarginMode(10, 'D'), party: 'dem' },
+        { label: 'Stronghold', range: '20“29.9', color: colorForMarginMode(20, 'D'), party: 'dem' },
+        { label: 'Dominant', range: '30“39.9', color: colorForMarginMode(30, 'D'), party: 'dem' },
         { label: 'Annihilation', range: '40+', color: colorForMarginMode(40, 'D'), party: 'dem' }
       ];
       const spectrum = [
@@ -21709,9 +21758,9 @@ document.addEventListener('DOMContentLoaded', function() {
         content.innerHTML = buildPopulationChangeLegendHTML();
       } else {
         if (header) header.textContent = 'Margin Categories';
-        if (subtitle) subtitle.textContent = 'Buckets by two-party margin (Rep% âˆ’ Dem%). Red = Republican lead; blue = Democratic lead.';
+        if (subtitle) subtitle.textContent = 'Buckets by two-party margin (Rep% − Dem%). Red = Republican lead; blue = Democratic lead.';
         if (badge) badge.textContent = 'Margins';
-        if (footer) footer.textContent = 'Darker shades mean a larger lead. Ranges are absolute two-party margin (|Rep% âˆ’ Dem%|).';
+        if (footer) footer.textContent = 'Darker shades mean a larger lead. Ranges are absolute two-party margin (|Rep% − Dem%|).';
         content.dataset.marginsHtml = buildMarginsLegendHTML();
         content.innerHTML = content.dataset.marginsHtml;
       }
@@ -21750,16 +21799,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const noContest = !contestKey;
         winnerEl.textContent = noContest ? 'Choose a contest' : 'No results';
         winnerEl.className = 'focus-pill-value tie';
-        marginEl.textContent = 'â€”';
+        marginEl.textContent = '”';
         marginEl.className = 'focus-pill-value tie';
-        totalEl.textContent = 'â€”';
+        totalEl.textContent = '”';
         try { renderVoteContextTierBadge(meta, NaN); } catch (_) {}
         barDem.style.width = '0%';
         barOther.style.width = '0%';
         barRep.style.width = '0%';
-        barDemLabelEl.textContent = `${shortCandidateLabel(resolvedCandidates.demCandidate, 'Dem')} â€”`;
-        barMidLabelEl.textContent = 'â€”';
-        barRepLabelEl.textContent = `${shortCandidateLabel(resolvedCandidates.repCandidate, 'Rep')} â€”`;
+        barDemLabelEl.textContent = `${shortCandidateLabel(resolvedCandidates.demCandidate, 'Dem')} ”`;
+        barMidLabelEl.textContent = '”';
+        barRepLabelEl.textContent = `${shortCandidateLabel(resolvedCandidates.repCandidate, 'Rep')} ”`;
         if (totalMetaEl) totalMetaEl.textContent = noContest ? 'Pick a contest to load totals' : 'No vote totals';
         if (leadMetaEl) {
           leadMetaEl.textContent = noContest ? 'Hover/tap a county' : 'No data';
@@ -22741,7 +22790,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let censusCheck = '';
       if (strongPoliticalSignal && /\bReinforcing\b/i.test(statusText) && fastGrowth) {
-        censusCheck = `Census growth estimates are broadly consistent with a higher-churn backdrop: population is ${formatPopulationChangePct(totalPct)} since 2020 during ${growthLabel}. Treat this as contextâ€”not a driver.`;
+        censusCheck = `Census growth estimates are broadly consistent with a higher-churn backdrop: population is ${formatPopulationChangePct(totalPct)} since 2020 during ${growthLabel}. Treat this as context”not a driver.`;
       } else if (strongPoliticalSignal && towardDem && fastGrowth && demGrowthPattern) {
         const statewideClause = Number.isFinite(stateTotalPct)
           ? ` versus ${formatPopulationChangePct(stateTotalPct)} statewide`
@@ -22749,9 +22798,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const stillRepublican = /\bRepublican\b/i.test(statusText) && !/\bDemocratic\b/i.test(statusText);
         censusCheck = stillRepublican
           ? (recentTickRedder && strongGopLean
-            ? `Census growth estimates suggest churn: population is ${formatPopulationChangePct(totalPct)} since 2020${statewideClause}. With ${growthLabel}, you might expect faster change, but the GOP edge is still largeâ€”and even ticked redder most recently.`
+            ? `Census growth estimates suggest churn: population is ${formatPopulationChangePct(totalPct)} since 2020${statewideClause}. With ${growthLabel}, you might expect faster change, but the GOP edge is still large”and even ticked redder most recently.`
             : `Census growth estimates are consistent with some churn: population is ${formatPopulationChangePct(totalPct)} since 2020${statewideClause}. With ${growthLabel}, Democrats often gain ground even while Republicans still lead.`)
-          : `Census growth estimates are consistent with a churn backdrop: population is ${formatPopulationChangePct(totalPct)} since 2020${statewideClause} alongside ${growthLabel}. Treat this as contextâ€”not a driver.`;
+          : `Census growth estimates are consistent with a churn backdrop: population is ${formatPopulationChangePct(totalPct)} since 2020${statewideClause} alongside ${growthLabel}. Treat this as context”not a driver.`;
       } else if (strongPoliticalSignal && towardRep && slowGrowth && repGrowthPattern) {
         censusCheck = `Census growth estimates are consistent with slower turnover: population is ${formatPopulationChangePct(totalPct)} since 2020, which can make margins stickier even when the direction is rightward.`;
       }
@@ -22811,8 +22860,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function normalizeDirectionalTone(text, fallbackShift = NaN) {
       const raw = String(text || '').trim();
-      if (/[â†â†˜]/.test(raw) || /democrat/i.test(raw) || /\bD\+/.test(raw)) return 'dem';
-      if (/[â†’â†—]/.test(raw) || /republican/i.test(raw) || /\bR\+/.test(raw)) return 'rep';
+      if (/[←↘]/.test(raw) || /democrat/i.test(raw) || /\bD\+/.test(raw)) return 'dem';
+      if (/[→↗]/.test(raw) || /republican/i.test(raw) || /\bR\+/.test(raw)) return 'rep';
       if (Number.isFinite(Number(fallbackShift))) {
         if (Number(fallbackShift) > 0.1) return 'rep';
         if (Number(fallbackShift) < -0.1) return 'dem';
@@ -22878,7 +22927,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Number(latest?.item?.year) === selectedYear
       );
       const flipBadge = isRecentFlip
-        ? (latest?.flip?.to === 'R' ? { cls: 'rep', text: 'Recent flip â†’ R' } : (latest?.flip?.to === 'D' ? { cls: 'dem', text: 'Recent flip â†’ D' } : { cls: 'neutral', text: 'Recent flip' }))
+        ? (latest?.flip?.to === 'R' ? { cls: 'rep', text: 'Recent flip → R' } : (latest?.flip?.to === 'D' ? { cls: 'dem', text: 'Recent flip → D' } : { cls: 'neutral', text: 'Recent flip' }))
         : null;
 
       const longShiftSign = Number.isFinite(longShift)
@@ -22902,19 +22951,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const directionBullet = (() => {
         if (isRecentFlip) {
-          if (latest?.flip?.to === 'R') return 'â†’ Moved right (flip)';
-          if (latest?.flip?.to === 'D') return 'â† Moved left (flip)';
+          if (latest?.flip?.to === 'R') return '→ Moved right (flip)';
+          if (latest?.flip?.to === 'D') return '← Moved left (flip)';
         }
         if (Number.isFinite(recentShiftSince2020) && selectedYear > 2020 && Math.abs(recentShiftSince2020) >= (SHIFT_DIR_RECENT + 0.5)) {
-          return recentShiftSince2020 > 0 ? 'â†’ Moving right lately' : 'â† Moving left lately';
+          return recentShiftSince2020 > 0 ? '→ Moving right lately' : '← Moving left lately';
         }
         if (Number.isFinite(longShift) && Math.abs(longShift) >= (SHIFT_DIR_LONG + 1.0)) {
-          return longShift > 0 ? 'â†’ Long-run move right' : 'â† Long-run move left';
+          return longShift > 0 ? '→ Long-run move right' : '← Long-run move left';
         }
         const shiftMeta = summaryEntry?.shiftMeta || null;
-        if (shiftMeta?.cls === 'rep') return 'â†’ Leaning right';
-        if (shiftMeta?.cls === 'dem') return 'â† Leaning left';
-        return 'â†” No clear direction';
+        if (shiftMeta?.cls === 'rep') return '→ Leaning right';
+        if (shiftMeta?.cls === 'dem') return '← Leaning left';
+        return '↔ No clear direction';
       })();
 
       const longBullet = (() => {
@@ -22923,10 +22972,10 @@ document.addEventListener('DOMContentLoaded', function() {
           return '\u2014';
         }
         if (Math.abs(delta) < 0.05) {
-          return `â†” 0.00 since ${baseYear}`;
+          return `↔ 0.00 since ${baseYear}`;
         }
         const side = delta > 0 ? 'R' : 'D';
-        const arrow = delta > 0 ? 'â†’' : 'â†';
+        const arrow = delta > 0 ? '→' : '←';
         return `${arrow} ${side}+${Math.abs(delta).toFixed(2)} since ${baseYear}`;
       })();
 
@@ -22964,7 +23013,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function classifyPopulationEffect(directionTone, growthText) {
         const toneLocal = String(directionTone || '').trim().toLowerCase();
         const g = String(growthText || '').trim().toLowerCase();
-        if (!g || g === 'â€”') return { effect: 'neutral', line: '' };
+        if (!g || g === '”') return { effect: 'neutral', line: '' };
         const fast = /fast-growth|metro|outer-suburban|urban anchor|coastal growth/.test(g);
         const slow = /slow-growth|declin/.test(g);
         if (toneLocal === 'rep') {
@@ -22972,7 +23021,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (fast) return { effect: 'complicates', line: 'Fast growth adds churn, so future margins can be less predictable.' };
         }
         if (toneLocal === 'dem') {
-          if (fast) return { effect: 'reinforces', line: 'Fast growth can coincide with faster change, but itâ€™s not deterministic.' };
+          if (fast) return { effect: 'reinforces', line: 'Fast growth can coincide with faster change, but it’s not deterministic.' };
           if (slow) return { effect: 'complicates', line: 'Slow growth can make future movement harder to read from margins alone.' };
         }
         return { effect: 'neutral', line: '' };
@@ -23029,16 +23078,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const headline = (() => {
         const absMargin = Math.abs(Number(selectedSigned) || 0);
         const leanParty = marginTier?.party || 'neutral';
-        if (isRecentFlip) return 'New flip â€” watch if it sticks';
+        if (isRecentFlip) return 'New flip ” watch if it sticks';
         if (absMargin < 0.5) return 'True tossup';
-        if (absMargin < 1.0) return 'Very close â€” either side can win';
+        if (absMargin < 1.0) return 'Very close ” either side can win';
         if (leanParty === 'rep' && recentShiftSign === 'dem') return 'Still Republican, but weakening';
         if (leanParty === 'dem' && recentShiftSign === 'rep') return 'Still Democratic, but slipping';
         if (recentShiftSign === 'dem') return 'Leaning left in recent cycles';
         if (recentShiftSign === 'rep') return 'Leaning right in recent cycles';
-        if (leanParty === 'rep') return absMargin >= 20 ? 'Deep red â€” mostly about turnout' : 'Republican edge';
-        if (leanParty === 'dem') return absMargin >= 20 ? 'Deep blue â€” mostly about turnout' : 'Democratic edge';
-        return 'In play â€” small swings matter';
+        if (leanParty === 'rep') return absMargin >= 20 ? 'Deep red ” mostly about turnout' : 'Republican edge';
+        if (leanParty === 'dem') return absMargin >= 20 ? 'Deep blue ” mostly about turnout' : 'Democratic edge';
+        return 'In play ” small swings matter';
       })();
 
       const popEffect = classifyPopulationEffect(tone, contextBullet);
@@ -23077,7 +23126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const momentumMini = (() => {
         if (isRecentFlip) return 'Recent flip';
-        if (!Number.isFinite(recentShiftSince2020) || selectedYear <= 2020) return 'â€”';
+        if (!Number.isFinite(recentShiftSince2020) || selectedYear <= 2020) return '”';
         if (Math.abs(recentShiftSince2020) < 0.75) return 'Steady since 2020';
         const side = recentShiftSince2020 > 0 ? 'R' : 'D';
         return `${side}+${Math.abs(recentShiftSince2020).toFixed(2)} since 2020`;
@@ -23125,7 +23174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isRecentFlip && electionCount > 0 && electionCount < 4) {
           return popClause
             ? `Early read based on limited history.${popClause}`
-            : (compact ? 'Early read: limited history.' : 'Early read: limited historyâ€”watch for confirmation next cycle.');
+            : (compact ? 'Early read: limited history.' : 'Early read: limited history”watch for confirmation next cycle.');
         }
         if (isRecentFlip) {
           const to = latest?.flip?.to === 'R' ? 'the GOP' : (latest?.flip?.to === 'D' ? 'Democrats' : 'the new side');
@@ -23143,13 +23192,13 @@ document.addEventListener('DOMContentLoaded', function() {
           const pace = accel
             ? (compact ? 'the pace has picked up lately.' : 'the pace has picked up recently.')
             : (compact ? 'still drifting that way.' : 'recent cycles are still moving that way.');
-          return `Moved ${longWord} since ${baseYear} â€” ${pace}${popClause}`.trim();
+          return `Moved ${longWord} since ${baseYear} ” ${pace}${popClause}`.trim();
         }
         if (hasLong && hasRecent && longShiftSign !== recentShiftSign) {
           return `Long-run pull is ${longWord} since ${baseYear}. Recent cycles have nudged ${recentWord}.${popClause}`.trim();
         }
         if (hasLong) {
-          return `Over time, itâ€™s moved ${longWord} since ${baseYear}, even if the most recent cycle was quieter.${popClause}`.trim();
+          return `Over time, it’s moved ${longWord} since ${baseYear}, even if the most recent cycle was quieter.${popClause}`.trim();
         }
         if (hasRecent) {
           return `Since 2020, the movement has been ${recentWord}, but the longer-run picture is mixed.${popClause}`.trim();
@@ -23187,8 +23236,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           if (slowGrowth && absMargin >= 8) {
             return compact
-              ? `In a slow-growth county, the key test is whether the margin holdsâ€”or starts to drift.`
-              : `With slow growth, margins tend to be stickyâ€”watch whether the next cycle holds steady or starts to drift.`;
+              ? `In a slow-growth county, the key test is whether the margin holds”or starts to drift.`
+              : `With slow growth, margins tend to be sticky”watch whether the next cycle holds steady or starts to drift.`;
           }
           return compact
             ? `Another move ${dir} next cycle would be a real signal.`
@@ -23197,14 +23246,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (tone === 'rep') {
           return popEffect.effect === 'complicates'
             ? (fastGrowth
-              ? `Fast growth is the wild cardâ€”watch whether Republicans hold their edge as the electorate changes.`
+              ? `Fast growth is the wild card”watch whether Republicans hold their edge as the electorate changes.`
               : `If the margin tightens, this may be a red-leaning ${noun} that stays competitive.`)
             : 'If Republicans widen the gap again next cycle, the direction looks durable.';
         }
         if (tone === 'dem') {
           return popEffect.effect === 'complicates'
             ? (slowGrowth
-              ? `In a slow-growth county, watch whether Democrats can keep adding groundâ€”or whether change cools off.`
+              ? `In a slow-growth county, watch whether Democrats can keep adding ground”or whether change cools off.`
               : `If the margin tightens, this may be a blue-leaning ${noun} that stays competitive.`)
             : 'If Democrats widen the gap again next cycle, the direction looks durable.';
         }
@@ -23222,7 +23271,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const whatToWatch = buildWhatToWatchLine({ compact: true });
       const longRunLabel = (() => {
         const delta = Number(longShift);
-        if (!Number.isFinite(delta) || !Number.isFinite(Number(baseYear))) return 'â€”';
+        if (!Number.isFinite(delta) || !Number.isFinite(Number(baseYear))) return '”';
         if (Math.abs(delta) < 0.05) return `0.00 since ${baseYear}`;
         const side = delta > 0 ? 'R' : 'D';
         return `${side}+${Math.abs(delta).toFixed(2)} since ${baseYear}`;
@@ -23516,30 +23565,30 @@ document.addEventListener('DOMContentLoaded', function() {
       let status = side === 'Competitive' ? 'Battleground' : `${statusMain} ${position}`;
       let statusClass = side === 'Republican' ? 'rep' : (side === 'Democratic' ? 'dem' : 'competitive');
 
-      let trend = 'â†” Stable';
+      let trend = '↔ Stable';
       const windowShift = Number.isFinite(recentWindowShiftTowardGop)
         ? recentWindowShiftTowardGop
         : (Number.isFinite(recentShiftTowardGop) ? recentShiftTowardGop : 0);
       const windowSteps = windowShift >= 0 ? rightwardSteps : leftwardSteps;
       const recentOneOffJump = Number.isFinite(recentShiftTowardGop) && Math.abs(recentShiftTowardGop) >= 4 && windowSteps < 2;
       if (!historySparse && (windowShift >= 6 || (windowShift >= 5 && windowSteps >= 2))) {
-        trend = 'â†’ Moving right faster';
+        trend = '→ Moving right faster';
       } else if (!historySparse && (windowShift <= -6 || (windowShift <= -5 && windowSteps >= 2))) {
-        trend = 'â† Moving left faster';
+        trend = '← Moving left faster';
       } else if (recentOneOffJump && windowShift > 0) {
-        trend = 'â†’ One-cycle jump right';
+        trend = '→ One-cycle jump right';
       } else if (recentOneOffJump && windowShift < 0) {
-        trend = 'â† One-cycle jump left';
+        trend = '← One-cycle jump left';
       } else if (windowShift >= 3 || (!historySparse && (windowShift >= 2 && windowSteps >= 2))) {
-        trend = 'â†’ Rightward drift';
+        trend = '→ Rightward drift';
       } else if (windowShift <= -3 || (!historySparse && (windowShift <= -2 && windowSteps >= 2))) {
-        trend = 'â† Leftward drift';
+        trend = '← Leftward drift';
       } else if (side !== 'Competitive') {
         const demDriftThreshold = (side === 'Republican' && fastGrowth && demGrowthPattern) ? 6 : 10;
         if (!historySparse && hasLongAnchor && longShiftTowardGop <= -Math.max(demDriftThreshold, 10)) {
-          trend = 'â† Long-run move left';
+          trend = '← Long-run move left';
         } else if (!historySparse && hasLongAnchor && longShiftTowardGop >= 12) {
-          trend = 'â†’ Long-run move right';
+          trend = '→ Long-run move right';
         }
       }
 
@@ -23558,8 +23607,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (origin === 'Emerging') {
         const awayFromLeaderLong = awayFromCurrentSideLong >= 4;
         const awayFromLeaderRecent = awayFromCurrentSide >= 2;
-        const trendTowardDem = /â†/.test(trend) || /left/i.test(trend);
-        const trendTowardRep = /â†’/.test(trend) || /right/i.test(trend);
+        const trendTowardDem = /←/.test(trend) || /left/i.test(trend);
+        const trendTowardRep = /→/.test(trend) || /right/i.test(trend);
         if (side === 'Republican') {
           meaning = (awayFromLeaderLong || awayFromLeaderRecent || trendTowardDem)
             ? 'Republicans still lead, but Democrats have been steadily closing the gap over the last few cycles.'
@@ -23820,8 +23869,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Normalize legacy diagonal arrows to horizontal so trend direction is always shown left/right.
       const normalizeTrajectoryArrow = (arrow) => {
-        if (arrow === '\u2197') return '\u2192'; // â†— -> â†’
-        if (arrow === '\u2198') return '\u2190'; // â†˜ -> â†
+        if (arrow === '\u2197') return '\u2192'; // ↗ -> →
+        if (arrow === '\u2198') return '\u2190'; // ↘ -> ←
         return arrow;
       };
 
@@ -24090,7 +24139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const label = formatShiftLabel(s);
       const partyClass = Math.abs(s) < 0.01 ? 'tie' : (s > 0 ? 'rep' : 'dem');
       const dotColor = colorForShiftMode(s);
-      const years = (prevYear && year) ? `${prevYear}â†’${year}` : '';
+      const years = (prevYear && year) ? `${prevYear}→${year}` : '';
       const variantClass = options && options.variant === 'county' ? ' county-shift' : '';
       return `<span class="meta-chip shift${variantClass}"><span class="dot" style="background:${dotColor};"></span>Shift: <span class="shift-value ${partyClass}">${escapeHtml(label)}</span>${years ? ` <span class="shift-years">(${escapeHtml(years)})</span>` : ''}</span>`;
     }
@@ -24950,7 +24999,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!canShow) return;
       if (!barometerOverlayEnabled) {
         chip.textContent = 'Barometer (off)';
-        chip.title = 'Click to enable Barometer county outlines (closest mirrors of statewide margin across the last 2â€“3 cycles).';
+        chip.title = 'Click to enable Barometer county outlines (closest mirrors of statewide margin across the last 2“3 cycles).';
         return;
       }
       chip.textContent = countyCount > 0 ? `Barometer: ${countyCount.toLocaleString()} counties` : 'Barometer (on)';
@@ -24986,7 +25035,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!visible) return;
       const metric = String(populationChangeMetric || 'pct') === 'abs' ? 'Absolute count' : 'Percent';
       chip.textContent = `Metric: ${metric}`;
-      chip.title = `Pop Change metric: ${metric} (2020â†’2025).`;
+      chip.title = `Pop Change metric: ${metric} (2020→2025).`;
     }
 
     function updateBellwetherLayerVisibility() {
@@ -25171,7 +25220,7 @@ document.addEventListener('DOMContentLoaded', function() {
       void setSmartInsightsEnabled(!smartInsightsEnabled, { persist: true });
       try {
         setStatus(smartInsightsEnabled
-          ? 'Smart Insights enabled: highlighting key counties (closest â€¢ biggest shifts â€¢ fastest growth).'
+          ? 'Smart Insights enabled: highlighting key counties (closest • biggest shifts • fastest growth).'
           : 'Smart Insights disabled.');
       } catch (_) {}
     }
@@ -25958,9 +26007,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       try {
         const realBody = document.querySelector('#realignment-index-card .analytics-card-body');
-        if (realBody) realBody.innerHTML = contestType && year ? 'Loadingâ€¦' : 'Select a contest to load top shifting precincts.';
+        if (realBody) realBody.innerHTML = contestType && year ? 'Loading…' : 'Select a contest to load top shifting precincts.';
         const ghostBody = document.querySelector('#ghost-precinct-card .analytics-card-body');
-        if (ghostBody) ghostBody.innerHTML = contestType && year ? 'Loadingâ€¦' : 'Waiting for contest selection.';
+        if (ghostBody) ghostBody.innerHTML = contestType && year ? 'Loading…' : 'Waiting for contest selection.';
       } catch (_) {}
       analyticsPanelsTimer = setTimeout(() => {
         analyticsPanelsTimer = null;
@@ -26190,10 +26239,10 @@ document.addEventListener('DOMContentLoaded', function() {
         ? (Math.abs(shiftDelta) < 0.01 ? 'tie' : (shiftDelta > 0 ? 'rep' : 'dem'))
         : 'tie';
       const shiftLine = (currentVizMode === 'shift' && Number.isFinite(shiftDelta) && vizShiftCache?.prevYear)
-        ? `<div class="tooltip-delta"><div class="tooltip-delta-line">Shift (${escapeHtml(`${vizShiftCache.prevYear}â†’${vizShiftCache.year}`)}): <span class="tooltip-shift ${shiftClass}">${escapeHtml(formatShiftLabel(shiftDelta))}</span></div></div>`
+        ? `<div class="tooltip-delta"><div class="tooltip-delta-line">Shift (${escapeHtml(`${vizShiftCache.prevYear}→${vizShiftCache.year}`)}): <span class="tooltip-shift ${shiftClass}">${escapeHtml(formatShiftLabel(shiftDelta))}</span></div></div>`
         : '';
       const tooltipInsight = (() => {
-        // Keep â€œtrend/shiftâ€ narration out of Margins/Winners views to reduce hover clutter.
+        // Keep “trend/shift” narration out of Margins/Winners views to reduce hover clutter.
         if (currentVizMode !== 'shift') return '';
         const abs = Math.abs(Number(signedMarginPct) || 0);
         if (abs < 0.5) return 'Tiny changes can flip it.';
@@ -26210,11 +26259,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!countyNorm || !smartInsightsActiveCountySet.has(countyNorm)) return '';
         const reasons = smartInsightsReasonsByCounty?.get(countyNorm) || [];
         const primary = Array.isArray(reasons) && reasons.length ? String(reasons[0] || '').trim() : '';
-        if (!primary) return 'Smart Insights: one of todayâ€™s key counties.';
+        if (!primary) return 'Smart Insights: one of today’s key counties.';
         if (/closest/i.test(primary)) return 'Smart Insights: one of the closest margins.';
         if (/shift/i.test(primary)) return 'Smart Insights: among the biggest shifts.';
         if (/growth/i.test(primary)) return 'Smart Insights: one of the fastest-growing counties.';
-        return 'Smart Insights: one of todayâ€™s key counties.';
+        return 'Smart Insights: one of today’s key counties.';
       })();
       const finalInsight = tooltipInsight || smartInsight;
       const pinnedShell = !!(tooltipPinned || (forceTooltip && isMobileInteractionMode()));
@@ -26836,15 +26885,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let demCandidate = (row.dem_candidate || '').toString().trim();
       let repCandidate = (row.rep_candidate || '').toString().trim();
-      if ((!(demCandidate && repCandidate)) && contestType !== 'us_house') {
+      const isLegislativeContest = contestType === 'state_house' || contestType === 'state_senate';
+      if (!isLegislativeContest && (!(demCandidate && repCandidate)) && contestType !== 'us_house') {
         try {
           const cand = await getContestCandidates(contestType, year);
           if (!demCandidate) demCandidate = cand.dem || '';
           if (!repCandidate) repCandidate = cand.rep || '';
         } catch (_) {}
       }
-      if (!demCandidate) demCandidate = getCandidateName(year, formatContestName(contestType, year), 'Democrat');
-      if (!repCandidate) repCandidate = getCandidateName(year, formatContestName(contestType, year), 'Republican');
+      if (!isLegislativeContest) {
+        if (!demCandidate) demCandidate = getCandidateName(year, formatContestName(contestType, year), 'Democrat');
+        if (!repCandidate) repCandidate = getCandidateName(year, formatContestName(contestType, year), 'Republican');
+      } else {
+        ({ demCandidate, repCandidate } = resolveDistrictCandidateNames(contestType, row));
+      }
       setVoteCounterHoverState(
         `Hover: ${panelDistrictLabel} ${panelDistrictNum}`,
         `${formatContestLabel(contestType, year)}`,
@@ -26926,7 +26980,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showWinnerLine: true,
         shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
         shiftToneClass: shiftClass,
-        shiftYearLabel: (prevYearForFlip && year) ? `${prevYearForFlip}â†’${year}` : '',
+        shiftYearLabel: (prevYearForFlip && year) ? `${prevYearForFlip}→${year}` : '',
         showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!prevYearForFlip
       });
       const copyText = `${panelDistrictLabel} ${panelDistrictNum} (Lines ${currentDistrictLinesYear})`;
@@ -27809,7 +27863,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const focusKey = `${norm}|${contestType}|${year}`;
       try { contentEl.dataset.focusKey = focusKey; } catch (_) {}
 
-      const contestLabel = `${formatContestName(contestType, year)} â€¢ ${year}`;
+      const contestLabel = `${formatContestName(contestType, year)} • ${year}`;
       const partyTone = winner === 'Republican' ? 'rep' : (winner === 'Democratic' ? 'dem' : 'tie');
       const toneClass = partyTone === 'rep' ? 'tone-rep' : (partyTone === 'dem' ? 'tone-dem' : 'tone-neutral');
       const noun = 'county';
@@ -27833,7 +27887,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const marginShort = winner === 'Tie'
         ? 'Even'
         : (countyWinnerCall?.uncontested ? countyWinnerCall.shortLabel : `${winner === 'Republican' ? 'R' : 'D'}+${marginPctLabel}%`);
-      const splitShort = `${demPctLabel}% D â€¢ ${repPctLabel}% R${otherVotes > 0 ? ` â€¢ ${otherPctLabel}% Other` : ''}`;
+      const splitShort = `${demPctLabel}% D • ${repPctLabel}% R${otherVotes > 0 ? ` • ${otherPctLabel}% Other` : ''}`;
 
       // Subhead (result first, then context)
       const countySubhead = document.getElementById('county-subhead');
@@ -27886,15 +27940,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const glanceHeadline = winner === 'Tie'
         ? `${countyDisplay} is essentially tied in ${year}.`
-        : `${countyDisplay} is a ${winner === 'Republican' ? 'GOP' : 'Democratic'} win in ${year} â€” ${marginShort}.`;
+        : `${countyDisplay} is a ${winner === 'Republican' ? 'GOP' : 'Democratic'} win in ${year} ” ${marginShort}.`;
 
       const popBullet = (() => {
         const pat = String(censusContext?.patternLabel || '').trim();
-        if (!pat) return 'â€”';
+        if (!pat) return '”';
         return pat.replace(/\s+county$/i, '').trim();
       })();
 
-      const glanceMicro = `<span><strong>Story:</strong> Loading the long-run patternâ€¦</span><span><strong>Watch:</strong> Loading the next-cycle signalâ€¦</span>`;
+      const glanceMicro = `<span><strong>Story:</strong> Loading the long-run pattern…</span><span><strong>Watch:</strong> Loading the next-cycle signal…</span>`;
 
       focusContent += `
         <section class="focus-glance ${escapeHtml(toneClass)}" aria-label="At a glance">
@@ -27909,11 +27963,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <ul class="focus-glance-bullets">
             <li>
               <span class="focus-glance-label">Trend:</span>
-              <span class="focus-glance-value" id="county-glance-trend">${escapeHtml('Loadingâ€¦')}</span>
+              <span class="focus-glance-value" id="county-glance-trend">${escapeHtml('Loading…')}</span>
             </li>
             <li>
               <span class="focus-glance-label">Long run:</span>
-              <span class="focus-glance-value" id="county-glance-longrun">${escapeHtml('Loadingâ€¦')}</span>
+              <span class="focus-glance-value" id="county-glance-longrun">${escapeHtml('Loading…')}</span>
             </li>
             <li>
               <span class="focus-glance-label">Population:</span>
@@ -27942,7 +27996,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         `
       });
-      miniCards.push({ k: 'Compared with Missouri', v: vsNcShort || 'â€”' });
+      miniCards.push({ k: 'Compared with Missouri', v: vsNcShort || '”' });
       miniCards.push({ k: 'Total votes', v: totalVotes.toLocaleString() });
       miniCards.push({ k: 'What to watch', v: 'Whether the next cycle confirms this direction.', id: 'county-watch' });
 
@@ -27965,16 +28019,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (/Metro spillover|outer-suburban/i.test(pat)) return 'Suburban growth is reshaping the electorate here.';
             if (/Urban anchor/i.test(pat)) return 'Urban growth keeps this county politically dynamic.';
             if (/Coastal growth/i.test(pat)) return 'Migration-driven growth can move margins quickly here.';
-            if (/Slow-growth|declin/i.test(pat)) return 'Slow growth often locks in todayâ€™s political lean.';
-            if (pat) return 'Population change is part of this countyâ€™s political story.';
+            if (/Slow-growth|declin/i.test(pat)) return 'Slow growth often locks in today’s political lean.';
+            if (pat) return 'Population change is part of this county’s political story.';
             return 'Local turnout and long-run change shape this county.';
           })())}</p>
           <p class="focus-why-lines" id="county-why-lines">
-            <span>${escapeHtml(String(censusContext?.signalLabel || 'Loading population contextâ€¦').replace(/^Population\s+/i, 'Population '))}</span>
-            <span>${escapeHtml('Loading trend contextâ€¦')}</span>
+            <span>${escapeHtml(String(censusContext?.signalLabel || 'Loading population context…').replace(/^Population\s+/i, 'Population '))}</span>
+            <span>${escapeHtml('Loading trend context…')}</span>
           </p>
         </div>
-        <div class="focus-firsttime-hint" id="county-firsttime-hint" role="note" hidden>Tip: open â€œHistoryâ€ for the long-run pattern behind todayâ€™s margin.</div>
+        <div class="focus-firsttime-hint" id="county-firsttime-hint" role="note" hidden>Tip: open “History” for the long-run pattern behind today’s margin.</div>
       `;
 
       if (shouldShowModeledCountyEnhancements) {
@@ -27996,7 +28050,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="focus-mini-card" id="county-historical-analog-card">
               <span class="k">Historical Analog</span>
-              <span class="v" id="county-historical-analog-match">Loadingâ€¦</span>
+              <span class="v" id="county-historical-analog-match">Loading…</span>
               <span class="v" id="county-historical-analog-confidence"></span>
               <span class="v" id="county-historical-analog-diff"></span>
             </div>
@@ -28031,17 +28085,17 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="body">
             ${splitInsight ? `
               <div style="margin:0 0 10px 0;padding:10px;border-radius:12px;background:rgba(15,23,42,0.04);border:1px solid rgba(148,163,184,0.32);">
-                <div style="font-size:11px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin:0 0 8px 0;">Presâ€“Gov lens</div>
+                <div style="font-size:11px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin:0 0 8px 0;">Pres“Gov lens</div>
                 <div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#334155;"><span>President</span><strong>${escapeHtml(splitInsight.presidentLabel)}</strong></div>
                 <div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#334155;"><span>Governor overlay</span><strong>${escapeHtml(splitInsight.governorLabel)}</strong></div>
                 <div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#334155;"><span>Gap</span><strong>${escapeHtml(splitInsight.deltaLabel)}</strong></div>
               </div>
             ` : ''}
             <div style="display:grid;gap:6px;">
-              <div class="sidebar-breakdown"><span style="color:${escapeHtml(demColor)};font-weight:900;">${escapeHtml(fullCandidateLabel(demCandidate, 'Democratic'))} (D)</span> <span style="color:#64748b;">â€”</span> <strong>${escapeHtml(`${demPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(demVotes.toLocaleString())})</span></div>
-              <div class="sidebar-breakdown"><span style="color:${escapeHtml(repColor)};font-weight:900;">${escapeHtml(fullCandidateLabel(repCandidate, 'Republican'))} (R)</span> <span style="color:#64748b;">â€”</span> <strong>${escapeHtml(`${repPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(repVotes.toLocaleString())})</span></div>
-              ${otherVotes > 0 ? `<div class="sidebar-breakdown"><span style="color:#6b7280;font-weight:900;">Other</span> <span style="color:#64748b;">â€”</span> <strong>${escapeHtml(`${otherPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(otherVotes.toLocaleString())})</span></div>` : ''}
-              <div class="sidebar-margin-details" style="margin-top:6px;">Total votes: <strong style="color:#0f172a;">${escapeHtml(totalVotes.toLocaleString())}</strong>${precincts ? ` â€¢ Precincts: <strong style="color:#0f172a;">${escapeHtml(String(precincts))}</strong>` : ''}</div>
+              <div class="sidebar-breakdown"><span style="color:${escapeHtml(demColor)};font-weight:900;">${escapeHtml(fullCandidateLabel(demCandidate, 'Democratic'))} (D)</span> <span style="color:#64748b;">”</span> <strong>${escapeHtml(`${demPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(demVotes.toLocaleString())})</span></div>
+              <div class="sidebar-breakdown"><span style="color:${escapeHtml(repColor)};font-weight:900;">${escapeHtml(fullCandidateLabel(repCandidate, 'Republican'))} (R)</span> <span style="color:#64748b;">”</span> <strong>${escapeHtml(`${repPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(repVotes.toLocaleString())})</span></div>
+              ${otherVotes > 0 ? `<div class="sidebar-breakdown"><span style="color:#6b7280;font-weight:900;">Other</span> <span style="color:#64748b;">”</span> <strong>${escapeHtml(`${otherPctLabel}%`)}</strong> <span style="color:#64748b;">(${escapeHtml(otherVotes.toLocaleString())})</span></div>` : ''}
+              <div class="sidebar-margin-details" style="margin-top:6px;">Total votes: <strong style="color:#0f172a;">${escapeHtml(totalVotes.toLocaleString())}</strong>${precincts ? ` • Precincts: <strong style="color:#0f172a;">${escapeHtml(String(precincts))}</strong>` : ''}</div>
             </div>
           </div>
         </details>
@@ -28071,7 +28125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         node.total += Number(r[`${contestType}_total`] || 0);
       });
       if (buckets.size) {
-        nonGeoHtml += `<p class="sidebar-margin-details" style="margin-top:0;">Included in totals; not shown as precinct polygons (e.g., Early Vote â€œEVâ€).</p>`;
+        nonGeoHtml += `<p class="sidebar-margin-details" style="margin-top:0;">Included in totals; not shown as precinct polygons (e.g., Early Vote “EV”).</p>`;
         nonGeoHtml += Array.from(buckets.entries())
           .sort((a, b) => (b[1].total || 0) - (a[1].total || 0))
           .slice(0, 10)
@@ -28132,7 +28186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <summary>History</summary>
       <div class="body">
         <div class="sidebar-margin-details" style="margin-top:0;">Year-by-year winner + margin for this contest.</div>
-        <div id="county-trends" style="margin-top:8px;color:#94a3b8;">Loadingâ€¦</div>
+        <div id="county-trends" style="margin-top:8px;color:#94a3b8;">Loading…</div>
       </div>
     </details>
   `;
@@ -28219,7 +28273,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const modelConfLabel = (countyData.__model_confidence_label || '').toString().trim();
       const modelConfBand = (countyData.__model_confidence_band || '').toString().trim();
       const modelConfSuffix = modelConfLabel
-        ? ` â€¢ <strong>Model confidence:</strong> ${escapeHtml(modelConfLabel)}${modelConfBand ? ` (${escapeHtml(modelConfBand)})` : ''}`
+        ? ` • <strong>Model confidence:</strong> ${escapeHtml(modelConfLabel)}${modelConfBand ? ` (${escapeHtml(modelConfBand)})` : ''}`
         : '';
 
       if (!analog) {
@@ -28301,14 +28355,14 @@ document.addEventListener('DOMContentLoaded', function() {
         let watch = '';
 
         if (longDir === 'neutral') {
-          story = `Over the long run this ${noun} moves around, but doesnâ€™t march consistently in one direction.`;
+          story = `Over the long run this ${noun} moves around, but doesn’t march consistently in one direction.`;
           watch = `In close years, turnout and a couple points of swing matter a lot here.`;
         } else {
           const pace = recentDir === 'neutral'
             ? 'but the pace has cooled lately.'
             : (recentDir === longDir ? 'and recent cycles are moving the same way.' : 'but recent cycles have nudged the other way.');
           story = steady
-            ? `This ${noun} has been moving ${directionWord} since ${baseYear}â€”and ${year} fits the pattern, ${pace}`
+            ? `This ${noun} has been moving ${directionWord} since ${baseYear}”and ${year} fits the pattern, ${pace}`
             : `Since ${baseYear}, the longer-term pull has been ${directionWord}. In the last few cycles, the movement is ${recentDir === 'neutral' ? 'more muted' : (recentDir === longDir ? 'still in that direction' : 'starting to push back')}.`;
 
           let streakLine = '';
@@ -28318,16 +28372,16 @@ document.addEventListener('DOMContentLoaded', function() {
           }
 
           if (partyTone === 'rep' && longDir === 'rep') {
-            headline = `GOP win in ${countyDisplay} â€” and itâ€™s been moving right since ${baseYear}.`;
+            headline = `GOP win in ${countyDisplay} ” and it’s been moving right since ${baseYear}.`;
           } else if (partyTone === 'dem' && longDir === 'dem') {
-            headline = `Democrats hold ${countyDisplay} â€” and itâ€™s been moving left since ${baseYear}.`;
+            headline = `Democrats hold ${countyDisplay} ” and it’s been moving left since ${baseYear}.`;
           } else if (partyTone === 'rep' && longDir === 'dem') {
             headline = `GOP win in ${countyDisplay}, but the long-run pull is left.`;
           } else if (partyTone === 'dem' && longDir === 'rep') {
             headline = `Democrats win ${countyDisplay}, but the long-run pull is right.`;
           }
 
-          if (partyTone === 'tie') headline = `A true tossup in ${countyDisplay} â€” watch the next cycle closely.`;
+          if (partyTone === 'tie') headline = `A true tossup in ${countyDisplay} ” watch the next cycle closely.`;
 
           if (partyTone !== 'tie') {
             watch = recentDir === 'neutral'
@@ -28355,17 +28409,17 @@ document.addEventListener('DOMContentLoaded', function() {
           const trendEl = document.getElementById('county-glance-trend');
           if (trendEl) {
             trendEl.textContent = recentDir === 'neutral'
-              ? 'â†” No clear recent direction'
-              : (recentDir === 'rep' ? 'â†’ Moving right lately' : 'â† Moving left lately');
+              ? '↔ No clear recent direction'
+              : (recentDir === 'rep' ? '→ Moving right lately' : '← Moving left lately');
           }
           const longEl = document.getElementById('county-glance-longrun');
           if (longEl) {
             const by = Number.isFinite(Number(baseYear)) ? String(baseYear) : '';
             longEl.textContent = longDir === 'neutral'
-              ? (by ? `â†” No clear drift since ${by}` : 'â†” No clear long-run drift')
+              ? (by ? `↔ No clear drift since ${by}` : '↔ No clear long-run drift')
               : (longDir === 'rep'
-                ? (by ? `â†’ Moving right since ${by}` : 'â†’ Long-run move right')
-                : (by ? `â† Moving left since ${by}` : 'â† Long-run move left'));
+                ? (by ? `→ Moving right since ${by}` : '→ Long-run move right')
+                : (by ? `← Moving left since ${by}` : '← Long-run move left'));
           }
         } catch (_) {}
 
@@ -28405,7 +28459,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         } catch (_) {}
 
-        // "Why it votes this way" (trend + census context, 1 headline + 1â€“2 lines).
+        // "Why it votes this way" (trend + census context, 1 headline + 1“2 lines).
         try {
           const patRaw = String(censusContext?.patternLabel || '').trim();
           const pat = patRaw.toLowerCase();
@@ -28427,13 +28481,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (growthDriver === 'Suburban growth' || growthDriver === 'Urban growth' || growthDriver === 'Smallâ€‘metro growth') {
               if (longDir === 'dem') return `${growthDriver} has helped Democrats gain ground over time.`;
-              if (longDir === 'rep') return `${growthDriver} hasnâ€™t translated into a leftward shift here.`;
-              return `${growthDriver} is the big backdrop, but margins havenâ€™t moved cleanly one way.`;
+              if (longDir === 'rep') return `${growthDriver} hasn’t translated into a leftward shift here.`;
+              return `${growthDriver} is the big backdrop, but margins haven’t moved cleanly one way.`;
             }
             if (growthDriver === 'Coastal inâ€‘migration') {
               if (longDir === 'dem') return 'Inâ€‘migration has helped pull margins left over time.';
-              if (longDir === 'rep') return 'Inâ€‘migration hasnâ€™t changed the underlying Republican lean yet.';
-              return 'Inâ€‘migration can move margins quickly hereâ€”watch the next cycle.';
+              if (longDir === 'rep') return 'Inâ€‘migration hasn’t changed the underlying Republican lean yet.';
+              return 'Inâ€‘migration can move margins quickly here”watch the next cycle.';
             }
             if (longDir === 'dem') return `${growthDriver} lines up with a long-run move left.`;
             if (longDir === 'rep') return `${growthDriver} lines up with a long-run move right.`;
@@ -28448,7 +28502,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const line2 = (() => {
             if (longDir === 'neutral' && recentDir === 'neutral') return 'The big driver year-to-year is turnout, not a consistent partisan drift.';
             if (longDir !== 'neutral' && recentDir === 'neutral') return `The long-run pull is ${directionWord}, but recent cycles have been quieter.`;
-            if (longDir !== 'neutral' && recentDir !== 'neutral' && longDir !== recentDir) return `The long-run pull is ${directionWord}, but lately itâ€™s shown some pushback.`;
+            if (longDir !== 'neutral' && recentDir !== 'neutral' && longDir !== recentDir) return `The long-run pull is ${directionWord}, but lately it’s shown some pushback.`;
             if (longDir !== 'neutral' && recentDir !== 'neutral' && longDir === recentDir) return `Both the long run and recent cycles point ${directionWord}.`;
             if (recentDir !== 'neutral') return `Since 2020, the movement has been ${recentDir === 'rep' ? 'right' : 'left'}.`;
             return '';
@@ -28908,7 +28962,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ? (flipMeta.to === 'R' ? 'rep' : (flipMeta.to === 'D' ? 'dem' : 'tie'))
         : 'tie';
       const flipLabel = (flipMeta && flipMeta.flipped)
-        ? `Flipped ${flipMeta.from === 'R' ? 'Râ†’D' : 'Dâ†’R'}${flipYearLabel ? ` since ${String(flipYearLabel)}` : ''}`
+        ? `Flipped ${flipMeta.from === 'R' ? 'R→D' : 'D→R'}${flipYearLabel ? ` since ${String(flipYearLabel)}` : ''}`
         : '';
       const flipLine = flipLabel ? `<div class="vhr-flip ${flipToneClass}">${escapeHtml(flipLabel)}</div>` : '';
       const shiftTone = String(shiftToneClass || '').toLowerCase();
@@ -31929,10 +31983,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let demCandidate = stripRunningMateName((row.dem_candidate || '').toString().trim());
       let repCandidate = stripRunningMateName((row.rep_candidate || '').toString().trim());
-      if (!demCandidate) demCandidate = stripRunningMateName((fallbackCandidates?.dem || '').toString().trim());
-      if (!repCandidate) repCandidate = stripRunningMateName((fallbackCandidates?.rep || '').toString().trim());
-      if (!demCandidate) demCandidate = 'D';
-      if (!repCandidate) repCandidate = 'R';
+      ({ demCandidate, repCandidate } = resolveDistrictCandidateNames(contestType, {
+        ...row,
+        dem_candidate: demCandidate || row.dem_candidate,
+        rep_candidate: repCandidate || row.rep_candidate
+      }, fallbackCandidates));
+      if (!(contestType === 'state_house' || contestType === 'state_senate')) {
+        if (!demCandidate) demCandidate = 'D';
+        if (!repCandidate) repCandidate = 'R';
+      }
 
       const demPct = (demVotes / totalVotes) * 100.0;
       const repPct = (repVotes / totalVotes) * 100.0;
@@ -32125,7 +32184,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && contestType !== 'us_house') {
+          if (row && contestType !== 'us_house' && contestType !== 'state_house' && contestType !== 'state_senate') {
             const demBlank = !((row.dem_candidate || '').toString().trim());
             const repBlank = !((row.rep_candidate || '').toString().trim());
             if (demBlank || repBlank) cand = await getContestCandidates(contestType, year);
@@ -32214,7 +32273,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && contestType !== 'us_house') {
+          if (row && contestType !== 'us_house' && contestType !== 'state_house' && contestType !== 'state_senate') {
             const demBlank = !((row.dem_candidate || '').toString().trim());
             const repBlank = !((row.rep_candidate || '').toString().trim());
             if (demBlank || repBlank) cand = await getContestCandidates(contestType, year);
@@ -32775,19 +32834,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function categoryColorForMargin(marginPct, winner) {
       // DRA-hybrid mid tiers; OG Stronghold + OG Dominant/Annihilation.
-      // Safe sits clearly above Stronghold (wider midâ†’deep gap).
+      // Safe sits clearly above Stronghold (wider mid→deep gap).
       if (marginPct >= 40) {
         return winner === 'R' ? '#67000d' : '#08306b'; // OG Annihilation
       } else if (marginPct >= 30) {
         return winner === 'R' ? '#a50f15' : '#08519c'; // OG Dominant
       } else if (marginPct >= 20) {
-        return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold â€” midpoint blue, OG red
+        return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold ” midpoint blue, OG red
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#e93a2d' : '#4795d2'; // Safe â€” near-original Atlas red, slightly tempered
+        return winner === 'R' ? '#e93a2d' : '#4795d2'; // Safe ” near-original Atlas red, slightly tempered
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#f7634b' : '#6baed6'; // Likely â€” near-original Atlas red, slightly tempered
+        return winner === 'R' ? '#f7634b' : '#6baed6'; // Likely ” near-original Atlas red, slightly tempered
       } else if (marginPct >= 1.0) {
-        return winner === 'R' ? '#fca98e' : '#8bbde0'; // Lean â€” near-original Atlas red, slightly tempered
+        return winner === 'R' ? '#fca98e' : '#8bbde0'; // Lean ” near-original Atlas red, slightly tempered
       } else if (marginPct >= 0.5) {
         return winner === 'R' ? '#f4c9c5' : '#c7ddf0'; // Balanced Tilt shades, still clearly lighter than Lean
       } else {
@@ -34436,7 +34495,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const countyFallbackExpr = (() => {
           // For modern precinct geometry, some polygons may exist that have no row in the selected
           // contest/year (newer splits/renames vs historical exports). Default those to transparent
-          // so the underlying county fill remains visible, instead of showing a â€œmissingâ€ gray block.
+          // so the underlying county fill remains visible, instead of showing a “missing” gray block.
           if (!useVtdCountyBackfill) return 'rgba(0,0,0,0)';
           if (!countyFillColorByNorm.size) return '#d1d5db';
           const fb = ['match', ['get', 'county_norm']];
