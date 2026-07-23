@@ -11412,6 +11412,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const BELLWETHER_PRECINCT_MAX_ERR_PCT = 18;
     const BELLWETHER_PRECINCT_MAX_AVG_ERR_PCT = 12;
     const MODELED_CONTEST_DEFINITIONS = {};
+    let splitTicketOverlayEnabled = false;
+    let splitTicketOverlayCache = new Map();
     let splitTicketCountyOverlayMargins = {};
     let splitTicketOverlayMeta = null; // { overlayContestType, overlayYear, baseYear, governorValue, presidentValue }
     let barometerOverlayEnabled = false;
@@ -12802,7 +12804,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (labelEl) labelEl.textContent = `${scenarioSwingPct.toFixed(1)}%`;
     }
 
-    // (saveUIState/restoreUIState defined above as no-ops)
+    // Session persistence was removed; keep call sites stable with no-ops.
+    function saveUIState() {}
+    async function restoreUIState() {}
 
     function normalizeCountyToken(name) {
       return window.AtlasCore.normalizeCountyToken(name);
