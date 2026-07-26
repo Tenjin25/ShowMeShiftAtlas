@@ -10238,8 +10238,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-25-mo-pop-change-v2';
-    const APP_BUILD_ID = '2026-07-25-mo-pop-change-v2';
+    const DATA_CACHE_BUSTER = '2026-07-25-mo-pop-change-v3';
+    const APP_BUILD_ID = '2026-07-25-mo-pop-change-v3';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -26219,53 +26219,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lastCountyHoverKey = hoverKey;
         lastCountyHoverRenderedAt = now;
       } catch (_) {}
-
-      if (currentVizMode === 'population_change') {
-        const estimate = getCountyPopulationEstimate(norm);
-        const population2020 = Number(estimate?.population2020);
-        const population2025 = Number(estimate?.population2025);
-        const changeAbs = Number(estimate?.change2020To2025);
-        const changePct = Number(estimate?.changePct2020To2025);
-        if (
-          estimate
-          && population2020 > 0
-          && population2025 > 0
-          && Number.isFinite(changeAbs)
-          && Number.isFinite(changePct)
-        ) {
-          const tone = changeAbs > 0 ? 'gain' : (changeAbs < 0 ? 'loss' : 'flat');
-          const toneLabel = tone === 'gain' ? 'Growth' : (tone === 'loss' ? 'Decline' : 'Flat');
-          const signAbs = changeAbs > 0 ? '+' : '';
-          const signPct = changePct > 0 ? '+' : '';
-          const statewidePct = Number(countyPopulationEstimateStatewide?.changePct2020To2025);
-          const statewideText = Number.isFinite(statewidePct)
-            ? ` · Missouri ${statewidePct >= 0 ? '+' : ''}${statewidePct.toFixed(1)}%`
-            : '';
-          const populationCard = `
-            <div class="votehub-results-card">
-              <div class="vhr-title">${escapeHtml(appendCountyJurisdiction(countyDisplay))}</div>
-              <div class="vhr-subtitle">Population change</div>
-              <div class="vhr-popchange">
-                <div class="vhr-popchange-grid">
-                  <div class="vhr-popchange-main ${tone}">Population change: ${escapeHtml(`${signAbs}${Math.round(changeAbs).toLocaleString()} (${signPct}${changePct.toFixed(1)}%)`)}<span class="vhr-popchange-tone"> · ${toneLabel}</span></div>
-                  <div class="vhr-popchange-values ${tone}">${escapeHtml(`${population2020.toLocaleString()} → ${population2025.toLocaleString()}`)}</div>
-                </div>
-              </div>
-              <div class="vhr-total">2020–2025${escapeHtml(statewideText)}</div>
-            </div>
-          `.trim();
-          const pinnedShell = !!(tooltipPinned || (forceTooltip && isMobileInteractionMode()));
-          const copyText = appendCountyJurisdiction(countyDisplay);
-          showHoverTooltip(
-            e.point.x,
-            e.point.y,
-            buildTooltipShell('', populationCard, { pinned: pinnedShell, showClose: pinnedShell, copyText }),
-            { force: !!forceTooltip, pinned: pinnedShell, context: pinnedShell ? 'pinned' : 'detail', copyText }
-          );
-          wireTooltipButtons();
-          return;
-        }
-      }
 
       if (!contestValue || !row) {
         const hoverTitle = buildTooltipTitleWithTier(appendCountyJurisdiction(countyDisplay));
