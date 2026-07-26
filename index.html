@@ -8468,7 +8468,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
       bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + 24px + var(--vote-counter-h, 0px) + 8px) !important;
     }
 
-    body.mobile-sheet-open #hover-tooltip {
+    body.mobile-sheet-open #hover-tooltip:not([data-pinned="1"]) {
       opacity: 0;
       pointer-events: none;
       transform: translateY(6px) !important;
@@ -8486,7 +8486,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
       pointer-events: none;
       transform: translateY(8px) !important;
     }
-    body.mobile-input-active #hover-tooltip {
+    body.mobile-input-active #hover-tooltip:not([data-pinned="1"]) {
       opacity: 0;
       pointer-events: none;
       transform: translateY(8px) !important;
@@ -9600,6 +9600,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const key = document.getElementById('contestSelect')?.value || '';
       if (key && typeof applyContest === 'function' && currentVizMode === 'population_change') {
         applyContest(key).catch(() => {});
+      } else if (currentVizMode === 'population_change' && typeof applyPopulationChangeCountyMode === 'function') {
+        applyPopulationChangeCountyMode();
       } else if (typeof renderLegendForVizMode === 'function') {
         renderLegendForVizMode(currentVizMode || 'margins');
       }
@@ -9831,6 +9833,10 @@ document.addEventListener('DOMContentLoaded', function() {
                   <button type="button" class="region-jump-btn" data-region-jump="kansas_city">Kansas City</button>
                   <button type="button" class="region-jump-btn" data-region-jump="springfield">Springfield</button>
                   <button type="button" class="region-jump-btn" data-region-jump="columbia">Columbia</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="jefferson_city">Jefferson City</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="joplin">Joplin</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="st_joseph">St. Joseph</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="cape_girardeau">Cape Girardeau</button>
                   <button type="button" class="region-jump-btn" data-region-jump="bootheel">Bootheel</button>
                   <button type="button" class="region-jump-btn" data-region-jump="ozarks">Ozarks</button>
                   <button type="button" class="region-jump-btn" data-region-jump="i70">I-70</button>
@@ -9867,7 +9873,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="viz-mode-btn" data-mode="shift" type="button"><span>Shift</span></button>
                 <button class="viz-mode-btn" data-mode="flips" type="button"><span>Flips</span></button>
                 <button class="viz-mode-btn" data-mode="demographics" type="button"><span>Demographics</span></button>
-                <button class="viz-mode-btn" data-mode="population_change" type="button" style="display:none;"><span>Pop Change</span></button>
+                <button class="viz-mode-btn" data-mode="population_change" type="button"><span>Pop Change</span></button>
               </div>
             </div>
             <details class="control-group control-group-scenario controls-disclosure" id="scenario-disclosure">
@@ -9909,7 +9915,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input id="demographics-contrast-toggle" type="checkbox" data-testid="demographics-contrast-toggle" aria-label="Enable high contrast demographics colors" />
                 High contrast demographics
               </label>
-              <div class="scenario-row" style="display:none;">
+              <div class="scenario-row">
                 <label for="pop-change-metric">Pop change metric</label>
                 <select id="pop-change-metric" data-testid="pop-change-metric" aria-label="Population change metric">
                   <option value="pct">Percent (2020→2025)</option>
@@ -10232,8 +10238,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-23-winner-pill-size';
-    const APP_BUILD_ID = '2026-07-23-winner-pill-size';
+    const DATA_CACHE_BUSTER = '2026-07-25-mo-pop-change-v2';
+    const APP_BUILD_ID = '2026-07-25-mo-pop-change-v2';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -10269,7 +10275,7 @@ document.addEventListener('DOMContentLoaded', function() {
         state_senate: withBase('./Data/mo_state_senate_districts_2022.geojson'),
         state_senate_2022: withBase('./Data/mo_state_senate_districts_2022.geojson'),
         county_demographics: withBase('./Data/county_demographics_2020_dp1.json'),
-        county_population_estimates: '',
+        county_population_estimates: withBase('./Data/mo_county_population_estimates_2025.csv'),
         precinct_demographics: withBase('./Data/precinct_demographics_2020_vap.csv'),
         cvap_aggregates: {},
         election: withBase('./Data/mo_elections_aggregated.json'),
@@ -10327,6 +10333,26 @@ document.addEventListener('DOMContentLoaded', function() {
         label: 'Columbia',
         bounds: [[-92.90, 38.70], [-92.00, 39.45]],
         counties: ['Boone', 'Callaway', 'Audrain', 'Cooper', 'Howard']
+      },
+      jefferson_city: {
+        label: 'Jefferson City Metro',
+        bounds: [[-92.98, 38.15], [-91.50, 39.20]],
+        counties: ['Callaway', 'Cole', 'Moniteau', 'Osage']
+      },
+      joplin: {
+        label: 'Joplin Metro',
+        bounds: [[-94.75, 36.62], [-93.92, 37.49]],
+        counties: ['Jasper', 'Newton']
+      },
+      st_joseph: {
+        label: 'St. Joseph Metro',
+        bounds: [[-95.25, 39.40], [-94.08, 40.25]],
+        counties: ['Andrew', 'Buchanan', 'DeKalb']
+      },
+      cape_girardeau: {
+        label: 'Cape Girardeau Metro',
+        bounds: [[-90.36, 36.90], [-89.28, 37.74]],
+        counties: ['Bollinger', 'Cape Girardeau']
       },
       bootheel: {
         label: 'Bootheel',
@@ -10588,7 +10614,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mobile: tapping empty space closes any pinned tooltip/highlight.
     map.on('click', (e) => {
-      if (!IS_COARSE_POINTER) return;
+      if (!isMobileInteractionMode()) return;
       try { lastPointerPoint = e.point; } catch (_) {}
       const layers = [
         'precinct-dot',
@@ -10723,7 +10749,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concord“Harrisburg"
     let countyDemographics = null; // County-level VAP (18+) + total-pop race/ethnicity from DP1 (includes AIAN/native)
     let countyPopulationEstimatesByNorm = null; // Map<string countyNorm, growth/estimate summary from Vintage 2025 county estimates>
-    let countyPopulationEstimateStatewide = null; // Statewide NC summary from the same file
+    let countyPopulationEstimateStatewide = null; // Statewide Missouri summary from the same file
 
     // --- County raw-vote deltas (cycle-to-cycle) for hover tooltips ---
     // Cache by (contestType, fromYear, toYear) so hover rendering stays synchronous/fast.
@@ -12732,6 +12758,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const preset = getOverlayOpacityPresetConfig();
       const contestIsActive = hasActiveContestSelection();
       const demographicsModeActive = currentVizMode === 'demographics';
+      const populationChangeModeActive = currentVizMode === 'population_change' && currentView === 'counties';
       const useTurnoutOpacity = turnoutBivariateEnabled && !demographicsModeActive;
       const precinctsActuallyVisible =
         precinctsEnabled &&
@@ -12751,6 +12778,9 @@ document.addEventListener('DOMContentLoaded', function() {
         precinctFillBaseOpacity = 0.22;
         precinctDotBaseOpacity = 0.62;
       }
+      if (populationChangeModeActive) {
+        countyBaseOpacity = precinctsActuallyVisible ? 0.18 : 0.86;
+      }
       if (contestIsActive && demographicsModeActive) {
         countyBaseOpacity = precinctsActuallyVisible ? Math.max(countyBaseOpacity, 0.16) : Math.max(countyBaseOpacity, 0.84);
         districtBaseOpacity = Math.max(districtBaseOpacity, 0.78);
@@ -12769,7 +12799,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (map.getLayer('county-fill')) {
-        if (!contestIsActive) {
+        if (!contestIsActive && !populationChangeModeActive) {
           try { map.setPaintProperty('county-fill', 'fill-color', '#d9e3ef'); } catch (_) {}
         }
         const countyOpacity = useTurnoutOpacity && !precinctsActuallyVisible
@@ -13357,6 +13387,51 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    function applyPopulationChangeCountyMode() {
+      if (!map || currentView !== 'counties') return false;
+      renderLegendForVizMode('population_change');
+      vizShiftCache = null;
+
+      const countyExpr = ['case'];
+      let mappedCount = 0;
+      if (countyPopulationEstimatesByNorm && typeof countyPopulationEstimatesByNorm.forEach === 'function') {
+        countyPopulationEstimatesByNorm.forEach((estimate, countyNorm) => {
+          const useAbs = String(populationChangeMetric || 'pct') === 'abs';
+          const countyPct = Number(estimate?.changePct2020To2025);
+          const color = useAbs
+            ? colorForPopulationChangeAbsMode(estimate?.change2020To2025)
+            : colorForPopulationChangeMode(countyPct);
+          // countyFeatureNameExpression() returns NAMELSAD20-style names such as
+          // "ADAIR COUNTY", while countyNorm intentionally omits the suffix for lookups.
+          const featureToken = normalizeCountyFeatureToken(estimate?.countyName || countyNorm);
+          if (!featureToken) return;
+          countyExpr.push(['==', countyFeatureNameExpression(), featureToken], color);
+          mappedCount += 1;
+        });
+      }
+      countyExpr.push('#e2e8f0');
+
+      if (map.getLayer('county-fill')) {
+        map.setPaintProperty('county-fill', 'fill-color', countyExpr);
+      }
+      if (map.getLayer('county-stroke')) {
+        try {
+          map.setPaintProperty('county-stroke', 'line-color', '#333');
+          map.setPaintProperty('county-stroke', 'line-width', 1);
+        } catch (_) {}
+      }
+      applyLayerOpacityTuning();
+      setStatewideContestTitle(String(populationChangeMetric || 'pct') === 'abs'
+        ? 'County Population Change (2020-2025, absolute)'
+        : 'County Population Change (2020-2025, percent)');
+      if (mappedCount > 0) {
+        setStatus(`Applied county population-change mode (2020-2025, ${String(populationChangeMetric || 'pct') === 'abs' ? 'absolute' : 'percent'}).`);
+        return true;
+      }
+      setStatus('Population estimates are still loading. Try Pop Change again in a moment.');
+      return false;
+    }
+
     function switchVizMode(mode) {
       currentVizMode = mode;
 
@@ -13369,6 +13444,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const contestSelect = document.getElementById('contestSelect');
       if (contestSelect && contestSelect.value) {
         applyContest(contestSelect.value);
+      } else if (mode === 'population_change' && currentView === 'counties') {
+        applyPopulationChangeCountyMode();
       }
       updateContextBanner();
       saveUIState();
@@ -13825,7 +13902,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!norm || !ct) return '';
       const presentation = String(options?.presentation || '').trim(); // 'desktop-collapsed' | 'desktop-expanded' | ''
 
-      const pop = countyPopulationEstimatesByNorm?.get(norm) || null;
+      const pop = getCountyPopulationEstimate(norm);
       const popDeltaRaw = Number(pop?.change2020To2025);
       const popPctRaw = Number(pop?.changePct2020To2025);
       const popDelta2024Raw = (Number.isFinite(Number(pop?.population2024)) && Number.isFinite(Number(pop?.population2020)))
@@ -15181,7 +15258,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           const ctx = getCountyCensusContextSafe(county);
           const pattern = String(ctx?.patternLabel || '').toLowerCase();
-          const popEstimate = countyPopulationEstimatesByNorm?.get(county) || null;
+          const popEstimate = getCountyPopulationEstimate(county);
           const pop = Number(popEstimate?.population2025 || popEstimate?.population2020 || 0);
           if (/urban anchor|urban county/.test(pattern) || pop >= 550000) return 'urban';
           if (/metro spillover|outer-suburban|suburban/.test(pattern) || pop >= 180000) return 'suburban';
@@ -15214,7 +15291,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const patternRaw = String(ctx?.patternLabel || '').trim();
           const pattern = patternRaw.toLowerCase();
           const note = String(ctx?.noteLabel || '').toLowerCase();
-          const pop = Number(countyPopulationEstimatesByNorm?.get(county)?.population2025 || 0);
+          const pop = Number(getCountyPopulationEstimate(county)?.population2025 || 0);
           const countyType = classifyCountyBehaviorType(county, totals);
 
           // Senate calibration: Wake should route with Mecklenburg/Durham-style urban-core handling.
@@ -22590,10 +22667,28 @@ document.addEventListener('DOMContentLoaded', function() {
           changePct2023To2024: Number.isFinite(changePct2023To2024) ? changePct2023To2024 : NaN
         };
 
-        if (countyNorm === 'NORTH CAROLINA') statewide = entry;
+        if (countyNorm === 'MISSOURI') statewide = entry;
         else byNorm.set(countyNorm, entry);
       });
       return { byNorm, statewide };
+    }
+
+    function getCountyPopulationEstimate(countyNameOrNorm) {
+      if (!countyPopulationEstimatesByNorm || typeof countyPopulationEstimatesByNorm.get !== 'function') return null;
+      const candidates = new Set();
+      const addCandidate = (value) => {
+        const norm = normalizeCountyToken(value);
+        if (!norm) return;
+        candidates.add(norm);
+        if (/\s+COUNTY$/i.test(norm)) candidates.add(norm.replace(/\s+COUNTY$/i, ''));
+      };
+      addCandidate(countyNameOrNorm);
+      getCountyLookupTokens(countyNameOrNorm).forEach(addCandidate);
+      for (const candidate of candidates) {
+        const estimate = countyPopulationEstimatesByNorm.get(candidate);
+        if (estimate) return estimate;
+      }
+      return null;
     }
 
     function formatPopulationChangePct(pct) {
@@ -22620,7 +22715,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let noteLabel = 'Population change may shape the electorate over time, even when margins remain stable in the short run.';
       let sourceNote = 'Qualitative context inspired by recent Census population-estimate patterns; not a raw population table.';
 
-      const estimate = countyPopulationEstimatesByNorm?.get(norm) || null;
+      const estimate = getCountyPopulationEstimate(norm);
       const statewide = countyPopulationEstimateStatewide || null;
       const totalPct = Number(estimate?.changePct2020To2025);
       const recentPct = Number(estimate?.changePct2024To2025);
@@ -22636,7 +22731,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (estimate) {
         signalLabel = `Population ${formatPopulationChangePct(totalPct)} since 2020`;
         noteLabel = `2025 estimate: ${Number(estimate.population2025 || 0).toLocaleString()}. 2024 to 2025 change: ${formatPopulationChangePct(recentPct)}.`;
-        sourceNote = 'County population estimates are not configured for this Missouri build.';
+        sourceNote = 'U.S. Census Bureau Vintage 2025 county population estimates (released March 2026).';
 
         if (urbanAnchor.has(norm)) {
           signalEmoji = 'ðŸ™ï¸';
@@ -26125,6 +26220,53 @@ document.addEventListener('DOMContentLoaded', function() {
         lastCountyHoverRenderedAt = now;
       } catch (_) {}
 
+      if (currentVizMode === 'population_change') {
+        const estimate = getCountyPopulationEstimate(norm);
+        const population2020 = Number(estimate?.population2020);
+        const population2025 = Number(estimate?.population2025);
+        const changeAbs = Number(estimate?.change2020To2025);
+        const changePct = Number(estimate?.changePct2020To2025);
+        if (
+          estimate
+          && population2020 > 0
+          && population2025 > 0
+          && Number.isFinite(changeAbs)
+          && Number.isFinite(changePct)
+        ) {
+          const tone = changeAbs > 0 ? 'gain' : (changeAbs < 0 ? 'loss' : 'flat');
+          const toneLabel = tone === 'gain' ? 'Growth' : (tone === 'loss' ? 'Decline' : 'Flat');
+          const signAbs = changeAbs > 0 ? '+' : '';
+          const signPct = changePct > 0 ? '+' : '';
+          const statewidePct = Number(countyPopulationEstimateStatewide?.changePct2020To2025);
+          const statewideText = Number.isFinite(statewidePct)
+            ? ` · Missouri ${statewidePct >= 0 ? '+' : ''}${statewidePct.toFixed(1)}%`
+            : '';
+          const populationCard = `
+            <div class="votehub-results-card">
+              <div class="vhr-title">${escapeHtml(appendCountyJurisdiction(countyDisplay))}</div>
+              <div class="vhr-subtitle">Population change</div>
+              <div class="vhr-popchange">
+                <div class="vhr-popchange-grid">
+                  <div class="vhr-popchange-main ${tone}">Population change: ${escapeHtml(`${signAbs}${Math.round(changeAbs).toLocaleString()} (${signPct}${changePct.toFixed(1)}%)`)}<span class="vhr-popchange-tone"> · ${toneLabel}</span></div>
+                  <div class="vhr-popchange-values ${tone}">${escapeHtml(`${population2020.toLocaleString()} → ${population2025.toLocaleString()}`)}</div>
+                </div>
+              </div>
+              <div class="vhr-total">2020–2025${escapeHtml(statewideText)}</div>
+            </div>
+          `.trim();
+          const pinnedShell = !!(tooltipPinned || (forceTooltip && isMobileInteractionMode()));
+          const copyText = appendCountyJurisdiction(countyDisplay);
+          showHoverTooltip(
+            e.point.x,
+            e.point.y,
+            buildTooltipShell('', populationCard, { pinned: pinnedShell, showClose: pinnedShell, copyText }),
+            { force: !!forceTooltip, pinned: pinnedShell, context: pinnedShell ? 'pinned' : 'detail', copyText }
+          );
+          wireTooltipButtons();
+          return;
+        }
+      }
+
       if (!contestValue || !row) {
         const hoverTitle = buildTooltipTitleWithTier(appendCountyJurisdiction(countyDisplay));
         const pinnedShell = !!(tooltipPinned || (forceTooltip && isMobileInteractionMode()));
@@ -26305,7 +26447,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })();
       const popChangeDetailLine = (() => {
         if (currentVizMode !== 'population_change') return '';
-        const estimate = countyPopulationEstimatesByNorm?.get(norm) || null;
+        const estimate = getCountyPopulationEstimate(norm);
         if (!estimate) return '';
         const p2020 = Number(estimate.population2020 || 0);
         const p2025 = Number(estimate.population2025 || 0);
@@ -26321,7 +26463,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })();
       const popChangeHeaderMeta = (() => {
         if (currentVizMode !== 'population_change') return null;
-        const estimate = countyPopulationEstimatesByNorm?.get(norm) || null;
+        const estimate = getCountyPopulationEstimate(norm);
         if (!estimate) return null;
         const p2020 = Number(estimate.population2020 || 0);
         const p2025 = Number(estimate.population2025 || 0);
@@ -30395,7 +30537,7 @@ document.addEventListener('DOMContentLoaded', function() {
               try {
                 setDistrictHoverOutline('congressional', districtNum);
                 setTooltipPinned(false);
-                if (isTouchInteractionMode()) {
+                if (isMobileInteractionMode()) {
                   await renderDistrictHover(
                     e,
                     'congressional',
@@ -30513,7 +30655,7 @@ document.addEventListener('DOMContentLoaded', function() {
               try {
                 setDistrictHoverOutline('state_house', districtNum);
                 setTooltipPinned(false);
-                if (isTouchInteractionMode()) {
+                if (isMobileInteractionMode()) {
                   await renderDistrictHover(
                     e,
                     'state_house',
@@ -30631,7 +30773,7 @@ document.addEventListener('DOMContentLoaded', function() {
               try {
                 setDistrictHoverOutline('state_senate', districtNum);
                 setTooltipPinned(false);
-                if (isTouchInteractionMode()) {
+                if (isMobileInteractionMode()) {
                   await renderDistrictHover(
                     e,
                     'state_senate',
@@ -31585,6 +31727,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!tooltip) return;
       if (isTouchInteractionMode() && !force && !tooltipPinned) return;
       if (tooltipPinned && !force) return;
+      // Apply the pin state before measuring/painting the card. This closes the
+      // gap where mobile sheet or input-focus styles could hide a newly tapped result.
+      setTooltipPinned(!!pinned);
 
       // If the user explicitly closed a hover tooltip while the pointer is still sitting on the same feature,
       // don't immediately reopen it on the next hover refresh (common in precinct mode).
@@ -32583,6 +32728,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const idx = buildCountyPopulationEstimateIndex(rows);
         countyPopulationEstimatesByNorm = idx.byNorm;
         countyPopulationEstimateStatewide = idx.statewide;
+        if (currentVizMode === 'population_change' && currentView === 'counties') {
+          applyPopulationChangeCountyMode();
+        }
       } catch (err) {
         countyPopulationEstimatesByNorm = null;
         countyPopulationEstimateStatewide = null;
@@ -34270,43 +34418,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (mode === 'population_change' && currentView === 'counties') {
-        renderLegendForVizMode('population_change');
-        vizShiftCache = null;
         if (staleCheck()) return;
-
-        const countyExpr = ['case'];
-        if (countyPopulationEstimatesByNorm && typeof countyPopulationEstimatesByNorm.forEach === 'function') {
-          countyPopulationEstimatesByNorm.forEach((estimate, countyNorm) => {
-            const useAbs = String(populationChangeMetric || 'pct') === 'abs';
-            const countyPct = Number(estimate?.changePct2020To2025);
-            const color = useAbs
-              ? colorForPopulationChangeAbsMode(estimate?.change2020To2025)
-              : colorForPopulationChangeMode(countyPct);
-            countyExpr.push([
-              '==',
-              countyFeatureNameExpression(),
-              countyNorm
-            ]);
-            countyExpr.push(color);
-          });
-        }
-        countyExpr.push('#e2e8f0');
-
-        if (map.getLayer('county-fill')) {
-          map.setPaintProperty('county-fill', 'fill-color', countyExpr);
-        }
-        if (map.getLayer('county-stroke')) {
-          try {
-            map.setPaintProperty('county-stroke', 'line-color', '#333');
-            map.setPaintProperty('county-stroke', 'line-width', 1);
-          } catch (_) {}
-        }
-        applyLayerOpacityTuning();
+        applyPopulationChangeCountyMode();
         if (staleCheck()) return;
-        setStatewideContestTitle(String(populationChangeMetric || 'pct') === 'abs'
-          ? 'County Population Change (2020-2025, absolute)'
-          : 'County Population Change (2020-2025, percent)');
-        setStatus(`Applied county population-change mode (2020-2025, ${String(populationChangeMetric || 'pct') === 'abs' ? 'absolute' : 'percent'}).`);
         return;
       }
 
