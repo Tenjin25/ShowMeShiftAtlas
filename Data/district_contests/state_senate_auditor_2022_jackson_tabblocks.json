@@ -3,10 +3,10 @@
     "scope": "state_senate",
     "contest_type": "auditor",
     "year": 2022,
-    "district_count": 2,
+    "district_count": 4,
     "match_coverage_pct": 100.0,
     "direct_match_coverage_pct": 93.840576,
-    "generated_at": "2026-07-27T22:50:11.591832+00:00",
+    "generated_at": "2026-07-27T23:09:40.017898+00:00",
     "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
     "geography_era": "vtd20",
     "jackson_votes": 129436,
@@ -14,33 +14,59 @@
     "jackson_direct_votes": 102580,
     "kansas_city_direct_votes": 84838,
     "districts": [
+      "7",
       "8",
+      "9",
       "11"
     ]
   },
   "general": {
     "results": {
-      "8": {
-        "dem_votes": 36174,
-        "rep_votes": 43702,
-        "other_votes": 2845,
-        "total_votes": 82721,
+      "7": {
+        "dem_votes": 43985,
+        "rep_votes": 14928,
+        "other_votes": 1715,
+        "total_votes": 60628,
         "dem_candidate": "Alan Green",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": 7528,
-        "margin_pct": 9.10047,
+        "margin": -29057,
+        "margin_pct": -47.926701,
+        "winner": "DEM",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 36100,
+        "rep_votes": 43580,
+        "other_votes": 2839,
+        "total_votes": 82519,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 7480,
+        "margin_pct": 9.064579,
         "winner": "REP",
         "color": ""
       },
-      "11": {
-        "dem_votes": 12530,
-        "rep_votes": 18801,
-        "other_votes": 1369,
-        "total_votes": 32700,
+      "9": {
+        "dem_votes": 29427,
+        "rep_votes": 8786,
+        "other_votes": 1197,
+        "total_votes": 39410,
         "dem_candidate": "Alan Green",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": 6271,
-        "margin_pct": 19.17737,
+        "margin": -20641,
+        "margin_pct": -52.375032,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 12166,
+        "rep_votes": 18793,
+        "other_votes": 1358,
+        "total_votes": 32317,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 6627,
+        "margin_pct": 20.506235,
         "winner": "REP",
         "color": ""
       }

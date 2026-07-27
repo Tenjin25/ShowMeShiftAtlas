@@ -36,7 +36,9 @@
       ],
       "patched_at": "2026-07-27T23:08:46.672127+00:00",
       "source_method": "jackson_tabblock_crosswalk_kc_split"
-    }
+    },
+    "promoted_from": "state_house_auditor_2018_overlap.json",
+    "promoted_at": "2026-07-27T23:14:06.210378+00:00"
   },
   "general": {
     "results": {

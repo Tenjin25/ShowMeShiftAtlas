@@ -8,7 +8,7 @@
  * Notes
  * - 2000–2008: VTD00
  * - 2010–2018: VTD10
- * - 2020–2024: VTD20
+ * - 2020–2024: VTD20 (includes 2022)
  *
  * Usage:
  *   node scripts/rebuild_overlap_statewide_slices_all.js
@@ -69,7 +69,7 @@ const VINTAGES = [
   },
   {
     label: 'vtd20',
-    years: [2020, 2024],
+    years: [2020, 2022, 2024],
     vtd: path.join('Data', 'mo_vtd20_precincts.geojson'),
     crosswalks: {
       congressional: path.join('Data', 'crosswalks', 'precinct_to_cd118_overlap.csv'),

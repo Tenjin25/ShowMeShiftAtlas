@@ -19,9 +19,7 @@
       ],
       "patched_at": "2026-07-27T23:09:40.023716+00:00",
       "source_method": "jackson_tabblock_crosswalk_kc_split"
-    },
-    "promoted_from": "state_senate_auditor_2022_overlap.json",
-    "promoted_at": "2026-07-27T23:14:06.217224+00:00"
+    }
   },
   "general": {
     "results": {

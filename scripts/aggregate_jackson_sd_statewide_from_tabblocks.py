@@ -1,24 +1,26 @@
 #!/usr/bin/env python
 """
-Re-aggregate statewide contests onto Jackson-based state senate districts
+Re-aggregate statewide contests onto Jackson-based legislative districts
 using the tabblock crosswalk, with Kansas City kept as its own election
 jurisdiction during precinct matching.
+
+Supports --scope state_senate (default) or state_house.
 
 Why
 ---
 OpenElections reports Kansas City Board precincts under county="Kansas City"
 and Jackson County Election Board precincts under county="Jackson". County
-maps already roll KC into JACKSON. For SD-08 / SD-11 aggregation we must:
+maps already roll KC into JACKSON. For Jackson-area aggregation we must:
 
   1) Match KANSAS CITY rows against KC-tagged VTDs only
   2) Match JACKSON rows against non-KC Jackson VTDs (with KC as fallback)
-  3) Allocate through tabblock-derived VTD → senate weights
+  3) Allocate through tabblock-derived VTD → district weights
 
 Inputs
 ------
-  - Data/crosswalks/jackson_vtd20_to_2022_state_senate_from_tabblocks.csv
-  - Data/crosswalks/jackson_vtd10_to_2022_state_senate_from_nhgis.csv
-  - Data/crosswalks/jackson_vtd00_to_2022_state_senate_from_nhgis.csv
+  - Data/crosswalks/jackson_vtd20_to_2022_{scope}_from_tabblocks.csv
+  - Data/crosswalks/jackson_vtd10_to_2022_{scope}_from_nhgis.csv
+  - Data/crosswalks/jackson_vtd00_to_2022_{scope}_from_nhgis.csv
   - Data/mo_vtd{00,10,20}_precincts.geojson
   - Data/YYYYMMDD__mo__general__precinct.csv
 
@@ -30,13 +32,13 @@ Year → geography
 
 Outputs
 -------
-  - Data/district_contests/state_senate_{contest}_{year}_jackson_tabblocks.json
-  - Optional patch of SD-08/11 into existing *_overlap.json files (--patch-overlap)
+  - Data/district_contests/{scope}_{contest}_{year}_jackson_tabblocks.json
+  - Optional patch of Jackson districts into existing *_overlap.json (--patch-overlap)
 
 Usage
 -----
   python scripts/aggregate_jackson_sd_statewide_from_tabblocks.py
-  python scripts/aggregate_jackson_sd_statewide_from_tabblocks.py --years 2024 --contests president
+  python scripts/aggregate_jackson_sd_statewide_from_tabblocks.py --scope state_house --years 2018 --contests auditor --patch-overlap
   python scripts/aggregate_jackson_sd_statewide_from_tabblocks.py --years 2020,2024 --patch-overlap
 """
 
@@ -62,20 +64,18 @@ VTD20_GEOJSON = DATA_DIR / "mo_vtd20_precincts.geojson"
 VTD10_GEOJSON = DATA_DIR / "mo_vtd10_precincts.geojson"
 VTD00_GEOJSON = DATA_DIR / "mo_vtd00_precincts.geojson"
 
-CROSSWALK_BY_ERA = {
-    "vtd20": CROSSWALK_DIR / "jackson_vtd20_to_2022_state_senate_from_tabblocks.csv",
-    "vtd10": CROSSWALK_DIR / "jackson_vtd10_to_2022_state_senate_from_nhgis.csv",
-    "vtd00": CROSSWALK_DIR / "jackson_vtd00_to_2022_state_senate_from_nhgis.csv",
-}
+VALID_SCOPES = ("state_senate", "state_house")
 VTD_GEOJSON_BY_ERA = {
     "vtd20": VTD20_GEOJSON,
     "vtd10": VTD10_GEOJSON,
     "vtd00": VTD00_GEOJSON,
 }
-CROSSWALK_CSV = CROSSWALK_BY_ERA["vtd20"]
 
 DEFAULT_YEARS = (2012, 2016, 2020, 2024)
-DEFAULT_DISTRICTS = ("8", "11")
+DEFAULT_DISTRICTS_BY_SCOPE = {
+    "state_senate": ("8", "11"),
+    "state_house": None,  # all Jackson-touching from crosswalk
+}
 
 STATEWIDE_OFFICE_MAP = {
     "PRESIDENT": "president",
@@ -575,6 +575,14 @@ def normalize_weights(mapping: Dict[str, float]) -> Dict[str, float]:
     return {k: (v / total) for k, v in mapping.items() if v and v > 0}
 
 
+def crosswalk_by_era(scope: str) -> Dict[str, Path]:
+    return {
+        "vtd20": CROSSWALK_DIR / f"jackson_vtd20_to_2022_{scope}_from_tabblocks.csv",
+        "vtd10": CROSSWALK_DIR / f"jackson_vtd10_to_2022_{scope}_from_nhgis.csv",
+        "vtd00": CROSSWALK_DIR / f"jackson_vtd00_to_2022_{scope}_from_nhgis.csv",
+    }
+
+
 def era_for_year(year: int) -> str:
     """
     Pick precinct geography decade for election matching / crosswalk weights.
@@ -590,18 +598,23 @@ def era_for_year(year: int) -> str:
     return "vtd00"
 
 
-def resolve_era_inputs(year: int, crosswalk_override: Optional[Path] = None) -> Tuple[str, Path, Path]:
+def resolve_era_inputs(
+    year: int,
+    scope: str,
+    crosswalk_override: Optional[Path] = None,
+) -> Tuple[str, Path, Path]:
     era = era_for_year(year)
+    paths = crosswalk_by_era(scope)
     # Only honor an explicit override for the matching decade; otherwise pick by year.
     if crosswalk_override and crosswalk_override.exists() and era == "vtd20":
         crosswalk = crosswalk_override
     else:
-        crosswalk = CROSSWALK_BY_ERA[era]
+        crosswalk = paths[era]
     vtd_geojson = VTD_GEOJSON_BY_ERA[era]
     if not crosswalk.exists():
         # Fall back toward newer decades if historical NHGIS outputs are missing.
         for fallback in ("vtd20", "vtd10", "vtd00"):
-            candidate = CROSSWALK_BY_ERA[fallback]
+            candidate = paths[fallback]
             if candidate.exists():
                 print(
                     f"Warning: missing {crosswalk.name} for {year}; "
@@ -609,9 +622,9 @@ def resolve_era_inputs(year: int, crosswalk_override: Optional[Path] = None) -> 
                 )
                 return fallback, candidate, VTD_GEOJSON_BY_ERA[fallback]
         raise SystemExit(
-            f"Missing crosswalk for {year} ({era}). "
+            f"Missing crosswalk for {year} ({era}, scope={scope}). "
             "Run: python scripts/build_jackson_sd_crosswalks_from_tabblocks.py "
-            "--districts 7,8,9,11 --with-nhgis"
+            f"--scope {scope} --districts all --with-nhgis"
         )
     if not vtd_geojson.exists():
         raise SystemExit(f"Missing VTD geojson for {era}: {vtd_geojson}")
@@ -846,19 +859,19 @@ def county_area_fallback(crosswalk: Dict[str, Dict[str, float]], election_county
 def read_year_precinct_aggs(
     year: int,
     contest_filter: Optional[Set[str]],
-) -> Tuple[Dict[Tuple[str, str, str, str], VoteAgg], Dict[Tuple[str, str], Dict[str, float]], Dict[str, VoteAgg]]:
+    scope: str = "state_senate",
+) -> Tuple[Dict[Tuple[str, str, str, str], VoteAgg], Dict[Tuple[str, str], Dict[str, float]], Dict[Tuple[str, str, str], Dict[str, float]]]:
     """
     Returns:
       precinct_aggs[(contest, election_county, raw_code, raw_precinct)]
       candidate_totals[(contest, bucket)][candidate] = votes
-      district_label_totals for same-year state senate rows: key county|code|precinct -> VoteAgg unused;
-      instead return senate district totals by label for fallback: label_key -> {district: votes}
+      same-year district label votes by (county, code, precinct) -> {district: votes}
     """
     csv_path = find_precinct_csv(year)
     print(f"Reading {csv_path.name} ...")
     precinct_aggs: Dict[Tuple[str, str, str, str], VoteAgg] = defaultdict(VoteAgg)
     candidate_totals: Dict[Tuple[str, str], Dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    senate_label_district_votes: Dict[Tuple[str, str, str], Dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    label_district_votes: Dict[Tuple[str, str, str], Dict[str, float]] = defaultdict(lambda: defaultdict(float))
 
     with csv_path.open("r", encoding="utf-8", newline="") as fh:
         reader = csv.DictReader(fh)
@@ -887,15 +900,24 @@ def read_year_precinct_aggs(
                 if bucket in {"dem", "rep"} and candidate:
                     candidate_totals[(contest, bucket)][candidate] += votes
 
-            # Same-year state senate district labels (useful for absentee buckets).
+            # Same-year district labels (useful for absentee buckets).
             office_norm = normalize_office(office)
-            if office_norm.startswith("STATE SENATE") or office_norm.startswith("STATE SENATOR"):
+            want_label = False
+            if scope == "state_senate" and (
+                office_norm.startswith("STATE SENATE") or office_norm.startswith("STATE SENATOR")
+            ):
+                want_label = True
+            elif scope == "state_house" and (
+                office_norm.startswith("STATE HOUSE") or office_norm.startswith("STATE REPRESENTATIVE")
+            ):
+                want_label = True
+            if want_label:
                 district = normalize_district_num(row.get("district"))
                 if district:
-                    senate_label_district_votes[(county, raw_code, raw_precinct)][district] += votes
+                    label_district_votes[(county, raw_code, raw_precinct)][district] += votes
 
         print(f"  kept {len(precinct_aggs):,} Jackson/KC precinct-contest buckets from {rows:,} rows")
-    return precinct_aggs, candidate_totals, senate_label_district_votes
+    return precinct_aggs, candidate_totals, label_district_votes
 
 
 def top_candidate(candidate_totals: Dict[Tuple[str, str], Dict[str, float]], contest: str, bucket: str) -> str:
@@ -912,8 +934,9 @@ def aggregate_year(
     crosswalk: Dict[str, Dict[str, float]],
     matcher: Dict[str, Dict[str, object]],
     era: str = "vtd20",
+    scope: str = "state_senate",
 ) -> Dict[str, Dict[str, object]]:
-    precinct_aggs, candidate_totals, senate_labels = read_year_precinct_aggs(year, contests)
+    precinct_aggs, candidate_totals, label_votes = read_year_precinct_aggs(year, contests, scope=scope)
 
     # Group by contest.
     by_contest: Dict[str, List[Tuple[str, str, str, VoteAgg]]] = defaultdict(list)
@@ -967,8 +990,8 @@ def aggregate_year(
             unmatched.append((county, raw_code, raw_precinct, agg))
 
         for county, raw_code, raw_precinct, agg in unmatched:
-            # Same-year senate district labels on absentee-like buckets.
-            label_weights = normalize_weights(dict(senate_labels.get((county, raw_code, raw_precinct)) or {}))
+            # Same-year district labels on absentee-like buckets.
+            label_weights = normalize_weights(dict(label_votes.get((county, raw_code, raw_precinct)) or {}))
             if districts is not None:
                 label_weights = normalize_weights(
                     {d: w for d, w in label_weights.items() if d in districts}
@@ -1009,7 +1032,7 @@ def aggregate_year(
         direct_coverage = (direct_votes / total_votes * 100.0) if total_votes else 0.0
         payload = {
             "meta": {
-                "scope": "state_senate",
+                "scope": scope,
                 "contest_type": contest,
                 "year": int(year),
                 "district_count": len(results),
@@ -1041,8 +1064,13 @@ def write_payload(path: Path, payload: Dict[str, object]) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
 
-def patch_overlap_files(year: int, contest: str, results: Dict[str, Dict[str, object]]) -> Optional[Path]:
-    overlap_path = DISTRICT_DIR / f"state_senate_{contest}_{year}_overlap.json"
+def patch_overlap_files(
+    year: int,
+    contest: str,
+    results: Dict[str, Dict[str, object]],
+    scope: str = "state_senate",
+) -> Optional[Path]:
+    overlap_path = DISTRICT_DIR / f"{scope}_{contest}_{year}_overlap.json"
     if not overlap_path.exists():
         return None
     payload = json.loads(overlap_path.read_text(encoding="utf-8"))
@@ -1062,6 +1090,12 @@ def patch_overlap_files(year: int, contest: str, results: Dict[str, Dict[str, ob
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument(
+        "--scope",
+        default="state_senate",
+        choices=list(VALID_SCOPES),
+        help="Legislative chamber to aggregate (default: state_senate).",
+    )
     ap.add_argument("--years", default=",".join(str(y) for y in DEFAULT_YEARS))
     ap.add_argument(
         "--contests",
@@ -1070,8 +1104,11 @@ def main() -> None:
     )
     ap.add_argument(
         "--districts",
-        default=",".join(DEFAULT_DISTRICTS),
-        help="Senate districts to emit (default: 8,11). Use 'all' for every Jackson-touching district in the crosswalk.",
+        default=None,
+        help=(
+            "Districts to emit. Defaults: senate 8,11; house all Jackson-touching. "
+            "Use 'all' for every district in the crosswalk."
+        ),
     )
     ap.add_argument(
         "--crosswalk",
@@ -1082,13 +1119,18 @@ def main() -> None:
     ap.add_argument(
         "--patch-overlap",
         action="store_true",
-        help="Also patch SD results into existing state_senate_*_overlap.json files.",
+        help="Also patch district results into existing {scope}_*_overlap.json files.",
     )
     args = ap.parse_args()
 
+    scope = str(args.scope).strip().lower()
     years = parse_years(args.years)
     contests = {c.strip().lower() for c in str(args.contests).split(",") if c.strip()} or None
-    districts = parse_districts(args.districts)
+    if args.districts is None:
+        default = DEFAULT_DISTRICTS_BY_SCOPE[scope]
+        districts = set(default) if default is not None else None
+    else:
+        districts = parse_districts(args.districts)
     crosswalk_override = Path(args.crosswalk) if args.crosswalk else None
 
     DISTRICT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1097,8 +1139,8 @@ def main() -> None:
     crosswalk_cache: Dict[str, Dict[str, Dict[str, float]]] = {}
 
     for year in years:
-        era, crosswalk_path, vtd_path = resolve_era_inputs(year, crosswalk_override)
-        print(f"\n=== {year} using {era} ({crosswalk_path.name}) ===")
+        era, crosswalk_path, vtd_path = resolve_era_inputs(year, scope, crosswalk_override)
+        print(f"\n=== {year} {scope} using {era} ({crosswalk_path.name}) ===")
         if era not in crosswalk_cache:
             crosswalk_cache[era] = load_crosswalk(crosswalk_path, districts)
         if era not in matcher_cache:
@@ -1111,14 +1153,17 @@ def main() -> None:
             crosswalk_cache[era],
             matcher_cache[era],
             era=era,
+            scope=scope,
         )
         for contest, payload in payloads.items():
-            out_path = DISTRICT_DIR / f"state_senate_{contest}_{year}_jackson_tabblocks.json"
+            out_path = DISTRICT_DIR / f"{scope}_{contest}_{year}_jackson_tabblocks.json"
             write_payload(out_path, payload)
             written += 1
             print(f"Wrote {out_path}")
             if args.patch_overlap:
-                patched = patch_overlap_files(year, contest, payload["general"]["results"])  # type: ignore[index]
+                patched = patch_overlap_files(
+                    year, contest, payload["general"]["results"], scope=scope  # type: ignore[index]
+                )
                 if patched:
                     print(f"Patched {patched}")
                 else:

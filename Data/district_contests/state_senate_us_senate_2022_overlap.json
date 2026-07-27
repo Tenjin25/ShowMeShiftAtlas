@@ -9,9 +9,7 @@
     "generated_at": "2026-07-27T23:05:35.339Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 418404,
-    "legacy_district_labels_enabled": false,
-    "promoted_from": "state_senate_us_senate_2022_overlap.json",
-    "promoted_at": "2026-07-27T23:14:06.239033+00:00"
+    "legacy_district_labels_enabled": false
   },
   "general": {
     "results": {
