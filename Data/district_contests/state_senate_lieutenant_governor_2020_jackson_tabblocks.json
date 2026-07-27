@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2020,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.999252,
+    "generated_at": "2026-07-27T22:50:10.678219+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 132683,
+    "kansas_city_votes": 134864,
+    "jackson_direct_votes": 132682,
+    "kansas_city_direct_votes": 134863,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 24639,
+        "rep_votes": 39643,
+        "other_votes": 2173,
+        "total_votes": 66455,
+        "dem_candidate": "Alissia Canaday",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 15004,
+        "margin_pct": 22.577684,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 19108,
+        "rep_votes": 30576,
+        "other_votes": 2308,
+        "total_votes": 51992,
+        "dem_candidate": "Alissia Canaday",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 11468,
+        "margin_pct": 22.05724,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

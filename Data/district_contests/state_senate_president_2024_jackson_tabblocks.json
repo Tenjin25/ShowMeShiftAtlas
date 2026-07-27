@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "president",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.084011,
+    "generated_at": "2026-07-27T22:50:12.728818+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 193729,
+    "kansas_city_votes": 124288,
+    "jackson_direct_votes": 135263,
+    "kansas_city_direct_votes": 121479,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 35430,
+        "rep_votes": 42400,
+        "other_votes": 1380,
+        "total_votes": 79210,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 6970,
+        "margin_pct": 8.799394,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 43941,
+        "rep_votes": 47845,
+        "other_votes": 1223,
+        "total_votes": 93009,
+        "dem_candidate": "Kamala D. Harris",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 3904,
+        "margin_pct": 4.197443,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

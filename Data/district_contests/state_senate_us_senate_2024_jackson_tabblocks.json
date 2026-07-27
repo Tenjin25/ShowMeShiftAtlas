@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.177106,
+    "generated_at": "2026-07-27T22:50:12.924629+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 191532,
+    "kansas_city_votes": 123940,
+    "jackson_direct_votes": 133875,
+    "kansas_city_direct_votes": 121327,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 36576,
+        "rep_votes": 39663,
+        "other_votes": 2257,
+        "total_votes": 78496,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": 3087,
+        "margin_pct": 3.932684,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 44779,
+        "rep_votes": 44541,
+        "other_votes": 2528,
+        "total_votes": 91848,
+        "dem_candidate": "Lucas Kunce",
+        "rep_candidate": "Josh Hawley",
+        "margin": -238,
+        "margin_pct": -0.259124,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

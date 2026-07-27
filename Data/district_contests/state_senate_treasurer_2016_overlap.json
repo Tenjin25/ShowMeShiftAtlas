@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:01.441Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:07.193526+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 51469,
-        "rep_votes": 36309,
-        "other_votes": 4335,
-        "total_votes": 92113,
+        "dem_votes": 29346,
+        "rep_votes": 45141,
+        "other_votes": 3330,
+        "total_votes": 77817,
         "dem_candidate": "Judy Baker",
         "rep_candidate": "Eric Schmitt",
-        "margin": -15160,
-        "margin_pct": -16.458046,
-        "winner": "DEM",
+        "margin": 15795,
+        "margin_pct": 20.297621,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 61089,
-        "rep_votes": 48327,
-        "other_votes": 5217,
-        "total_votes": 114633,
+        "dem_votes": 30746,
+        "rep_votes": 37074,
+        "other_votes": 3629,
+        "total_votes": 71449,
         "dem_candidate": "Judy Baker",
         "rep_candidate": "Eric Schmitt",
-        "margin": -12762,
-        "margin_pct": -11.13292,
-        "winner": "DEM",
+        "margin": 6328,
+        "margin_pct": 8.856667,
+        "winner": "REP",
         "color": ""
       },
       "12": {

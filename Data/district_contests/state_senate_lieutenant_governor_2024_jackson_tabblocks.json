@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.175199,
+    "generated_at": "2026-07-27T22:50:12.683845+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 187521,
+    "kansas_city_votes": 122493,
+    "jackson_direct_votes": 130938,
+    "kansas_city_direct_votes": 119917,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 32261,
+        "rep_votes": 40612,
+        "other_votes": 3804,
+        "total_votes": 76677,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 8351,
+        "margin_pct": 10.891141,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 40975,
+        "rep_votes": 44655,
+        "other_votes": 4419,
+        "total_votes": 90049,
+        "dem_candidate": "Richard Brown",
+        "rep_candidate": "Dave Wasinger",
+        "margin": 3680,
+        "margin_pct": 4.086664,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

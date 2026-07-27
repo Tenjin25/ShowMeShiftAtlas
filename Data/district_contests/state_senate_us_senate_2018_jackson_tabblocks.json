@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2018,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.607349,
+    "generated_at": "2026-07-27T22:50:07.650216+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 151029,
+    "kansas_city_votes": 113185,
+    "jackson_direct_votes": 135014,
+    "kansas_city_direct_votes": 106586,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 38538,
+        "rep_votes": 40807,
+        "other_votes": 2281,
+        "total_votes": 81626,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 2269,
+        "margin_pct": 2.779752,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 24704,
+        "rep_votes": 25334,
+        "other_votes": 2096,
+        "total_votes": 52134,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Josh Hawley",
+        "margin": 630,
+        "margin_pct": 1.208424,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

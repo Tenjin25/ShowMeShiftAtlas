@@ -524,6 +524,38 @@ function partyBucket(rawParty) {
   return 'other';
 }
 
+function normalizeCandidateKey(name) {
+  return String(name || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+}
+
+// OpenElections sometimes omits party entirely (notably 2018 State Auditor).
+const KNOWN_CANDIDATE_PARTIES = new Map([
+  ['nicolegalloway', 'dem'],
+  ['saundramcdowell', 'rep'],
+  ['seanotoole', 'other'],
+  ['jacobluetkemeyer', 'other'],
+  ['donfitz', 'other'],
+  ['arniecdienoff', 'other'],
+  ['arniecacdienoff', 'other']
+]);
+
+function inferPartyBucket(rawParty, candidate, blankPartyInference = null, inferenceKey = '') {
+  const explicit = normalizeParty(rawParty);
+  if (explicit) return partyBucket(explicit);
+
+  const known = KNOWN_CANDIDATE_PARTIES.get(normalizeCandidateKey(candidate));
+  if (known) return known;
+
+  if (blankPartyInference && inferenceKey) {
+    const inferred = blankPartyInference.get(makeKey(inferenceKey, String(candidate || '').trim()));
+    if (inferred) return inferred;
+  }
+  return 'other';
+}
+
 function candidateName(row) {
   const direct = String(row.candidate || '').trim();
   if (direct) return direct;
@@ -1105,6 +1137,54 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
   return [];
 }
 
+async function buildBlankPartyInferenceForCsv(csvPath) {
+  // For races where every row lacks an explicit party, assign the first two
+  // distinct candidates in file order as REP then DEM (matches OpenElections MO
+  // listing order and the Python contest builder heuristic). Known-name overrides
+  // in inferPartyBucket still win when present (e.g. Nicole Galloway -> DEM).
+  const rl = readline.createInterface({
+    input: fs.createReadStream(csvPath, { encoding: 'utf8' }),
+    crlfDelay: Infinity
+  });
+
+  let header = null;
+  const raceMeta = new Map(); // contestType -> { hasExplicitParty, firstSeen: string[] }
+
+  for await (const line of rl) {
+    if (!line) continue;
+    if (!header) {
+      header = parseCsvLine(line).map(h => String(h || '').trim());
+      continue;
+    }
+    const parts = parseCsvLine(line);
+    const row = {};
+    for (let i = 0; i < header.length; i += 1) row[header[i]] = parts[i];
+
+    const contestType = mapContestType(row.office);
+    if (!contestType || !STATEWIDE_CONTEST_TYPES.has(contestType)) continue;
+    const candidate = candidateName(row);
+    if (!candidate) continue;
+
+    if (!raceMeta.has(contestType)) {
+      raceMeta.set(contestType, { hasExplicitParty: false, firstSeen: [] });
+    }
+    const meta = raceMeta.get(contestType);
+    if (normalizeParty(row.party || row.party_simplified || row.party_detailed || '')) {
+      meta.hasExplicitParty = true;
+    }
+    if (!meta.firstSeen.includes(candidate)) meta.firstSeen.push(candidate);
+  }
+
+  const inferred = new Map(); // contestType|candidate -> dem|rep
+  for (const [contestType, meta] of raceMeta.entries()) {
+    if (meta.hasExplicitParty) continue;
+    if (meta.firstSeen.length < 2) continue;
+    inferred.set(makeKey(contestType, meta.firstSeen[0]), 'rep');
+    inferred.set(makeKey(contestType, meta.firstSeen[1]), 'dem');
+  }
+  return inferred;
+}
+
 async function readPrecinctCsvYear(year, scope, precinctAggByContestYear, candidateTotalsByContestYear, districtTurnoutByLabelKeyByScope) {
   const prefix = String(Number(year));
   const csvCandidates = fs.readdirSync(DATA_DIR)
@@ -1114,6 +1194,8 @@ async function readPrecinctCsvYear(year, scope, precinctAggByContestYear, candid
 
   const csvPath = csvCandidates.length ? csvCandidates[0] : '';
   if (!csvPath) throw new Error(`Missing precinct CSV for ${year}`);
+
+  const blankPartyInference = await buildBlankPartyInferenceForCsv(csvPath);
 
   const rl = readline.createInterface({
     input: fs.createReadStream(csvPath, { encoding: 'utf8' }),
@@ -1139,8 +1221,13 @@ async function readPrecinctCsvYear(year, scope, precinctAggByContestYear, candid
     if (!votes) continue;
 
     const contestType = mapContestType(row.office);
-    const bucket = partyBucket(row.party);
     const candidate = candidateName(row);
+    const bucket = inferPartyBucket(
+      row.party || row.party_simplified || row.party_detailed || '',
+      candidate,
+      blankPartyInference,
+      contestType || ''
+    );
     const contestYearKey = contestType ? makeKey(contestType, String(year)) : makeKey('unknown', String(year));
 
     if (contestType && STATEWIDE_CONTEST_TYPES.has(contestType)) {

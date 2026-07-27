@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "governor",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.611022,
+    "generated_at": "2026-07-27T22:50:05.613890+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 172661,
+    "kansas_city_votes": 134336,
+    "jackson_direct_votes": 151087,
+    "kansas_city_direct_votes": 109992,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 40632,
+        "rep_votes": 37658,
+        "other_votes": 2220,
+        "total_votes": 80510,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -2974,
+        "margin_pct": -3.693951,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 55660,
+        "rep_votes": 32397,
+        "other_votes": 2585,
+        "total_votes": 90642,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "David (Dave) Spence",
+        "margin": -23263,
+        "margin_pct": -25.664703,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

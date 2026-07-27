@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "treasurer",
+    "year": 2020,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T22:50:10.831160+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 132045,
+    "kansas_city_votes": 134169,
+    "jackson_direct_votes": 132045,
+    "kansas_city_direct_votes": 134169,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 23532,
+        "rep_votes": 40103,
+        "other_votes": 2459,
+        "total_votes": 66094,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 16571,
+        "margin_pct": 25.071867,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 18386,
+        "rep_votes": 30960,
+        "other_votes": 2445,
+        "total_votes": 51791,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 12574,
+        "margin_pct": 24.27835,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

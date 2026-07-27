@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "treasurer",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.176185,
+    "generated_at": "2026-07-27T22:50:12.873796+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 187259,
+    "kansas_city_votes": 122155,
+    "jackson_direct_votes": 130703,
+    "kansas_city_direct_votes": 119588,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 31863,
+        "rep_votes": 41153,
+        "other_votes": 3539,
+        "total_votes": 76555,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 9290,
+        "margin_pct": 12.135066,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 40873,
+        "rep_votes": 44887,
+        "other_votes": 4169,
+        "total_votes": 89929,
+        "dem_candidate": "Mark Osmack",
+        "rep_candidate": "Vivek Malek",
+        "margin": 4014,
+        "margin_pct": 4.463521,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

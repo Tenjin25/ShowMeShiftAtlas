@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:23.489Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:10.843367+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 61037,
-        "rep_votes": 44683,
-        "other_votes": 2389,
-        "total_votes": 108109,
+        "dem_votes": 26740,
+        "rep_votes": 39800,
+        "other_votes": 1611,
+        "total_votes": 68151,
         "dem_candidate": "Joseph R. Biden",
         "rep_candidate": "Donald J. Trump",
-        "margin": -16354,
-        "margin_pct": -15.127325,
-        "winner": "DEM",
+        "margin": 13060,
+        "margin_pct": 19.163328,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 56890,
-        "rep_votes": 41101,
-        "other_votes": 2256,
-        "total_votes": 100247,
+        "dem_votes": 19896,
+        "rep_votes": 32321,
+        "other_votes": 1395,
+        "total_votes": 53612,
         "dem_candidate": "Joseph R. Biden",
         "rep_candidate": "Donald J. Trump",
-        "margin": -15789,
-        "margin_pct": -15.750097,
-        "winner": "DEM",
+        "margin": 12425,
+        "margin_pct": 23.175782,
+        "winner": "REP",
         "color": ""
       },
       "12": {

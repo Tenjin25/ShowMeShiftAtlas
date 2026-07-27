@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "treasurer",
+    "year": 2016,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.188706,
+    "generated_at": "2026-07-27T22:50:07.143934+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 168708,
+    "kansas_city_votes": 125745,
+    "jackson_direct_votes": 147380,
+    "kansas_city_direct_votes": 118956,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 29346,
+        "rep_votes": 45141,
+        "other_votes": 3330,
+        "total_votes": 77817,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 15795,
+        "margin_pct": 20.297621,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 30746,
+        "rep_votes": 37074,
+        "other_votes": 3629,
+        "total_votes": 71449,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 6328,
+        "margin_pct": 8.856667,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

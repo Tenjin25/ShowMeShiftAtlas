@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:48.408Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.952423+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 77805,
-        "rep_votes": 38295,
-        "other_votes": 3400,
-        "total_votes": 119500,
+        "dem_votes": 40632,
+        "rep_votes": 37658,
+        "other_votes": 2220,
+        "total_votes": 80510,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "David (Dave) Spence",
-        "margin": -39510,
-        "margin_pct": -33.062762,
+        "margin": -2974,
+        "margin_pct": -3.693951,
         "winner": "DEM",
         "color": ""
       },
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 69399,
-        "rep_votes": 36100,
-        "other_votes": 2841,
-        "total_votes": 108340,
+        "dem_votes": 55660,
+        "rep_votes": 32397,
+        "other_votes": 2585,
+        "total_votes": 90642,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "David (Dave) Spence",
-        "margin": -33299,
-        "margin_pct": -30.735647,
+        "margin": -23263,
+        "margin_pct": -25.664703,
         "winner": "DEM",
         "color": ""
       },

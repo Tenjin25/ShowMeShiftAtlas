@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:55.054Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.947821+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 77974,
-        "rep_votes": 35228,
-        "other_votes": 3876,
-        "total_votes": 117078,
+        "dem_votes": 41337,
+        "rep_votes": 34867,
+        "other_votes": 2482,
+        "total_votes": 78686,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Ed Martin",
-        "margin": -42746,
-        "margin_pct": -36.510702,
+        "margin": -6470,
+        "margin_pct": -8.222555,
         "winner": "DEM",
         "color": ""
       },
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 69588,
-        "rep_votes": 33417,
-        "other_votes": 3262,
-        "total_votes": 106267,
+        "dem_votes": 55763,
+        "rep_votes": 30179,
+        "other_votes": 2989,
+        "total_votes": 88931,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Ed Martin",
-        "margin": -36171,
-        "margin_pct": -34.037848,
+        "margin": -25584,
+        "margin_pct": -28.768371,
         "winner": "DEM",
         "color": ""
       },

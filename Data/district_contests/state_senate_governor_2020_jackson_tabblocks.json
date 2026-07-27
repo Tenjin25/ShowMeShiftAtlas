@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "governor",
+    "year": 2020,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.999264,
+    "generated_at": "2026-07-27T22:50:10.619877+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 135366,
+    "kansas_city_votes": 136215,
+    "jackson_direct_votes": 135365,
+    "kansas_city_direct_votes": 136214,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 26297,
+        "rep_votes": 39773,
+        "other_votes": 1699,
+        "total_votes": 67769,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 13476,
+        "margin_pct": 19.885198,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 19974,
+        "rep_votes": 31301,
+        "other_votes": 1866,
+        "total_votes": 53141,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 11327,
+        "margin_pct": 21.314992,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

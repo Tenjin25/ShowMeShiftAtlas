@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:25.887Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 1011977,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.949366+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 25835,
-        "rep_votes": 29839,
-        "other_votes": 998,
-        "total_votes": 56672,
+        "dem_votes": 35430,
+        "rep_votes": 42400,
+        "other_votes": 1380,
+        "total_votes": 79210,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
-        "margin": 4004,
-        "margin_pct": 7.065217,
+        "margin": 6970,
+        "margin_pct": 8.799394,
         "winner": "REP",
         "color": ""
       },
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 42264,
-        "rep_votes": 39344,
-        "other_votes": 1301,
-        "total_votes": 82909,
+        "dem_votes": 43941,
+        "rep_votes": 47845,
+        "other_votes": 1223,
+        "total_votes": 93009,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
-        "margin": -2920,
-        "margin_pct": -3.521934,
-        "winner": "DEM",
+        "margin": 3904,
+        "margin_pct": 4.197443,
+        "winner": "REP",
         "color": ""
       },
       "12": {

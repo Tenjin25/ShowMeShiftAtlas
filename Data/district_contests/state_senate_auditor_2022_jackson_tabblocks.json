@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "auditor",
+    "year": 2022,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 93.840576,
+    "generated_at": "2026-07-27T22:50:11.591832+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 129436,
+    "kansas_city_votes": 85438,
+    "jackson_direct_votes": 102580,
+    "kansas_city_direct_votes": 84838,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 36174,
+        "rep_votes": 43702,
+        "other_votes": 2845,
+        "total_votes": 82721,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 7528,
+        "margin_pct": 9.10047,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 12530,
+        "rep_votes": 18801,
+        "other_votes": 1369,
+        "total_votes": 32700,
+        "dem_candidate": "Alan Green",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 6271,
+        "margin_pct": 19.17737,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

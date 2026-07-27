@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2016,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.190274,
+    "generated_at": "2026-07-27T22:50:06.933937+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 169576,
+    "kansas_city_votes": 125867,
+    "jackson_direct_votes": 147952,
+    "kansas_city_direct_votes": 119074,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 30678,
+        "rep_votes": 47535,
+        "other_votes": 0,
+        "total_votes": 78213,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 16857,
+        "margin_pct": 21.552683,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 31667,
+        "rep_votes": 40245,
+        "other_votes": 0,
+        "total_votes": 71912,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 8578,
+        "margin_pct": 11.928468,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "treasurer",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.599952,
+    "generated_at": "2026-07-27T22:50:05.873214+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 167373,
+    "kansas_city_votes": 130791,
+    "jackson_direct_votes": 146520,
+    "kansas_city_direct_votes": 106886,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 35612,
+        "rep_votes": 39382,
+        "other_votes": 2976,
+        "total_votes": 77970,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": 3770,
+        "margin_pct": 4.835193,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 50804,
+        "rep_votes": 33792,
+        "other_votes": 3505,
+        "total_votes": 88101,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -17012,
+        "margin_pct": -19.309656,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

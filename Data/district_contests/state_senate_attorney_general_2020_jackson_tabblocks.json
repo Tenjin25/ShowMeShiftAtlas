@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2020,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T22:50:10.559379+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 131752,
+    "kansas_city_votes": 134287,
+    "jackson_direct_votes": 131752,
+    "kansas_city_direct_votes": 134287,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 23135,
+        "rep_votes": 40446,
+        "other_votes": 2404,
+        "total_votes": 65985,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 17311,
+        "margin_pct": 26.23475,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 17682,
+        "rep_votes": 31433,
+        "other_votes": 2536,
+        "total_votes": 51651,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 13751,
+        "margin_pct": 26.622911,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

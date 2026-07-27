@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "governor",
+    "year": 2016,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.192663,
+    "generated_at": "2026-07-27T22:50:06.979867+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 172629,
+    "kansas_city_votes": 128078,
+    "jackson_direct_votes": 150673,
+    "kansas_city_direct_votes": 121170,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 35481,
+        "rep_votes": 41694,
+        "other_votes": 2467,
+        "total_votes": 79642,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 6213,
+        "margin_pct": 7.80116,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 34999,
+        "rep_votes": 35089,
+        "other_votes": 3085,
+        "total_votes": 73173,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 90,
+        "margin_pct": 0.122996,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:24.220Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:10.840078+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 57889,
-        "rep_votes": 44440,
-        "other_votes": 3530,
-        "total_votes": 105859,
-        "dem_candidate": "Alissia Canady",
+        "dem_votes": 24639,
+        "rep_votes": 39643,
+        "other_votes": 2173,
+        "total_votes": 66455,
+        "dem_candidate": "Alissia Canaday",
         "rep_candidate": "Mike Kehoe",
-        "margin": -13449,
-        "margin_pct": -12.704635,
-        "winner": "DEM",
+        "margin": 15004,
+        "margin_pct": 22.577684,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 54165,
-        "rep_votes": 40228,
-        "other_votes": 3500,
-        "total_votes": 97893,
-        "dem_candidate": "Alissia Canady",
+        "dem_votes": 19108,
+        "rep_votes": 30576,
+        "other_votes": 2308,
+        "total_votes": 51992,
+        "dem_candidate": "Alissia Canaday",
         "rep_candidate": "Mike Kehoe",
-        "margin": -13937,
-        "margin_pct": -14.236973,
-        "winner": "DEM",
+        "margin": 11468,
+        "margin_pct": 22.05724,
+        "winner": "REP",
         "color": ""
       },
       "12": {

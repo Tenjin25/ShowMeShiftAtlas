@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:45.091Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.964247+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 70984,
-        "rep_votes": 48227,
-        "other_votes": 2030,
-        "total_votes": 121241,
+        "dem_votes": 32791,
+        "rep_votes": 47169,
+        "other_votes": 1458,
+        "total_votes": 81418,
         "dem_candidate": "Barack Obama, Joe Biden",
         "rep_candidate": "Mitt Romney, Paul Ryan",
-        "margin": -22757,
-        "margin_pct": -18.770053,
-        "winner": "DEM",
+        "margin": 14378,
+        "margin_pct": 17.659486,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 62651,
-        "rep_votes": 45456,
-        "other_votes": 1730,
-        "total_votes": 109837,
+        "dem_votes": 48770,
+        "rep_votes": 41739,
+        "other_votes": 1584,
+        "total_votes": 92093,
         "dem_candidate": "Barack Obama, Joe Biden",
         "rep_candidate": "Mitt Romney, Paul Ryan",
-        "margin": -17195,
-        "margin_pct": -15.655016,
+        "margin": -7031,
+        "margin_pct": -7.634674,
         "winner": "DEM",
         "color": ""
       },

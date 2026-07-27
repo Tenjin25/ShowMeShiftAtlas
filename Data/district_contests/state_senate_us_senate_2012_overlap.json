@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:46.750Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.978644+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 79004,
-        "rep_votes": 33792,
-        "other_votes": 7062,
-        "total_votes": 119858,
+        "dem_votes": 41174,
+        "rep_votes": 32877,
+        "other_votes": 6175,
+        "total_votes": 80226,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Todd Akin",
-        "margin": -45212,
-        "margin_pct": -37.721304,
+        "margin": -8297,
+        "margin_pct": -10.342034,
         "winner": "DEM",
         "color": ""
       },
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 70336,
-        "rep_votes": 31898,
-        "other_votes": 6282,
-        "total_votes": 108516,
+        "dem_votes": 55472,
+        "rep_votes": 29677,
+        "other_votes": 5750,
+        "total_votes": 90899,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Todd Akin",
-        "margin": -38438,
-        "margin_pct": -35.421505,
+        "margin": -25795,
+        "margin_pct": -28.37765,
         "winner": "DEM",
         "color": ""
       },

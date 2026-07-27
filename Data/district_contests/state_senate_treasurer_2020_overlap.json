@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:25.056Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:10.848865+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 55846,
-        "rep_votes": 45493,
-        "other_votes": 4002,
-        "total_votes": 105341,
+        "dem_votes": 23532,
+        "rep_votes": 40103,
+        "other_votes": 2459,
+        "total_votes": 66094,
         "dem_candidate": "Vicki Lorenz Englund",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": -10353,
-        "margin_pct": -9.828082,
-        "winner": "DEM",
+        "margin": 16571,
+        "margin_pct": 25.071867,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 52308,
-        "rep_votes": 41245,
-        "other_votes": 3861,
-        "total_votes": 97414,
+        "dem_votes": 18386,
+        "rep_votes": 30960,
+        "other_votes": 2445,
+        "total_votes": 51791,
         "dem_candidate": "Vicki Lorenz Englund",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": -11063,
-        "margin_pct": -11.356684,
-        "winner": "DEM",
+        "margin": 12574,
+        "margin_pct": 24.27835,
+        "winner": "REP",
         "color": ""
       },
       "12": {

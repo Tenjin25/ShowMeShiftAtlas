@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:28.417Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 982438,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.938458+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 23109,
-        "rep_votes": 29768,
-        "other_votes": 1776,
-        "total_votes": 54653,
+        "dem_votes": 31650,
+        "rep_votes": 42542,
+        "other_votes": 2260,
+        "total_votes": 76452,
         "dem_candidate": "Elad Jonathan Gross",
         "rep_candidate": "Andrew Bailey",
-        "margin": 6659,
-        "margin_pct": 12.184144,
+        "margin": 10892,
+        "margin_pct": 14.246848,
         "winner": "REP",
         "color": ""
       },
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 39241,
-        "rep_votes": 38511,
-        "other_votes": 2488,
-        "total_votes": 80240,
+        "dem_votes": 40513,
+        "rep_votes": 46995,
+        "other_votes": 2477,
+        "total_votes": 89985,
         "dem_candidate": "Elad Jonathan Gross",
         "rep_candidate": "Andrew Bailey",
-        "margin": -730,
-        "margin_pct": -0.909771,
-        "winner": "DEM",
+        "margin": 6482,
+        "margin_pct": 7.203423,
+        "winner": "REP",
         "color": ""
       },
       "12": {

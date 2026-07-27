@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:26.300Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 1003897,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.958452+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 26629,
-        "rep_votes": 27735,
-        "other_votes": 1754,
-        "total_votes": 56118,
+        "dem_votes": 36576,
+        "rep_votes": 39663,
+        "other_votes": 2257,
+        "total_votes": 78496,
         "dem_candidate": "Lucas Kunce",
         "rep_candidate": "Josh Hawley",
-        "margin": 1106,
-        "margin_pct": 1.970847,
+        "margin": 3087,
+        "margin_pct": 3.932684,
         "winner": "REP",
         "color": ""
       },
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 43302,
-        "rep_votes": 36196,
-        "other_votes": 2596,
-        "total_votes": 82094,
+        "dem_votes": 44779,
+        "rep_votes": 44541,
+        "other_votes": 2528,
+        "total_votes": 91848,
         "dem_candidate": "Lucas Kunce",
         "rep_candidate": "Josh Hawley",
-        "margin": -7106,
-        "margin_pct": -8.655931,
+        "margin": -238,
+        "margin_pct": -0.259124,
         "winner": "DEM",
         "color": ""
       },

@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:27.997Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 981412,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.954852+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 23344,
-        "rep_votes": 28726,
-        "other_votes": 2673,
-        "total_votes": 54743,
+        "dem_votes": 31863,
+        "rep_votes": 41153,
+        "other_votes": 3539,
+        "total_votes": 76555,
         "dem_candidate": "Mark Osmack",
         "rep_candidate": "Vivek Malek",
-        "margin": 5382,
-        "margin_pct": 9.831394,
+        "margin": 9290,
+        "margin_pct": 12.135066,
         "winner": "REP",
         "color": ""
       },
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 39363,
-        "rep_votes": 36722,
-        "other_votes": 4135,
-        "total_votes": 80220,
+        "dem_votes": 40873,
+        "rep_votes": 44887,
+        "other_votes": 4169,
+        "total_votes": 89929,
         "dem_candidate": "Mark Osmack",
         "rep_candidate": "Vivek Malek",
-        "margin": -2641,
-        "margin_pct": -3.292196,
-        "winner": "DEM",
+        "margin": 4014,
+        "margin_pct": 4.463521,
+        "winner": "REP",
         "color": ""
       },
       "12": {

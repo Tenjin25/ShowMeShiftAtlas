@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.616304,
+    "generated_at": "2026-07-27T22:50:05.684930+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 169852,
+    "kansas_city_votes": 132041,
+    "jackson_direct_votes": 148694,
+    "kansas_city_direct_votes": 107940,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 32932,
+        "rep_votes": 42687,
+        "other_votes": 3657,
+        "total_votes": 79276,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": 9755,
+        "margin_pct": 12.305111,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 48715,
+        "rep_votes": 36128,
+        "other_votes": 4363,
+        "total_votes": 89206,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Peter Kinder",
+        "margin": -12587,
+        "margin_pct": -14.110037,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

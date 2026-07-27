@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2016,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.203318,
+    "generated_at": "2026-07-27T22:50:07.176225+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 172676,
+    "kansas_city_votes": 128699,
+    "jackson_direct_votes": 150695,
+    "kansas_city_direct_votes": 121785,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 36891,
+        "rep_votes": 39098,
+        "other_votes": 3651,
+        "total_votes": 79640,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": 2207,
+        "margin_pct": 2.77122,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 36586,
+        "rep_votes": 32236,
+        "other_votes": 4397,
+        "total_votes": 73219,
+        "dem_candidate": "Jason Kander",
+        "rep_candidate": "Roy Blunt",
+        "margin": -4350,
+        "margin_pct": -5.941081,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.175373,
+    "generated_at": "2026-07-27T22:50:12.595525+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 187126,
+    "kansas_city_votes": 122226,
+    "jackson_direct_votes": 130527,
+    "kansas_city_direct_votes": 119656,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 31650,
+        "rep_votes": 42542,
+        "other_votes": 2260,
+        "total_votes": 76452,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 10892,
+        "margin_pct": 14.246848,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 40513,
+        "rep_votes": 46995,
+        "other_votes": 2477,
+        "total_votes": 89985,
+        "dem_candidate": "Elad Jonathan Gross",
+        "rep_candidate": "Andrew Bailey",
+        "margin": 6482,
+        "margin_pct": 7.203423,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

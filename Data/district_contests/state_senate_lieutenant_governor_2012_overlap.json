@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:50.188Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.959304+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 68722,
-        "rep_votes": 43045,
-        "other_votes": 5743,
-        "total_votes": 117510,
+        "dem_votes": 32932,
+        "rep_votes": 42687,
+        "other_votes": 3657,
+        "total_votes": 79276,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Peter Kinder",
-        "margin": -25677,
-        "margin_pct": -21.850906,
-        "winner": "DEM",
+        "margin": 9755,
+        "margin_pct": 12.305111,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 61011,
-        "rep_votes": 40717,
-        "other_votes": 4848,
-        "total_votes": 106576,
+        "dem_votes": 48715,
+        "rep_votes": 36128,
+        "other_votes": 4363,
+        "total_votes": 89206,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Peter Kinder",
-        "margin": -20294,
-        "margin_pct": -19.041811,
+        "margin": -12587,
+        "margin_pct": -14.110037,
         "winner": "DEM",
         "color": ""
       },
