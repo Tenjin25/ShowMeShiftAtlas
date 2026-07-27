@@ -10238,8 +10238,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-27-jackson-sd-tabblocks-v1';
-    const APP_BUILD_ID = '2026-07-25-mo-pop-change-v3';
+    const DATA_CACHE_BUSTER = '2026-07-27-us-house-congress-only-v1';
+    const APP_BUILD_ID = '2026-07-27-us-house-congress-only-v1';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -19395,7 +19395,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function populateContestSelectFromElectionJSON(electionData) {
       if (!Array.isArray(electionData) || electionData.length === 0) return;
       if (contestManifest && contestManifest.length > 0) {
-        return populateContestSelectFromManifest(contestManifest);
+        return populateContestSelectFromManifest(
+          filterManifestEntriesForCurrentView(contestManifest, currentView)
+        );
       }
       const sel = document.getElementById('contestSelect');
       sel.innerHTML = '<option value="">Select a contest...</option>';
@@ -19730,12 +19732,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = Number(entry.year);
         const statewide = isStatewideContestType(contestType);
 
-        // County layer: keep statewide contests; hide chamber races that belong on district layers.
+        // County / precinct layers: statewide only. US House belongs on Congress.
         if (viewKey === 'counties' || viewKey === 'vtds_2000' || !viewKey) {
-          return contestType !== 'state_house' && contestType !== 'state_senate';
+          return contestType !== 'state_house'
+            && contestType !== 'state_senate'
+            && contestType !== 'us_house';
         }
 
-        // District layers keep all statewide contests, plus that layer's own chamber races for 2022/2024.
+        // District layers keep statewide contests, plus that layer's own chamber races for 2022/2024.
         if (viewKey === 'state_house') {
           return statewide || (contestType === 'state_house' && chamberYears.has(year));
         }
@@ -19944,11 +19948,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function populateContestSelectFromCongressionalCSV(csvData) {
       const sel = document.getElementById('contestSelect');
-      const years = [...new Set(csvData.map(row => row.year))].sort();
+      const allowedYears = new Set([2022, 2024]);
+      const years = [...new Set(csvData.map(row => row.year))]
+        .map(Number)
+        .filter(year => allowedYears.has(year))
+        .sort((a, b) => a - b);
 
       years.forEach(year => {
         const hasData = csvData.some(row =>
-          row.year == year && row.us_house_total > 0
+          Number(row.year) === year && row.us_house_total > 0
         );
 
         if (hasData) {
@@ -32806,7 +32814,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const kickoff = () => {
         // Non-blocking slice warmup: keeps common contest switches near-instant after the first load.
-        const common = ['president', 'governor', 'us_senate', 'us_house'];
+        const common = ['president', 'governor', 'us_senate'];
         const seen = new Set();
 
         const meta = (currentContestMeta && currentContestMeta.contestType)
