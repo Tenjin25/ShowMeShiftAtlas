@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """
-Build Jackson County state-senate crosswalks via 2020 tabblocks (+ optional NHGIS).
+Build Jackson County legislative crosswalks via 2020 tabblocks (+ optional NHGIS).
+
+Supports --scope state_senate (default) or state_house.
 
 Why this exists
 ---------------
@@ -8,32 +10,33 @@ OpenElections splits Jackson County into two reporting jurisdictions:
   - JACKSON      (Jackson County Election Board)
   - KANSAS CITY  (Kansas City Board of Election Commissioners)
 
-County-map aggregation already rolls KANSAS CITY into JACKSON. Senate districts
-SD-08 and SD-11 are Jackson-based and include many Kansas City VTDs, so the same
-split breaks precinct→district aggregation unless KC-named VTDs are dual-aliased.
+County-map aggregation already rolls KANSAS CITY into JACKSON. Jackson-area
+senate / house districts include many Kansas City VTDs, so the same split
+breaks precinct→district aggregation unless KC-named VTDs are dual-aliased.
 
 This script:
   1) Loads Jackson County (FIPS 095) 2020 tabulation blocks.
-  2) Point-in-polygon assigns each block to a VTD20 precinct and a 2022 SLDU.
-  3) Aggregates block counts into VTD20 → state senate area weights.
+  2) Point-in-polygon assigns each block to a VTD20 precinct and a 2022 district.
+  3) Aggregates block counts into VTD20 → district area weights.
   4) Tags KC-named VTDs so election matching can try KANSAS CITY then JACKSON.
   5) Optionally chains NHGIS blk2010→blk2020 (and blk2000→blk2010) weights to
-     emit VTD10 / VTD00 → 2022 senate crosswalk rows for the same districts.
+     emit VTD10 / VTD00 → 2022 district crosswalk rows.
 
-Defaults focus on SD-08 and SD-11; pass --districts to widen.
+Defaults: senate 7,8,9,11; house uses all Jackson-touching districts (discover
+after assigning against every SLDL, then filter output).
 
 Usage:
   python scripts/build_jackson_sd_crosswalks_from_tabblocks.py
   python scripts/build_jackson_sd_crosswalks_from_tabblocks.py --districts 7,8,9,11
-  python scripts/build_jackson_sd_crosswalks_from_tabblocks.py --districts 7,8,9,11 --with-nhgis
+  python scripts/build_jackson_sd_crosswalks_from_tabblocks.py --scope state_house --districts all --with-nhgis
 
 Decade chain (--with-nhgis)
 ---------------------------
-  tabblock20 + VTD20  -> jackson_vtd20_..._from_tabblocks.csv
+  tabblock20 + VTD20  -> jackson_vtd20_to_2022_{scope}_from_tabblocks.csv
   + NHGIS 2010->2020 + tabblock10 + VTD10
-                      -> jackson_vtd10_..._from_nhgis.csv
+                      -> jackson_vtd10_to_2022_{scope}_from_nhgis.csv
   + NHGIS 2000->2010 + Jackson tabblock00 + VTD00
-                      -> jackson_vtd00_..._from_nhgis.csv
+                      -> jackson_vtd00_to_2022_{scope}_from_nhgis.csv
 """
 
 from __future__ import annotations
@@ -55,7 +58,24 @@ CROSSWALK_DIR = DATA_DIR / "crosswalks"
 
 JACKSON_COUNTYFP = "095"
 STATEFP = "29"
-DEFAULT_DISTRICTS = ("7", "8", "9", "11")
+VALID_SCOPES = ("state_senate", "state_house")
+DEFAULT_DISTRICTS_BY_SCOPE = {
+    "state_senate": ("7", "8", "9", "11"),
+    # Assign against all house districts; filter to Jackson-touching after.
+    "state_house": None,  # treated as "all"
+}
+DISTRICT_GEOJSON_BY_SCOPE = {
+    "state_senate": DATA_DIR / "mo_state_senate_districts_2022.geojson",
+    "state_house": DATA_DIR / "mo_state_house_districts_2022.geojson",
+}
+DISTRICT_FIELD_CANDIDATES_BY_SCOPE = {
+    "state_senate": ("district", "SLDUST", "GEOID"),
+    "state_house": ("district", "SLDLST", "GEOID"),
+}
+DISTRICT_LABEL_BY_SCOPE = {
+    "state_senate": "SLDU 2022",
+    "state_house": "SLDL 2022",
+}
 
 TABBLOCK20_SHP = DATA_DIR / "_extract_tabblock20" / "tl_2020_29_tabblock20.shp"
 TABBLOCK20_ZIP = DATA_DIR / "tl_2020_29_tabblock20.zip"
@@ -67,17 +87,20 @@ TABBLOCK00_STATE_ZIP = DATA_DIR / "tiger2008" / "tl_2008_29_tabblock00.zip"
 VTD20_GEOJSON = DATA_DIR / "mo_vtd20_precincts.geojson"
 VTD10_GEOJSON = DATA_DIR / "mo_vtd10_precincts.geojson"
 VTD00_GEOJSON = DATA_DIR / "mo_vtd00_precincts.geojson"
-SLDU_GEOJSON = DATA_DIR / "mo_state_senate_districts_2022.geojson"
 
 NHGIS_2010_2020_CSV = DATA_DIR / "_extract_nhgis_blk2010_blk2020_29" / "nhgis_blk2010_blk2020_29.csv"
 NHGIS_2010_2020_ZIP = DATA_DIR / "nhgis_blk2010_blk2020_29.zip"
 NHGIS_2000_2010_CSV = DATA_DIR / "_extract_nhgis_blk2000_blk2010_29" / "nhgis_blk2000_blk2010_29.csv"
 NHGIS_2000_2010_ZIP = DATA_DIR / "nhgis_blk2000_blk2010_29.zip"
 
-OUT_BLOCK = CROSSWALK_DIR / "jackson_tabblock20_to_2022_state_senate.csv"
-OUT_VTD20 = CROSSWALK_DIR / "jackson_vtd20_to_2022_state_senate_from_tabblocks.csv"
-OUT_VTD10 = CROSSWALK_DIR / "jackson_vtd10_to_2022_state_senate_from_nhgis.csv"
-OUT_VTD00 = CROSSWALK_DIR / "jackson_vtd00_to_2022_state_senate_from_nhgis.csv"
+
+def output_paths(scope: str) -> Dict[str, Path]:
+    return {
+        "block": CROSSWALK_DIR / f"jackson_tabblock20_to_2022_{scope}.csv",
+        "vtd20": CROSSWALK_DIR / f"jackson_vtd20_to_2022_{scope}_from_tabblocks.csv",
+        "vtd10": CROSSWALK_DIR / f"jackson_vtd10_to_2022_{scope}_from_nhgis.csv",
+        "vtd00": CROSSWALK_DIR / f"jackson_vtd00_to_2022_{scope}_from_nhgis.csv",
+    }
 
 
 def normalize_district_num(raw: object) -> str:
@@ -264,28 +287,30 @@ def load_jackson_vtds(path: Path, era_label: str) -> "gpd.GeoDataFrame":
     ].drop_duplicates(subset=["precinct_key"], keep="first")
 
 
-def load_senate_districts(district_filter: Optional[Set[str]]) -> "gpd.GeoDataFrame":
+def load_districts(scope: str, district_filter: Optional[Set[str]]) -> "gpd.GeoDataFrame":
     import geopandas as gpd
 
-    if not SLDU_GEOJSON.exists():
-        raise SystemExit(f"Missing {SLDU_GEOJSON}")
-    print(f"Reading state senate districts from {SLDU_GEOJSON} ...")
-    gdf = gpd.read_file(SLDU_GEOJSON)
+    geojson = DISTRICT_GEOJSON_BY_SCOPE[scope]
+    if not geojson.exists():
+        raise SystemExit(f"Missing {geojson}")
+    print(f"Reading {scope} districts from {geojson} ...")
+    gdf = gpd.read_file(geojson)
     if gdf.crs is None:
         gdf = gdf.set_crs("EPSG:4326")
     else:
         gdf = gdf.to_crs("EPSG:4326")
 
-    district_col = next((c for c in ("district", "SLDUST", "GEOID") if c in gdf.columns), None)
+    field_candidates = DISTRICT_FIELD_CANDIDATES_BY_SCOPE[scope]
+    district_col = next((c for c in field_candidates if c in gdf.columns), None)
     if district_col is None:
-        raise SystemExit(f"{SLDU_GEOJSON} missing district field")
+        raise SystemExit(f"{geojson} missing district field")
 
     gdf["district_num"] = gdf[district_col].map(normalize_district_num)
     if district_filter is not None:
         gdf = gdf.loc[gdf["district_num"].isin(district_filter)].copy()
     gdf = gdf.loc[gdf["district_num"] != ""].copy()
     if gdf.empty:
-        raise SystemExit("No senate districts selected")
+        raise SystemExit(f"No {scope} districts selected")
     print(f"  districts: {', '.join(sorted(gdf['district_num'].unique(), key=lambda x: int(x) if x.isdigit() else x))}")
     return gdf[["district_num", "geometry"]]
 
@@ -394,16 +419,22 @@ def aggregate_vtd_district_weights(
     return rows
 
 
-def build_vtd20_from_tabblocks(district_filter: Optional[Set[str]]) -> pd.DataFrame:
+def build_vtd20_from_tabblocks(
+    scope: str,
+    district_filter: Optional[Set[str]],
+    out_paths: Dict[str, Path],
+) -> pd.DataFrame:
     blocks = load_jackson_block_points()
     vtds = load_jackson_vtds(VTD20_GEOJSON, "VTD20")
-    # Assign against ALL senate districts so nearest-fallback cannot pull SD-7/9
-    # blocks into SD-8/11. Output filtering happens after assignment.
-    districts = load_senate_districts(None)
+    # Assign against ALL districts so nearest-fallback cannot pull neighboring
+    # districts into the emit set. Output filtering happens after assignment.
+    districts = load_districts(scope, None)
 
     blocks = blocks.copy()
     blocks["precinct_key"] = spatial_assign_blocks(blocks, vtds, "precinct_key", "VTD20")
-    blocks["district_num"] = spatial_assign_blocks(blocks, districts, "district_num", "SLDU 2022")
+    blocks["district_num"] = spatial_assign_blocks(
+        blocks, districts, "district_num", DISTRICT_LABEL_BY_SCOPE[scope]
+    )
 
     # Attach KC / election-county metadata from the VTD layer.
     vtd_meta = vtds.drop(columns=["geometry"]).drop_duplicates("precinct_key")
@@ -439,8 +470,9 @@ def build_vtd20_from_tabblocks(district_filter: Optional[Set[str]]) -> pd.DataFr
             }
         )
 
+    out_block = out_paths["block"]
     n = write_csv(
-        OUT_BLOCK,
+        out_block,
         [
             "block_geoid20",
             "blk2020gj",
@@ -452,15 +484,24 @@ def build_vtd20_from_tabblocks(district_filter: Optional[Set[str]]) -> pd.DataFr
         ],
         block_rows,
     )
-    print(f"Wrote {OUT_BLOCK} ({n:,} rows)")
+    print(f"Wrote {out_block} ({n:,} rows)")
 
     weight_source = blocks.dropna(subset=["precinct_key", "district_num"]).copy()
     vtd_rows = aggregate_vtd_district_weights(weight_source)
     if district_filter is not None:
         # Keep true multi-district shares; do not renormalize after filtering.
         vtd_rows = [r for r in vtd_rows if str(r["district_num"]) in district_filter]
+    else:
+        # For house (default all): keep only districts that actually touch Jackson blocks.
+        touched = sorted(
+            {str(r["district_num"]) for r in vtd_rows},
+            key=lambda x: int(x) if x.isdigit() else x,
+        )
+        print(f"  Jackson-touching {scope} districts: {', '.join(touched)}")
+
+    out_vtd20 = out_paths["vtd20"]
     n = write_csv(
-        OUT_VTD20,
+        out_vtd20,
         [
             "precinct_key",
             "district_num",
@@ -473,7 +514,7 @@ def build_vtd20_from_tabblocks(district_filter: Optional[Set[str]]) -> pd.DataFr
         ],
         vtd_rows,
     )
-    print(f"Wrote {OUT_VTD20} ({n:,} rows)")
+    print(f"Wrote {out_vtd20} ({n:,} rows)")
 
     kc_rows = sum(1 for r in vtd_rows if r["is_kansas_city"] == "1")
     print(f"  VTD20 rows with KC election alias: {kc_rows:,}")
@@ -680,9 +721,18 @@ def assign_historical_vtds_via_nhgis(
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument(
+        "--scope",
+        default="state_senate",
+        choices=list(VALID_SCOPES),
+        help="District layer to assign (default: state_senate).",
+    )
+    ap.add_argument(
         "--districts",
-        default=",".join(DEFAULT_DISTRICTS),
-        help="Comma-separated senate districts to include (default: 8,11). Use 'all' for every district.",
+        default=None,
+        help=(
+            "Comma-separated districts to emit. Defaults: senate 7,8,9,11; "
+            "house all Jackson-touching. Use 'all' for every district that touches Jackson."
+        ),
     )
     ap.add_argument(
         "--with-nhgis",
@@ -690,9 +740,15 @@ def main() -> None:
         help="Also build VTD10 (and VTD00 when possible) crosswalks via NHGIS block weights.",
     )
     args = ap.parse_args()
-    district_filter = parse_districts(args.districts)
+    scope = str(args.scope).strip().lower()
+    if args.districts is None:
+        default = DEFAULT_DISTRICTS_BY_SCOPE[scope]
+        district_filter = set(default) if default is not None else None
+    else:
+        district_filter = parse_districts(args.districts)
+    out_paths = output_paths(scope)
 
-    blocks = build_vtd20_from_tabblocks(district_filter)
+    blocks = build_vtd20_from_tabblocks(scope, district_filter, out_paths)
 
     if not args.with_nhgis:
         print("Done (VTD20 via tabblocks). Re-run with --with-nhgis for decade chaining.")
@@ -714,7 +770,7 @@ def main() -> None:
         era="vtd10",
         vtd_geojson=VTD10_GEOJSON,
         nhgis_frames=[("2010", nhgis_10_20)],
-        out_path=OUT_VTD10,
+        out_path=out_paths["vtd10"],
         district_filter=district_filter,
     )
 
@@ -733,7 +789,7 @@ def main() -> None:
             era="vtd00",
             vtd_geojson=VTD00_GEOJSON,
             nhgis_frames=[("2010", nhgis_10_20), ("2000", nhgis_00_10)],
-            out_path=OUT_VTD00,
+            out_path=out_paths["vtd00"],
             district_filter=district_filter,
         )
     else:
