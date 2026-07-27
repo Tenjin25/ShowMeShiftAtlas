@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "auditor",
+    "year": 2018,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.595431,
+    "generated_at": "2026-07-27T22:50:07.603309+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 147950,
+    "kansas_city_votes": 111803,
+    "jackson_direct_votes": 132292,
+    "kansas_city_direct_votes": 105275,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 40672,
+        "rep_votes": 35276,
+        "other_votes": 4020,
+        "total_votes": 79968,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -5396,
+        "margin_pct": -6.747699,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 26358,
+        "rep_votes": 21277,
+        "other_votes": 3368,
+        "total_votes": 51003,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -5081,
+        "margin_pct": -9.962159,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

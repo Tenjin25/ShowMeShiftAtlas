@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:59.370Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:07.184901+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 53457,
-        "rep_votes": 34049,
-        "other_votes": 5109,
-        "total_votes": 92615,
+        "dem_votes": 32164,
+        "rep_votes": 42612,
+        "other_votes": 3656,
+        "total_votes": 78432,
         "dem_candidate": "Russ Carnahan",
         "rep_candidate": "Mike Parson",
-        "margin": -19408,
-        "margin_pct": -20.955569,
-        "winner": "DEM",
+        "margin": 10448,
+        "margin_pct": 13.321093,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 63828,
-        "rep_votes": 45313,
-        "other_votes": 6158,
-        "total_votes": 115299,
+        "dem_votes": 32691,
+        "rep_votes": 34736,
+        "other_votes": 4399,
+        "total_votes": 71826,
         "dem_candidate": "Russ Carnahan",
         "rep_candidate": "Mike Parson",
-        "margin": -18515,
-        "margin_pct": -16.058249,
-        "winner": "DEM",
+        "margin": 2045,
+        "margin_pct": 2.847158,
+        "winner": "REP",
         "color": ""
       },
       "12": {

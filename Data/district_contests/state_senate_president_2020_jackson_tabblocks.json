@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "president",
+    "year": 2020,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.952371,
+    "generated_at": "2026-07-27T22:50:10.734343+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 136300,
+    "kansas_city_votes": 136645,
+    "jackson_direct_votes": 136255,
+    "kansas_city_direct_votes": 136560,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 26740,
+        "rep_votes": 39800,
+        "other_votes": 1611,
+        "total_votes": 68151,
+        "dem_candidate": "Joseph R. Biden",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 13060,
+        "margin_pct": 19.163328,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 19896,
+        "rep_votes": 32321,
+        "other_votes": 1395,
+        "total_votes": 53612,
+        "dem_candidate": "Joseph R. Biden",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 12425,
+        "margin_pct": 23.175782,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

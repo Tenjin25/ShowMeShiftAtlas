@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:27.149Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 983213,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.946851+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 23593,
-        "rep_votes": 28244,
-        "other_votes": 2989,
-        "total_votes": 54826,
+        "dem_votes": 32261,
+        "rep_votes": 40612,
+        "other_votes": 3804,
+        "total_votes": 76677,
         "dem_candidate": "Richard Brown",
         "rep_candidate": "Dave Wasinger",
-        "margin": 4651,
-        "margin_pct": 8.483201,
+        "margin": 8351,
+        "margin_pct": 10.891141,
         "winner": "REP",
         "color": ""
       },
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 39637,
-        "rep_votes": 36448,
-        "other_votes": 4340,
-        "total_votes": 80425,
+        "dem_votes": 40975,
+        "rep_votes": 44655,
+        "other_votes": 4419,
+        "total_votes": 90049,
         "dem_candidate": "Richard Brown",
         "rep_candidate": "Dave Wasinger",
-        "margin": -3189,
-        "margin_pct": -3.965185,
-        "winner": "DEM",
+        "margin": 3680,
+        "margin_pct": 4.086664,
+        "winner": "REP",
         "color": ""
       },
       "12": {

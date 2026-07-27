@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "attorney_general",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.598328,
+    "generated_at": "2026-07-27T22:50:05.548295+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 168898,
+    "kansas_city_votes": 132231,
+    "jackson_direct_votes": 147802,
+    "kansas_city_direct_votes": 108098,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 41337,
+        "rep_votes": 34867,
+        "other_votes": 2482,
+        "total_votes": 78686,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -6470,
+        "margin_pct": -8.222555,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 55763,
+        "rep_votes": 30179,
+        "other_votes": 2989,
+        "total_votes": 88931,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Ed Martin",
+        "margin": -25584,
+        "margin_pct": -28.768371,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

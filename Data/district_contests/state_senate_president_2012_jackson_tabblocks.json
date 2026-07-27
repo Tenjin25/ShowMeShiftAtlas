@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "president",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.609358,
+    "generated_at": "2026-07-27T22:50:05.753673+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 174764,
+    "kansas_city_votes": 136813,
+    "jackson_direct_votes": 152831,
+    "kansas_city_direct_votes": 111888,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 32791,
+        "rep_votes": 47169,
+        "other_votes": 1458,
+        "total_votes": 81418,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 14378,
+        "margin_pct": 17.659486,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 48770,
+        "rep_votes": 41739,
+        "other_votes": 1584,
+        "total_votes": 92093,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": -7031,
+        "margin_pct": -7.634674,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

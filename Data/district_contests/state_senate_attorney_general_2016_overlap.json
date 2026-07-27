@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:02.392Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:07.179639+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 53424,
-        "rep_votes": 39031,
+        "dem_votes": 30678,
+        "rep_votes": 47535,
         "other_votes": 0,
-        "total_votes": 92455,
+        "total_votes": 78213,
         "dem_candidate": "Teresa Hensley",
         "rep_candidate": "Josh Hawley",
-        "margin": -14393,
-        "margin_pct": -15.567573,
-        "winner": "DEM",
+        "margin": 16857,
+        "margin_pct": 21.552683,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 63326,
-        "rep_votes": 51685,
+        "dem_votes": 31667,
+        "rep_votes": 40245,
         "other_votes": 0,
-        "total_votes": 115011,
+        "total_votes": 71912,
         "dem_candidate": "Teresa Hensley",
         "rep_candidate": "Josh Hawley",
-        "margin": -11641,
-        "margin_pct": -10.121641,
-        "winner": "DEM",
+        "margin": 8578,
+        "margin_pct": 11.928468,
+        "winner": "REP",
         "color": ""
       },
       "12": {

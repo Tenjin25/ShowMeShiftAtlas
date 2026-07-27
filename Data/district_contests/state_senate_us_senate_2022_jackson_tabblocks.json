@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2022,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 93.834285,
+    "generated_at": "2026-07-27T22:50:11.642576+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 130597,
+    "kansas_city_votes": 86004,
+    "jackson_direct_votes": 103487,
+    "kansas_city_direct_votes": 85397,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 40506,
+        "rep_votes": 41103,
+        "other_votes": 1834,
+        "total_votes": 83443,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 597,
+        "margin_pct": 0.715458,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 14186,
+        "rep_votes": 17843,
+        "other_votes": 958,
+        "total_votes": 32987,
+        "dem_candidate": "Trudy Busch Valentine",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 3657,
+        "margin_pct": 11.086185,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:26.720Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 999562,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:12.943644+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,14 +106,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 24897,
-        "rep_votes": 29462,
-        "other_votes": 1435,
-        "total_votes": 55794,
+        "dem_votes": 33989,
+        "rep_votes": 42215,
+        "other_votes": 1817,
+        "total_votes": 78021,
         "dem_candidate": "Crystal Quade",
         "rep_candidate": "Mike Kehoe",
-        "margin": 4565,
-        "margin_pct": 8.181883,
+        "margin": 8226,
+        "margin_pct": 10.543315,
         "winner": "REP",
         "color": ""
       },
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 41371,
-        "rep_votes": 37999,
-        "other_votes": 2151,
-        "total_votes": 81521,
+        "dem_votes": 42900,
+        "rep_votes": 46192,
+        "other_votes": 2117,
+        "total_votes": 91209,
         "dem_candidate": "Crystal Quade",
         "rep_candidate": "Mike Kehoe",
-        "margin": -3372,
-        "margin_pct": -4.136358,
-        "winner": "DEM",
+        "margin": 3292,
+        "margin_pct": 3.609293,
+        "winner": "REP",
         "color": ""
       },
       "12": {

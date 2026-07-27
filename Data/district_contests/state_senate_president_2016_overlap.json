@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:56.296Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:07.187585+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 53256,
-        "rep_votes": 35895,
-        "other_votes": 5219,
-        "total_votes": 94370,
+        "dem_votes": 30244,
+        "rep_votes": 44583,
+        "other_votes": 4857,
+        "total_votes": 79684,
         "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
         "rep_candidate": "Donald J. Trump, Michael R. Pence",
-        "margin": -17361,
-        "margin_pct": -18.396736,
-        "winner": "DEM",
+        "margin": 14339,
+        "margin_pct": 17.99483,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 63034,
-        "rep_votes": 47730,
-        "other_votes": 6463,
-        "total_votes": 117227,
+        "dem_votes": 30069,
+        "rep_votes": 39195,
+        "other_votes": 4479,
+        "total_votes": 73743,
         "dem_candidate": "Hillary Rodham Clinton, Timothy Michael Kaine",
         "rep_candidate": "Donald J. Trump, Michael R. Pence",
-        "margin": -15304,
-        "margin_pct": -13.055013,
-        "winner": "DEM",
+        "margin": 9126,
+        "margin_pct": 12.375412,
+        "winner": "REP",
         "color": ""
       },
       "12": {

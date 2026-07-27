@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:53.360Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:05.973593+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 71680,
-        "rep_votes": 39638,
-        "other_votes": 4667,
-        "total_votes": 115985,
+        "dem_votes": 35612,
+        "rep_votes": 39382,
+        "other_votes": 2976,
+        "total_votes": 77970,
         "dem_candidate": "Clint Zweifel",
         "rep_candidate": "Cole McNary",
-        "margin": -32042,
-        "margin_pct": -27.625986,
-        "winner": "DEM",
+        "margin": 3770,
+        "margin_pct": 4.835193,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,14 +142,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 63617,
-        "rep_votes": 37648,
-        "other_votes": 3966,
-        "total_votes": 105231,
+        "dem_votes": 50804,
+        "rep_votes": 33792,
+        "other_votes": 3505,
+        "total_votes": 88101,
         "dem_candidate": "Clint Zweifel",
         "rep_candidate": "Cole McNary",
-        "margin": -25969,
-        "margin_pct": -24.678089,
+        "margin": -17012,
+        "margin_pct": -19.309656,
         "winner": "DEM",
         "color": ""
       },

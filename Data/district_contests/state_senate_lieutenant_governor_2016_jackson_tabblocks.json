@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "lieutenant_governor",
+    "year": 2016,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 95.188584,
+    "generated_at": "2026-07-27T22:50:07.016581+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 169814,
+    "kansas_city_votes": 126128,
+    "jackson_direct_votes": 148440,
+    "kansas_city_direct_votes": 119339,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 32164,
+        "rep_votes": 42612,
+        "other_votes": 3656,
+        "total_votes": 78432,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 10448,
+        "margin_pct": 13.321093,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 32691,
+        "rep_votes": 34736,
+        "other_votes": 4399,
+        "total_votes": 71826,
+        "dem_candidate": "Russ Carnahan",
+        "rep_candidate": "Mike Parson",
+        "margin": 2045,
+        "margin_pct": 2.847158,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

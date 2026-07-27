@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:17:58.375Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:07.182514+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 56994,
-        "rep_votes": 33692,
-        "other_votes": 3390,
-        "total_votes": 94076,
+        "dem_votes": 35481,
+        "rep_votes": 41694,
+        "other_votes": 2467,
+        "total_votes": 79642,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Eric Greitens",
-        "margin": -23302,
-        "margin_pct": -24.769335,
-        "winner": "DEM",
+        "margin": 6213,
+        "margin_pct": 7.80116,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 68066,
-        "rep_votes": 44836,
-        "other_votes": 4177,
-        "total_votes": 117079,
+        "dem_votes": 34999,
+        "rep_votes": 35089,
+        "other_votes": 3085,
+        "total_votes": 73173,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Eric Greitens",
-        "margin": -23230,
-        "margin_pct": -19.841304,
-        "winner": "DEM",
+        "margin": 90,
+        "margin_pct": 0.122996,
+        "winner": "REP",
         "color": ""
       },
       "12": {

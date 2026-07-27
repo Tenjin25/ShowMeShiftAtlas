@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:23.861Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:10.836982+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 59643,
-        "rep_votes": 45104,
-        "other_votes": 2816,
-        "total_votes": 107563,
+        "dem_votes": 26297,
+        "rep_votes": 39773,
+        "other_votes": 1699,
+        "total_votes": 67769,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Mike Parson",
-        "margin": -14539,
-        "margin_pct": -13.51673,
-        "winner": "DEM",
+        "margin": 13476,
+        "margin_pct": 19.885198,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 55680,
-        "rep_votes": 41160,
-        "other_votes": 2800,
-        "total_votes": 99640,
+        "dem_votes": 19974,
+        "rep_votes": 31301,
+        "other_votes": 1866,
+        "total_votes": 53141,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Mike Parson",
-        "margin": -14520,
-        "margin_pct": -14.572461,
-        "winner": "DEM",
+        "margin": 11327,
+        "margin_pct": 21.314992,
+        "winner": "REP",
         "color": ""
       },
       "12": {

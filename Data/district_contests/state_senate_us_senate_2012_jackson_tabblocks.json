@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "us_senate",
+    "year": 2012,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 94.610123,
+    "generated_at": "2026-07-27T22:50:05.941688+00:00",
+    "source_method": "jackson_vtd10_tabblock_nhgis_kc_split",
+    "geography_era": "vtd10",
+    "jackson_votes": 172486,
+    "kansas_city_votes": 135573,
+    "jackson_direct_votes": 150928,
+    "kansas_city_direct_votes": 110954,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 41174,
+        "rep_votes": 32877,
+        "other_votes": 6175,
+        "total_votes": 80226,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -8297,
+        "margin_pct": -10.342034,
+        "winner": "DEM",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 55472,
+        "rep_votes": 29677,
+        "other_votes": 5750,
+        "total_votes": 90899,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Todd Akin",
+        "margin": -25795,
+        "margin_pct": -28.37765,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

@@ -9,7 +9,15 @@
     "generated_at": "2026-06-05T18:18:25.504Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "jackson_tabblock_patch": {
+      "patched_districts": [
+        "8",
+        "11"
+      ],
+      "patched_at": "2026-07-27T22:50:10.834530+00:00",
+      "source_method": "jackson_tabblock_crosswalk_kc_split"
+    }
   },
   "general": {
     "results": {
@@ -98,15 +106,15 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 55477,
-        "rep_votes": 45885,
-        "other_votes": 3880,
-        "total_votes": 105242,
+        "dem_votes": 23135,
+        "rep_votes": 40446,
+        "other_votes": 2404,
+        "total_votes": 65985,
         "dem_candidate": "Rich Finneran",
         "rep_candidate": "Eric Schmitt",
-        "margin": -9592,
-        "margin_pct": -9.114232,
-        "winner": "DEM",
+        "margin": 17311,
+        "margin_pct": 26.23475,
+        "winner": "REP",
         "color": ""
       },
       "9": {
@@ -134,15 +142,15 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 51827,
-        "rep_votes": 41667,
-        "other_votes": 3803,
-        "total_votes": 97297,
+        "dem_votes": 17682,
+        "rep_votes": 31433,
+        "other_votes": 2536,
+        "total_votes": 51651,
         "dem_candidate": "Rich Finneran",
         "rep_candidate": "Eric Schmitt",
-        "margin": -10160,
-        "margin_pct": -10.442254,
-        "winner": "DEM",
+        "margin": 13751,
+        "margin_pct": 26.622911,
+        "winner": "REP",
         "color": ""
       },
       "12": {

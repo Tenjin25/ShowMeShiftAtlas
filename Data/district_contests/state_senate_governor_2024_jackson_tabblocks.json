@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "scope": "state_senate",
+    "contest_type": "governor",
+    "year": 2024,
+    "district_count": 2,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 99.177689,
+    "generated_at": "2026-07-27T22:50:12.639065+00:00",
+    "source_method": "jackson_vtd20_tabblock_nhgis_kc_split",
+    "geography_era": "vtd20",
+    "jackson_votes": 190296,
+    "kansas_city_votes": 123454,
+    "jackson_direct_votes": 133043,
+    "kansas_city_direct_votes": 120858,
+    "districts": [
+      "8",
+      "11"
+    ]
+  },
+  "general": {
+    "results": {
+      "8": {
+        "dem_votes": 33989,
+        "rep_votes": 42215,
+        "other_votes": 1817,
+        "total_votes": 78021,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 8226,
+        "margin_pct": 10.543315,
+        "winner": "REP",
+        "color": ""
+      },
+      "11": {
+        "dem_votes": 42900,
+        "rep_votes": 46192,
+        "other_votes": 2117,
+        "total_votes": 91209,
+        "dem_candidate": "Crystal Quade",
+        "rep_candidate": "Mike Kehoe",
+        "margin": 3292,
+        "margin_pct": 3.609293,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
