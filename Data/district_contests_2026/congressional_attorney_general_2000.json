@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2000,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 51.039714,
+    "generated_at": "2026-07-27T23:22:27.170004+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 145305,
+    "kansas_city_votes": 119076,
+    "jackson_direct_votes": 105588,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 191898,
+        "rep_votes": 97184,
+        "other_votes": 5636,
+        "total_votes": 294718,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -94714,
+        "margin_pct": -32.137162,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 191609,
+        "rep_votes": 105287,
+        "other_votes": 6330,
+        "total_votes": 303226,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -86322,
+        "margin_pct": -28.467875,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 154623,
+        "rep_votes": 91137,
+        "other_votes": 6367,
+        "total_votes": 252127,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -63486,
+        "margin_pct": -25.180167,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 159198,
+        "rep_votes": 106876,
+        "other_votes": 6643,
+        "total_votes": 272717,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -52322,
+        "margin_pct": -19.185456,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 211855,
+        "rep_votes": 110056,
+        "other_votes": 8001,
+        "total_votes": 329912,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -101799,
+        "margin_pct": -30.85641,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 170347,
+        "rep_votes": 115628,
+        "other_votes": 8234,
+        "total_votes": 294209,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -54719,
+        "margin_pct": -18.598683,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 127060,
+        "rep_votes": 119983,
+        "other_votes": 5490,
+        "total_votes": 252533,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -7077,
+        "margin_pct": -2.802406,
+        "winner": "DEM",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 171786,
+        "rep_votes": 109662,
+        "other_votes": 6661,
+        "total_votes": 288109,
+        "dem_candidate": "Jeremiah W. (Jay) Nixon",
+        "rep_candidate": "Sam Jones",
+        "margin": -62124,
+        "margin_pct": -21.562672,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

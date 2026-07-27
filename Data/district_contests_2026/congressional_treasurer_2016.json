@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 39.1186,
+    "generated_at": "2026-07-27T23:23:42.265612+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 168708,
+    "kansas_city_votes": 125745,
+    "jackson_direct_votes": 147380,
+    "kansas_city_direct_votes": 118956,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 164978,
+        "rep_votes": 127445,
+        "other_votes": 11013,
+        "total_votes": 303436,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -37533,
+        "margin_pct": -12.36933,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 173730,
+        "rep_votes": 178712,
+        "other_votes": 14098,
+        "total_votes": 366540,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 4982,
+        "margin_pct": 1.359197,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 135628,
+        "rep_votes": 207509,
+        "other_votes": 15895,
+        "total_votes": 359032,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 71881,
+        "margin_pct": 20.020778,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 134610,
+        "rep_votes": 205158,
+        "other_votes": 15305,
+        "total_votes": 355073,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 70548,
+        "margin_pct": 19.86859,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 150404,
+        "rep_votes": 167999,
+        "other_votes": 14682,
+        "total_votes": 333085,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 17595,
+        "margin_pct": 5.282435,
+        "winner": "REP",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 130929,
+        "rep_votes": 200712,
+        "other_votes": 16194,
+        "total_votes": 347835,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 69783,
+        "margin_pct": 20.062098,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 88810,
+        "rep_votes": 233558,
+        "other_votes": 14584,
+        "total_votes": 336952,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 144748,
+        "margin_pct": 42.958047,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 98975,
+        "rep_votes": 224489,
+        "other_votes": 12706,
+        "total_votes": 336170,
+        "dem_candidate": "Judy Baker",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 125514,
+        "margin_pct": 37.336467,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

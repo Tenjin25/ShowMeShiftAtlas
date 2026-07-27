@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2020,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 50.538718,
+    "generated_at": "2026-07-27T23:23:58.337509+00:00",
+    "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd20",
+    "jackson_votes": 131752,
+    "kansas_city_votes": 134287,
+    "jackson_direct_votes": 131752,
+    "kansas_city_direct_votes": 134287,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 179610,
+        "rep_votes": 59138,
+        "other_votes": 5638,
+        "total_votes": 244386,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": -120472,
+        "margin_pct": -49.295786,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 187105,
+        "rep_votes": 261666,
+        "other_votes": 9504,
+        "total_votes": 458275,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 74561,
+        "margin_pct": 16.269925,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 147320,
+        "rep_votes": 243101,
+        "other_votes": 10953,
+        "total_votes": 401374,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 95781,
+        "margin_pct": 23.86328,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 129176,
+        "rep_votes": 220852,
+        "other_votes": 11097,
+        "total_votes": 361125,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 91676,
+        "margin_pct": 25.386224,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 130067,
+        "rep_votes": 182731,
+        "other_votes": 11263,
+        "total_votes": 324061,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 52664,
+        "margin_pct": 16.251261,
+        "winner": "REP",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 130582,
+        "rep_votes": 233531,
+        "other_votes": 12274,
+        "total_votes": 376387,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 102949,
+        "margin_pct": 27.351901,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 95825,
+        "rep_votes": 261559,
+        "other_votes": 10337,
+        "total_votes": 367721,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 165734,
+        "margin_pct": 45.070583,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 84603,
+        "rep_votes": 266188,
+        "other_votes": 8858,
+        "total_votes": 359649,
+        "dem_candidate": "Rich Finneran",
+        "rep_candidate": "Eric Schmitt",
+        "margin": 181585,
+        "margin_pct": 50.489505,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

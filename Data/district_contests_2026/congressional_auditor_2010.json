@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "auditor",
+    "year": 2010,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 10.997236,
+    "generated_at": "2026-07-27T23:22:54.655625+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 116025,
+    "kansas_city_votes": 85095,
+    "jackson_direct_votes": 21555,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 126219,
+        "rep_votes": 89836,
+        "other_votes": 5644,
+        "total_votes": 221699,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -36383,
+        "margin_pct": -16.41099,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 137840,
+        "rep_votes": 115759,
+        "other_votes": 7988,
+        "total_votes": 261587,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -22081,
+        "margin_pct": -8.441169,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 95276,
+        "rep_votes": 121440,
+        "other_votes": 9398,
+        "total_votes": 226114,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 26164,
+        "margin_pct": 11.571154,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 102358,
+        "rep_votes": 124223,
+        "other_votes": 9053,
+        "total_votes": 235634,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 21865,
+        "margin_pct": 9.279221,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 132850,
+        "rep_votes": 124515,
+        "other_votes": 9462,
+        "total_votes": 266827,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": -8335,
+        "margin_pct": -3.123747,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 110052,
+        "rep_votes": 122482,
+        "other_votes": 10171,
+        "total_votes": 242705,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 12430,
+        "margin_pct": 5.121444,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 76029,
+        "rep_votes": 143935,
+        "other_votes": 8995,
+        "total_votes": 228959,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 67906,
+        "margin_pct": 29.658585,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 91243,
+        "rep_votes": 132327,
+        "other_votes": 10105,
+        "total_votes": 233675,
+        "dem_candidate": "Susan Montee",
+        "rep_candidate": "Tom Schweich",
+        "margin": 41084,
+        "margin_pct": 17.581684,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

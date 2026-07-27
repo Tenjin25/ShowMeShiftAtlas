@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "auditor",
+    "year": 2014,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 35.03302,
+    "generated_at": "2026-07-27T23:23:34.188906+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 72417,
+    "kansas_city_votes": 42786,
+    "jackson_direct_votes": 61416,
+    "kansas_city_direct_votes": 39989,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 0,
+        "rep_votes": 104178,
+        "other_votes": 42872,
+        "total_votes": 147050,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 104178,
+        "margin_pct": 70.845291,
+        "winner": "REP",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 0,
+        "rep_votes": 128894,
+        "other_votes": 48835,
+        "total_votes": 177729,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 128894,
+        "margin_pct": 72.522773,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 0,
+        "rep_votes": 120731,
+        "other_votes": 38062,
+        "total_votes": 158793,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 120731,
+        "margin_pct": 76.03043,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 0,
+        "rep_votes": 119282,
+        "other_votes": 48361,
+        "total_votes": 167643,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 119282,
+        "margin_pct": 71.152389,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 0,
+        "rep_votes": 104573,
+        "other_votes": 46536,
+        "total_votes": 151109,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 104573,
+        "margin_pct": 69.203687,
+        "winner": "REP",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 0,
+        "rep_votes": 116826,
+        "other_votes": 49321,
+        "total_votes": 166147,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 116826,
+        "margin_pct": 70.314842,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 0,
+        "rep_votes": 122739,
+        "other_votes": 31854,
+        "total_votes": 154593,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 122739,
+        "margin_pct": 79.394927,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 0,
+        "rep_votes": 120738,
+        "other_votes": 35590,
+        "total_votes": 156328,
+        "dem_candidate": "",
+        "rep_candidate": "Tom Schweich",
+        "margin": 120738,
+        "margin_pct": 77.233765,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

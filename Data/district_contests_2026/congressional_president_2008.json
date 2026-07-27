@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "president",
+    "year": 2008,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 2.905331,
+    "generated_at": "2026-07-27T23:22:49.549401+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 186047,
+    "kansas_city_votes": 153219,
+    "jackson_direct_votes": 0,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 191485,
+        "rep_votes": 121124,
+        "other_votes": 2827,
+        "total_votes": 315436,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": -70361,
+        "margin_pct": -22.305951,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 223049,
+        "rep_votes": 167274,
+        "other_votes": 4172,
+        "total_votes": 394495,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": -55775,
+        "margin_pct": -14.138329,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 171409,
+        "rep_votes": 185627,
+        "other_votes": 4408,
+        "total_votes": 361444,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": 14218,
+        "margin_pct": 3.933666,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 171121,
+        "rep_votes": 179194,
+        "other_votes": 4677,
+        "total_votes": 354992,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": 8073,
+        "margin_pct": 2.274136,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 223012,
+        "rep_votes": 187390,
+        "other_votes": 5315,
+        "total_votes": 415717,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": -35622,
+        "margin_pct": -8.56881,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 175296,
+        "rep_votes": 187094,
+        "other_votes": 5781,
+        "total_votes": 368171,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": 11798,
+        "margin_pct": 3.204489,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 129768,
+        "rep_votes": 210847,
+        "other_votes": 4595,
+        "total_votes": 345210,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": 81079,
+        "margin_pct": 23.486863,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 156772,
+        "rep_votes": 207266,
+        "other_votes": 5671,
+        "total_votes": 369709,
+        "dem_candidate": "Barack Obama",
+        "rep_candidate": "John McCain",
+        "margin": 50494,
+        "margin_pct": 13.657769,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
