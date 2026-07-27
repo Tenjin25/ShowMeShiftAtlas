@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "auditor",
+    "year": 2002,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 30.773844,
+    "generated_at": "2026-07-27T23:22:39.166931+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 111018,
+    "kansas_city_votes": 87019,
+    "jackson_direct_votes": 0,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 149123,
+        "rep_votes": 76724,
+        "other_votes": 8046,
+        "total_votes": 233893,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -72399,
+        "margin_pct": -30.953898,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 146376,
+        "rep_votes": 85026,
+        "other_votes": 8371,
+        "total_votes": 239773,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -61350,
+        "margin_pct": -25.586701,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 115233,
+        "rep_votes": 75013,
+        "other_votes": 7807,
+        "total_votes": 198053,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -40220,
+        "margin_pct": -20.307695,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 134073,
+        "rep_votes": 77563,
+        "other_votes": 6511,
+        "total_votes": 218147,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -56510,
+        "margin_pct": -25.904551,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 174879,
+        "rep_votes": 82543,
+        "other_votes": 9028,
+        "total_votes": 266450,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -92336,
+        "margin_pct": -34.654157,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 139558,
+        "rep_votes": 79919,
+        "other_votes": 7892,
+        "total_votes": 227369,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -59639,
+        "margin_pct": -26.230049,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 103405,
+        "rep_votes": 93786,
+        "other_votes": 7779,
+        "total_votes": 204970,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -9619,
+        "margin_pct": -4.692882,
+        "winner": "DEM",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 127946,
+        "rep_votes": 94402,
+        "other_votes": 8031,
+        "total_votes": 230379,
+        "dem_candidate": "Claire McCaskill",
+        "rep_candidate": "Allen Hanson",
+        "margin": -33544,
+        "margin_pct": -14.560355,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

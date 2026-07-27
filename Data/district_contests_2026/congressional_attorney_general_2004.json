@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2004,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 26.566542,
+    "generated_at": "2026-07-27T23:22:41.644960+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 169727,
+    "kansas_city_votes": 137328,
+    "jackson_direct_votes": 0,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 211732,
+        "rep_votes": 98331,
+        "other_votes": 5417,
+        "total_votes": 315480,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -113401,
+        "margin_pct": -35.945543,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 227035,
+        "rep_votes": 116896,
+        "other_votes": 6693,
+        "total_votes": 350624,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -110139,
+        "margin_pct": -31.412282,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 181341,
+        "rep_votes": 112066,
+        "other_votes": 6610,
+        "total_votes": 300017,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -69275,
+        "margin_pct": -23.090358,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 185142,
+        "rep_votes": 125010,
+        "other_votes": 8100,
+        "total_votes": 318252,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -60132,
+        "margin_pct": -18.894461,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 251041,
+        "rep_votes": 129246,
+        "other_votes": 9789,
+        "total_votes": 390076,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -121795,
+        "margin_pct": -31.223403,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 192094,
+        "rep_votes": 131892,
+        "other_votes": 9901,
+        "total_votes": 333887,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -60202,
+        "margin_pct": -18.030651,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 147950,
+        "rep_votes": 152657,
+        "other_votes": 8063,
+        "total_votes": 308670,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": 4707,
+        "margin_pct": 1.52493,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 196553,
+        "rep_votes": 134424,
+        "other_votes": 8762,
+        "total_votes": 339739,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Christopher Byrd",
+        "margin": -62129,
+        "margin_pct": -18.287273,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

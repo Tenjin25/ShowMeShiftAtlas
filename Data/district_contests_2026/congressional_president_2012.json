@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "president",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 11.856105,
+    "generated_at": "2026-07-27T23:23:14.469820+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 174764,
+    "kansas_city_votes": 136813,
+    "jackson_direct_votes": 152831,
+    "kansas_city_direct_votes": 111888,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 186590,
+        "rep_votes": 128311,
+        "other_votes": 4131,
+        "total_votes": 319032,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": -58279,
+        "margin_pct": -18.267447,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 196545,
+        "rep_votes": 172555,
+        "other_votes": 5810,
+        "total_votes": 374910,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": -23990,
+        "margin_pct": -6.398869,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 134821,
+        "rep_votes": 191303,
+        "other_votes": 6502,
+        "total_votes": 332626,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 56482,
+        "margin_pct": 16.980633,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 153993,
+        "rep_votes": 199613,
+        "other_votes": 6730,
+        "total_votes": 360336,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 45620,
+        "margin_pct": 12.660406,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 183301,
+        "rep_votes": 173692,
+        "other_votes": 6827,
+        "total_votes": 363820,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": -9609,
+        "margin_pct": -2.641141,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 145624,
+        "rep_votes": 192678,
+        "other_votes": 7367,
+        "total_votes": 345669,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 47054,
+        "margin_pct": 13.612444,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 104623,
+        "rep_votes": 215017,
+        "other_votes": 6761,
+        "total_votes": 326401,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 110394,
+        "margin_pct": 33.821588,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 118297,
+        "rep_votes": 209270,
+        "other_votes": 6959,
+        "total_votes": 334526,
+        "dem_candidate": "Barack Obama, Joe Biden",
+        "rep_candidate": "Mitt Romney, Paul Ryan",
+        "margin": 90973,
+        "margin_pct": 27.194598,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

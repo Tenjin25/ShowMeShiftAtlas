@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2012,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 11.852079,
+    "generated_at": "2026-07-27T23:23:23.152713+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 167373,
+    "kansas_city_votes": 130791,
+    "jackson_direct_votes": 146520,
+    "kansas_city_direct_votes": 106886,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 191990,
+        "rep_votes": 104609,
+        "other_votes": 9485,
+        "total_votes": 306084,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -87381,
+        "margin_pct": -28.548046,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 209877,
+        "rep_votes": 137532,
+        "other_votes": 12696,
+        "total_votes": 360105,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -72345,
+        "margin_pct": -20.089974,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 151139,
+        "rep_votes": 151142,
+        "other_votes": 14258,
+        "total_votes": 316539,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": 3,
+        "margin_pct": 0.000948,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 166311,
+        "rep_votes": 163906,
+        "other_votes": 14762,
+        "total_votes": 344979,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -2405,
+        "margin_pct": -0.697144,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 199560,
+        "rep_votes": 135050,
+        "other_votes": 14294,
+        "total_votes": 348904,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -64510,
+        "margin_pct": -18.489327,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 158700,
+        "rep_votes": 155846,
+        "other_votes": 15812,
+        "total_votes": 330358,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": -2854,
+        "margin_pct": -0.863911,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 114799,
+        "rep_votes": 185848,
+        "other_votes": 14573,
+        "total_votes": 315220,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": 71049,
+        "margin_pct": 22.539496,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 140499,
+        "rep_votes": 166434,
+        "other_votes": 13308,
+        "total_votes": 320241,
+        "dem_candidate": "Clint Zweifel",
+        "rep_candidate": "Cole McNary",
+        "margin": 25935,
+        "margin_pct": 8.098588,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "lieutenant_governor",
+    "year": 2000,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 50.997511,
+    "generated_at": "2026-07-27T23:22:32.505775+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 145927,
+    "kansas_city_votes": 119682,
+    "jackson_direct_votes": 106121,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 166167,
+        "rep_votes": 120137,
+        "other_votes": 9897,
+        "total_votes": 296201,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -46030,
+        "margin_pct": -15.540123,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 162739,
+        "rep_votes": 131262,
+        "other_votes": 11687,
+        "total_votes": 305688,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -31477,
+        "margin_pct": -10.2971,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 135289,
+        "rep_votes": 108896,
+        "other_votes": 10190,
+        "total_votes": 254375,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -26393,
+        "margin_pct": -10.375627,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 140249,
+        "rep_votes": 124181,
+        "other_votes": 10194,
+        "total_votes": 274624,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -16068,
+        "margin_pct": -5.850909,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 191441,
+        "rep_votes": 128676,
+        "other_votes": 11649,
+        "total_votes": 331766,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -62765,
+        "margin_pct": -18.918455,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 161487,
+        "rep_votes": 122743,
+        "other_votes": 12428,
+        "total_votes": 296658,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -38744,
+        "margin_pct": -13.060157,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 101884,
+        "rep_votes": 141873,
+        "other_votes": 11184,
+        "total_votes": 254941,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": 39989,
+        "margin_pct": 15.68559,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 142704,
+        "rep_votes": 136677,
+        "other_votes": 11653,
+        "total_votes": 291034,
+        "dem_candidate": "Joe Maxwell",
+        "rep_candidate": "Wendell Bailey",
+        "margin": -6027,
+        "margin_pct": -2.070892,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}

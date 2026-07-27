@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "treasurer",
+    "year": 2020,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 50.547972,
+    "generated_at": "2026-07-27T23:24:17.477327+00:00",
+    "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd20",
+    "jackson_votes": 132045,
+    "kansas_city_votes": 134169,
+    "jackson_direct_votes": 132045,
+    "kansas_city_direct_votes": 134169,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 178335,
+        "rep_votes": 58585,
+        "other_votes": 7211,
+        "total_votes": 244131,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": -119750,
+        "margin_pct": -49.051534,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 186894,
+        "rep_votes": 258833,
+        "other_votes": 11595,
+        "total_votes": 457322,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 71939,
+        "margin_pct": 15.730492,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 145975,
+        "rep_votes": 242992,
+        "other_votes": 11776,
+        "total_votes": 400743,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 97017,
+        "margin_pct": 24.209281,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 131104,
+        "rep_votes": 219192,
+        "other_votes": 10844,
+        "total_votes": 361140,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 88088,
+        "margin_pct": 24.391649,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 131689,
+        "rep_votes": 181694,
+        "other_votes": 10898,
+        "total_votes": 324281,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 50005,
+        "margin_pct": 15.420268,
+        "winner": "REP",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 132457,
+        "rep_votes": 232554,
+        "other_votes": 11336,
+        "total_votes": 376347,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 100097,
+        "margin_pct": 26.596997,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 96292,
+        "rep_votes": 261075,
+        "other_votes": 10103,
+        "total_votes": 367470,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 164783,
+        "margin_pct": 44.842572,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 86049,
+        "rep_votes": 264237,
+        "other_votes": 8847,
+        "total_votes": 359133,
+        "dem_candidate": "Vicki Lorenz Englund",
+        "rep_candidate": "Scott Fitzpatrick",
+        "margin": 178188,
+        "margin_pct": 49.616159,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

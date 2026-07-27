@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 39.119886,
+    "generated_at": "2026-07-27T23:23:36.952448+00:00",
+    "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd10",
+    "jackson_votes": 169576,
+    "kansas_city_votes": 125867,
+    "jackson_direct_votes": 147952,
+    "kansas_city_direct_votes": 119074,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 172115,
+        "rep_votes": 131619,
+        "other_votes": 0,
+        "total_votes": 303734,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": -40496,
+        "margin_pct": -13.332719,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 180042,
+        "rep_votes": 187263,
+        "other_votes": 0,
+        "total_votes": 367305,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 7221,
+        "margin_pct": 1.965941,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 139652,
+        "rep_votes": 220663,
+        "other_votes": 0,
+        "total_votes": 360315,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 81011,
+        "margin_pct": 22.483383,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 148377,
+        "rep_votes": 209139,
+        "other_votes": 0,
+        "total_votes": 357516,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 60762,
+        "margin_pct": 16.995603,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 159209,
+        "rep_votes": 174992,
+        "other_votes": 0,
+        "total_votes": 334201,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 15783,
+        "margin_pct": 4.722607,
+        "winner": "REP",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 137025,
+        "rep_votes": 212182,
+        "other_votes": 0,
+        "total_votes": 349207,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 75157,
+        "margin_pct": 21.522192,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 98412,
+        "rep_votes": 239439,
+        "other_votes": 0,
+        "total_votes": 337851,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 141027,
+        "margin_pct": 41.742366,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 105421,
+        "rep_votes": 232251,
+        "other_votes": 0,
+        "total_votes": 337672,
+        "dem_candidate": "Teresa Hensley",
+        "rep_candidate": "Josh Hawley",
+        "margin": 126830,
+        "margin_pct": 37.560118,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

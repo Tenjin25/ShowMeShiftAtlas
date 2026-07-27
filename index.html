@@ -9861,7 +9861,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <button id="district-lines-2026" class="view-toggle-btn" type="button" data-testid="lines-2026" aria-label="Use 2026 congressional lines" aria-pressed="false" style="display:none;">2026 Lines</button>
                 </div>
                 <div style="margin-top:4px;font-size:11px;color:#6b7280;">
-                  Missouri district views use the 2022 lines. 2026 congressional lines can be enabled later.
+                  Congress can switch between 2022 and 2026 lines. State House / Senate stay on 2022 lines.
                 </div>
                 <div id="district-lines-loading-hint" class="district-lines-loading-hint" aria-live="polite" aria-atomic="true"></div>
             </div>
@@ -10238,8 +10238,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-27-jackson-sd-tabblocks-v1';
-    const APP_BUILD_ID = '2026-07-25-mo-pop-change-v3';
+    const DATA_CACHE_BUSTER = '2026-07-27-us-house-congress-only-v1';
+    const APP_BUILD_ID = '2026-07-27-us-house-congress-only-v1';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -10269,7 +10269,7 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_variant_overrides: '',
         districts: withBase('./Data/mo_congressional_districts_2022.geojson'),
         districts_2022: withBase('./Data/mo_congressional_districts_2022.geojson'),
-        districts_2026: '', // reserved for future 2026 congressional lines
+        districts_2026: withBase('./Data/mo_congressional_districts_2026.geojson'),
         state_house: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_house_2022: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_senate: withBase('./Data/mo_state_senate_districts_2022.geojson'),
@@ -10284,7 +10284,7 @@ document.addEventListener('DOMContentLoaded', function() {
         district_contests_dir: withBase('./Data/district_contests'),
         district_contests_dirs: {
           '2022': withBase('./Data/district_contests'),
-          '2026': '' // reserved for future 2026 congressional contest slices
+          '2026': withBase('./Data/district_contests_2026')
         },
         districts_info: withBase('./Data/empty.csv'),
         state_house_info: withBase('./Data/empty.csv'),
@@ -10296,6 +10296,7 @@ document.addEventListener('DOMContentLoaded', function() {
         crosswalks: {
           congressional: withBase('./Data/crosswalks/precinct_to_cd118_overlap.csv'),
           congressional_2022: withBase('./Data/crosswalks/precinct_to_cd118_overlap.csv'),
+          congressional_2026: withBase('./Data/crosswalks/precinct_to_cd2026_from_tabblocks.csv'),
           state_house_2022: withBase('./Data/crosswalks/precinct_to_2022_state_house_overlap.csv'),
           state_senate_2022: withBase('./Data/crosswalks/precinct_to_2022_state_senate_overlap.csv')
         }
@@ -12031,7 +12032,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function normalizeDistrictLinesYear(raw) {
       const y = Number(raw);
-      // Missouri currently ships 2022 lines; 2026 is reserved for future congressional lines.
+      // 2026 congressional lines use a separate geometry + contest-slice folder.
       if (y === 2026) return 2026;
       return 2022;
     }
@@ -12055,22 +12056,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // Statewide contests reallocated onto legislative/congressional lines must use the
       // *_overlap.json slices. Non-overlap senate files only cover the ~17 seats on the ballot
       // that cycle (odd/even stagger), which leaves half the map empty.
-      const wantsOverlapSlice = new Set(['state_house', 'state_senate', 'congressional']).has(scope)
-        && normalizedLines === 2022
-        && new Set([
-          'president',
-          'us_senate',
-          'governor',
-          'lieutenant_governor',
-          'attorney_general',
-          'secretary_of_state',
-          'treasurer',
-          'auditor',
-          'labor_commissioner',
-          'insurance_commissioner',
-          'agriculture_commissioner',
-          'superintendent'
-        ]).has(String(contestType || '').trim().toLowerCase());
+      // 2026 congressional slices live in Data/district_contests_2026 as the main
+      // congressional_*.json files (no _overlap suffix).
+      const statewideContestTypes = new Set([
+        'president',
+        'us_senate',
+        'governor',
+        'lieutenant_governor',
+        'attorney_general',
+        'secretary_of_state',
+        'treasurer',
+        'auditor',
+        'labor_commissioner',
+        'insurance_commissioner',
+        'agriculture_commissioner',
+        'superintendent'
+      ]);
+      const wantsOverlapSlice = normalizedLines === 2022
+        && new Set(['state_house', 'state_senate', 'congressional']).has(scope)
+        && statewideContestTypes.has(String(contestType || '').trim().toLowerCase());
 
       if (baseDir && wantsOverlapSlice) out.push(`${baseDir}/${key}_overlap.json`);
       if (baseDir) out.push(`${baseDir}/${key}.json`);
@@ -19395,7 +19399,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function populateContestSelectFromElectionJSON(electionData) {
       if (!Array.isArray(electionData) || electionData.length === 0) return;
       if (contestManifest && contestManifest.length > 0) {
-        return populateContestSelectFromManifest(contestManifest);
+        return populateContestSelectFromManifest(
+          filterManifestEntriesForCurrentView(contestManifest, currentView)
+        );
       }
       const sel = document.getElementById('contestSelect');
       sel.innerHTML = '<option value="">Select a contest...</option>';
@@ -19730,12 +19736,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = Number(entry.year);
         const statewide = isStatewideContestType(contestType);
 
-        // County layer: keep statewide contests; hide chamber races that belong on district layers.
+        // County / precinct layers: statewide only. US House belongs on Congress.
         if (viewKey === 'counties' || viewKey === 'vtds_2000' || !viewKey) {
-          return contestType !== 'state_house' && contestType !== 'state_senate';
+          return contestType !== 'state_house'
+            && contestType !== 'state_senate'
+            && contestType !== 'us_house';
         }
 
-        // District layers keep all statewide contests, plus that layer's own chamber races for 2022/2024.
+        // District layers keep statewide contests, plus that layer's own chamber races for 2022/2024.
         if (viewKey === 'state_house') {
           return statewide || (contestType === 'state_house' && chamberYears.has(year));
         }
@@ -19944,11 +19952,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function populateContestSelectFromCongressionalCSV(csvData) {
       const sel = document.getElementById('contestSelect');
-      const years = [...new Set(csvData.map(row => row.year))].sort();
+      const allowedYears = new Set([2022, 2024]);
+      const years = [...new Set(csvData.map(row => row.year))]
+        .map(Number)
+        .filter(year => allowedYears.has(year))
+        .sort((a, b) => a - b);
 
       years.forEach(year => {
         const hasData = csvData.some(row =>
-          row.year == year && row.us_house_total > 0
+          Number(row.year) === year && row.us_house_total > 0
         );
 
         if (hasData) {
@@ -32806,7 +32818,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const kickoff = () => {
         // Non-blocking slice warmup: keeps common contest switches near-instant after the first load.
-        const common = ['president', 'governor', 'us_senate', 'us_house'];
+        const common = ['president', 'governor', 'us_senate'];
         const seen = new Set();
 
         const meta = (currentContestMeta && currentContestMeta.contestType)

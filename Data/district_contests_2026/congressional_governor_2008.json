@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2008,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 2.888007,
+    "generated_at": "2026-07-27T23:22:49.186895+00:00",
+    "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
+    "lines_year": 2026,
+    "geography_era": "vtd00",
+    "jackson_votes": 182622,
+    "kansas_city_votes": 149239,
+    "jackson_direct_votes": 0,
+    "kansas_city_direct_votes": 0,
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 204589,
+        "rep_votes": 98476,
+        "other_votes": 5364,
+        "total_votes": 308429,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -106113,
+        "margin_pct": -34.404352,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 246343,
+        "rep_votes": 134121,
+        "other_votes": 6801,
+        "total_votes": 387265,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -112222,
+        "margin_pct": -28.97809,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 192377,
+        "rep_votes": 157453,
+        "other_votes": 6267,
+        "total_votes": 356097,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -34924,
+        "margin_pct": -9.80744,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 207660,
+        "rep_votes": 132170,
+        "other_votes": 8035,
+        "total_votes": 347865,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -75490,
+        "margin_pct": -21.700947,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 251589,
+        "rep_votes": 148732,
+        "other_votes": 8859,
+        "total_votes": 409180,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -102857,
+        "margin_pct": -25.137348,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 204403,
+        "rep_votes": 149414,
+        "other_votes": 8673,
+        "total_votes": 362490,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -54989,
+        "margin_pct": -15.169798,
+        "winner": "DEM",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 169638,
+        "rep_votes": 163058,
+        "other_votes": 8655,
+        "total_votes": 341351,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -6580,
+        "margin_pct": -1.927635,
+        "winner": "DEM",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 204013,
+        "rep_votes": 152943,
+        "other_votes": 8028,
+        "total_votes": 364984,
+        "dem_candidate": "Jeremiah Nixon",
+        "rep_candidate": "Kenny Hulshof",
+        "margin": -51070,
+        "margin_pct": -13.992394,
+        "winner": "DEM",
+        "color": ""
+      }
+    }
+  }
+}
