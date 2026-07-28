@@ -77,11 +77,11 @@
       "file": "congressional_attorney_general_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1084288,
-      "rep_total": 1728766,
+      "dem_total": 1117705,
+      "rep_total": 1752779,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {
@@ -259,11 +259,11 @@
       "file": "congressional_governor_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1190291,
-      "rep_total": 1696688,
+      "dem_total": 1225761,
+      "rep_total": 1720190,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {
@@ -357,11 +357,11 @@
       "file": "congressional_lieutenant_governor_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1115633,
-      "rep_total": 1708172,
+      "dem_total": 1150223,
+      "rep_total": 1731251,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {
@@ -441,11 +441,11 @@
       "file": "congressional_president_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1215777,
-      "rep_total": 1694178,
+      "dem_total": 1253005,
+      "rep_total": 1718724,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {
@@ -539,11 +539,11 @@
       "file": "congressional_secretary_of_state_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1049336,
-      "rep_total": 1772572,
+      "dem_total": 1081103,
+      "rep_total": 1798492,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {
@@ -637,11 +637,11 @@
       "file": "congressional_treasurer_2020.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1088795,
-      "rep_total": 1719162,
+      "dem_total": 1122537,
+      "rep_total": 1742930,
       "major_party_contested": true,
       "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd20_tabblock_nhgis_cd2026_kc_split",
+      "source_method": "vest_2020_area_weighted_overlay",
       "lines_year": 2026
     },
     {

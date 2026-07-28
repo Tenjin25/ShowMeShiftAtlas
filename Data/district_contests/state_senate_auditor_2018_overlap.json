@@ -17,7 +17,49 @@
       ],
       "patched_at": "2026-07-27T22:50:07.657840+00:00",
       "source_method": "jackson_tabblock_crosswalk_kc_split"
-    }
+    },
+    "vest_2018_patch": {
+      "patched_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "patched_at": "2026-07-27T23:51:05.820003+00:00",
+      "source_method": "vest_2018_area_weighted_overlay",
+      "vest_source": "Harvard Dataverse doi:10.7910/DVN/UBKYRU mo_2018.zip"
+    },
+    "superseded_by": "vest_2018_patch"
   },
   "general": {
     "results": {

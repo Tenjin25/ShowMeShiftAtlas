@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T23:50:59.088857+00:00",
+    "source_method": "vest_2016_area_weighted_overlay",
+    "vest_source": "Harvard Dataverse doi:10.7910/DVN/NH5S2I mo_2016.zip",
+    "vest_2016_main": {
+      "updated_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "updated_at": "2026-07-27T23:50:59.088869+00:00",
+      "mode": "replace"
+    }
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 266569,
+        "rep_votes": 72385,
+        "other_votes": 11000,
+        "total_votes": 349954,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": -194184,
+        "margin_pct": -55.488436,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 182638,
+        "rep_votes": 213002,
+        "other_votes": 12492,
+        "total_votes": 408132,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 30364,
+        "margin_pct": 7.43975,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 154823,
+        "rep_votes": 199397,
+        "other_votes": 12533,
+        "total_votes": 366753,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 44574,
+        "margin_pct": 12.153684,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 124731,
+        "rep_votes": 200510,
+        "other_votes": 11515,
+        "total_votes": 336756,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 75779,
+        "margin_pct": 22.502643,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 195078,
+        "rep_votes": 112483,
+        "other_votes": 11844,
+        "total_votes": 319405,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": -82595,
+        "margin_pct": -25.859019,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 134981,
+        "rep_votes": 202671,
+        "other_votes": 10514,
+        "total_votes": 348166,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 67690,
+        "margin_pct": 19.441875,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 105203,
+        "rep_votes": 215322,
+        "other_votes": 11644,
+        "total_votes": 332169,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 110119,
+        "margin_pct": 33.151498,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 113335,
+        "rep_votes": 217623,
+        "other_votes": 10719,
+        "total_votes": 341677,
+        "dem_candidate": "Chris Koster",
+        "rep_candidate": "Eric Greitens",
+        "margin": 104288,
+        "margin_pct": 30.522394,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

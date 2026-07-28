@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "scope": "congressional",
+    "contest_type": "president",
+    "year": 2016,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T23:50:59.080856+00:00",
+    "source_method": "vest_2016_area_weighted_overlay",
+    "vest_source": "Harvard Dataverse doi:10.7910/DVN/NH5S2I mo_2016.zip",
+    "vest_2016_main": {
+      "updated_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "updated_at": "2026-07-27T23:50:59.080908+00:00",
+      "mode": "replace"
+    }
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 262174,
+        "rep_votes": 72723,
+        "other_votes": 14901,
+        "total_votes": 349798,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -189451,
+        "margin_pct": -54.160115,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 159588,
+        "rep_votes": 226401,
+        "other_votes": 20119,
+        "total_votes": 406108,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 66813,
+        "margin_pct": 16.452028,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 117482,
+        "rep_votes": 230287,
+        "other_votes": 18869,
+        "total_votes": 366638,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 112805,
+        "margin_pct": 30.767405,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 89562,
+        "rep_votes": 230146,
+        "other_votes": 17404,
+        "total_votes": 337112,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 140584,
+        "margin_pct": 41.702461,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 183789,
+        "rep_votes": 118403,
+        "other_votes": 17320,
+        "total_votes": 319512,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": -65386,
+        "margin_pct": -20.464333,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 98461,
+        "rep_votes": 231703,
+        "other_votes": 17818,
+        "total_votes": 347982,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 133242,
+        "margin_pct": 38.289912,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 82220,
+        "rep_votes": 232447,
+        "other_votes": 16421,
+        "total_votes": 331088,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 150227,
+        "margin_pct": 45.373737,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 77790,
+        "rep_votes": 252396,
+        "other_votes": 13018,
+        "total_votes": 343204,
+        "dem_candidate": "Hillary Rodham Clinton",
+        "rep_candidate": "Donald J. Trump",
+        "margin": 174606,
+        "margin_pct": 50.875281,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

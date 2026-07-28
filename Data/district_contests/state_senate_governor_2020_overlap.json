@@ -16,8 +16,51 @@
         "11"
       ],
       "patched_at": "2026-07-27T22:50:10.836982+00:00",
-      "source_method": "jackson_tabblock_crosswalk_kc_split"
-    }
+      "source_method": "jackson_tabblock_crosswalk_kc_split",
+      "superseded_by": "vest_2020_patch"
+    },
+    "vest_2020_patch": {
+      "patched_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "patched_at": "2026-07-27T23:50:39.363432+00:00",
+      "source_method": "vest_2020_area_weighted_overlay",
+      "vest_source": "Harvard Dataverse doi:10.7910/DVN/K7760H mo_2020.zip"
+    },
+    "superseded_by": "vest_2020_patch"
   },
   "general": {
     "results": {
@@ -106,14 +149,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 26297,
-        "rep_votes": 39773,
-        "other_votes": 1699,
-        "total_votes": 67769,
+        "dem_votes": 43781,
+        "rep_votes": 52703,
+        "other_votes": 2056,
+        "total_votes": 98540,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Mike Parson",
-        "margin": 13476,
-        "margin_pct": 19.885198,
+        "margin": 8922,
+        "margin_pct": 9.054191,
         "winner": "REP",
         "color": ""
       },
@@ -142,14 +185,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 19974,
-        "rep_votes": 31301,
-        "other_votes": 1866,
-        "total_votes": 53141,
+        "dem_votes": 32409,
+        "rep_votes": 40087,
+        "other_votes": 2221,
+        "total_votes": 74717,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Mike Parson",
-        "margin": 11327,
-        "margin_pct": 21.314992,
+        "margin": 7678,
+        "margin_pct": 10.276109,
         "winner": "REP",
         "color": ""
       },

@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "scope": "congressional",
+    "contest_type": "auditor",
+    "year": 2018,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T23:57:25.604320+00:00",
+    "source_method": "vest_2018_area_weighted_overlay",
+    "vest_source": "Harvard Dataverse doi:10.7910/DVN/UBKYRU mo_2018.zip",
+    "vest_2018_main": {
+      "updated_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "updated_at": "2026-07-27T23:57:25.604354+00:00",
+      "mode": "replace"
+    }
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 246735,
+        "rep_votes": 47155,
+        "other_votes": 10567,
+        "total_votes": 304457,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -199580,
+        "margin_pct": -65.552771,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 178626,
+        "rep_votes": 153381,
+        "other_votes": 17384,
+        "total_votes": 349391,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -25245,
+        "margin_pct": -7.225429,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 153075,
+        "rep_votes": 139044,
+        "other_votes": 19018,
+        "total_votes": 311137,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -14031,
+        "margin_pct": -4.509589,
+        "winner": "DEM",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 147279,
+        "rep_votes": 142368,
+        "other_votes": 14456,
+        "total_votes": 304103,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -4911,
+        "margin_pct": -1.614913,
+        "winner": "DEM",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 144892,
+        "rep_votes": 111946,
+        "other_votes": 15543,
+        "total_votes": 272381,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": -32946,
+        "margin_pct": -12.095557,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 130367,
+        "rep_votes": 141579,
+        "other_votes": 17886,
+        "total_votes": 289832,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": 11212,
+        "margin_pct": 3.868448,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 111563,
+        "rep_votes": 161296,
+        "other_votes": 12592,
+        "total_votes": 285451,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": 49733,
+        "margin_pct": 17.422605,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 97335,
+        "rep_votes": 173923,
+        "other_votes": 11914,
+        "total_votes": 283172,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Saundra McDowell",
+        "margin": 76588,
+        "margin_pct": 27.046459,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

@@ -10238,7 +10238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-27-us-house-congress-only-v1';
+    const DATA_CACHE_BUSTER = '2026-07-27-vest-2016-2018-2020-v1';
     const APP_BUILD_ID = '2026-07-27-us-house-congress-only-v1';
 
     function withCacheBuster(path) {
@@ -12053,11 +12053,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
       const normalizedLines = normalizeDistrictLinesYear(linesYear);
 
-      // Statewide contests reallocated onto legislative/congressional lines must use the
-      // *_overlap.json slices. Non-overlap senate files only cover the ~17 seats on the ballot
-      // that cycle (odd/even stagger), which leaves half the map empty.
-      // 2026 congressional slices live in Data/district_contests_2026 as the main
-      // congressional_*.json files (no _overlap suffix).
+      // Statewide contests reallocated onto legislative/congressional lines:
+      // - state_senate / congressional (2022): prefer *_overlap.json (senate non-overlap
+      //   only covers the ~17 seats on the ballot that cycle).
+      // - state_house: prefer main *.json (VEST 2020 absentee-complete slices live there).
+      // - 2026 congressional: main congressional_*.json in district_contests_2026 only.
       const statewideContestTypes = new Set([
         'president',
         'us_senate',
@@ -12072,12 +12072,22 @@ document.addEventListener('DOMContentLoaded', function() {
         'agriculture_commissioner',
         'superintendent'
       ]);
-      const wantsOverlapSlice = normalizedLines === 2022
-        && new Set(['state_house', 'state_senate', 'congressional']).has(scope)
-        && statewideContestTypes.has(String(contestType || '').trim().toLowerCase());
+      const contestKey = String(contestType || '').trim().toLowerCase();
+      const isStatewide = statewideContestTypes.has(contestKey);
+      const prefersOverlapFirst = normalizedLines === 2022
+        && isStatewide
+        && (scope === 'state_senate' || scope === 'congressional');
+      const prefersMainFirst = normalizedLines === 2022
+        && isStatewide
+        && scope === 'state_house';
 
-      if (baseDir && wantsOverlapSlice) out.push(`${baseDir}/${key}_overlap.json`);
-      if (baseDir) out.push(`${baseDir}/${key}.json`);
+      if (baseDir && prefersMainFirst) {
+        out.push(`${baseDir}/${key}.json`);
+        out.push(`${baseDir}/${key}_overlap.json`);
+      } else {
+        if (baseDir && prefersOverlapFirst) out.push(`${baseDir}/${key}_overlap.json`);
+        if (baseDir) out.push(`${baseDir}/${key}.json`);
+      }
 
       return Array.from(new Set(out));
     }

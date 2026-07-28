@@ -16,8 +16,51 @@
         "11"
       ],
       "patched_at": "2026-07-27T22:50:10.834530+00:00",
-      "source_method": "jackson_tabblock_crosswalk_kc_split"
-    }
+      "source_method": "jackson_tabblock_crosswalk_kc_split",
+      "superseded_by": "vest_2020_patch"
+    },
+    "vest_2020_patch": {
+      "patched_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "patched_at": "2026-07-27T23:50:39.371188+00:00",
+      "source_method": "vest_2020_area_weighted_overlay",
+      "vest_source": "Harvard Dataverse doi:10.7910/DVN/K7760H mo_2020.zip"
+    },
+    "superseded_by": "vest_2020_patch"
   },
   "general": {
     "results": {
@@ -106,14 +149,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 23135,
-        "rep_votes": 40446,
-        "other_votes": 2404,
-        "total_votes": 65985,
+        "dem_votes": 39417,
+        "rep_votes": 53728,
+        "other_votes": 2931,
+        "total_votes": 96076,
         "dem_candidate": "Rich Finneran",
         "rep_candidate": "Eric Schmitt",
-        "margin": 17311,
-        "margin_pct": 26.23475,
+        "margin": 14311,
+        "margin_pct": 14.895499,
         "winner": "REP",
         "color": ""
       },
@@ -142,14 +185,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 17682,
-        "rep_votes": 31433,
-        "other_votes": 2536,
-        "total_votes": 51651,
+        "dem_votes": 29290,
+        "rep_votes": 40360,
+        "other_votes": 3046,
+        "total_votes": 72696,
         "dem_candidate": "Rich Finneran",
         "rep_candidate": "Eric Schmitt",
-        "margin": 13751,
-        "margin_pct": 26.622911,
+        "margin": 11070,
+        "margin_pct": 15.227798,
         "winner": "REP",
         "color": ""
       },

@@ -16,8 +16,51 @@
         "11"
       ],
       "patched_at": "2026-07-27T22:50:10.840078+00:00",
-      "source_method": "jackson_tabblock_crosswalk_kc_split"
-    }
+      "source_method": "jackson_tabblock_crosswalk_kc_split",
+      "superseded_by": "vest_2020_patch"
+    },
+    "vest_2020_patch": {
+      "patched_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "patched_at": "2026-07-27T23:50:39.367545+00:00",
+      "source_method": "vest_2020_area_weighted_overlay",
+      "vest_source": "Harvard Dataverse doi:10.7910/DVN/K7760H mo_2020.zip"
+    },
+    "superseded_by": "vest_2020_patch"
   },
   "general": {
     "results": {
@@ -106,14 +149,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 24639,
-        "rep_votes": 39643,
-        "other_votes": 2173,
-        "total_votes": 66455,
-        "dem_candidate": "Alissia Canaday",
+        "dem_votes": 41384,
+        "rep_votes": 52496,
+        "other_votes": 2670,
+        "total_votes": 96550,
+        "dem_candidate": "Alissia Canady",
         "rep_candidate": "Mike Kehoe",
-        "margin": 15004,
-        "margin_pct": 22.577684,
+        "margin": 11112,
+        "margin_pct": 11.509063,
         "winner": "REP",
         "color": ""
       },
@@ -142,14 +185,14 @@
         "color": ""
       },
       "11": {
-        "dem_votes": 19108,
-        "rep_votes": 30576,
-        "other_votes": 2308,
-        "total_votes": 51992,
-        "dem_candidate": "Alissia Canaday",
+        "dem_votes": 31278,
+        "rep_votes": 39093,
+        "other_votes": 2789,
+        "total_votes": 73160,
+        "dem_candidate": "Alissia Canady",
         "rep_candidate": "Mike Kehoe",
-        "margin": 11468,
-        "margin_pct": 22.05724,
+        "margin": 7815,
+        "margin_pct": 10.682067,
         "winner": "REP",
         "color": ""
       },

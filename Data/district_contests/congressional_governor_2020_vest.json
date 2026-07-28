@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "districts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2020,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "direct_match_coverage_pct": 100.0,
+    "generated_at": "2026-07-27T23:51:27.859990+00:00",
+    "source_method": "vest_2020_area_weighted_overlay",
+    "vest_source": "Harvard Dataverse doi:10.7910/DVN/K7760H mo_2020.zip",
+    "vest_2020_main": {
+      "updated_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "updated_at": "2026-07-27T23:51:27.860007+00:00",
+      "mode": "replace"
+    }
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 270343,
+        "rep_votes": 74906,
+        "other_votes": 7826,
+        "total_votes": 353075,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": -195437,
+        "margin_pct": -55.352829,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 193053,
+        "rep_votes": 237779,
+        "other_votes": 7929,
+        "total_votes": 438761,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 44726,
+        "margin_pct": 10.193705,
+        "winner": "REP",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 139815,
+        "rep_votes": 246986,
+        "other_votes": 8644,
+        "total_votes": 395445,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 107171,
+        "margin_pct": 27.101367,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 107137,
+        "rep_votes": 256692,
+        "other_votes": 8786,
+        "total_votes": 372615,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 149555,
+        "margin_pct": 40.136602,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 211102,
+        "rep_votes": 128049,
+        "other_votes": 8718,
+        "total_votes": 347869,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": -83053,
+        "margin_pct": -23.874792,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 114805,
+        "rep_votes": 254402,
+        "other_votes": 8180,
+        "total_votes": 377387,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 139597,
+        "margin_pct": 36.99041,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 100936,
+        "rep_votes": 254196,
+        "other_votes": 8370,
+        "total_votes": 363502,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 153260,
+        "margin_pct": 42.162079,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 88578,
+        "rep_votes": 267187,
+        "other_votes": 7847,
+        "total_votes": 363612,
+        "dem_candidate": "Nicole Galloway",
+        "rep_candidate": "Mike Parson",
+        "margin": 178609,
+        "margin_pct": 49.120766,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}
