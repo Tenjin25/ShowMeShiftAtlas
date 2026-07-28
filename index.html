@@ -10238,7 +10238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-27-vest-2016-2018-2020-v1';
+    const DATA_CACHE_BUSTER = '2026-07-27-fix-2024-house-overlap-v1';
     const APP_BUILD_ID = '2026-07-27-us-house-congress-only-v1';
 
     function withCacheBuster(path) {
@@ -12053,11 +12053,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const baseDir = (getActiveDistrictContestsDir(linesYear) || '').toString().trim();
       const normalizedLines = normalizeDistrictLinesYear(linesYear);
 
-      // Statewide contests reallocated onto legislative/congressional lines:
-      // - state_senate / congressional (2022): prefer *_overlap.json (senate non-overlap
-      //   only covers the ~17 seats on the ballot that cycle).
-      // - state_house: prefer main *.json (VEST 2020 absentee-complete slices live there).
-      // - 2026 congressional: main congressional_*.json in district_contests_2026 only.
+      // Statewide contests reallocated onto district lines:
+      // - VEST years (2016/2018/2020 absentee-complete overlays): prefer main *.json.
+      // - Other years: prefer *_overlap.json (calibrated / tabblock-patched), then main.
+      // - 2026 congressional: main files in district_contests_2026 only.
       const statewideContestTypes = new Set([
         'president',
         'us_senate',
@@ -12072,14 +12071,29 @@ document.addEventListener('DOMContentLoaded', function() {
         'agriculture_commissioner',
         'superintendent'
       ]);
+      // Contests rewritten from Harvard Dataverse VEST onto current district lines.
+      const vestMainByYear = {
+        2016: new Set([
+          'president', 'us_senate', 'governor', 'lieutenant_governor',
+          'attorney_general', 'secretary_of_state', 'treasurer'
+        ]),
+        2018: new Set(['us_senate', 'auditor']),
+        2020: new Set([
+          'president', 'governor', 'lieutenant_governor',
+          'attorney_general', 'secretary_of_state', 'treasurer'
+        ])
+      };
       const contestKey = String(contestType || '').trim().toLowerCase();
+      const yearNum = Number(year);
       const isStatewide = statewideContestTypes.has(contestKey);
-      const prefersOverlapFirst = normalizedLines === 2022
-        && isStatewide
-        && (scope === 'state_senate' || scope === 'congressional');
-      const prefersMainFirst = normalizedLines === 2022
-        && isStatewide
-        && scope === 'state_house';
+      const hasVestMain = !!(vestMainByYear[yearNum] && vestMainByYear[yearNum].has(contestKey));
+      const prefersMainFirst = isStatewide && (
+        normalizedLines === 2026
+        || (normalizedLines === 2022 && hasVestMain)
+      );
+      const prefersOverlapFirst = isStatewide
+        && normalizedLines === 2022
+        && !hasVestMain;
 
       if (baseDir && prefersMainFirst) {
         out.push(`${baseDir}/${key}.json`);

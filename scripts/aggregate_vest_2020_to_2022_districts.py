@@ -544,7 +544,7 @@ def main() -> None:
     ap.add_argument(
         "--write-vest-sidecar",
         action="store_true",
-        help="Also write *_vest.json sidecar next to the main file.",
+        help="Deprecated: VEST results are written to main *.json only. Sidecars are not used by the app.",
     )
     ap.add_argument(
         "--patch-overlap",
@@ -621,9 +621,7 @@ def main() -> None:
             print(f"  ... +{len(results) - len(sample)} more districts")
 
         if args.write_vest_sidecar:
-            side = out_dir / f"{prefix}_{contest}_{year}_vest.json"
-            write_payload(side, build_full_payload(scope, contest, year, results))
-            print(f"  Sidecar {side}")
+            print("  Note: --write-vest-sidecar ignored; VEST results are main *.json only")
 
         if args.patch_overlap:
             overlap = out_dir / f"{prefix}_{contest}_{year}_overlap.json"
