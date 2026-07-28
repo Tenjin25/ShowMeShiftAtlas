@@ -9,7 +9,23 @@
     "generated_at": "2026-06-05T18:18:08.348Z",
     "source_method": "precinct_overlap_crosswalk",
     "label_match_votes": 0,
-    "legacy_district_labels_enabled": false
+    "legacy_district_labels_enabled": false,
+    "vest_2020_patch": {
+      "patched_districts": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "patched_at": "2026-07-27T23:51:27.862958+00:00",
+      "source_method": "vest_2020_area_weighted_overlay",
+      "vest_source": "Harvard Dataverse doi:10.7910/DVN/K7760H mo_2020.zip"
+    },
+    "superseded_by": "vest_2020_patch"
   },
   "general": {
     "results": {
