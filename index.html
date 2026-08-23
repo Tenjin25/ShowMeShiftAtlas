@@ -10242,8 +10242,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-15-dem-ramp-nc-red-v4';
-    const APP_BUILD_ID = '2026-08-15-dem-ramp-nc-red-v4';
+    const DATA_CACHE_BUSTER = '2026-08-23-statewide-cd7-cd8';
+    const APP_BUILD_ID = '2026-08-23-statewide-cd7-cd8';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -15009,6 +15009,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	      if (!path) throw new Error(`No OpenElections CSV configured for president ${year}`);
 	      const downloadUrl = withCacheBuster(toAbsoluteUrl(path));
 
+	      function extractCandidateName(row) {
+	        const direct = (row?.candidate || '').toString().trim();
+	        if (direct) return direct;
+
+	        const first = (row?.['first name'] || row?.first_name || row?.firstName || '').toString().trim();
+	        const last = (row?.['last name'] || row?.last_name || row?.lastName || '').toString().trim();
+	        // The 2000 Missouri presidential file stores the presidential nominee in
+	        // `last name` and the running mate in `first name` (both are full names).
+	        // Preserve the ticket order; display helpers strip the running mate later.
+	        if (last && first) return `${last}, ${first}`;
+	        return last || first;
+	      }
+
 	      function extractPrecinctCode(precinctRaw) {
 	        const p = (precinctRaw || '').toString().trim();
 	        if (!p) return '';
@@ -15024,7 +15037,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	      // Aggregate to precinct key "COUNTY - CODE" where CODE is the first token extracted from OpenElections `precinct`.
 	      const byPrecinct = new Map(); // key -> {dem, rep, other, demCand, repCand}
+	      const byCounty = new Map(); // canonical county -> official county totals
 	      const officeOk = (s) => (s || '').toString().toUpperCase().includes('PRESIDENT');
+
+	      function consumePresidentRow(r) {
+	        const office = (r?.office || '').toString();
+	        if (!officeOk(office)) return;
+	        const county = (r?.county || '').toString().trim().toUpperCase();
+	        const precinctRaw = (r?.precinct || '').toString().trim();
+	        if (!county || !precinctRaw) return;
+	        const code = extractPrecinctCode(precinctRaw);
+	        if (!code) return;
+
+	        const key = `${county} - ${code}`.replace(/\s+/g, ' ').trim();
+	        const countyKey = normalizeCountyToken(county);
+	        const party = (r?.party || '').toString().trim().toUpperCase();
+	        const cand = extractCandidateName(r);
+	        const votes = Number(r?.votes) || 0;
+
+	        if (!byPrecinct.has(key)) byPrecinct.set(key, { dem: 0, rep: 0, other: 0, demCand: '', repCand: '' });
+	        const precinctNode = byPrecinct.get(key);
+	        if (!byCounty.has(countyKey)) byCounty.set(countyKey, { dem: 0, rep: 0, other: 0, demCand: '', repCand: '' });
+	        const countyNode = byCounty.get(countyKey);
+
+	        if (party === 'DEM') {
+	          precinctNode.dem += votes;
+	          countyNode.dem += votes;
+	          if (!precinctNode.demCand && cand) precinctNode.demCand = cand;
+	          if (!countyNode.demCand && cand) countyNode.demCand = cand;
+	        } else if (party === 'REP') {
+	          precinctNode.rep += votes;
+	          countyNode.rep += votes;
+	          if (!precinctNode.repCand && cand) precinctNode.repCand = cand;
+	          if (!countyNode.repCand && cand) countyNode.repCand = cand;
+	        } else {
+	          precinctNode.other += votes;
+	          countyNode.other += votes;
+	        }
+	      }
 
 	      // Stream-parse in a worker to avoid freezing the UI on large files (notably 2008/2012).
 	      if (typeof Papa !== 'undefined' && Papa && typeof Papa.parse === 'function') {
@@ -15037,25 +15087,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	            worker: true,
 	            chunkSize: 1024 * 256,
 	            chunk: (result) => {
-	              (result?.data || []).forEach(r => {
-	                const office = (r.office || '').toString();
-	                if (!officeOk(office)) return;
-	                const county = (r.county || '').toString().trim().toUpperCase();
-	                const precinctRaw = (r.precinct || '').toString().trim();
-	                if (!county || !precinctRaw) return;
-	                const code = extractPrecinctCode(precinctRaw);
-	                if (!code) return;
-	                const key = `${county} - ${code}`.replace(/\s+/g, ' ').trim();
-	                const party = (r.party || '').toString().trim().toUpperCase();
-	                const cand = (r.candidate || '').toString().trim();
-	                const votes = Number(r.votes) || 0;
-
-	                if (!byPrecinct.has(key)) byPrecinct.set(key, { dem: 0, rep: 0, other: 0, demCand: '', repCand: '' });
-	                const node = byPrecinct.get(key);
-	                if (party === 'DEM') { node.dem += votes; if (!node.demCand && cand) node.demCand = cand; }
-	                else if (party === 'REP') { node.rep += votes; if (!node.repCand && cand) node.repCand = cand; }
-	                else { node.other += votes; }
-	              });
+	              (result?.data || []).forEach(consumePresidentRow);
 	            },
 	            error: (err) => reject(err),
 	            complete: () => resolve()
@@ -15065,28 +15097,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	        // Fallback: parse synchronously (may lag on large CSVs).
 	        const csvText = await loadCSV(path);
 	        const rows = parseCSV(csvText);
-	        rows.forEach(r => {
-	          const office = (r.office || '').toString();
-	          if (!officeOk(office)) return;
-	          const county = (r.county || '').toString().trim().toUpperCase();
-	          const precinctRaw = (r.precinct || '').toString().trim();
-	          if (!county || !precinctRaw) return;
-	          const code = extractPrecinctCode(precinctRaw);
-	          if (!code) return;
-	          const key = `${county} - ${code}`.replace(/\s+/g, ' ').trim();
-	          const party = (r.party || '').toString().trim().toUpperCase();
-	          const cand = (r.candidate || '').toString().trim();
-	          const votes = Number(r.votes) || 0;
-
-	          if (!byPrecinct.has(key)) byPrecinct.set(key, { dem: 0, rep: 0, other: 0, demCand: '', repCand: '' });
-	          const node = byPrecinct.get(key);
-	          if (party === 'DEM') { node.dem += votes; if (!node.demCand && cand) node.demCand = cand; }
-	          else if (party === 'REP') { node.rep += votes; if (!node.repCand && cand) node.repCand = cand; }
-	          else { node.other += votes; }
-	        });
+	        rows.forEach(consumePresidentRow);
 	      }
 
-	      return Array.from(byPrecinct.entries()).map(([key, v]) => ({
+	      const precinctRows = Array.from(byPrecinct.entries()).map(([key, v]) => ({
 	        year: y,
 	        county: key,
 	        president_dem: v.dem,
@@ -15096,6 +15110,23 @@ document.addEventListener('DOMContentLoaded', function() {
 	        president_dem_candidate: v.demCand,
 	        president_rep_candidate: v.repCand
 	      }));
+
+	      const countyTotals = {};
+	      byCounty.forEach((v, county) => {
+	        countyTotals[county] = {
+	          county,
+	          dem_votes: v.dem,
+	          rep_votes: v.rep,
+	          other_votes: v.other,
+	          total_votes: v.dem + v.rep + v.other,
+	          dem_candidate: v.demCand,
+	          rep_candidate: v.repCand
+	        };
+	      });
+	      // County mode consumes these canonical totals, while precinct mode keeps the
+	      // detailed rows above. This also rolls Kansas City into Jackson County.
+	      attachOfficialCountyTotalsToRows(precinctRows, { county_totals: countyTotals });
+	      return precinctRows;
 	    }
 
       function computeStatewideMarginPctFromSliceRows(rows, contestType) {
@@ -18818,6 +18849,9 @@ document.addEventListener('DOMContentLoaded', function() {
             ? (contestManifest.find(e => e && e.contest_type === contestType && Number(e.year) === Number(year) && !e.scope) || null)
             : null;
           const manifestFile = (manifestEntry?.file || '').toString().trim();
+          if (manifestEntry?.source === 'open_elections') {
+            return loadContestSlice(contestType, year);
+          }
           if (manifestHasEntries && !manifestEntry) {
             throw new Error(`No county contest manifest entry for ${key}`);
           }
@@ -18880,6 +18914,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (manifestHasEntries && !manifestEntry) {
               // Manifest is present but this contest/year isn't indexed: don't guess a JSON filename that will 404.
               // Fall through to OpenElections presidential CSV when configured.
+            } else if (manifestEntry?.source === 'open_elections') {
+              // This contest is intentionally CSV-backed; skip the nonexistent JSON probe.
             } else {
               const payloadPath = manifestFile
                 ? `${CONFIG.paths.contests_dir}/${manifestFile}`
@@ -32629,7 +32665,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add CSV-backed presidential elections not present in the precomputed contest slices.
         Object.keys(PRESIDENT_OPEN_ELECTIONS_CSV).map(Number).forEach(y => {
           const exists = contestManifest.some(e => e && e.contest_type === 'president' && Number(e.year) === Number(y));
-          if (!exists) contestManifest.push({ year: y, contest_type: 'president', file: `open_elections_csv_${y}.csv`, rows: 1 });
+          if (!exists) contestManifest.push({ year: y, contest_type: 'president', source: 'open_elections', rows: 1 });
         });
         try { contestYearsByTypeCache.clear(); } catch (_) {}
         electionData = [];
@@ -33165,7 +33201,7 @@ document.addEventListener('DOMContentLoaded', function() {
         : null;
       const manifestFile = (manifestEntry?.file || '').toString().trim();
 
-      if (!(manifestHasEntries && !manifestEntry)) {
+      if (!(manifestHasEntries && !manifestEntry) && manifestEntry?.source !== 'open_elections') {
         try {
           const payloadPath = manifestFile
             ? `${CONFIG.paths.contests_dir}/${manifestFile}`

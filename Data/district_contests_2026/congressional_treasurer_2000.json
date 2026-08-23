@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_treasurer_2000_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 108222,
-        "rep_votes": 139938,
-        "other_votes": 6564,
-        "total_votes": 254724,
+        "dem_votes": 108220,
+        "rep_votes": 139912,
+        "other_votes": 6567,
+        "total_votes": 254699,
         "dem_candidate": "Nancy Farmer",
         "rep_candidate": "Todd Graves",
-        "margin": 31716,
-        "margin_pct": 12.451124,
+        "margin": 31692,
+        "margin_pct": 12.442923,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 145196,
-        "rep_votes": 136381,
-        "other_votes": 7646,
-        "total_votes": 289223,
+        "dem_votes": 147925,
+        "rep_votes": 138260,
+        "other_votes": 7757,
+        "total_votes": 293942,
         "dem_candidate": "Nancy Farmer",
         "rep_candidate": "Todd Graves",
-        "margin": -8815,
-        "margin_pct": -3.047821,
+        "margin": -9665,
+        "margin_pct": -3.288064,
         "winner": "DEM",
         "color": ""
       }

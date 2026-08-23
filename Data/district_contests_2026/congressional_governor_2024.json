@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 110507,
-        "rep_votes": 262897,
-        "other_votes": 7765,
-        "total_votes": 381169,
+        "dem_votes": 103906,
+        "rep_votes": 260328,
+        "other_votes": 7552,
+        "total_votes": 371786,
         "dem_candidate": "Crystal Quade",
         "rep_candidate": "Mike Kehoe",
-        "margin": 152390,
-        "margin_pct": 39.979642,
+        "margin": 156422,
+        "margin_pct": 42.073128,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 84117,
-        "rep_votes": 272182,
-        "other_votes": 7608,
-        "total_votes": 363907,
+        "dem_votes": 79042,
+        "rep_votes": 281801,
+        "other_votes": 7749,
+        "total_votes": 368592,
         "dem_candidate": "Crystal Quade",
         "rep_candidate": "Mike Kehoe",
-        "margin": 188065,
-        "margin_pct": 51.679413,
+        "margin": 202759,
+        "margin_pct": 55.009062,
         "winner": "REP",
         "color": ""
       }

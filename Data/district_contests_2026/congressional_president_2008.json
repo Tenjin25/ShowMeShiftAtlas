@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2008_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 129768,
-        "rep_votes": 210847,
-        "other_votes": 4595,
-        "total_votes": 345210,
+        "dem_votes": 129560,
+        "rep_votes": 210876,
+        "other_votes": 4578,
+        "total_votes": 345014,
         "dem_candidate": "Barack Obama",
         "rep_candidate": "John McCain",
-        "margin": 81079,
-        "margin_pct": 23.486863,
+        "margin": 81316,
+        "margin_pct": 23.568899,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 156772,
-        "rep_votes": 207266,
-        "other_votes": 5671,
-        "total_votes": 369709,
+        "dem_votes": 155674,
+        "rep_votes": 206194,
+        "other_votes": 5640,
+        "total_votes": 367508,
         "dem_candidate": "Barack Obama",
         "rep_candidate": "John McCain",
-        "margin": 50494,
-        "margin_pct": 13.657769,
+        "margin": 50520,
+        "margin_pct": 13.74664,
         "winner": "REP",
         "color": ""
       }

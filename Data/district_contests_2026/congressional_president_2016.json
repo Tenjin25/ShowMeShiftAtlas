@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.024793+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2016.json"
     }
   },
   "general": {
@@ -109,26 +117,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 82219,
+        "dem_votes": 82220,
         "rep_votes": 232447,
         "other_votes": 16421,
-        "total_votes": 331087,
+        "total_votes": 331088,
         "dem_candidate": "Hillary Rodham Clinton",
         "rep_candidate": "Donald J. Trump",
-        "margin": 150228,
-        "margin_pct": 45.374177,
+        "margin": 150227,
+        "margin_pct": 45.373737,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 77824,
-        "rep_votes": 252452,
-        "other_votes": 13023,
-        "total_votes": 343299,
+        "dem_votes": 77790,
+        "rep_votes": 252396,
+        "other_votes": 13018,
+        "total_votes": 343204,
         "dem_candidate": "Hillary Rodham Clinton",
         "rep_candidate": "Donald J. Trump",
-        "margin": 174628,
-        "margin_pct": 50.867611,
+        "margin": 174606,
+        "margin_pct": 50.875281,
         "winner": "REP",
         "color": ""
       }

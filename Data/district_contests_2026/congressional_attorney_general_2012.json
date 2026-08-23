@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 142374,
-        "rep_votes": 162501,
-        "other_votes": 13091,
-        "total_votes": 317966,
+        "dem_votes": 143276,
+        "rep_votes": 163477,
+        "other_votes": 13143,
+        "total_votes": 319896,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Ed Martin",
-        "margin": 20127,
-        "margin_pct": 6.329922,
+        "margin": 20201,
+        "margin_pct": 6.314865,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 161791,
-        "rep_votes": 149692,
-        "other_votes": 11920,
-        "total_votes": 323403,
+        "dem_votes": 159146,
+        "rep_votes": 147792,
+        "other_votes": 11762,
+        "total_votes": 318700,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Ed Martin",
-        "margin": -12099,
-        "margin_pct": -3.741153,
+        "margin": -11354,
+        "margin_pct": -3.562598,
         "winner": "DEM",
         "color": ""
       }

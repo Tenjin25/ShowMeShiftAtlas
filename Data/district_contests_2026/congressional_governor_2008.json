@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2008_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 169638,
-        "rep_votes": 163058,
-        "other_votes": 8655,
-        "total_votes": 341351,
+        "dem_votes": 169419,
+        "rep_votes": 163080,
+        "other_votes": 8657,
+        "total_votes": 341156,
         "dem_candidate": "Jeremiah Nixon",
         "rep_candidate": "Kenny Hulshof",
-        "margin": -6580,
-        "margin_pct": -1.927635,
+        "margin": -6339,
+        "margin_pct": -1.858094,
         "winner": "DEM",
         "color": ""
       },
       "8": {
-        "dem_votes": 204013,
-        "rep_votes": 152943,
-        "other_votes": 8028,
-        "total_votes": 364984,
+        "dem_votes": 202713,
+        "rep_votes": 152124,
+        "other_votes": 7989,
+        "total_votes": 362826,
         "dem_candidate": "Jeremiah Nixon",
         "rep_candidate": "Kenny Hulshof",
-        "margin": -51070,
-        "margin_pct": -13.992394,
+        "margin": -50589,
+        "margin_pct": -13.943047,
         "winner": "DEM",
         "color": ""
       }

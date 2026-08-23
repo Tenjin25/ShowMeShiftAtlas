@@ -29,6 +29,7 @@ import json
 import math
 import re
 from collections import defaultdict
+from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Set, Tuple
@@ -60,6 +61,30 @@ DEFAULT_YEARS = (
     2020, 2022, 2024,
 )
 SCOPE = "congressional"
+TRANSFER_DISTRICTS = ("7", "8")
+
+# Match getPreferredDistrictSlicePaths() in index.html so the copied rows are
+# exactly the results users see when the atlas is set to the 2022 lines.
+VEST_MAIN_BY_YEAR = {
+    2016: {
+        "president",
+        "us_senate",
+        "governor",
+        "lieutenant_governor",
+        "attorney_general",
+        "secretary_of_state",
+        "treasurer",
+    },
+    2018: {"us_senate", "auditor"},
+    2020: {
+        "president",
+        "governor",
+        "lieutenant_governor",
+        "attorney_general",
+        "secretary_of_state",
+        "treasurer",
+    },
+}
 
 
 def _load_jackson_helpers():
@@ -566,6 +591,64 @@ def write_payload(path: Path, payload: Dict[str, object]) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
 
+def preferred_2022_lines_source(contest: str, year: int) -> Path:
+    base = f"congressional_{contest}_{int(year)}"
+    main_path = DATA_DIR / "district_contests" / f"{base}.json"
+    overlap_path = DATA_DIR / "district_contests" / f"{base}_overlap.json"
+    prefer_main = contest in VEST_MAIN_BY_YEAR.get(int(year), set())
+    candidates = (main_path, overlap_path) if prefer_main else (overlap_path, main_path)
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise SystemExit(f"Missing 2022-lines source for {contest} {year}: {candidates}")
+
+
+def transfer_unchanged_district_results(
+    payload: Dict[str, object], contest: str, year: int
+) -> Path:
+    source_path = preferred_2022_lines_source(contest, year)
+    source_payload = json.loads(source_path.read_text(encoding="utf-8"))
+    source_results = ((source_payload.get("general") or {}).get("results")) or {}
+    target_results = ((payload.get("general") or {}).get("results")) or {}
+
+    for district in TRANSFER_DISTRICTS:
+        source_row = source_results.get(district)
+        if not source_row:
+            raise SystemExit(
+                f"Missing district {district} in 2022-lines source {source_path.name}"
+            )
+        target_results[district] = deepcopy(source_row)
+
+    meta = payload.setdefault("meta", {})
+    meta["direct_transfer"] = {
+        "source_lines_year": 2022,
+        "districts": list(TRANSFER_DISTRICTS),
+        "source_file": source_path.name,
+    }
+    return source_path
+
+
+def transfer_existing_outputs(out_dir: Path) -> int:
+    transferred = 0
+    for path in sorted(out_dir.glob("congressional_*.json")):
+        if path.name == "manifest.json" or path.name.endswith("_overlap.json"):
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        meta = payload.get("meta") or {}
+        contest = str(meta.get("contest_type") or "").strip()
+        year = int(meta.get("year") or 0)
+        if not contest or not year or contest == "us_house":
+            continue
+        source_path = transfer_unchanged_district_results(payload, contest, year)
+        write_payload(path, payload)
+        transferred += 1
+        print(
+            f"Transferred CDs {','.join(TRANSFER_DISTRICTS)} in {path.name} "
+            f"from {source_path.name}"
+        )
+    return transferred
+
+
 def rebuild_manifest(out_dir: Path) -> Path:
     files = []
     for path in sorted(out_dir.glob("congressional_*.json")):
@@ -576,22 +659,23 @@ def rebuild_manifest(out_dir: Path) -> Path:
         results = ((payload.get("general") or {}).get("results")) or {}
         dem_total = sum(int((r or {}).get("dem_votes") or 0) for r in results.values())
         rep_total = sum(int((r or {}).get("rep_votes") or 0) for r in results.values())
-        files.append(
-            {
-                "scope": SCOPE,
-                "contest_type": meta.get("contest_type"),
-                "year": meta.get("year"),
-                "file": path.name,
-                "districts": int(meta.get("district_count") or len(results)),
-                "rows": len(results),
-                "dem_total": dem_total,
-                "rep_total": rep_total,
-                "major_party_contested": dem_total > 0 and rep_total > 0,
-                "match_coverage_pct": meta.get("match_coverage_pct"),
-                "source_method": meta.get("source_method"),
-                "lines_year": 2026,
-            }
-        )
+        entry = {
+            "scope": SCOPE,
+            "contest_type": meta.get("contest_type"),
+            "year": meta.get("year"),
+            "file": path.name,
+            "districts": int(meta.get("district_count") or len(results)),
+            "rows": len(results),
+            "dem_total": dem_total,
+            "rep_total": rep_total,
+            "major_party_contested": dem_total > 0 and rep_total > 0,
+            "match_coverage_pct": meta.get("match_coverage_pct"),
+            "source_method": meta.get("source_method"),
+            "lines_year": 2026,
+        }
+        if meta.get("direct_transfer"):
+            entry["direct_transfer"] = meta["direct_transfer"]
+        files.append(entry)
     manifest_path = out_dir / "manifest.json"
     write_payload(manifest_path, {"files": files, "lines_year": 2026})
     return manifest_path
@@ -617,6 +701,11 @@ def main() -> None:
         default=OUT_DIR,
         help="Output folder for 2026 congressional contest slices.",
     )
+    ap.add_argument(
+        "--transfer-unchanged-only",
+        action="store_true",
+        help="Copy CDs 7 and 8 from the preferred 2022-lines slices without rebuilding other districts.",
+    )
     args = ap.parse_args()
 
     years = parse_years(args.years)
@@ -624,6 +713,13 @@ def main() -> None:
     crosswalk_override = Path(args.crosswalk) if args.crosswalk else None
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    if args.transfer_unchanged_only:
+        transferred = transfer_existing_outputs(out_dir)
+        manifest_path = rebuild_manifest(out_dir)
+        print(f"Wrote {manifest_path}")
+        print(f"Done. Updated {transferred} aggregate file(s) in {out_dir}")
+        return
 
     written = 0
     matcher_cache: Dict[str, Dict[str, Dict[str, object]]] = {}
@@ -645,10 +741,14 @@ def main() -> None:
             era=era,
         )
         for contest, payload in payloads.items():
+            source_path = transfer_unchanged_district_results(payload, contest, year)
             out_path = out_dir / f"congressional_{contest}_{year}.json"
             write_payload(out_path, payload)
             written += 1
-            print(f"Wrote {out_path}")
+            print(
+                f"Wrote {out_path} "
+                f"(CDs {','.join(TRANSFER_DISTRICTS)} from {source_path.name})"
+            )
 
     manifest_path = rebuild_manifest(out_dir)
     print(f"Wrote {manifest_path}")

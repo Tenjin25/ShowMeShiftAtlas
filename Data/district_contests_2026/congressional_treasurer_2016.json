@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.051282+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_treasurer_2016.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 91831,
-        "rep_votes": 228144,
-        "other_votes": 12493,
-        "total_votes": 332468,
+        "dem_votes": 91800,
+        "rep_votes": 228085,
+        "other_votes": 12489,
+        "total_votes": 332374,
         "dem_candidate": "Judy Baker",
         "rep_candidate": "Eric Schmitt",
-        "margin": 136313,
-        "margin_pct": 41.000337,
+        "margin": 136285,
+        "margin_pct": 41.003508,
         "winner": "REP",
         "color": ""
       }

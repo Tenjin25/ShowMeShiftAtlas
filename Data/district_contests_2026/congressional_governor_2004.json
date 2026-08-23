@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 105805,
-        "rep_votes": 205394,
-        "other_votes": 3918,
-        "total_votes": 315117,
+        "dem_votes": 105444,
+        "rep_votes": 205054,
+        "other_votes": 3911,
+        "total_votes": 314409,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Matthew Blunt",
-        "margin": 99589,
-        "margin_pct": 31.603817,
+        "margin": 99610,
+        "margin_pct": 31.681663,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 150900,
-        "rep_votes": 192733,
-        "other_votes": 4907,
-        "total_votes": 348540,
+        "dem_votes": 151823,
+        "rep_votes": 193318,
+        "other_votes": 4924,
+        "total_votes": 350065,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Matthew Blunt",
-        "margin": 41833,
-        "margin_pct": 12.002353,
+        "margin": 41495,
+        "margin_pct": 11.853513,
         "winner": "REP",
         "color": ""
       }

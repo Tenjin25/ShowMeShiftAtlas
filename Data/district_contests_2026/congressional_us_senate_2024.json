@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 115502,
-        "rep_votes": 257344,
-        "other_votes": 9681,
-        "total_votes": 382527,
+        "dem_votes": 108675,
+        "rep_votes": 255036,
+        "other_votes": 9400,
+        "total_votes": 373111,
         "dem_candidate": "Lucas Kunce",
         "rep_candidate": "Josh Hawley",
-        "margin": 141842,
-        "margin_pct": 37.080258,
+        "margin": 146361,
+        "margin_pct": 39.2272,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 94427,
-        "rep_votes": 262146,
-        "other_votes": 8747,
-        "total_votes": 365320,
+        "dem_votes": 89924,
+        "rep_votes": 271288,
+        "other_votes": 8846,
+        "total_votes": 370058,
         "dem_candidate": "Lucas Kunce",
         "rep_candidate": "Josh Hawley",
-        "margin": 167719,
-        "margin_pct": 45.910161,
+        "margin": 181364,
+        "margin_pct": 49.009615,
         "winner": "REP",
         "color": ""
       }

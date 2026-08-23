@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2006_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 98130,
-        "rep_votes": 144794,
-        "other_votes": 9652,
-        "total_votes": 252576,
+        "dem_votes": 97883,
+        "rep_votes": 144650,
+        "other_votes": 9637,
+        "total_votes": 252170,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "James Talent",
-        "margin": 46664,
-        "margin_pct": 18.475231,
+        "margin": 46767,
+        "margin_pct": 18.545822,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 126721,
-        "rep_votes": 140040,
-        "other_votes": 9450,
-        "total_votes": 276211,
+        "dem_votes": 125941,
+        "rep_votes": 139396,
+        "other_votes": 9427,
+        "total_votes": 274764,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "James Talent",
-        "margin": 13319,
-        "margin_pct": 4.822038,
+        "margin": 13455,
+        "margin_pct": 4.89693,
         "winner": "REP",
         "color": ""
       }

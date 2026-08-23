@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:37.256742+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2020.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 86632,
-        "rep_votes": 274763,
-        "other_votes": 5244,
-        "total_votes": 366639,
+        "dem_votes": 86588,
+        "rep_votes": 274705,
+        "other_votes": 5241,
+        "total_votes": 366534,
         "dem_candidate": "Joseph R. Biden",
         "rep_candidate": "Donald J. Trump",
-        "margin": 188131,
-        "margin_pct": 51.312326,
+        "margin": 188117,
+        "margin_pct": 51.323206,
         "winner": "REP",
         "color": ""
       }

@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 107994,
-        "rep_votes": 192373,
-        "other_votes": 8867,
-        "total_votes": 309234,
+        "dem_votes": 107642,
+        "rep_votes": 192057,
+        "other_votes": 8839,
+        "total_votes": 308538,
         "dem_candidate": "Rebecca Cook",
         "rep_candidate": "Peter Kinder",
-        "margin": 84379,
-        "margin_pct": 27.286456,
+        "margin": 84415,
+        "margin_pct": 27.359677,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 153985,
-        "rep_votes": 177735,
-        "other_votes": 9686,
-        "total_votes": 341406,
+        "dem_votes": 154997,
+        "rep_votes": 178223,
+        "other_votes": 9692,
+        "total_votes": 342912,
         "dem_candidate": "Rebecca Cook",
         "rep_candidate": "Peter Kinder",
-        "margin": 23750,
-        "margin_pct": 6.956527,
+        "margin": 23226,
+        "margin_pct": 6.773166,
         "winner": "REP",
         "color": ""
       }

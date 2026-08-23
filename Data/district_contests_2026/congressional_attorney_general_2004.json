@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 147950,
-        "rep_votes": 152657,
-        "other_votes": 8063,
-        "total_votes": 308670,
+        "dem_votes": 147375,
+        "rep_votes": 152553,
+        "other_votes": 8050,
+        "total_votes": 307978,
         "dem_candidate": "Jeremiah Nixon",
         "rep_candidate": "Christopher Byrd",
-        "margin": 4707,
-        "margin_pct": 1.52493,
+        "margin": 5178,
+        "margin_pct": 1.681289,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 196553,
-        "rep_votes": 134424,
-        "other_votes": 8762,
-        "total_votes": 339739,
+        "dem_votes": 197800,
+        "rep_votes": 134666,
+        "other_votes": 8777,
+        "total_votes": 341243,
         "dem_candidate": "Jeremiah Nixon",
         "rep_candidate": "Christopher Byrd",
-        "margin": -62129,
-        "margin_pct": -18.287273,
+        "margin": -63134,
+        "margin_pct": -18.501185,
         "winner": "DEM",
         "color": ""
       }

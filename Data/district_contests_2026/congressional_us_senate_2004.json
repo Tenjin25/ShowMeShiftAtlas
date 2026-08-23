@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 97204,
-        "rep_votes": 212848,
-        "other_votes": 3700,
-        "total_votes": 313752,
+        "dem_votes": 96873,
+        "rep_votes": 212483,
+        "other_votes": 3692,
+        "total_votes": 313048,
         "dem_candidate": "Nancy Farmer",
         "rep_candidate": "Christopher Bond",
-        "margin": 115644,
-        "margin_pct": 36.85841,
+        "margin": 115610,
+        "margin_pct": 36.930439,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 135496,
-        "rep_votes": 207759,
-        "other_votes": 4138,
-        "total_votes": 347393,
+        "dem_votes": 136494,
+        "rep_votes": 208278,
+        "other_votes": 4147,
+        "total_votes": 348919,
         "dem_candidate": "Nancy Farmer",
         "rep_candidate": "Christopher Bond",
-        "margin": 72263,
-        "margin_pct": 20.801513,
+        "margin": 71784,
+        "margin_pct": 20.573256,
         "winner": "REP",
         "color": ""
       }

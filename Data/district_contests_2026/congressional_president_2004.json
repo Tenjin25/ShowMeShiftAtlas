@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 109100,
-        "rep_votes": 205695,
-        "other_votes": 1843,
-        "total_votes": 316638,
+        "dem_votes": 108757,
+        "rep_votes": 205339,
+        "other_votes": 1841,
+        "total_votes": 315937,
         "dem_candidate": "John F. Kerry",
         "rep_candidate": "George W. Bush",
-        "margin": 96595,
-        "margin_pct": 30.506446,
+        "margin": 96582,
+        "margin_pct": 30.570019,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 144126,
-        "rep_votes": 204108,
-        "other_votes": 2338,
-        "total_votes": 350572,
+        "dem_votes": 145142,
+        "rep_votes": 204614,
+        "other_votes": 2336,
+        "total_votes": 352092,
         "dem_candidate": "John F. Kerry",
         "rep_candidate": "George W. Bush",
-        "margin": 59982,
-        "margin_pct": 17.109752,
+        "margin": 59472,
+        "margin_pct": 16.89104,
         "winner": "REP",
         "color": ""
       }

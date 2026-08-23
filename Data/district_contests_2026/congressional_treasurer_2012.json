@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_treasurer_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 114799,
-        "rep_votes": 185848,
-        "other_votes": 14573,
-        "total_votes": 315220,
+        "dem_votes": 115532,
+        "rep_votes": 186991,
+        "other_votes": 14620,
+        "total_votes": 317143,
         "dem_candidate": "Clint Zweifel",
         "rep_candidate": "Cole McNary",
-        "margin": 71049,
-        "margin_pct": 22.539496,
+        "margin": 71459,
+        "margin_pct": 22.532107,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 140499,
-        "rep_votes": 166434,
-        "other_votes": 13308,
-        "total_votes": 320241,
+        "dem_votes": 138023,
+        "rep_votes": 164445,
+        "other_votes": 13129,
+        "total_votes": 315597,
         "dem_candidate": "Clint Zweifel",
         "rep_candidate": "Cole McNary",
-        "margin": 25935,
-        "margin_pct": 8.098588,
+        "margin": 26422,
+        "margin_pct": 8.372069,
         "winner": "REP",
         "color": ""
       }

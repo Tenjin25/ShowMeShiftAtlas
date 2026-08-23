@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2008_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 128498,
-        "rep_votes": 202522,
+        "dem_votes": 128280,
+        "rep_votes": 202565,
         "other_votes": 0,
-        "total_votes": 331020,
+        "total_votes": 330845,
         "dem_candidate": "Christopher Koster",
         "rep_candidate": "Michael Gibbons",
-        "margin": 74024,
-        "margin_pct": 22.362395,
+        "margin": 74285,
+        "margin_pct": 22.453112,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 177819,
-        "rep_votes": 173702,
+        "dem_votes": 176676,
+        "rep_votes": 172752,
         "other_votes": 0,
-        "total_votes": 351521,
+        "total_votes": 349428,
         "dem_candidate": "Christopher Koster",
         "rep_candidate": "Michael Gibbons",
-        "margin": -4117,
-        "margin_pct": -1.171196,
+        "margin": -3924,
+        "margin_pct": -1.122978,
         "winner": "DEM",
         "color": ""
       }

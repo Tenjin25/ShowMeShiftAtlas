@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.038520+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2016.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 113376,
-        "rep_votes": 217674,
-        "other_votes": 10722,
-        "total_votes": 341772,
+        "dem_votes": 113335,
+        "rep_votes": 217623,
+        "other_votes": 10719,
+        "total_votes": 341677,
         "dem_candidate": "Chris Koster",
         "rep_candidate": "Eric Greitens",
-        "margin": 104298,
-        "margin_pct": 30.516836,
+        "margin": 104288,
+        "margin_pct": 30.522394,
         "winner": "REP",
         "color": ""
       }

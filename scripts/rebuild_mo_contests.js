@@ -281,6 +281,8 @@ function candidateName(row) {
 
   const first = String(row['first name'] || row.first_name || '').trim();
   const last = String(row['last name'] || row.last_name || '').trim();
+  const office = normalizeOffice(row.office || '');
+  if (office.includes('PRESIDENT') && last && first) return `${last}, ${first}`;
   if (first || last) return `${first} ${last}`.trim();
   return '';
 }
@@ -321,7 +323,7 @@ function mapContestType(rawOffice, rawDistrict) {
     return 'state_senate';
   }
   if (STATEWIDE_OFFICE_MAP.has(office)) return STATEWIDE_OFFICE_MAP.get(office);
-  if (office.startsWith('PRESIDENT')) return 'president';
+  if (office.startsWith('PRESIDENT') || office.startsWith('US PRESIDENT')) return 'president';
   if (office.startsWith('US SENATE')) return 'us_senate';
   if (office.startsWith('GOVERNOR')) return 'governor';
   if (office.startsWith('LIEUTENANT GOVERNOR')) return 'lieutenant_governor';

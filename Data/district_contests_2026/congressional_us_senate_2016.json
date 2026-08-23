@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.029973+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2016.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 117277,
-        "rep_votes": 208001,
-        "other_votes": 15605,
-        "total_votes": 340883,
+        "dem_votes": 117235,
+        "rep_votes": 207952,
+        "other_votes": 15601,
+        "total_votes": 340788,
         "dem_candidate": "Jason Kander",
         "rep_candidate": "Roy Blunt",
-        "margin": 90724,
-        "margin_pct": 26.61441,
+        "margin": 90717,
+        "margin_pct": 26.619775,
         "winner": "REP",
         "color": ""
       }

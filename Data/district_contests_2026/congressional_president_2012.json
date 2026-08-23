@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 104623,
-        "rep_votes": 215017,
-        "other_votes": 6761,
-        "total_votes": 326401,
+        "dem_votes": 105206,
+        "rep_votes": 216375,
+        "other_votes": 6791,
+        "total_votes": 328372,
         "dem_candidate": "Barack Obama, Joe Biden",
         "rep_candidate": "Mitt Romney, Paul Ryan",
-        "margin": 110394,
-        "margin_pct": 33.821588,
+        "margin": 111169,
+        "margin_pct": 33.854592,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 118297,
-        "rep_votes": 209270,
-        "other_votes": 6959,
-        "total_votes": 334526,
+        "dem_votes": 116063,
+        "rep_votes": 206681,
+        "other_votes": 6938,
+        "total_votes": 329682,
         "dem_candidate": "Barack Obama, Joe Biden",
         "rep_candidate": "Mitt Romney, Paul Ryan",
-        "margin": 90973,
-        "margin_pct": 27.194598,
+        "margin": 90618,
+        "margin_pct": 27.486487,
         "winner": "REP",
         "color": ""
       }

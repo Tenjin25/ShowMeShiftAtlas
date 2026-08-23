@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2002_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 79502,
-        "rep_votes": 128633,
-        "other_votes": 3921,
-        "total_votes": 212056,
+        "dem_votes": 79526,
+        "rep_votes": 128933,
+        "other_votes": 3933,
+        "total_votes": 212392,
         "dem_candidate": "Jean Carnahan",
         "rep_candidate": "Jim Talent",
-        "margin": 49131,
-        "margin_pct": 23.16888,
+        "margin": 49407,
+        "margin_pct": 23.262176,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 110330,
-        "rep_votes": 127555,
-        "other_votes": 3417,
-        "total_votes": 241302,
+        "dem_votes": 110997,
+        "rep_votes": 127901,
+        "other_votes": 3416,
+        "total_votes": 242314,
         "dem_candidate": "Jean Carnahan",
         "rep_candidate": "Jim Talent",
-        "margin": 17225,
-        "margin_pct": 7.138358,
+        "margin": 16904,
+        "margin_pct": 6.976072,
         "winner": "REP",
         "color": ""
       }

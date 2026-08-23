@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:37.260841+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2020.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 88621,
-        "rep_votes": 267246,
-        "other_votes": 7849,
-        "total_votes": 363716,
+        "dem_votes": 88578,
+        "rep_votes": 267187,
+        "other_votes": 7847,
+        "total_votes": 363612,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Mike Parson",
-        "margin": 178625,
-        "margin_pct": 49.11112,
+        "margin": 178609,
+        "margin_pct": 49.120766,
         "winner": "REP",
         "color": ""
       }

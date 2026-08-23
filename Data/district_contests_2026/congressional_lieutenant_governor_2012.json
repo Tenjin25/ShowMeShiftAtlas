@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 109095,
-        "rep_votes": 193539,
-        "other_votes": 17168,
-        "total_votes": 319802,
+        "dem_votes": 109738,
+        "rep_votes": 194745,
+        "other_votes": 17267,
+        "total_votes": 321750,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Peter Kinder",
-        "margin": 84444,
-        "margin_pct": 26.405088,
+        "margin": 85007,
+        "margin_pct": 26.420202,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 122145,
-        "rep_votes": 188515,
-        "other_votes": 15816,
-        "total_votes": 326476,
+        "dem_votes": 120040,
+        "rep_votes": 186232,
+        "other_votes": 15519,
+        "total_votes": 321791,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Peter Kinder",
-        "margin": 66370,
-        "margin_pct": 20.329213,
+        "margin": 66192,
+        "margin_pct": 20.569873,
         "winner": "REP",
         "color": ""
       }

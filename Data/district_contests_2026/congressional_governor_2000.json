@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2000_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 106070,
-        "rep_votes": 146987,
+        "dem_votes": 106054,
+        "rep_votes": 146990,
         "other_votes": 5500,
-        "total_votes": 258557,
+        "total_votes": 258544,
         "dem_candidate": "Bob Holden",
         "rep_candidate": "Jim Talent",
-        "margin": 40917,
-        "margin_pct": 15.825137,
+        "margin": 40936,
+        "margin_pct": 15.833282,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 141234,
-        "rep_votes": 148531,
-        "other_votes": 7664,
-        "total_votes": 297429,
+        "dem_votes": 143679,
+        "rep_votes": 150691,
+        "other_votes": 7839,
+        "total_votes": 302209,
         "dem_candidate": "Bob Holden",
         "rep_candidate": "Jim Talent",
-        "margin": 7297,
-        "margin_pct": 2.453359,
+        "margin": 7012,
+        "margin_pct": 2.320249,
         "winner": "REP",
         "color": ""
       }

@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2002_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 103405,
-        "rep_votes": 93786,
-        "other_votes": 7779,
-        "total_votes": 204970,
+        "dem_votes": 103531,
+        "rep_votes": 93963,
+        "other_votes": 7796,
+        "total_votes": 205290,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Allen Hanson",
-        "margin": -9619,
-        "margin_pct": -4.692882,
+        "margin": -9568,
+        "margin_pct": -4.660724,
         "winner": "DEM",
         "color": ""
       },
       "8": {
-        "dem_votes": 127946,
-        "rep_votes": 94402,
-        "other_votes": 8031,
-        "total_votes": 230379,
+        "dem_votes": 128708,
+        "rep_votes": 94662,
+        "other_votes": 8032,
+        "total_votes": 231402,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Allen Hanson",
-        "margin": -33544,
-        "margin_pct": -14.560355,
+        "margin": -34046,
+        "margin_pct": -14.712924,
         "winner": "DEM",
         "color": ""
       }
