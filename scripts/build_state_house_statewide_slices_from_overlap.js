@@ -112,7 +112,7 @@ function districtStatsPathForLegislativeCalibration(scope, year, contestType) {
 }
 
 function parseArgs(argv) {
-  const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, crosswalkPath: '', vtdGeojsonPath: '' };
+  const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, contests: null, crosswalkPath: '', vtdGeojsonPath: '' };
   const args = Array.from(argv || []);
   for (let i = 0; i < args.length; i += 1) {
     const a = String(args[i] || '');
@@ -138,6 +138,15 @@ function parseArgs(argv) {
     }
     if (a === '--vtd') {
       out.vtdGeojsonPath = String(args[i + 1] || '').trim();
+      i += 1;
+      continue;
+    }
+    if (a === '--contests') {
+      const contests = String(args[i + 1] || '')
+        .split(/[,\s]+/g)
+        .map(value => value.trim().toLowerCase())
+        .filter(Boolean);
+      out.contests = contests.length ? new Set(contests) : null;
       i += 1;
       continue;
     }
@@ -220,6 +229,160 @@ function normalizePrecinctCodeToken(value) {
 function compactPrecinctAliasToken(value) {
   const t = String(value || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   return t || '';
+}
+
+const ST_LOUIS_JURISDICTION_ALIASES = {
+  AIRPORT: 'AP', BONHOMME: 'BON', CHESTERFIELD: 'CHE', CLAYTON: 'CLA',
+  CONCORD: 'CON', CREVECOEUR: 'CC', FERGUSON: 'FER', FLORISSANT: 'FLO',
+  GRAVOIS: 'GRA', HADLEY: 'HAD', HALLSFERRY: 'WH', JEFFERSON: 'JEF',
+  LAFAYETTE: 'LAF', LEMAY: 'LEM', LEWISCLARK: 'LC', MARYLANDHEIGHTS: 'MHT',
+  MERAMEC: 'MER', MIDLAND: 'MID', MISSOURIRIVER: 'MR', NORMANDY: 'NOR',
+  NORTHWEST: 'NW', NORWOOD: 'NRW', OAKVILLE: 'OAK', QUEENY: 'QUE',
+  SPANISHLAKE: 'SPL', STFERDINAND: 'SF', TESSONFERRY: 'TSF', UNIVERSITY: 'UNV'
+};
+
+function stripElectionSequencePrefixes(rawValue) {
+  const text = String(rawValue || '').trim().toUpperCase().replace(/\s+/g, ' ');
+  const out = new Set();
+  let match = text.match(/^0*\d{1,4}\s+(.+)$/);
+  if (match && match[1]) out.add(match[1].trim());
+  match = text.match(/^0*\d{3,4}(W\s+.+)$/);
+  if (match && match[1]) out.add(match[1].trim());
+  return out;
+}
+
+function expandStLouisPrecinctAliases(rawValue) {
+  let text = String(rawValue || '').trim().toUpperCase().replace(/\s+/g, ' ');
+  const stripped = Array.from(stripElectionSequencePrefixes(text));
+  if (stripped.length) text = stripped[0];
+  let compact = text.replace(/[^A-Z0-9,&/ ]/g, '');
+  Object.entries(ST_LOUIS_JURISDICTION_ALIASES)
+    .sort((a, b) => b[0].length - a[0].length)
+    .forEach(([longName, code]) => {
+      compact = compact.split(longName).join(` ${code} `);
+    });
+  compact = compact.replace(/\s+/g, ' ').trim();
+
+  const codes = Array.from(new Set(Object.values(ST_LOUIS_JURISDICTION_ALIASES)))
+    .sort((a, b) => b.length - a.length);
+  const codeAlt = codes.join('|');
+  const groupRe = new RegExp(`(?:^|\\s)(${codeAlt})\\s*([0-9][0-9A-Z,\\s&/]*?)(?=(?:\\s+(?:${codeAlt})\\s*[0-9])|$)`, 'g');
+  const out = new Set();
+  let match;
+  while ((match = groupRe.exec(compact)) !== null) {
+    const code = match[1];
+    const numbers = String(match[2] || '').match(/\d+[A-Z]?/g) || [];
+    numbers.forEach(number => {
+      const parsed = number.match(/^0*(\d+)([A-Z]?)$/);
+      if (!parsed) return;
+      const bare = String(Number(parsed[1]));
+      const suffix = parsed[2] || '';
+      [bare, bare.padStart(2, '0'), bare.padStart(3, '0')].forEach(digits => {
+        out.add(`${code}${digits}${suffix}`);
+        out.add(`${code} ${digits}${suffix}`);
+      });
+    });
+  }
+  return out;
+}
+
+function canonicalStLouisPrecinctComponents(rawValue) {
+  const out = new Set();
+  expandStLouisPrecinctAliases(rawValue).forEach(value => {
+    const compact = compactPrecinctAliasToken(value);
+    const match = compact.match(/^([A-Z]+)0*(\d+)([A-Z]?)$/);
+    if (!match) return;
+    out.add(`${match[1]}${Number(match[2])}${match[3] || ''}`);
+  });
+  return out;
+}
+
+const JACKSON_TOWNSHIP_PREFIXES = {
+  PR: ['PRAIRIE', 'PRARIE'], FO: ['FORT OSAGE'], BR: ['BROOKING'],
+  WA: ['WASHINGTON'], VB: ['VAN BUREN'], SN: ['SNI-A-BAR', 'SNI A BAR', 'SNIABAR']
+};
+
+function jacksonPrecinctComponents(rawValue) {
+  const out = new Set();
+  const texts = new Set([String(rawValue || '').trim().toUpperCase().replace(/\s+/g, ' ')]);
+  stripElectionSequencePrefixes(rawValue).forEach(value => texts.add(value));
+  const addNumberList = (kind, prefix, values) => {
+    (String(values || '').match(/\d+[A-Z]?/g) || []).forEach(value => {
+      const match = value.match(/^0*(\d+)([A-Z]?)$/);
+      if (match) out.add(`${kind}:${prefix}:${Number(match[1])}${match[2] || ''}`);
+    });
+  };
+  texts.forEach(text => {
+    let match = text.match(/^B\s*0*([1-8])\s+([0-9A-Z,&/\s]+)$/);
+    if (match) addNumberList('B', String(Number(match[1])), match[2]);
+    match = text.match(/^BLUE\s*SUB\s*0*(\d+)\s*NO\.?\s*(.+)$/);
+    if (match) addNumberList('B', String(Number(match[1])), match[2]);
+
+    match = text.match(/^(PR|PRAIRIE|PRARIE|FO|FORT(?:\s+OSAGE)?|BR|BROOKING|WA|WASHINGTON|VB|VAN\s+BUREN|SN|SNI|SI|SNI[- ]?A[- ]?BAR)(?:\s+NO\.?)?\s+([0-9A-Z,&/\s]+)$/);
+    if (match) {
+      const key = match[1].replace(/[^A-Z]/g, '');
+      const code = key.startsWith('PR') ? 'PR'
+        : key.startsWith('FO') ? 'FO'
+          : key.startsWith('BR') ? 'BR'
+            : key.startsWith('WA') ? 'WA'
+              : key.startsWith('VAN') || key === 'VB' ? 'VB'
+                : 'SN';
+      addNumberList('T', code, match[2]);
+    }
+
+    const wardPatterns = [
+      /W(?:ARD)?\s*0*(\d{1,2})\s*[-/ ]*\s*P(?:CT|RECINCT)?\s*([0-9,\s/]+)/g,
+      /KC\s*WD\s*0*(\d{1,2})\s*PCT\s*([0-9,\s/]+)/g
+    ];
+    wardPatterns.forEach(pattern => {
+      let wardMatch;
+      while ((wardMatch = pattern.exec(text)) !== null) {
+        addNumberList('K', String(Number(wardMatch[1])), wardMatch[2]);
+      }
+    });
+  });
+  return out;
+}
+
+function jacksonAliasesForComponent(component) {
+  const out = new Set();
+  const [kind, prefix, rawNumber] = String(component || '').split(':');
+  const match = String(rawNumber || '').match(/^(\d+)([A-Z]?)$/);
+  if (!match) return out;
+  const number = Number(match[1]);
+  const suffix = match[2] || '';
+  const bare = `${number}${suffix}`;
+  const padded = `${String(number).padStart(2, '0')}${suffix}`;
+  if (kind === 'B') {
+    [bare, padded].forEach(value => {
+      out.add(`B${prefix} ${value}`);
+      out.add(`BLUE ${String(prefix).padStart(2, '0')}-${value}`);
+      out.add(`BLUE SUB ${Number(prefix)} NO. ${value}`);
+      out.add(`BLUE SUB ${Number(prefix)} NO ${value}`);
+    });
+  } else if (kind === 'T') {
+    (JACKSON_TOWNSHIP_PREFIXES[prefix] || [prefix]).forEach(name => {
+      [bare, padded].forEach(value => {
+        out.add(`${name} ${value}`);
+        out.add(`${name}${value}`);
+        out.add(`${name}-${value}`);
+        out.add(`${name} NO. ${value}`);
+        out.add(`${name} NO ${value}`);
+      });
+    });
+  } else if (kind === 'K') {
+    const ward = Number(prefix);
+    const precinct = number;
+    const code = `${ward}${String(precinct).padStart(2, '0')}`;
+    out.add(`KC ${code}`);
+    out.add(`KC${code}`);
+    out.add(`W${ward} P${precinct}`);
+    out.add(`W${ward}-P${precinct}`);
+    out.add(`WARD ${ward} PCT ${precinct}`);
+    out.add(`KC WD${ward} PCT${precinct}`);
+    out.add(`KC WD${ward} PCT${code}`);
+  }
+  return out;
 }
 
 const PRECINCT_ALIAS_COMMON_WORDS = ['PRECINCT', 'PCT', 'WARD', 'DISTRICT', 'TOWNSHIP', 'BOX', 'VOTING', 'LOCATION'];
@@ -371,6 +534,14 @@ function addPrecinctAliasVariants(rawValue, addAliasFn) {
   addSafe(normalized);
   addSafe(compact);
   extractPrecinctAliasCandidates(raw).forEach(addSafe);
+  stripElectionSequencePrefixes(raw).forEach(value => {
+    addSafe(value);
+    extractPrecinctAliasCandidates(value).forEach(addSafe);
+  });
+  expandStLouisPrecinctAliases(raw).forEach(addSafe);
+  jacksonPrecinctComponents(raw).forEach(component => {
+    jacksonAliasesForComponent(component).forEach(addSafe);
+  });
 
   const stripped = raw
     .replace(/\bVOTING DISTRICT\b/g, ' ')
@@ -404,6 +575,15 @@ function addPrecinctAliasVariants(rawValue, addAliasFn) {
 
   const trailingCode = (strippedNorm || '').match(/(?:^|\s)(\d+[A-Z]{0,2})$/);
   if (trailingCode) addSafe(trailingCode[1]);
+
+  const alphaNumeric = compact.match(/^([A-Z]+)0*(\d+)([A-Z]?)$/);
+  if (alphaNumeric) {
+    const prefix = alphaNumeric[1];
+    const bare = String(Number(alphaNumeric[2]));
+    const suffix = alphaNumeric[3] || '';
+    [bare, bare.padStart(2, '0'), bare.padStart(3, '0')]
+      .forEach(digits => addSafe(`${prefix}${digits}${suffix}`));
+  }
 }
 
 function collectVtdCodeCandidates(rawCode) {
@@ -987,9 +1167,18 @@ function buildPrecinctMatcherIndex(vtdGeojsonPath) {
 
   for (const feature of (payload.features || [])) {
     const props = feature && feature.properties ? feature.properties : {};
-    const countyNorm = normalizeCounty(props.county_nam || props.COUNTYNAME || props.County || props.NAME || '');
+    const countyFips = String(
+      props.COUNTYFP20 || props.COUNTYFP10 || props.COUNTYFP00 || props.COUNTYFP || ''
+    ).replace(/[^0-9]/g, '').padStart(3, '0').slice(-3);
+    const countyNorm = countyFips === '510'
+      ? 'ST LOUIS CITY'
+      : normalizeCounty(props.county_nam || props.COUNTYNAME || props.County || props.NAME || '');
     const precId = String(props.VTDST20 || props.prec_id || props.PREC_ID || '').trim().toUpperCase();
-    const precinctNorm = String(props.precinct_norm || (countyNorm && precId ? `${countyNorm} - ${precId}` : '')).trim().toUpperCase();
+    const precinctNorm = String(
+      countyFips === '510' && precId
+        ? `ST. LOUIS CITY - ${precId}`
+        : (props.precinct_norm || (countyNorm && precId ? `${countyNorm} - ${precId}` : ''))
+    ).trim().toUpperCase();
     if (!countyNorm || !precinctNorm) continue;
 
     if (!idx.has(countyNorm)) {
@@ -1078,6 +1267,47 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
   };
 
   [precinct, code, combined].forEach(addRawVariants);
+
+  // Preserve component multiplicity across historical St. Louis VTD bundles.
+  // VTD00 names can group several election precincts into one polygon; collapsing
+  // the matched polygons to a Set incorrectly gives every polygon equal weight.
+  const stLouisComponents = new Set();
+  [precinct, code, combined].forEach(value => {
+    canonicalStLouisPrecinctComponents(value).forEach(token => stLouisComponents.add(token));
+  });
+  const weightedStLouisHits = [];
+  stLouisComponents.forEach(token => {
+    const variants = new Set();
+    addPrecinctAliasVariants(token, value => variants.add(value));
+    const tokenHits = new Set();
+    variants.forEach(value => {
+      const hits = countyInfo.aliasToNorms.get(value);
+      if (hits) hits.forEach(norm => tokenHits.add(norm));
+    });
+    tokenHits.forEach(norm => weightedStLouisHits.push(norm));
+  });
+  if (weightedStLouisHits.length) return weightedStLouisHits;
+
+  if (countyNorm === 'JACKSON') {
+    const jacksonComponents = new Set();
+    [precinct, code, combined].forEach(value => {
+      jacksonPrecinctComponents(value).forEach(component => jacksonComponents.add(component));
+    });
+    const weightedJacksonHits = [];
+    jacksonComponents.forEach(component => {
+      const tokenHits = new Set();
+      jacksonAliasesForComponent(component).forEach(value => {
+        const variants = new Set();
+        addPrecinctAliasVariants(value, token => variants.add(token));
+        variants.forEach(token => {
+          const hits = countyInfo.aliasToNorms.get(token);
+          if (hits) hits.forEach(norm => tokenHits.add(norm));
+        });
+      });
+      tokenHits.forEach(norm => weightedJacksonHits.push(norm));
+    });
+    if (weightedJacksonHits.length) return weightedJacksonHits;
+  }
 
   // Prefer the most specific token match rather than unioning everything (which can explode).
   let bestExact = null; // Set<string>
@@ -1280,7 +1510,17 @@ function topCandidateFor(contestType, year, bucket, candidateTotalsByContestYear
 
 function writeJson(filePath, payload) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+  const body = `${JSON.stringify(payload, null, 2)}\n`;
+  for (let attempt = 1; attempt <= 20; attempt += 1) {
+    try {
+      fs.writeFileSync(filePath, body, 'utf8');
+      return;
+    } catch (error) {
+      const code = String(error && error.code ? error.code : '').toUpperCase();
+      if (attempt === 20 || !['UNKNOWN', 'EBUSY', 'EACCES', 'EPERM'].includes(code)) throw error;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 250);
+    }
+  }
 }
 
 function buildPayload(
@@ -1318,7 +1558,7 @@ function buildPayload(
 }
 
 async function main() {
-  const { scope, years, crosswalkPath, vtdGeojsonPath } = parseArgs(process.argv.slice(2));
+  const { scope, years, contests, crosswalkPath, vtdGeojsonPath } = parseArgs(process.argv.slice(2));
   const crosswalkByPrecinct = readCrosswalkByPrecinct(crosswalkPath);
   const matcherIdx = buildPrecinctMatcherIndex(vtdGeojsonPath);
   const countyArea = buildCountyWeightFallbacks(crosswalkByPrecinct);
@@ -1363,6 +1603,7 @@ async function main() {
   let writtenFiles = 0;
   for (const [contestYearKey, precinctRows] of precinctsByContestYear.entries()) {
     const [contestType, year] = splitKey(contestYearKey);
+    if (contests && !contests.has(String(contestType || '').toLowerCase())) continue;
     const demCandidate = topCandidateFor(contestType, year, 'dem', candidateTotalsByContestYear);
     const repCandidate = topCandidateFor(contestType, year, 'rep', candidateTotalsByContestYear);
 

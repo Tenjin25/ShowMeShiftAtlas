@@ -133,6 +133,42 @@ JACKSON_TOWNSHIP_ALIASES = {
     "SNI": ["SNI-A-BAR", "SNI A BAR", "SNIABAR"],
     "SI": ["SNI-A-BAR", "SNI A BAR", "SNIABAR"],
 }
+
+# St. Louis County election files use short township codes while the 2000 VTD
+# file often spells those names out.  Keeping the mapping here also lets bundle
+# labels such as "AP 1,2,3" resolve to every constituent VTD instead of one
+# arbitrary numeric alias.
+ST_LOUIS_JURISDICTION_ALIASES = {
+    "AIRPORT": "AP",
+    "BONHOMME": "BON",
+    "CHESTERFIELD": "CHE",
+    "CLAYTON": "CLA",
+    "CONCORD": "CON",
+    "CREVECOEUR": "CC",
+    "FERGUSON": "FER",
+    "FLORISSANT": "FLO",
+    "GRAVOIS": "GRA",
+    "HADLEY": "HAD",
+    "HALLSFERRY": "WH",
+    "JEFFERSON": "JEF",
+    "LAFAYETTE": "LAF",
+    "LEMAY": "LEM",
+    "LEWISCLARK": "LC",
+    "MARYLANDHEIGHTS": "MHT",
+    "MERAMEC": "MER",
+    "MIDLAND": "MID",
+    "MISSOURIRIVER": "MR",
+    "NORMANDY": "NOR",
+    "NORTHWEST": "NW",
+    "NORWOOD": "NRW",
+    "OAKVILLE": "OAK",
+    "QUEENY": "QUE",
+    "SPANISHLAKE": "SPL",
+    "STFERDINAND": "SF",
+    "TESSONFERRY": "TSF",
+    "UNIVERSITY": "UNV",
+}
+ST_LOUIS_JURISDICTION_CODES = set(ST_LOUIS_JURISDICTION_ALIASES.values())
 BLUE_TOWNSHIP_RE = re.compile(r"^B\s*0*([1-8])\s+([0-9,\s/]+)$", re.I)
 TOWNSHIP_BUNDLE_RE = re.compile(
     r"^(PR|PRAIRIE|PRARIE|FO|FORT|BR|BROOKING|WA|WASHINGTON|VB|VAN|SN|SNI|SI)\s+([0-9,\s/]+)$",
@@ -531,6 +567,97 @@ def expand_kc_ward_precinct_aliases(raw: object) -> Set[str]:
     return out
 
 
+def strip_election_sequence_prefix(raw: object) -> Set[str]:
+    """Remove source-row sequence ids such as ``0001`` / ``0101``."""
+    text = re.sub(r"\s+", " ", str(raw or "").strip().upper())
+    out: Set[str] = set()
+    if not text:
+        return out
+    for pattern in (r"^0*\d{1,4}\s+(.+)$", r"^0*\d{3,4}(W\s+.+)$"):
+        match = re.match(pattern, text)
+        if match and str(match.group(1) or "").strip():
+            out.add(str(match.group(1)).strip())
+    return out
+
+
+def jackson_township_component_labels(raw: object) -> Set[str]:
+    """Return one canonical source label per Jackson County bundle component."""
+    out: Set[str] = set()
+    texts = {re.sub(r"\s+", " ", str(raw or "").strip().upper())}
+    texts.update(strip_election_sequence_prefix(raw))
+    for text in texts:
+        blue = BLUE_TOWNSHIP_RE.match(text)
+        if blue:
+            ward = int(blue.group(1))
+            for part in re.split(r"[,/]+", blue.group(2)):
+                digits = re.sub(r"[^0-9]", "", part)
+                if digits:
+                    out.add(f"B{ward} {int(digits)}")
+            continue
+        town = TOWNSHIP_BUNDLE_RE.match(text)
+        if town:
+            key = town.group(1).upper()
+            for part in re.split(r"[,/]+", town.group(2)):
+                digits = re.sub(r"[^0-9]", "", part)
+                if digits:
+                    out.add(f"{key} {int(digits)}")
+    return out
+
+
+def kc_ward_precinct_component_labels(raw: object) -> Set[str]:
+    """Return one canonical source label per Kansas City ward/precinct component."""
+    out: Set[str] = set()
+    texts = {re.sub(r"\s+", " ", str(raw or "").strip().upper())}
+    texts.update(strip_election_sequence_prefix(raw))
+    for text in texts:
+        for match in WARD_PRECINCT_RE.finditer(text):
+            out.add(f"W{int(match.group(1))} P{int(match.group(2))}")
+        for match in WARD_BUNDLE_RE.finditer(text):
+            ward = int(match.group(1))
+            for part in re.split(r"[,/]+", match.group(2)):
+                digits = re.sub(r"[^0-9]", "", part)
+                if digits:
+                    out.add(f"W{ward} P{int(digits)}")
+    return out
+
+
+def expand_st_louis_precinct_aliases(raw: object) -> Set[str]:
+    """Expand St. Louis bundles (``AP1,2``) into stable component aliases."""
+    text = re.sub(r"\s+", " ", str(raw or "").strip().upper())
+    if not text:
+        return set()
+    for stripped in strip_election_sequence_prefix(text):
+        text = stripped
+
+    # Standardize spelled-out VTD00 jurisdiction names before parsing numbers.
+    compact = re.sub(r"[^A-Z0-9,&/ ]", "", text)
+    for long_name, code in sorted(
+        ST_LOUIS_JURISDICTION_ALIASES.items(), key=lambda item: -len(item[0])
+    ):
+        compact = compact.replace(long_name, f" {code} ")
+    compact = re.sub(r"\s+", " ", compact).strip()
+
+    code_alt = "|".join(sorted(ST_LOUIS_JURISDICTION_CODES, key=lambda x: -len(x)))
+    group_re = re.compile(
+        rf"(?:^|\s)({code_alt})\s*([0-9][0-9A-Z,\s&/]*)"
+        rf"(?=(?:\s+(?:{code_alt})\s*[0-9])|$)"
+    )
+    out: Set[str] = set()
+    for match in group_re.finditer(compact):
+        code = match.group(1)
+        numbers = re.findall(r"\d+[A-Z]?", match.group(2))
+        for number in numbers:
+            num_match = re.match(r"0*(\d+)([A-Z]?)$", number)
+            if not num_match:
+                continue
+            base = str(int(num_match.group(1)))
+            suffix = num_match.group(2)
+            for digits in (base, base.zfill(2), base.zfill(3)):
+                out.add(f"{code}{digits}{suffix}")
+                out.add(f"{code} {digits}{suffix}")
+    return out
+
+
 def alias_candidates(*values: object) -> List[str]:
     seen: Set[str] = set()
     out: List[str] = []
@@ -559,12 +686,23 @@ def alias_candidates(*values: object) -> List[str]:
         if not text:
             continue
         add(text)
+        for stripped in strip_election_sequence_prefix(text):
+            add(stripped)
         for piece in re.split(r"[/,|;]+", text):
             add(piece.strip())
         for alias in expand_kc_ward_precinct_aliases(text):
             add(alias)
         for alias in expand_jackson_township_aliases(text):
             add(alias)
+        for alias in expand_st_louis_precinct_aliases(text):
+            add(alias)
+
+        alpha_numeric = re.fullmatch(r"([A-Z]+)0*(\d+)([A-Z]?)", compact_token(text))
+        if alpha_numeric:
+            prefix, number, suffix = alpha_numeric.groups()
+            bare = str(int(number))
+            for digits in (bare, bare.zfill(2), bare.zfill(3)):
+                add(f"{prefix}{digits}{suffix}")
     return out
 
 

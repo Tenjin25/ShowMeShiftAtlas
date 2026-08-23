@@ -29,6 +29,7 @@ import json
 import math
 import re
 from collections import defaultdict
+from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Set, Tuple
@@ -60,6 +61,30 @@ DEFAULT_YEARS = (
     2020, 2022, 2024,
 )
 SCOPE = "congressional"
+TRANSFER_DISTRICTS = ("7", "8")
+
+# Match getPreferredDistrictSlicePaths() in index.html so the copied rows are
+# exactly the results users see when the atlas is set to the 2022 lines.
+VEST_MAIN_BY_YEAR = {
+    2016: {
+        "president",
+        "us_senate",
+        "governor",
+        "lieutenant_governor",
+        "attorney_general",
+        "secretary_of_state",
+        "treasurer",
+    },
+    2018: {"us_senate", "auditor"},
+    2020: {
+        "president",
+        "governor",
+        "lieutenant_governor",
+        "attorney_general",
+        "secretary_of_state",
+        "treasurer",
+    },
+}
 
 
 def _load_jackson_helpers():
@@ -196,9 +221,31 @@ def load_statewide_matcher(vtd_path: Path) -> Dict[str, Dict[str, object]]:
         precinct_norm = str(props.get("precinct_norm") or "").strip().upper()
         if not precinct_norm:
             continue
+        county_fips = re.sub(
+            r"[^0-9]",
+            "",
+            str(
+                props.get("COUNTYFP20")
+                or props.get("COUNTYFP10")
+                or props.get("COUNTYFP00")
+                or props.get("COUNTYFP")
+                or ""
+            ),
+        ).zfill(3)
         county = J.election_county_key(
             props.get("county_nam") or props.get("COUNTYNAME") or precinct_norm.split(" - ", 1)[0]
         )
+        if county_fips == "510":
+            county = "ST LOUIS CITY"
+            vtd_id = str(
+                props.get("VTDST20")
+                or props.get("VTDST10")
+                or props.get("VTDST00")
+                or props.get("prec_id")
+                or ""
+            ).strip().upper()
+            if vtd_id:
+                precinct_norm = f"ST. LOUIS CITY - {vtd_id}"
         # Geography county for Jackson VTDs is always JACKSON; election county may be KC.
         geo_county = county
         if county == "KANSAS CITY":
@@ -288,7 +335,8 @@ def match_precinct_norms(
     if not county_info:
         return []
 
-    tokens = list(J.alias_candidates(raw_code, raw_precinct, f"{raw_code} {raw_precinct}".strip()))
+    raw_values = [raw_code, raw_precinct, f"{raw_code} {raw_precinct}".strip()]
+    tokens = list(J.alias_candidates(*raw_values))
     if election_county in {"JACKSON", "KANSAS CITY"}:
         expanded: List[str] = []
         for token in tokens:
@@ -299,6 +347,71 @@ def match_precinct_norms(
         tokens.extend(expanded)
 
     alias_map: Dict[str, Set[str]] = county_info["alias_to_norms"]  # type: ignore[assignment]
+
+    # Multi-precinct bundles must keep every component.  Returning the first
+    # unique alias turns labels such as "B1 01,02" or "AP1,2,3" into a single
+    # arbitrary VTD and materially distorts split counties.
+    st_louis_components: Set[str] = set()
+    jackson_components: Set[str] = set()
+    component_aliases: Set[str] = set()
+    for value in raw_values:
+        value_variants = {str(value or "").strip().upper()}
+        value_variants.update(J.strip_election_sequence_prefix(value))
+        for variant in value_variants:
+            if not variant:
+                continue
+            for alias in J.expand_st_louis_precinct_aliases(variant):
+                compact = J.compact_token(alias)
+                match = re.fullmatch(r"([A-Z]+)0*(\d+)([A-Z]?)", compact)
+                if match:
+                    prefix, number, suffix = match.groups()
+                    st_louis_components.add(f"{prefix}{int(number)}{suffix}")
+            if election_county in {"JACKSON", "KANSAS CITY"}:
+                jackson_components.update(J.jackson_township_component_labels(variant))
+                jackson_components.update(J.kc_ward_precinct_component_labels(variant))
+                component_aliases.update(J.expand_jackson_township_aliases(variant))
+                component_aliases.update(J.expand_kc_ward_precinct_aliases(variant))
+
+    # VTD00 polygons often bundle several St. Louis election precincts. Keep one
+    # matched-polygon contribution per logical component so a 4+1 bundle is
+    # weighted 80/20 rather than collapsing to two polygons and becoming 50/50.
+    weighted_st_louis_hits: List[str] = []
+    for component in sorted(st_louis_components):
+        hits: Set[str] = set()
+        for token in J.alias_candidates(component):
+            hits.update(alias_map.get(token) or set())
+        weighted_st_louis_hits.extend(sorted(hits))
+    if weighted_st_louis_hits:
+        return weighted_st_louis_hits
+
+    weighted_jackson_hits: List[str] = []
+    for component in sorted(jackson_components):
+        hits: Set[str] = set()
+        for token in J.alias_candidates(component):
+            hits.update(alias_map.get(token) or set())
+        if election_county == "KANSAS CITY":
+            hits = {n for n in hits if n in county_info["kc_norms"]}
+        else:
+            hits = {n for n in hits if n in county_info["non_kc_norms"]}
+        weighted_jackson_hits.extend(sorted(hits))
+    if weighted_jackson_hits:
+        return weighted_jackson_hits
+
+    component_hits: Set[str] = set()
+    for component in component_aliases:
+        for token in J.alias_candidates(component):
+            component_hits.update(alias_map.get(token) or set())
+    if component_hits:
+        if election_county == "KANSAS CITY":
+            kc_only = {n for n in component_hits if n in county_info["kc_norms"]}
+            if kc_only:
+                component_hits = kc_only
+        elif election_county == "JACKSON":
+            non_kc = {n for n in component_hits if n in county_info["non_kc_norms"]}
+            if non_kc:
+                component_hits = non_kc
+        return sorted(component_hits)
+
     best: Optional[Set[str]] = None
     best_size = math.inf
     for token in tokens:
@@ -324,7 +437,45 @@ def match_precinct_norms(
         kc_only = {n for n in best if n in county_info["kc_norms"]}
         if kc_only:
             return sorted(kc_only)
-    return sorted(best) if best else []
+    if best:
+        return sorted(best)
+
+    # Conservative name fallback for legacy files whose election sequence ids
+    # do not equal Census VTD ids (for example, "001 Sherman" vs "Sherman1").
+    fuzzy_tokens = {
+        J.normalize_alias_token(token)
+        for token in tokens
+        if len(J.compact_token(token)) >= 4 and not J.compact_token(token).isdigit()
+    }
+    scored: List[Tuple[float, str]] = []
+    for feature in county_info.get("features") or []:
+        score = 0.0
+        for alias in feature.get("name_aliases") or set():
+            alias_compact = J.compact_token(alias)
+            if len(alias_compact) < 4:
+                continue
+            for token in fuzzy_tokens:
+                token_compact = J.compact_token(token)
+                if len(token_compact) < 4:
+                    continue
+                if token_compact == alias_compact:
+                    score = max(score, 100.0)
+                elif token_compact in alias_compact or alias_compact in token_compact:
+                    ratio = min(len(token_compact), len(alias_compact)) / max(
+                        len(token_compact), len(alias_compact)
+                    )
+                    score = max(score, 60.0 + 30.0 * ratio)
+        if score >= 75.0:
+            scored.append((score, str(feature.get("precinct_norm") or "")))
+    if not scored:
+        return []
+    top = max(score for score, _ in scored)
+    matches = {norm for score, norm in scored if norm and score >= top - 0.5}
+    if election_county == "KANSAS CITY":
+        matches = {n for n in matches if n in county_info["kc_norms"]} or matches
+    elif election_county == "JACKSON":
+        matches = {n for n in matches if n in county_info["non_kc_norms"]} or matches
+    return sorted(matches)[:12]
 
 
 def district_weights_for_matches(
@@ -566,6 +717,72 @@ def write_payload(path: Path, payload: Dict[str, object]) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
 
+def preferred_2022_lines_source(contest: str, year: int) -> Path:
+    base = f"congressional_{contest}_{int(year)}"
+    main_path = DATA_DIR / "district_contests" / f"{base}.json"
+    overlap_path = DATA_DIR / "district_contests" / f"{base}_overlap.json"
+    prefer_main = contest in VEST_MAIN_BY_YEAR.get(int(year), set())
+    candidates = (main_path, overlap_path) if prefer_main else (overlap_path, main_path)
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise SystemExit(f"Missing 2022-lines source for {contest} {year}: {candidates}")
+
+
+def transfer_unchanged_district_results(
+    payload: Dict[str, object], contest: str, year: int
+) -> Path:
+    source_path = preferred_2022_lines_source(contest, year)
+    source_payload = json.loads(source_path.read_text(encoding="utf-8"))
+    source_results = ((source_payload.get("general") or {}).get("results")) or {}
+    target_results = ((payload.get("general") or {}).get("results")) or {}
+
+    for district in TRANSFER_DISTRICTS:
+        source_row = source_results.get(district)
+        if not source_row:
+            raise SystemExit(
+                f"Missing district {district} in 2022-lines source {source_path.name}"
+            )
+        target_results[district] = deepcopy(source_row)
+
+    meta = payload.setdefault("meta", {})
+    meta["direct_transfer"] = {
+        "source_lines_year": 2022,
+        "districts": list(TRANSFER_DISTRICTS),
+        "source_file": source_path.name,
+    }
+    return source_path
+
+
+def transfer_existing_outputs(
+    out_dir: Path,
+    years: Optional[Set[int]] = None,
+    contests: Optional[Set[str]] = None,
+) -> int:
+    transferred = 0
+    for path in sorted(out_dir.glob("congressional_*.json")):
+        if path.name == "manifest.json" or path.name.endswith("_overlap.json"):
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        meta = payload.get("meta") or {}
+        contest = str(meta.get("contest_type") or "").strip()
+        year = int(meta.get("year") or 0)
+        if not contest or not year or contest == "us_house":
+            continue
+        if years and year not in years:
+            continue
+        if contests and contest not in contests:
+            continue
+        source_path = transfer_unchanged_district_results(payload, contest, year)
+        write_payload(path, payload)
+        transferred += 1
+        print(
+            f"Transferred CDs {','.join(TRANSFER_DISTRICTS)} in {path.name} "
+            f"from {source_path.name}"
+        )
+    return transferred
+
+
 def rebuild_manifest(out_dir: Path) -> Path:
     files = []
     for path in sorted(out_dir.glob("congressional_*.json")):
@@ -576,22 +793,23 @@ def rebuild_manifest(out_dir: Path) -> Path:
         results = ((payload.get("general") or {}).get("results")) or {}
         dem_total = sum(int((r or {}).get("dem_votes") or 0) for r in results.values())
         rep_total = sum(int((r or {}).get("rep_votes") or 0) for r in results.values())
-        files.append(
-            {
-                "scope": SCOPE,
-                "contest_type": meta.get("contest_type"),
-                "year": meta.get("year"),
-                "file": path.name,
-                "districts": int(meta.get("district_count") or len(results)),
-                "rows": len(results),
-                "dem_total": dem_total,
-                "rep_total": rep_total,
-                "major_party_contested": dem_total > 0 and rep_total > 0,
-                "match_coverage_pct": meta.get("match_coverage_pct"),
-                "source_method": meta.get("source_method"),
-                "lines_year": 2026,
-            }
-        )
+        entry = {
+            "scope": SCOPE,
+            "contest_type": meta.get("contest_type"),
+            "year": meta.get("year"),
+            "file": path.name,
+            "districts": int(meta.get("district_count") or len(results)),
+            "rows": len(results),
+            "dem_total": dem_total,
+            "rep_total": rep_total,
+            "major_party_contested": dem_total > 0 and rep_total > 0,
+            "match_coverage_pct": meta.get("match_coverage_pct"),
+            "source_method": meta.get("source_method"),
+            "lines_year": 2026,
+        }
+        if meta.get("direct_transfer"):
+            entry["direct_transfer"] = meta["direct_transfer"]
+        files.append(entry)
     manifest_path = out_dir / "manifest.json"
     write_payload(manifest_path, {"files": files, "lines_year": 2026})
     return manifest_path
@@ -617,6 +835,11 @@ def main() -> None:
         default=OUT_DIR,
         help="Output folder for 2026 congressional contest slices.",
     )
+    ap.add_argument(
+        "--transfer-unchanged-only",
+        action="store_true",
+        help="Copy CDs 7 and 8 from the preferred 2022-lines slices without rebuilding other districts.",
+    )
     args = ap.parse_args()
 
     years = parse_years(args.years)
@@ -624,6 +847,13 @@ def main() -> None:
     crosswalk_override = Path(args.crosswalk) if args.crosswalk else None
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    if args.transfer_unchanged_only:
+        transferred = transfer_existing_outputs(out_dir, set(years), contests)
+        manifest_path = rebuild_manifest(out_dir)
+        print(f"Wrote {manifest_path}")
+        print(f"Done. Updated {transferred} aggregate file(s) in {out_dir}")
+        return
 
     written = 0
     matcher_cache: Dict[str, Dict[str, Dict[str, object]]] = {}
@@ -645,10 +875,14 @@ def main() -> None:
             era=era,
         )
         for contest, payload in payloads.items():
+            source_path = transfer_unchanged_district_results(payload, contest, year)
             out_path = out_dir / f"congressional_{contest}_{year}.json"
             write_payload(out_path, payload)
             written += 1
-            print(f"Wrote {out_path}")
+            print(
+                f"Wrote {out_path} "
+                f"(CDs {','.join(TRANSFER_DISTRICTS)} from {source_path.name})"
+            )
 
     manifest_path = rebuild_manifest(out_dir)
     print(f"Wrote {manifest_path}")

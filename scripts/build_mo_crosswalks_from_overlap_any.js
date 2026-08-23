@@ -152,6 +152,17 @@ function normalizePrecinctKey(raw) {
   return String(raw || '').replace(/\u00a0/g, ' ').trim().toUpperCase();
 }
 
+function precinctKeyFromProps(props) {
+  const countyFips = String(
+    props.COUNTYFP20 || props.COUNTYFP10 || props.COUNTYFP00 || props.COUNTYFP || ''
+  ).replace(/[^0-9]/g, '').padStart(3, '0').slice(-3);
+  const vtd = String(
+    props.VTDST20 || props.VTDST10 || props.VTDST00 || props.prec_id || ''
+  ).trim().toUpperCase();
+  if (countyFips === '510' && vtd) return `ST. LOUIS CITY - ${vtd}`;
+  return normalizePrecinctKey(props.precinct_norm || props.precinct_name || props.precinct || '');
+}
+
 function normalizeDistrictNum(raw) {
   const text = String(raw || '').trim();
   if (!text) return '';
@@ -242,7 +253,7 @@ function main() {
   const precincts = (precinctsPayload.features || [])
     .map(f => {
       const props = f.properties || {};
-      const key = normalizePrecinctKey(props.precinct_norm || props.precinct_name || props.precinct || '');
+      const key = precinctKeyFromProps(props);
       if (!key || !f.geometry) return null;
       const bbox = bboxFromCoords(f.geometry.coordinates);
       return { key, bbox, geom: f.geometry };
@@ -300,4 +311,3 @@ function main() {
 }
 
 main();
-

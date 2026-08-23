@@ -211,6 +211,22 @@ def load_vtds(path: Path, era_label: str = "VTD20") -> "gpd.GeoDataFrame":
         else:
             raise SystemExit(f"{path} missing county + VTD fields")
 
+    county_fips_col = next(
+        (c for c in ("COUNTYFP20", "COUNTYFP10", "COUNTYFP00", "COUNTYFP") if c in gdf.columns),
+        None,
+    )
+    vtd_col = next(
+        (c for c in ("VTDST20", "VTDST10", "VTDST00", "VTDST", "prec_id") if c in gdf.columns),
+        None,
+    )
+    if county_fips_col and vtd_col:
+        county_fips = gdf[county_fips_col].astype(str).str.replace(r"\D", "", regex=True).str.zfill(3)
+        city_mask = county_fips.eq("510")
+        gdf.loc[city_mask, "precinct_key"] = (
+            "ST. LOUIS CITY - "
+            + gdf.loc[city_mask, vtd_col].astype(str).str.strip().str.upper()
+        )
+
     county_col = next(
         (c for c in ("county_nam", "COUNTYNAME", "COUNTYFP20", "COUNTYFP10", "COUNTYFP") if c in gdf.columns),
         None,
@@ -229,6 +245,10 @@ def load_vtds(path: Path, era_label: str = "VTD20") -> "gpd.GeoDataFrame":
             lambda k: normalize_county_name(str(k).split(" - ", 1)[0] if " - " in str(k) else "")
         )
         gdf["county_name"] = key_county
+
+    if county_fips_col:
+        county_fips = gdf[county_fips_col].astype(str).str.replace(r"\D", "", regex=True).str.zfill(3)
+        gdf.loc[county_fips.eq("510"), "county_name"] = "ST LOUIS CITY"
 
     name20 = (
         gdf["NAME20"]
