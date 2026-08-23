@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:37.265931+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2020.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 81469,
-        "rep_votes": 265958,
-        "other_votes": 9067,
-        "total_votes": 356494,
+        "dem_votes": 81430,
+        "rep_votes": 265897,
+        "other_votes": 9064,
+        "total_votes": 356391,
         "dem_candidate": "Alissia Canady",
         "rep_candidate": "Mike Kehoe",
-        "margin": 184489,
-        "margin_pct": 51.750941,
+        "margin": 184467,
+        "margin_pct": 51.759725,
         "winner": "REP",
         "color": ""
       }

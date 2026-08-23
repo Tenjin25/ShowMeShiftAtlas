@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_treasurer_2004_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 95751,
-        "rep_votes": 203989,
-        "other_votes": 8240,
-        "total_votes": 307980,
+        "dem_votes": 95385,
+        "rep_votes": 203678,
+        "other_votes": 8228,
+        "total_votes": 307291,
         "dem_candidate": "Mark Powell",
         "rep_candidate": "Sarah Steelman",
-        "margin": 108238,
-        "margin_pct": 35.14449,
+        "margin": 108293,
+        "margin_pct": 35.241188,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 145703,
-        "rep_votes": 174157,
-        "other_votes": 17993,
-        "total_votes": 337853,
+        "dem_votes": 147090,
+        "rep_votes": 174291,
+        "other_votes": 18007,
+        "total_votes": 339388,
         "dem_candidate": "Mark Powell",
         "rep_candidate": "Sarah Steelman",
-        "margin": 28454,
-        "margin_pct": 8.422006,
+        "margin": 27201,
+        "margin_pct": 8.014721,
         "winner": "REP",
         "color": ""
       }

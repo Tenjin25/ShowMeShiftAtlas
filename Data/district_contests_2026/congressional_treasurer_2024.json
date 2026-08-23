@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_treasurer_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 101090,
-        "rep_votes": 261066,
-        "other_votes": 13674,
-        "total_votes": 375830,
+        "dem_votes": 94691,
+        "rep_votes": 258610,
+        "other_votes": 13312,
+        "total_votes": 366613,
         "dem_candidate": "Mark Osmack",
         "rep_candidate": "Vivek Malek",
-        "margin": 159976,
-        "margin_pct": 42.566054,
+        "margin": 163919,
+        "margin_pct": 44.711726,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 83605,
-        "rep_votes": 257903,
-        "other_votes": 14942,
-        "total_votes": 356450,
+        "dem_votes": 78747,
+        "rep_votes": 266916,
+        "other_votes": 15263,
+        "total_votes": 360926,
         "dem_candidate": "Mark Osmack",
         "rep_candidate": "Vivek Malek",
-        "margin": 174298,
-        "margin_pct": 48.898303,
+        "margin": 188169,
+        "margin_pct": 52.135064,
         "winner": "REP",
         "color": ""
       }

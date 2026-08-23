@@ -35,6 +35,14 @@
       canonical = 'ST. LOUIS CITY';
     } else if (/^(ST\.?\s+LOUIS|SAINT\s+LOUIS)(\s+COUNTY)?$/i.test(jurisdiction)) {
       canonical = 'ST. LOUIS COUNTY';
+    } else if (/^ST\.?\s+CHARLES(\s+COUNTY)?$/i.test(jurisdiction)) {
+      canonical = jurisdiction.match(/\s+COUNTY$/i) ? 'ST. CHARLES COUNTY' : 'ST. CHARLES';
+    } else if (/^ST\.?\s+CLAIR(\s+COUNTY)?$/i.test(jurisdiction)) {
+      canonical = jurisdiction.match(/\s+COUNTY$/i) ? 'ST. CLAIR COUNTY' : 'ST. CLAIR';
+    } else if (/^ST\.?\s+FRANCOIS(\s+COUNTY)?$/i.test(jurisdiction)) {
+      canonical = jurisdiction.match(/\s+COUNTY$/i) ? 'ST. FRANCOIS COUNTY' : 'ST. FRANCOIS';
+    } else if (/^STE\.?\s+GENEVIEVE(\s+COUNTY)?$/i.test(jurisdiction)) {
+      canonical = jurisdiction.match(/\s+COUNTY$/i) ? 'STE. GENEVIEVE COUNTY' : 'STE. GENEVIEVE';
     } else if (/^DE\s*KALB(\s+COUNTY)?$/i.test(jurisdiction)) {
       // OpenElections uses "DE KALB"; Census/geojson use "DeKalb".
       canonical = 'DEKALB';

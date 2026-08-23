@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2022_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 68222,
-        "rep_votes": 182646,
-        "other_votes": 7004,
-        "total_votes": 257872,
+        "dem_votes": 63460,
+        "rep_votes": 180881,
+        "other_votes": 6805,
+        "total_votes": 251146,
         "dem_candidate": "Alan Green",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": 114424,
-        "margin_pct": 44.372402,
+        "margin": 117421,
+        "margin_pct": 46.754079,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 57052,
-        "rep_votes": 184316,
-        "other_votes": 6193,
-        "total_votes": 247561,
+        "dem_votes": 50927,
+        "rep_votes": 185340,
+        "other_votes": 6068,
+        "total_votes": 242335,
         "dem_candidate": "Alan Green",
         "rep_candidate": "Scott Fitzpatrick",
-        "margin": 127264,
-        "margin_pct": 51.407128,
+        "margin": 134413,
+        "margin_pct": 55.465781,
         "winner": "REP",
         "color": ""
       }

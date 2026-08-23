@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.041526+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2016.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 105010,
-        "rep_votes": 216582,
-        "other_votes": 15400,
-        "total_votes": 336992,
+        "dem_votes": 104971,
+        "rep_votes": 216530,
+        "other_votes": 15396,
+        "total_votes": 336897,
         "dem_candidate": "Russ Carnahan",
         "rep_candidate": "Mike Parson",
-        "margin": 111572,
-        "margin_pct": 33.108204,
+        "margin": 111559,
+        "margin_pct": 33.113682,
         "winner": "REP",
         "color": ""
       }

@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2000_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 101884,
-        "rep_votes": 141873,
-        "other_votes": 11184,
-        "total_votes": 254941,
+        "dem_votes": 101854,
+        "rep_votes": 141883,
+        "other_votes": 11179,
+        "total_votes": 254916,
         "dem_candidate": "Joe Maxwell",
         "rep_candidate": "Wendell Bailey",
-        "margin": 39989,
-        "margin_pct": 15.68559,
+        "margin": 40029,
+        "margin_pct": 15.70282,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 142704,
-        "rep_votes": 136677,
-        "other_votes": 11653,
-        "total_votes": 291034,
+        "dem_votes": 145514,
+        "rep_votes": 138374,
+        "other_votes": 11852,
+        "total_votes": 295740,
         "dem_candidate": "Joe Maxwell",
         "rep_candidate": "Wendell Bailey",
-        "margin": -6027,
-        "margin_pct": -2.070892,
+        "margin": -7140,
+        "margin_pct": -2.414283,
         "winner": "DEM",
         "color": ""
       }

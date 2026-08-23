@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 100471,
-        "rep_votes": 266900,
-        "other_votes": 8390,
-        "total_votes": 375761,
+        "dem_votes": 93949,
+        "rep_votes": 264407,
+        "other_votes": 8176,
+        "total_votes": 366532,
         "dem_candidate": "Elad Jonathan Gross",
         "rep_candidate": "Andrew Bailey",
-        "margin": 166429,
-        "margin_pct": 44.291185,
+        "margin": 170458,
+        "margin_pct": 46.505626,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 80595,
-        "rep_votes": 268962,
-        "other_votes": 7349,
-        "total_votes": 356906,
+        "dem_votes": 75325,
+        "rep_votes": 278555,
+        "other_votes": 7524,
+        "total_votes": 361404,
         "dem_candidate": "Elad Jonathan Gross",
         "rep_candidate": "Andrew Bailey",
-        "margin": 188367,
-        "margin_pct": 52.777762,
+        "margin": 203230,
+        "margin_pct": 56.233467,
         "winner": "REP",
         "color": ""
       }

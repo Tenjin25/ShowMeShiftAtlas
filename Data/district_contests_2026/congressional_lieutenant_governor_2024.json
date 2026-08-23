@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_lieutenant_governor_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 102830,
-        "rep_votes": 258969,
-        "other_votes": 14513,
-        "total_votes": 376312,
+        "dem_votes": 96325,
+        "rep_votes": 256626,
+        "other_votes": 14126,
+        "total_votes": 367077,
         "dem_candidate": "Richard Brown",
         "rep_candidate": "Dave Wasinger",
-        "margin": 156139,
-        "margin_pct": 41.4919,
+        "margin": 160301,
+        "margin_pct": 43.669584,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 84397,
-        "rep_votes": 257162,
-        "other_votes": 15502,
-        "total_votes": 357061,
+        "dem_votes": 79276,
+        "rep_votes": 266393,
+        "other_votes": 15927,
+        "total_votes": 361596,
         "dem_candidate": "Richard Brown",
         "rep_candidate": "Dave Wasinger",
-        "margin": 172765,
-        "margin_pct": 48.38529,
+        "margin": 187117,
+        "margin_pct": 51.74753,
         "winner": "REP",
         "color": ""
       }

@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:25.596988+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2018.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 87040,
-        "rep_votes": 194177,
-        "other_votes": 8630,
-        "total_votes": 289847,
+        "dem_votes": 87002,
+        "rep_votes": 194133,
+        "other_votes": 8627,
+        "total_votes": 289762,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Josh Hawley",
-        "margin": 107137,
-        "margin_pct": 36.963294,
+        "margin": 107131,
+        "margin_pct": 36.972067,
         "winner": "REP",
         "color": ""
       }

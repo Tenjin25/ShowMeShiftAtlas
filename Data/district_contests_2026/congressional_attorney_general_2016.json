@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:14.044610+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2016.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 98054,
-        "rep_votes": 236037,
+        "dem_votes": 98020,
+        "rep_votes": 235978,
         "other_votes": 0,
-        "total_votes": 334091,
+        "total_votes": 333998,
         "dem_candidate": "Teresa Hensley",
         "rep_candidate": "Josh Hawley",
-        "margin": 137983,
-        "margin_pct": 41.301023,
+        "margin": 137958,
+        "margin_pct": 41.305038,
         "winner": "REP",
         "color": ""
       }

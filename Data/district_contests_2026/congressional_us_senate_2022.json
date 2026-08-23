@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2022_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 77093,
-        "rep_votes": 173696,
-        "other_votes": 8035,
-        "total_votes": 258824,
+        "dem_votes": 72040,
+        "rep_votes": 172081,
+        "other_votes": 7911,
+        "total_votes": 252032,
         "dem_candidate": "Trudy Busch Valentine",
         "rep_candidate": "Eric Schmitt",
-        "margin": 96603,
-        "margin_pct": 37.323819,
+        "margin": 100041,
+        "margin_pct": 39.693769,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 65024,
-        "rep_votes": 178124,
-        "other_votes": 6430,
-        "total_votes": 249578,
+        "dem_votes": 58757,
+        "rep_votes": 179158,
+        "other_votes": 6371,
+        "total_votes": 244286,
         "dem_candidate": "Trudy Busch Valentine",
         "rep_candidate": "Eric Schmitt",
-        "margin": 113100,
-        "margin_pct": 45.316494,
+        "margin": 120401,
+        "margin_pct": 49.286901,
         "winner": "REP",
         "color": ""
       }

@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_governor_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 146016,
-        "rep_votes": 169401,
-        "other_votes": 9242,
-        "total_votes": 324659,
+        "dem_votes": 146861,
+        "rep_votes": 170508,
+        "other_votes": 9269,
+        "total_votes": 326638,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "David (Dave) Spence",
-        "margin": 23385,
-        "margin_pct": 7.202942,
+        "margin": 23647,
+        "margin_pct": 7.239513,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 166995,
-        "rep_votes": 155775,
-        "other_votes": 8824,
-        "total_votes": 331594,
+        "dem_votes": 164129,
+        "rep_votes": 153939,
+        "other_votes": 8698,
+        "total_votes": 326766,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "David (Dave) Spence",
-        "margin": -11220,
-        "margin_pct": -3.383656,
+        "margin": -10190,
+        "margin_pct": -3.118439,
         "winner": "DEM",
         "color": ""
       }

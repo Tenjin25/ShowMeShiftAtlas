@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_president_2024_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 112292,
-        "rep_votes": 267779,
-        "other_votes": 4821,
-        "total_votes": 384892,
+        "dem_votes": 105453,
+        "rep_votes": 265329,
+        "other_votes": 4640,
+        "total_votes": 375422,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
-        "margin": 155487,
-        "margin_pct": 40.397566,
+        "margin": 159876,
+        "margin_pct": 42.585677,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 89190,
-        "rep_votes": 277273,
-        "other_votes": 3730,
-        "total_votes": 370193,
+        "dem_votes": 83856,
+        "rep_votes": 287596,
+        "other_votes": 3723,
+        "total_votes": 375175,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
-        "margin": 188083,
-        "margin_pct": 50.806741,
+        "margin": 203740,
+        "margin_pct": 54.305324,
         "winner": "REP",
         "color": ""
       }

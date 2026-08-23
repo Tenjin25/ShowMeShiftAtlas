@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:25.602297+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2018.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 97335,
-        "rep_votes": 173923,
-        "other_votes": 11914,
-        "total_votes": 283172,
+        "dem_votes": 97292,
+        "rep_votes": 173887,
+        "other_votes": 11910,
+        "total_votes": 283089,
         "dem_candidate": "Nicole Galloway",
         "rep_candidate": "Saundra McDowell",
-        "margin": 76588,
-        "margin_pct": 27.046459,
+        "margin": 76595,
+        "margin_pct": 27.056862,
         "winner": "REP",
         "color": ""
       }

@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2000_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 127060,
-        "rep_votes": 119983,
-        "other_votes": 5490,
-        "total_votes": 252533,
+        "dem_votes": 127051,
+        "rep_votes": 119981,
+        "other_votes": 5489,
+        "total_votes": 252521,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "Sam Jones",
-        "margin": -7077,
-        "margin_pct": -2.802406,
+        "margin": -7070,
+        "margin_pct": -2.799767,
         "winner": "DEM",
         "color": ""
       },
       "8": {
-        "dem_votes": 171786,
-        "rep_votes": 109662,
-        "other_votes": 6661,
-        "total_votes": 288109,
+        "dem_votes": 175038,
+        "rep_votes": 111021,
+        "other_votes": 6731,
+        "total_votes": 292790,
         "dem_candidate": "Jeremiah W. (Jay) Nixon",
         "rep_candidate": "Sam Jones",
-        "margin": -62124,
-        "margin_pct": -21.562672,
+        "margin": -64017,
+        "margin_pct": -21.864476,
         "winner": "DEM",
         "color": ""
       }

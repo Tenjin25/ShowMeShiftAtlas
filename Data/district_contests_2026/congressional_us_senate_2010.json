@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2010_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 63609,
-        "rep_votes": 155295,
-        "other_votes": 12598,
-        "total_votes": 231502,
+        "dem_votes": 64360,
+        "rep_votes": 157080,
+        "other_votes": 12815,
+        "total_votes": 234255,
         "dem_candidate": "Robin Carnahan",
         "rep_candidate": "Roy Blunt",
-        "margin": 91686,
-        "margin_pct": 39.604841,
+        "margin": 92720,
+        "margin_pct": 39.580799,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 81706,
-        "rep_votes": 143352,
-        "other_votes": 14035,
-        "total_votes": 239093,
+        "dem_votes": 84025,
+        "rep_votes": 146683,
+        "other_votes": 14452,
+        "total_votes": 245160,
         "dem_candidate": "Robin Carnahan",
         "rep_candidate": "Roy Blunt",
-        "margin": 61646,
-        "margin_pct": 25.783273,
+        "margin": 62658,
+        "margin_pct": 25.558003,
         "winner": "REP",
         "color": ""
       }

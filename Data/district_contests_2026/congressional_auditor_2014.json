@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2014_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -101,25 +109,25 @@
       },
       "7": {
         "dem_votes": 0,
-        "rep_votes": 122739,
-        "other_votes": 31854,
-        "total_votes": 154593,
+        "rep_votes": 122801,
+        "other_votes": 31890,
+        "total_votes": 154691,
         "dem_candidate": "",
         "rep_candidate": "Tom Schweich",
-        "margin": 122739,
-        "margin_pct": 79.394927,
+        "margin": 122801,
+        "margin_pct": 79.384709,
         "winner": "REP",
         "color": ""
       },
       "8": {
         "dem_votes": 0,
-        "rep_votes": 120738,
-        "other_votes": 35590,
-        "total_votes": 156328,
+        "rep_votes": 115895,
+        "other_votes": 33779,
+        "total_votes": 149674,
         "dem_candidate": "",
         "rep_candidate": "Tom Schweich",
-        "margin": 120738,
-        "margin_pct": 77.233765,
+        "margin": 115895,
+        "margin_pct": 77.431618,
         "winner": "REP",
         "color": ""
       }

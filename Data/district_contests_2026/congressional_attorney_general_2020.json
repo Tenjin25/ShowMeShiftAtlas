@@ -32,6 +32,14 @@
       ],
       "updated_at": "2026-07-27T23:57:37.269847+00:00",
       "mode": "replace"
+    },
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_attorney_general_2020.json"
     }
   },
   "general": {
@@ -121,14 +129,14 @@
         "color": ""
       },
       "8": {
-        "dem_votes": 77014,
-        "rep_votes": 269698,
-        "other_votes": 8776,
-        "total_votes": 355488,
+        "dem_votes": 76977,
+        "rep_votes": 269635,
+        "other_votes": 8774,
+        "total_votes": 355386,
         "dem_candidate": "Rich Finneran",
         "rep_candidate": "Eric Schmitt",
-        "margin": 192684,
-        "margin_pct": 54.202674,
+        "margin": 192658,
+        "margin_pct": 54.210914,
         "winner": "REP",
         "color": ""
       }

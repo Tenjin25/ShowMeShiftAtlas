@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2010_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 76029,
-        "rep_votes": 143935,
-        "other_votes": 8995,
-        "total_votes": 228959,
+        "dem_votes": 76996,
+        "rep_votes": 145588,
+        "other_votes": 9112,
+        "total_votes": 231696,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Tom Schweich",
-        "margin": 67906,
-        "margin_pct": 29.658585,
+        "margin": 68592,
+        "margin_pct": 29.604309,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 91243,
-        "rep_votes": 132327,
-        "other_votes": 10105,
-        "total_votes": 233675,
+        "dem_votes": 93904,
+        "rep_votes": 135409,
+        "other_votes": 10362,
+        "total_votes": 239675,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Tom Schweich",
-        "margin": 41084,
-        "margin_pct": 17.581684,
+        "margin": 41505,
+        "margin_pct": 17.3172,
         "winner": "REP",
         "color": ""
       }

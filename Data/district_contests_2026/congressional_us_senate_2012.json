@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_us_senate_2012_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 139395,
-        "rep_votes": 160754,
-        "other_votes": 22598,
-        "total_votes": 322747,
+        "dem_votes": 140235,
+        "rep_votes": 161753,
+        "other_votes": 22706,
+        "total_votes": 324694,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Todd Akin",
-        "margin": 21359,
-        "margin_pct": 6.617877,
+        "margin": 21518,
+        "margin_pct": 6.627163,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 161858,
-        "rep_votes": 150189,
-        "other_votes": 19296,
-        "total_votes": 331343,
+        "dem_votes": 158878,
+        "rep_votes": 148635,
+        "other_votes": 19005,
+        "total_votes": 326518,
         "dem_candidate": "Claire McCaskill",
         "rep_candidate": "Todd Akin",
-        "margin": -11669,
-        "margin_pct": -3.521728,
+        "margin": -10243,
+        "margin_pct": -3.13704,
         "winner": "DEM",
         "color": ""
       }

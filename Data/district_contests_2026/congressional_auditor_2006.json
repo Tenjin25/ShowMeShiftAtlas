@@ -23,7 +23,15 @@
       "6",
       "7",
       "8"
-    ]
+    ],
+    "direct_transfer": {
+      "source_lines_year": 2022,
+      "districts": [
+        "7",
+        "8"
+      ],
+      "source_file": "congressional_auditor_2006_overlap.json"
+    }
   },
   "general": {
     "results": {
@@ -100,26 +108,26 @@
         "color": ""
       },
       "7": {
-        "dem_votes": 101193,
-        "rep_votes": 135699,
-        "other_votes": 9491,
-        "total_votes": 246383,
+        "dem_votes": 100911,
+        "rep_votes": 135599,
+        "other_votes": 9471,
+        "total_votes": 245981,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Sandra Thomas",
-        "margin": 34506,
-        "margin_pct": 14.005025,
+        "margin": 34688,
+        "margin_pct": 14.101902,
         "winner": "REP",
         "color": ""
       },
       "8": {
-        "dem_votes": 133226,
-        "rep_votes": 121330,
-        "other_votes": 10860,
-        "total_votes": 265416,
+        "dem_votes": 132410,
+        "rep_votes": 120760,
+        "other_votes": 10815,
+        "total_votes": 263985,
         "dem_candidate": "Susan Montee",
         "rep_candidate": "Sandra Thomas",
-        "margin": -11896,
-        "margin_pct": -4.482021,
+        "margin": -11650,
+        "margin_pct": -4.41313,
         "winner": "DEM",
         "color": ""
       }
