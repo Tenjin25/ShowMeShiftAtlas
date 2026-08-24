@@ -63,6 +63,10 @@ def load_county_name_by_fips() -> dict[str, str]:
         if not fips or not name:
             continue
         out[fips.zfill(3)] = name
+    # Census county code 510 is the independent City of St. Louis.  The county
+    # boundary file calls both 189 (St. Louis County) and 510 (St. Louis city)
+    # simply "St. Louis", which otherwise makes their VTD identifiers collide.
+    out["510"] = "St. Louis City"
     if len(out) < 100:
         raise RuntimeError(f"Unexpected county map size: {len(out)}")
     return out
@@ -187,4 +191,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

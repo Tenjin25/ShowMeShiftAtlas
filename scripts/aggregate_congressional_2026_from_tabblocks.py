@@ -221,9 +221,31 @@ def load_statewide_matcher(vtd_path: Path) -> Dict[str, Dict[str, object]]:
         precinct_norm = str(props.get("precinct_norm") or "").strip().upper()
         if not precinct_norm:
             continue
+        county_fips = re.sub(
+            r"[^0-9]",
+            "",
+            str(
+                props.get("COUNTYFP20")
+                or props.get("COUNTYFP10")
+                or props.get("COUNTYFP00")
+                or props.get("COUNTYFP")
+                or ""
+            ),
+        ).zfill(3)
         county = J.election_county_key(
             props.get("county_nam") or props.get("COUNTYNAME") or precinct_norm.split(" - ", 1)[0]
         )
+        if county_fips == "510":
+            county = "ST LOUIS CITY"
+            vtd_id = str(
+                props.get("VTDST20")
+                or props.get("VTDST10")
+                or props.get("VTDST00")
+                or props.get("prec_id")
+                or ""
+            ).strip().upper()
+            if vtd_id:
+                precinct_norm = f"ST. LOUIS CITY - {vtd_id}"
         # Geography county for Jackson VTDs is always JACKSON; election county may be KC.
         geo_county = county
         if county == "KANSAS CITY":
@@ -313,7 +335,8 @@ def match_precinct_norms(
     if not county_info:
         return []
 
-    tokens = list(J.alias_candidates(raw_code, raw_precinct, f"{raw_code} {raw_precinct}".strip()))
+    raw_values = [raw_code, raw_precinct, f"{raw_code} {raw_precinct}".strip()]
+    tokens = list(J.alias_candidates(*raw_values))
     if election_county in {"JACKSON", "KANSAS CITY"}:
         expanded: List[str] = []
         for token in tokens:
@@ -324,6 +347,71 @@ def match_precinct_norms(
         tokens.extend(expanded)
 
     alias_map: Dict[str, Set[str]] = county_info["alias_to_norms"]  # type: ignore[assignment]
+
+    # Multi-precinct bundles must keep every component.  Returning the first
+    # unique alias turns labels such as "B1 01,02" or "AP1,2,3" into a single
+    # arbitrary VTD and materially distorts split counties.
+    st_louis_components: Set[str] = set()
+    jackson_components: Set[str] = set()
+    component_aliases: Set[str] = set()
+    for value in raw_values:
+        value_variants = {str(value or "").strip().upper()}
+        value_variants.update(J.strip_election_sequence_prefix(value))
+        for variant in value_variants:
+            if not variant:
+                continue
+            for alias in J.expand_st_louis_precinct_aliases(variant):
+                compact = J.compact_token(alias)
+                match = re.fullmatch(r"([A-Z]+)0*(\d+)([A-Z]?)", compact)
+                if match:
+                    prefix, number, suffix = match.groups()
+                    st_louis_components.add(f"{prefix}{int(number)}{suffix}")
+            if election_county in {"JACKSON", "KANSAS CITY"}:
+                jackson_components.update(J.jackson_township_component_labels(variant))
+                jackson_components.update(J.kc_ward_precinct_component_labels(variant))
+                component_aliases.update(J.expand_jackson_township_aliases(variant))
+                component_aliases.update(J.expand_kc_ward_precinct_aliases(variant))
+
+    # VTD00 polygons often bundle several St. Louis election precincts. Keep one
+    # matched-polygon contribution per logical component so a 4+1 bundle is
+    # weighted 80/20 rather than collapsing to two polygons and becoming 50/50.
+    weighted_st_louis_hits: List[str] = []
+    for component in sorted(st_louis_components):
+        hits: Set[str] = set()
+        for token in J.alias_candidates(component):
+            hits.update(alias_map.get(token) or set())
+        weighted_st_louis_hits.extend(sorted(hits))
+    if weighted_st_louis_hits:
+        return weighted_st_louis_hits
+
+    weighted_jackson_hits: List[str] = []
+    for component in sorted(jackson_components):
+        hits: Set[str] = set()
+        for token in J.alias_candidates(component):
+            hits.update(alias_map.get(token) or set())
+        if election_county == "KANSAS CITY":
+            hits = {n for n in hits if n in county_info["kc_norms"]}
+        else:
+            hits = {n for n in hits if n in county_info["non_kc_norms"]}
+        weighted_jackson_hits.extend(sorted(hits))
+    if weighted_jackson_hits:
+        return weighted_jackson_hits
+
+    component_hits: Set[str] = set()
+    for component in component_aliases:
+        for token in J.alias_candidates(component):
+            component_hits.update(alias_map.get(token) or set())
+    if component_hits:
+        if election_county == "KANSAS CITY":
+            kc_only = {n for n in component_hits if n in county_info["kc_norms"]}
+            if kc_only:
+                component_hits = kc_only
+        elif election_county == "JACKSON":
+            non_kc = {n for n in component_hits if n in county_info["non_kc_norms"]}
+            if non_kc:
+                component_hits = non_kc
+        return sorted(component_hits)
+
     best: Optional[Set[str]] = None
     best_size = math.inf
     for token in tokens:
@@ -349,7 +437,45 @@ def match_precinct_norms(
         kc_only = {n for n in best if n in county_info["kc_norms"]}
         if kc_only:
             return sorted(kc_only)
-    return sorted(best) if best else []
+    if best:
+        return sorted(best)
+
+    # Conservative name fallback for legacy files whose election sequence ids
+    # do not equal Census VTD ids (for example, "001 Sherman" vs "Sherman1").
+    fuzzy_tokens = {
+        J.normalize_alias_token(token)
+        for token in tokens
+        if len(J.compact_token(token)) >= 4 and not J.compact_token(token).isdigit()
+    }
+    scored: List[Tuple[float, str]] = []
+    for feature in county_info.get("features") or []:
+        score = 0.0
+        for alias in feature.get("name_aliases") or set():
+            alias_compact = J.compact_token(alias)
+            if len(alias_compact) < 4:
+                continue
+            for token in fuzzy_tokens:
+                token_compact = J.compact_token(token)
+                if len(token_compact) < 4:
+                    continue
+                if token_compact == alias_compact:
+                    score = max(score, 100.0)
+                elif token_compact in alias_compact or alias_compact in token_compact:
+                    ratio = min(len(token_compact), len(alias_compact)) / max(
+                        len(token_compact), len(alias_compact)
+                    )
+                    score = max(score, 60.0 + 30.0 * ratio)
+        if score >= 75.0:
+            scored.append((score, str(feature.get("precinct_norm") or "")))
+    if not scored:
+        return []
+    top = max(score for score, _ in scored)
+    matches = {norm for score, norm in scored if norm and score >= top - 0.5}
+    if election_county == "KANSAS CITY":
+        matches = {n for n in matches if n in county_info["kc_norms"]} or matches
+    elif election_county == "JACKSON":
+        matches = {n for n in matches if n in county_info["non_kc_norms"]} or matches
+    return sorted(matches)[:12]
 
 
 def district_weights_for_matches(
@@ -628,7 +754,11 @@ def transfer_unchanged_district_results(
     return source_path
 
 
-def transfer_existing_outputs(out_dir: Path) -> int:
+def transfer_existing_outputs(
+    out_dir: Path,
+    years: Optional[Set[int]] = None,
+    contests: Optional[Set[str]] = None,
+) -> int:
     transferred = 0
     for path in sorted(out_dir.glob("congressional_*.json")):
         if path.name == "manifest.json" or path.name.endswith("_overlap.json"):
@@ -638,6 +768,10 @@ def transfer_existing_outputs(out_dir: Path) -> int:
         contest = str(meta.get("contest_type") or "").strip()
         year = int(meta.get("year") or 0)
         if not contest or not year or contest == "us_house":
+            continue
+        if years and year not in years:
+            continue
+        if contests and contest not in contests:
             continue
         source_path = transfer_unchanged_district_results(payload, contest, year)
         write_payload(path, payload)
@@ -715,7 +849,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if args.transfer_unchanged_only:
-        transferred = transfer_existing_outputs(out_dir)
+        transferred = transfer_existing_outputs(out_dir, set(years), contests)
         manifest_path = rebuild_manifest(out_dir)
         print(f"Wrote {manifest_path}")
         print(f"Done. Updated {transferred} aggregate file(s) in {out_dir}")
