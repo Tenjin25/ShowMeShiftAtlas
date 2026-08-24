@@ -112,7 +112,14 @@ function districtStatsPathForLegislativeCalibration(scope, year, contestType) {
 }
 
 function parseArgs(argv) {
-  const out = { scope: SCOPE_DEFAULT, years: YEARS_DEFAULT, contests: null, crosswalkPath: '', vtdGeojsonPath: '' };
+  const out = {
+    scope: SCOPE_DEFAULT,
+    years: YEARS_DEFAULT,
+    contests: null,
+    crosswalkPath: '',
+    crosswalkOverridePath: '',
+    vtdGeojsonPath: ''
+  };
   const args = Array.from(argv || []);
   for (let i = 0; i < args.length; i += 1) {
     const a = String(args[i] || '');
@@ -123,6 +130,11 @@ function parseArgs(argv) {
     }
     if (a === '--crosswalk') {
       out.crosswalkPath = String(args[i + 1] || '').trim();
+      i += 1;
+      continue;
+    }
+    if (a === '--crosswalk-override') {
+      out.crosswalkOverridePath = String(args[i + 1] || '').trim();
       i += 1;
       continue;
     }
@@ -1008,6 +1020,17 @@ function readCrosswalkByPrecinct(csvPath) {
   return out;
 }
 
+function applyCrosswalkOverride(baseByPrecinct, overrideByPrecinct) {
+  let replaced = 0;
+  let added = 0;
+  for (const [precinctKey, weights] of (overrideByPrecinct || new Map()).entries()) {
+    if (baseByPrecinct.has(precinctKey)) replaced += 1;
+    else added += 1;
+    baseByPrecinct.set(precinctKey, new Map(weights));
+  }
+  return { replaced, added, total: replaced + added };
+}
+
 function buildDistrictMapFromPrecinctCrosswalks(fromByPrecinct, toByPrecinct) {
   // Produces a best-effort mapping from "fromDistrict" -> "toDistrict" by
   // composing precinct overlaps (no geometry deps).
@@ -1764,8 +1787,24 @@ function buildPayload(
 }
 
 async function main() {
-  const { scope, years, contests, crosswalkPath, vtdGeojsonPath } = parseArgs(process.argv.slice(2));
+  const {
+    scope,
+    years,
+    contests,
+    crosswalkPath,
+    crosswalkOverridePath,
+    vtdGeojsonPath
+  } = parseArgs(process.argv.slice(2));
   const crosswalkByPrecinct = readCrosswalkByPrecinct(crosswalkPath);
+  let crosswalkOverrideStats = null;
+  if (crosswalkOverridePath) {
+    const overrideByPrecinct = readCrosswalkByPrecinct(crosswalkOverridePath);
+    crosswalkOverrideStats = applyCrosswalkOverride(crosswalkByPrecinct, overrideByPrecinct);
+    console.log(
+      `Applied crosswalk override ${path.basename(crosswalkOverridePath)}: `
+      + `${crosswalkOverrideStats.replaced} replaced, ${crosswalkOverrideStats.added} added`
+    );
+  }
   const matcherIdx = buildPrecinctMatcherIndex(vtdGeojsonPath);
   const countyArea = buildCountyWeightFallbacks(crosswalkByPrecinct);
   const statewideFallbackWeights = normalizeWeights(countyArea.statewide);
@@ -1980,6 +2019,16 @@ async function main() {
       demCandidate,
       repCandidate,
       {
+        source_method: crosswalkOverridePath
+          ? 'vtd_match_with_tabblock_crosswalk_override'
+          : (/(?:from_tabblocks|from_nhgis)/i.test(crosswalkPath)
+              ? 'vtd_match_tabblock_nhgis_crosswalk'
+              : 'precinct_overlap_crosswalk'),
+        crosswalk: path.relative(ROOT, crosswalkPath).replace(/\\/g, '/'),
+        ...(crosswalkOverridePath ? {
+          crosswalk_override: path.relative(ROOT, crosswalkOverridePath).replace(/\\/g, '/'),
+          crosswalk_override_precincts: crosswalkOverrideStats ? crosswalkOverrideStats.total : 0
+        } : {}),
         label_match_votes: Math.round(labelMatchedVotes),
         legacy_district_labels_enabled: Boolean(allowLegacyDistrictLabels && Number(year) < 2022)
       }

@@ -1,22 +1,26 @@
 #!/usr/bin/env python
 """
-Build statewide precinct -> 2026 congressional district crosswalks via
-tabulation blocks (+ optional NHGIS decade chaining), with the Jackson /
-Kansas City election-county fix.
+Build statewide precinct -> congressional district crosswalks via tabulation
+blocks (+ optional NHGIS decade chaining), with the Jackson / Kansas City
+election-county fix. Supports both the enacted 2022 (CD118) plan and the 2026
+plan.
 
 Decade chain (--with-nhgis)
 ---------------------------
-  tabblock20 + VTD20  -> precinct_to_cd2026_from_tabblocks.csv
+  tabblock20 + VTD20  -> precinct_to_{plan}_from_tabblocks.csv
   + NHGIS 2010->2020 + tabblock10 + VTD10
-                      -> vtd10_to_cd2026_from_nhgis.csv
+                      -> vtd10_to_{plan}_from_nhgis.csv
   + NHGIS 2000->2010 + tabblock00 + VTD00
-                      -> vtd00_to_cd2026_from_nhgis.csv
+                      -> vtd00_to_{plan}_from_nhgis.csv
+
+Where {plan} is cd2026 by default or cd118 with --plan 2022.
 
 Usage
 -----
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --with-nhgis
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --with-nhgis --skip-block-dump
+  python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --plan 2022 --with-nhgis
 """
 
 from __future__ import annotations
@@ -35,6 +39,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "Data"
 CROSSWALK_DIR = DATA_DIR / "crosswalks"
+SOURCE_DATA_DIR = DATA_DIR
 
 JACKSON_COUNTYFP = "095"
 STATEFP = "29"
@@ -42,12 +47,31 @@ STATEFP = "29"
 TABBLOCK20_SHP = DATA_DIR / "_extract_tabblock20" / "tl_2020_29_tabblock20.shp"
 TABBLOCK20_ZIP = DATA_DIR / "tl_2020_29_tabblock20.zip"
 VTD20_GEOJSON = DATA_DIR / "mo_vtd20_precincts.geojson"
-CD2026_GEOJSON = DATA_DIR / "mo_congressional_districts_2026.geojson"
+PLAN_CONFIG = {
+    "2022": {
+        "district_geojson": DATA_DIR / "mo_congressional_districts_2022.geojson",
+        "district_label": "CD 2022 (CD118)",
+        "out_block": CROSSWALK_DIR / "tabblock20_to_cd118.csv",
+        "out_vtd20": CROSSWALK_DIR / "precinct_to_cd118_from_tabblocks.csv",
+        "out_vtd10": CROSSWALK_DIR / "vtd10_to_cd118_from_nhgis.csv",
+        "out_vtd00": CROSSWALK_DIR / "vtd00_to_cd118_from_nhgis.csv",
+    },
+    "2026": {
+        "district_geojson": DATA_DIR / "mo_congressional_districts_2026.geojson",
+        "district_label": "CD 2026",
+        "out_block": CROSSWALK_DIR / "tabblock20_to_cd2026.csv",
+        "out_vtd20": CROSSWALK_DIR / "precinct_to_cd2026_from_tabblocks.csv",
+        "out_vtd10": CROSSWALK_DIR / "vtd10_to_cd2026_from_nhgis.csv",
+        "out_vtd00": CROSSWALK_DIR / "vtd00_to_cd2026_from_nhgis.csv",
+    },
+}
 
-OUT_BLOCK = CROSSWALK_DIR / "tabblock20_to_cd2026.csv"
-OUT_VTD20 = CROSSWALK_DIR / "precinct_to_cd2026_from_tabblocks.csv"
-OUT_VTD10 = CROSSWALK_DIR / "vtd10_to_cd2026_from_nhgis.csv"
-OUT_VTD00 = CROSSWALK_DIR / "vtd00_to_cd2026_from_nhgis.csv"
+CD_GEOJSON = PLAN_CONFIG["2026"]["district_geojson"]
+DISTRICT_LABEL = PLAN_CONFIG["2026"]["district_label"]
+OUT_BLOCK = PLAN_CONFIG["2026"]["out_block"]
+OUT_VTD20 = PLAN_CONFIG["2026"]["out_vtd20"]
+OUT_VTD10 = PLAN_CONFIG["2026"]["out_vtd10"]
+OUT_VTD00 = PLAN_CONFIG["2026"]["out_vtd00"]
 
 TABBLOCK10_ZIP = DATA_DIR / "tl_2020_29_tabblock10.zip"
 TABBLOCK10_SHP = DATA_DIR / "_extract_tabblock10" / "tl_2020_29_tabblock10.shp"
@@ -293,13 +317,10 @@ def load_vtds(path: Path, era_label: str = "VTD20") -> "gpd.GeoDataFrame":
 def load_congressional_districts() -> "gpd.GeoDataFrame":
     import geopandas as gpd
 
-    if not CD2026_GEOJSON.exists():
-        raise SystemExit(
-            f"Missing {CD2026_GEOJSON}. Convert Data/MO_CD_MO_2025.zip first "
-            "(or re-run the extract step)."
-        )
-    print(f"Reading 2026 congressional districts from {CD2026_GEOJSON} ...")
-    gdf = gpd.read_file(CD2026_GEOJSON)
+    if not CD_GEOJSON.exists():
+        raise SystemExit(f"Missing congressional district geography: {CD_GEOJSON}")
+    print(f"Reading {DISTRICT_LABEL} districts from {CD_GEOJSON} ...")
+    gdf = gpd.read_file(CD_GEOJSON)
     if gdf.crs is None:
         gdf = gdf.set_crs("EPSG:4326")
     else:
@@ -310,7 +331,7 @@ def load_congressional_districts() -> "gpd.GeoDataFrame":
         None,
     )
     if district_col is None:
-        raise SystemExit(f"{CD2026_GEOJSON} missing district field")
+        raise SystemExit(f"{CD_GEOJSON} missing district field")
 
     gdf["district_num"] = gdf[district_col].map(normalize_district_num)
     gdf = gdf.loc[gdf["district_num"] != ""].copy()
@@ -445,7 +466,7 @@ def build_crosswalk(*, write_blocks: bool = True) -> pd.DataFrame:
 
     blocks = blocks.copy()
     blocks["precinct_key"] = spatial_assign_blocks(blocks, vtds, "precinct_key", "VTD20")
-    blocks["district_num"] = spatial_assign_blocks(blocks, districts, "district_num", "CD 2026")
+    blocks["district_num"] = spatial_assign_blocks(blocks, districts, "district_num", DISTRICT_LABEL)
 
     vtd_meta = vtds.drop(columns=["geometry"]).drop_duplicates("precinct_key")
     blocks = blocks.merge(vtd_meta, on="precinct_key", how="left")
@@ -561,7 +582,7 @@ def load_era_block_points(era: str) -> "gpd.GeoDataFrame":
             read_geometry=False,
         )
     elif era == "vtd00":
-        county_dir = DATA_DIR / "tiger2008" / "tabblock00_by_county"
+        county_dir = SOURCE_DATA_DIR / "tiger2008" / "tabblock00_by_county"
         county_zips = sorted(county_dir.glob("tl_2008_29*_tabblock00.zip")) if county_dir.exists() else []
         # Statewide zip in this repo is truncated (no EOCD); prefer county extracts.
         if county_zips:
@@ -627,7 +648,7 @@ def load_era_block_points(era: str) -> "gpd.GeoDataFrame":
                 raise SystemExit(
                     f"Missing tabblock00 sources ({county_dir} and {TABBLOCK00_STATE_ZIP})"
                 )
-            extract_dir = DATA_DIR / "_extract_tabblock00"
+            extract_dir = SOURCE_DATA_DIR / "_extract_tabblock00"
             extract_dir.mkdir(parents=True, exist_ok=True)
             shp_files = list(extract_dir.glob("*.shp")) or list(extract_dir.rglob("*.shp"))
             if not shp_files:
@@ -779,8 +800,42 @@ def assign_historical_vtds_via_nhgis(
     print(f"  {era} KC-tagged rows: {kc_rows:,}")
 
 
+def configure_plan(plan: str) -> None:
+    global CD_GEOJSON, DISTRICT_LABEL, OUT_BLOCK, OUT_VTD20, OUT_VTD10, OUT_VTD00
+    config = PLAN_CONFIG[str(plan)]
+    CD_GEOJSON = config["district_geojson"]
+    DISTRICT_LABEL = str(config["district_label"])
+    OUT_BLOCK = config["out_block"]
+    OUT_VTD20 = config["out_vtd20"]
+    OUT_VTD10 = config["out_vtd10"]
+    OUT_VTD00 = config["out_vtd00"]
+
+
+def configure_block_source(source_data_dir: Path) -> None:
+    global SOURCE_DATA_DIR, TABBLOCK20_SHP, TABBLOCK20_ZIP
+    global TABBLOCK10_SHP, TABBLOCK10_ZIP, TABBLOCK00_STATE_ZIP
+    SOURCE_DATA_DIR = Path(source_data_dir).resolve()
+    TABBLOCK20_SHP = SOURCE_DATA_DIR / "_extract_tabblock20" / "tl_2020_29_tabblock20.shp"
+    TABBLOCK20_ZIP = SOURCE_DATA_DIR / "tl_2020_29_tabblock20.zip"
+    TABBLOCK10_SHP = SOURCE_DATA_DIR / "_extract_tabblock10" / "tl_2020_29_tabblock10.shp"
+    TABBLOCK10_ZIP = SOURCE_DATA_DIR / "tl_2020_29_tabblock10.zip"
+    TABBLOCK00_STATE_ZIP = SOURCE_DATA_DIR / "tiger2008" / "tl_2008_29_tabblock00.zip"
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument(
+        "--plan",
+        choices=sorted(PLAN_CONFIG),
+        default="2026",
+        help="Congressional plan to target (default: 2026).",
+    )
+    ap.add_argument(
+        "--block-data-dir",
+        type=Path,
+        default=DATA_DIR,
+        help="Data directory containing TIGER tab-block files (default: repository Data).",
+    )
     ap.add_argument(
         "--skip-block-dump",
         action="store_true",
@@ -792,8 +847,10 @@ def main() -> None:
         help="Also build VTD10 and VTD00 crosswalks via NHGIS + tabblock10/00.",
     )
     args = ap.parse_args()
-    if not CD2026_GEOJSON.exists():
-        raise SystemExit(f"Missing {CD2026_GEOJSON}")
+    configure_plan(args.plan)
+    configure_block_source(args.block_data_dir)
+    if not CD_GEOJSON.exists():
+        raise SystemExit(f"Missing {CD_GEOJSON}")
 
     blocks = build_crosswalk(write_blocks=not args.skip_block_dump)
 

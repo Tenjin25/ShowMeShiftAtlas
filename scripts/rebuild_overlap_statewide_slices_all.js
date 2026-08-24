@@ -32,8 +32,8 @@ function run(cmd, args, opts = {}) {
   }
 }
 
-function buildScriptArgs({ scope, years, vtdPath, crosswalkPath }) {
-  return [
+function buildScriptArgs({ scope, years, vtdPath, crosswalkPath, crosswalkOverridePath = '' }) {
+  const args = [
     path.join('scripts', 'build_state_house_statewide_slices_from_overlap.js'),
     '--scope',
     scope,
@@ -44,6 +44,10 @@ function buildScriptArgs({ scope, years, vtdPath, crosswalkPath }) {
     '--crosswalk',
     crosswalkPath
   ];
+  if (crosswalkOverridePath) {
+    args.push('--crosswalk-override', crosswalkOverridePath);
+  }
+  return args;
 }
 
 const VINTAGES = [
@@ -55,6 +59,11 @@ const VINTAGES = [
       congressional: path.join('Data', 'crosswalks', 'vtd00_to_cd118_overlap.csv'),
       state_house: path.join('Data', 'crosswalks', 'vtd00_to_2022_state_house_overlap.csv'),
       state_senate: path.join('Data', 'crosswalks', 'vtd00_to_2022_state_senate_overlap.csv')
+    },
+    crosswalkOverrides: {
+      congressional: path.join('Data', 'crosswalks', 'vtd00_to_cd118_from_nhgis.csv'),
+      state_house: path.join('Data', 'crosswalks', 'jackson_vtd00_to_2022_state_house_from_nhgis.csv'),
+      state_senate: path.join('Data', 'crosswalks', 'jackson_vtd00_to_2022_state_senate_from_nhgis.csv')
     }
   },
   {
@@ -65,6 +74,11 @@ const VINTAGES = [
       congressional: path.join('Data', 'crosswalks', 'vtd10_to_cd118_overlap.csv'),
       state_house: path.join('Data', 'crosswalks', 'vtd10_to_2022_state_house_overlap.csv'),
       state_senate: path.join('Data', 'crosswalks', 'vtd10_to_2022_state_senate_overlap.csv')
+    },
+    crosswalkOverrides: {
+      congressional: path.join('Data', 'crosswalks', 'vtd10_to_cd118_from_nhgis.csv'),
+      state_house: path.join('Data', 'crosswalks', 'jackson_vtd10_to_2022_state_house_from_nhgis.csv'),
+      state_senate: path.join('Data', 'crosswalks', 'jackson_vtd10_to_2022_state_senate_from_nhgis.csv')
     }
   },
   {
@@ -75,6 +89,11 @@ const VINTAGES = [
       congressional: path.join('Data', 'crosswalks', 'precinct_to_cd118_overlap.csv'),
       state_house: path.join('Data', 'crosswalks', 'precinct_to_2022_state_house_overlap.csv'),
       state_senate: path.join('Data', 'crosswalks', 'precinct_to_2022_state_senate_overlap.csv')
+    },
+    crosswalkOverrides: {
+      congressional: path.join('Data', 'crosswalks', 'precinct_to_cd118_from_tabblocks.csv'),
+      state_house: path.join('Data', 'crosswalks', 'jackson_vtd20_to_2022_state_house_from_tabblocks.csv'),
+      state_senate: path.join('Data', 'crosswalks', 'jackson_vtd20_to_2022_state_senate_from_tabblocks.csv')
     }
   }
 ];
@@ -93,7 +112,8 @@ function main() {
         scope,
         years,
         vtdPath: vintage.vtd,
-        crosswalkPath
+        crosswalkPath,
+        crosswalkOverridePath: (vintage.crosswalkOverrides || {})[scope] || ''
       });
       run(process.execPath, args);
     }
