@@ -7,20 +7,12 @@
       "file": "congressional_attorney_general_2000.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1380674,
-      "rep_total": 856637,
+      "dem_total": 1378376,
+      "rep_total": 855813,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_attorney_general_2000_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -29,20 +21,12 @@
       "file": "congressional_attorney_general_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1596698,
-      "rep_total": 1001949,
+      "dem_total": 1592887,
+      "rep_total": 1000522,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_attorney_general_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -51,20 +35,12 @@
       "file": "congressional_attorney_general_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1470106,
-      "rep_total": 1311170,
+      "dem_total": 1471647,
+      "rep_total": 1312721,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_attorney_general_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -73,20 +49,12 @@
       "file": "congressional_attorney_general_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1489413,
-      "rep_total": 1083065,
+      "dem_total": 1491140,
+      "rep_total": 1084107,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_attorney_general_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -161,20 +129,12 @@
       "file": "congressional_auditor_2002.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1092562,
-      "rep_total": 665929,
+      "dem_total": 1090594,
+      "rep_total": 664977,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_auditor_2002_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -183,20 +143,12 @@
       "file": "congressional_auditor_2006.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1087960,
-      "rep_total": 889740,
+      "dem_total": 1091832,
+      "rep_total": 892579,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_auditor_2006_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -205,20 +157,12 @@
       "file": "congressional_auditor_2010.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 870927,
-      "rep_total": 973533,
+      "dem_total": 871866,
+      "rep_total": 974516,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_auditor_2010_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -228,19 +172,11 @@
       "districts": 8,
       "rows": 8,
       "dem_total": 0,
-      "rep_total": 934324,
+      "rep_total": 937962,
       "major_party_contested": false,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_auditor_2014_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -293,20 +229,12 @@
       "file": "congressional_governor_2000.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1154507,
-      "rep_total": 1132643,
+      "dem_total": 1152752,
+      "rep_total": 1131308,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_governor_2000_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -315,20 +243,12 @@
       "file": "congressional_governor_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1304523,
-      "rep_total": 1385317,
+      "dem_total": 1301470,
+      "rep_total": 1382990,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_governor_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -337,20 +257,12 @@
       "file": "congressional_governor_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1678800,
-      "rep_total": 1135048,
+      "dem_total": 1680611,
+      "rep_total": 1136368,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_governor_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -359,20 +271,12 @@
       "file": "congressional_governor_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1492036,
-      "rep_total": 1159423,
+      "dem_total": 1494055,
+      "rep_total": 1160264,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_governor_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -447,20 +351,12 @@
       "file": "congressional_lieutenant_governor_2000.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1203929,
-      "rep_total": 1015508,
+      "dem_total": 1201958,
+      "rep_total": 1014447,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_lieutenant_governor_2000_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -469,20 +365,12 @@
       "file": "congressional_lieutenant_governor_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1289323,
-      "rep_total": 1302251,
+      "dem_total": 1286286,
+      "rep_total": 1300117,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_lieutenant_governor_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -491,20 +379,12 @@
       "file": "congressional_lieutenant_governor_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1329780,
-      "rep_total": 1402020,
+      "dem_total": 1331177,
+      "rep_total": 1403707,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_lieutenant_governor_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -513,20 +393,12 @@
       "file": "congressional_lieutenant_governor_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1217981,
-      "rep_total": 1318572,
+      "dem_total": 1219456,
+      "rep_total": 1319746,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_lieutenant_governor_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -601,20 +473,12 @@
       "file": "congressional_president_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1262322,
-      "rep_total": 1458050,
+      "dem_total": 1259220,
+      "rep_total": 1455760,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_president_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -623,20 +487,12 @@
       "file": "congressional_president_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1440456,
-      "rep_total": 1444084,
+      "dem_total": 1441910,
+      "rep_total": 1445816,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_president_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -645,20 +501,12 @@
       "file": "congressional_president_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1222077,
-      "rep_total": 1481129,
+      "dem_total": 1223795,
+      "rep_total": 1482439,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_president_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -733,20 +581,12 @@
       "file": "congressional_secretary_of_state_2000.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1038625,
-      "rep_total": 1181729,
+      "dem_total": 1037064,
+      "rep_total": 1180234,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_secretary_of_state_2000_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -755,20 +595,12 @@
       "file": "congressional_secretary_of_state_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1370960,
-      "rep_total": 1245174,
+      "dem_total": 1367818,
+      "rep_total": 1243023,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_secretary_of_state_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -777,20 +609,12 @@
       "file": "congressional_secretary_of_state_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1747250,
-      "rep_total": 1004928,
+      "dem_total": 1749153,
+      "rep_total": 1006090,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_secretary_of_state_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -799,20 +623,12 @@
       "file": "congressional_secretary_of_state_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1296064,
-      "rep_total": 1258105,
+      "dem_total": 1298023,
+      "rep_total": 1258936,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_secretary_of_state_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -887,20 +703,12 @@
       "file": "congressional_treasurer_2000.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1188576,
-      "rep_total": 1058502,
+      "dem_total": 1186626,
+      "rep_total": 1057353,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_treasurer_2000_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -909,20 +717,12 @@
       "file": "congressional_treasurer_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1217104,
-      "rep_total": 1343929,
+      "dem_total": 1213799,
+      "rep_total": 1342068,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_treasurer_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -931,20 +731,12 @@
       "file": "congressional_treasurer_2008.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1393268,
-      "rep_total": 1300951,
+      "dem_total": 1394628,
+      "rep_total": 1302626,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_treasurer_2008_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -953,20 +745,12 @@
       "file": "congressional_treasurer_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1331087,
-      "rep_total": 1199442,
+      "dem_total": 1332876,
+      "rep_total": 1200368,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_treasurer_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -1041,20 +825,12 @@
       "file": "congressional_us_senate_2002.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 915524,
-      "rep_total": 936392,
+      "dem_total": 913776,
+      "rep_total": 935033,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_us_senate_2002_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -1063,20 +839,12 @@
       "file": "congressional_us_senate_2004.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1161388,
-      "rep_total": 1520376,
+      "dem_total": 1158283,
+      "rep_total": 1518117,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_us_senate_2004_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -1085,20 +853,12 @@
       "file": "congressional_us_senate_2006.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1051617,
-      "rep_total": 1003852,
+      "dem_total": 1055346,
+      "rep_total": 1007119,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd00_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_us_senate_2006_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -1107,20 +867,12 @@
       "file": "congressional_us_senate_2010.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 788818,
-      "rep_total": 1053187,
+      "dem_total": 789735,
+      "rep_total": 1054161,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_us_senate_2010_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",
@@ -1129,20 +881,12 @@
       "file": "congressional_us_senate_2012.json",
       "districts": 8,
       "rows": 8,
-      "dem_total": 1491916,
-      "rep_total": 1065556,
+      "dem_total": 1494126,
+      "rep_total": 1066158,
       "major_party_contested": true,
-      "match_coverage_pct": 100.0,
-      "source_method": "statewide_vtd10_tabblock_nhgis_cd2026_kc_split",
-      "lines_year": 2026,
-      "direct_transfer": {
-        "source_lines_year": 2022,
-        "districts": [
-          "7",
-          "8"
-        ],
-        "source_file": "congressional_us_senate_2012_overlap.json"
-      }
+      "match_coverage_pct": 100,
+      "source_method": "vtd_match_tabblock_nhgis_crosswalk",
+      "lines_year": 2026
     },
     {
       "scope": "congressional",

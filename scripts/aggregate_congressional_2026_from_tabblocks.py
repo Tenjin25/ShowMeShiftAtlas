@@ -840,6 +840,15 @@ def main() -> None:
         action="store_true",
         help="Copy CDs 7 and 8 from the preferred 2022-lines slices without rebuilding other districts.",
     )
+    ap.add_argument(
+        "--transfer-unchanged",
+        action="store_true",
+        help=(
+            "After rebuilding, replace CDs 7 and 8 from the 2022-lines slices. "
+            "Disabled by default because mixing independently rounded crosswalks "
+            "does not conserve statewide totals."
+        ),
+    )
     args = ap.parse_args()
 
     years = parse_years(args.years)
@@ -875,14 +884,19 @@ def main() -> None:
             era=era,
         )
         for contest, payload in payloads.items():
-            source_path = transfer_unchanged_district_results(payload, contest, year)
+            source_path = None
+            if args.transfer_unchanged:
+                source_path = transfer_unchanged_district_results(payload, contest, year)
             out_path = out_dir / f"congressional_{contest}_{year}.json"
             write_payload(out_path, payload)
             written += 1
-            print(
-                f"Wrote {out_path} "
-                f"(CDs {','.join(TRANSFER_DISTRICTS)} from {source_path.name})"
-            )
+            if source_path:
+                print(
+                    f"Wrote {out_path} "
+                    f"(CDs {','.join(TRANSFER_DISTRICTS)} from {source_path.name})"
+                )
+            else:
+                print(f"Wrote {out_path}")
 
     manifest_path = rebuild_manifest(out_dir)
     print(f"Wrote {manifest_path}")
