@@ -331,7 +331,7 @@ function jacksonPrecinctComponents(rawValue) {
     }
 
     const wardPatterns = [
-      /W(?:ARD)?\s*0*(\d{1,2})\s*[-/ ]*\s*P(?:CT|RECINCT)?\s*([0-9,\s/]+)/g,
+      /W(?:ARD)?\s*0*(\d{1,3})\s*[,/-]?\s*P(?:CT|RECINCT)?\s*([0-9,\s/]+)/g,
       /KC\s*WD\s*0*(\d{1,2})\s*PCT\s*([0-9,\s/]+)/g
     ];
     wardPatterns.forEach(pattern => {
@@ -1184,7 +1184,11 @@ function buildPrecinctMatcherIndex(vtdGeojsonPath) {
     if (!idx.has(countyNorm)) {
       idx.set(countyNorm, {
         aliasToNorms: new Map(),
-        features: []
+        features: [],
+        stLouisCityByWardPrecinct: new Map(),
+        stLouisCityByPrecinct: new Map(),
+        kansasCityByWardPrecinct: new Map(),
+        kansasCityByPrecinct: new Map()
       });
     }
     const countyNode = idx.get(countyNorm);
@@ -1213,10 +1217,125 @@ function buildPrecinctMatcherIndex(vtdGeojsonPath) {
     };
 
     for (const alias of aliases) addLookupValue(countyNode.aliasToNorms, alias, precinctNorm);
+    if (countyNorm === 'ST LOUIS CITY') {
+      const cityLabel = [props.NAME20, props.NAMELSAD20, props.precinct_name]
+        .map(value => String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, ''))
+        .find(value => /WARD0*\d+P(?:CT|RECINCT)0*\d+/.test(value)) || '';
+      const cityMatch = cityLabel.match(/WARD0*(\d+)P(?:CT|RECINCT)0*(\d+)/);
+      if (cityMatch) {
+        const ward = String(Number(cityMatch[1]));
+        const precinct = String(Number(cityMatch[2]));
+        addLookupValue(countyNode.stLouisCityByWardPrecinct, `${ward}:${precinct}`, precinctNorm);
+        addLookupValue(countyNode.stLouisCityByPrecinct, precinct, precinctNorm);
+      }
+    }
+    if (countyNorm === 'JACKSON') {
+      [props.NAME20, props.NAMELSAD20, props.precinct_name].forEach(value => {
+        kansasCityVtdComponents(value).forEach(component => {
+          const [, ward, precinct] = component.split(':');
+          addLookupValue(countyNode.kansasCityByWardPrecinct, `${ward}:${precinct}`, precinctNorm);
+          addLookupValue(countyNode.kansasCityByPrecinct, precinct, precinctNorm);
+        });
+      });
+    }
     countyNode.features.push({ precinctNorm, nameAliases });
   }
 
   return idx;
+}
+
+function stLouisCityWardPrecinct(rawCode, rawPrecinct) {
+  const code = String(rawCode || '').trim().toUpperCase();
+  const precinctLabel = String(rawPrecinct || '').trim().toUpperCase();
+  const values = [precinctLabel, code, `${code} ${precinctLabel}`.trim()].filter(Boolean);
+  let ward = '';
+  let precinct = '';
+
+  for (const value of values) {
+    if (!ward) {
+      const wardMatch = value.match(/(?:^|[^A-Z])W(?:ARD|D)?[\s,._-]*0*(\d{1,3})(?=\D|$)/);
+      if (wardMatch) ward = String(Number(wardMatch[1]));
+    }
+    if (!precinct) {
+      const precinctMatch = value.match(/(?:^|[^A-Z])P(?:CT|RECINCT)?[\s,._-]*0*(\d{1,3})(?=\D|$)/);
+      if (precinctMatch) precinct = String(Number(precinctMatch[1]));
+    }
+  }
+
+  // Some legacy St. Louis City files retain the ward in a separate column but
+  // report the precinct as a bare number (for example, AV WARD 1 / 10).
+  if (!precinct) {
+    const barePrecinct = precinctLabel.match(/^0*(\d{1,3})$/);
+    if (barePrecinct) precinct = String(Number(barePrecinct[1]));
+  }
+  return { ward, precinct };
+}
+
+function kansasCityVtdComponents(rawValue) {
+  const out = new Set();
+  const text = String(rawValue || '').trim().toUpperCase();
+  const match = text.match(/KC\s*W(?:ARD|D)?\s*0*(\d{1,3})\s*P(?:CT|RC|RECINCT)?\s*([0-9A-Z,&/\s]+)/);
+  if (!match) return out;
+  const ward = String(Number(match[1]));
+  const wardPrefix = ward;
+  (String(match[2] || '').match(/\d+[A-Z]?/g) || []).forEach(rawPrecinct => {
+    const part = rawPrecinct.match(/^0*(\d+)([A-Z]?)$/);
+    if (!part) return;
+    let digits = String(Number(part[1]));
+    // VTD10 encodes the ward into the precinct number (WD10/PCT1001), while
+    // VTD00 usually stores a bare number (WD10/PCT1). Normalize both to Pct 1.
+    if (digits.startsWith(wardPrefix) && digits.length > wardPrefix.length) {
+      digits = String(Number(digits.slice(wardPrefix.length)));
+    }
+    out.add(`K:${ward}:${digits}${part[2] || ''}`);
+  });
+  return out;
+}
+
+function kansasCityElectionWardPrecinct(rawCode, rawPrecinct) {
+  const code = String(rawCode || '').trim().toUpperCase();
+  const precinctLabel = String(rawPrecinct || '').trim().toUpperCase();
+  const combined = `${code} ${precinctLabel}`.trim();
+  const values = [precinctLabel, code, combined].filter(Boolean);
+  let ward = '';
+  const precincts = new Set();
+
+  for (const value of values) {
+    if (!ward) {
+      const wardMatch = value.match(/(?:^|[^A-Z])W(?:ARD|D)?[\s,._-]*0*(\d{1,3})(?=\D|$)/);
+      if (wardMatch) ward = String(Number(wardMatch[1]));
+    }
+    const precinctMatch = value.match(/(?:^|[^A-Z])P(?:CT|RC|RECINCT)?[\s,._-]*([0-9A-Z,&/\s]+)/);
+    if (precinctMatch) {
+      (String(precinctMatch[1] || '').match(/\d+[A-Z]?/g) || []).forEach(rawPart => {
+        const part = rawPart.match(/^0*(\d+)([A-Z]?)$/);
+        if (part) precincts.add(`${Number(part[1])}${part[2] || ''}`);
+      });
+    }
+  }
+
+  // The 2000 file stores AV WD N separately from a bare precinct number.
+  if (ward && precincts.size === 0) {
+    (precinctLabel.match(/\d+[A-Z]?/g) || []).forEach(rawPart => {
+      const part = rawPart.match(/^0*(\d+)([A-Z]?)$/);
+      if (part) precincts.add(`${Number(part[1])}${part[2] || ''}`);
+    });
+  }
+  return { ward, precincts };
+}
+
+function genericAlphaNumericPrecinctComponents(rawValue) {
+  const out = new Set();
+  const values = new Set([String(rawValue || '').trim().toUpperCase()]);
+  stripElectionSequencePrefixes(rawValue).forEach(value => values.add(String(value || '').toUpperCase()));
+  values.forEach(value => {
+    const pattern = /(?:^|[^A-Z0-9])0*(\d{1,4})\s*[- ]?\s*([A-Z]{1,2})(?=$|[^A-Z0-9])/g;
+    let match;
+    while ((match = pattern.exec(value)) !== null) {
+      out.add(`${Number(match[1])}${match[2]}`);
+    }
+  });
+  return out;
 }
 
 function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInfo) {
@@ -1224,6 +1343,84 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
   const code = String(rawCode || '').trim();
   const precinct = String(rawPrecinct || '').trim();
   const combined = [code, precinct].filter(Boolean).join(' ');
+
+  // Missouri's 2000/2006/2008/2012/2014 city files expose ward + precinct in
+  // several different formats, while 2002/2004/2010 omit the ward entirely.
+  // Resolve the former to one VTD and the latter to every Ward/Pct N VTD. This
+  // avoids fuzzy-matching "PCT 01" to Census sequence ids such as 000010.
+  if (countyNorm === 'ST LOUIS CITY') {
+    const city = stLouisCityWardPrecinct(code, precinct);
+    if (city.ward && city.precinct) {
+      const exact = countyInfo.stLouisCityByWardPrecinct?.get(`${city.ward}:${city.precinct}`);
+      if (exact && exact.size) return Array.from(exact);
+    }
+    if (!city.ward && city.precinct) {
+      const acrossWards = countyInfo.stLouisCityByPrecinct?.get(city.precinct);
+      if (acrossWards && acrossWards.size) return Array.from(acrossWards);
+    }
+  }
+  if (countyNorm === 'JACKSON') {
+    const city = kansasCityElectionWardPrecinct(code, precinct);
+    const cityHits = [];
+    if (city.ward && city.precincts.size) {
+      city.precincts.forEach(precinctNumber => {
+        const hits = countyInfo.kansasCityByWardPrecinct?.get(`${city.ward}:${precinctNumber}`);
+        if (hits) hits.forEach(norm => cityHits.push(norm));
+      });
+    } else if (!city.ward && city.precincts.size && /\bP(?:CT|RC|RECINCT)\b/i.test(precinct)) {
+      // The 2002 Kansas City file drops the ward; distribute each listed Pct N
+      // component across the matching ward precincts instead of sequence ids.
+      city.precincts.forEach(precinctNumber => {
+        const hits = countyInfo.kansasCityByPrecinct?.get(precinctNumber);
+        if (hits) hits.forEach(norm => cityHits.push(norm));
+      });
+    }
+    if (cityHits.length) return cityHits;
+  }
+
+  // Expand generic bundles such as Boone's "1C&1G" and "1 E & 1 I" before
+  // considering the numeric election row id. Preserve component multiplicity.
+  const genericComponents = new Set();
+  [precinct, code, combined].forEach(value => {
+    genericAlphaNumericPrecinctComponents(value).forEach(component => genericComponents.add(component));
+  });
+  const genericComponentHits = [];
+  genericComponents.forEach(component => {
+    const tokens = new Set();
+    addPrecinctAliasVariants(component, token => tokens.add(token));
+    const hits = new Set();
+    tokens.forEach(token => {
+      const matched = countyInfo.aliasToNorms.get(token);
+      if (matched) matched.forEach(norm => hits.add(norm));
+    });
+    hits.forEach(norm => genericComponentHits.push(norm));
+  });
+  if (genericComponentHits.length) return genericComponentHits;
+
+  // Many legacy files prefix the real precinct name with an election-system
+  // sequence (for example, "0009 2A"). Resolve the stripped name before the
+  // generic aliases; otherwise "0009" can incorrectly win as Census VTD 09.
+  let bestStripped = null;
+  let bestStrippedSize = Infinity;
+  [precinct, code, combined].forEach(value => {
+    stripElectionSequencePrefixes(value).forEach(stripped => {
+      const tokens = new Set();
+      const strippedHasName = /[A-Z]/i.test(stripped);
+      addPrecinctAliasVariants(stripped, token => {
+        if (strippedHasName && /^\d+$/.test(String(token || ''))) return;
+        tokens.add(token);
+      });
+      tokens.forEach(token => {
+        const hits = countyInfo.aliasToNorms.get(token);
+        if (!hits || hits.size === 0) return;
+        if (hits.size < bestStrippedSize) {
+          bestStripped = hits;
+          bestStrippedSize = hits.size;
+        }
+      });
+    });
+  });
+  if (bestStripped && bestStrippedSize <= 12) return Array.from(bestStripped);
 
   const candidateTokens = [];
   const tokenSeen = new Set();
@@ -1235,15 +1432,24 @@ function matchPrecinctNormsForRawRow(rawCode, rawPrecinct, countyNorm, countyInf
   };
   const addRawVariants = (value) => {
     if (!value) return;
-    addPrecinctAliasVariants(value, addToken);
-    for (const v of collectVtdCodeCandidates(value)) addToken(v);
-    for (const codeToken of expandCompositePrecinctCodes(value)) {
-      addToken(codeToken);
-      addPrecinctAliasVariants(codeToken, addToken);
-    }
+    const strippedValues = Array.from(stripElectionSequencePrefixes(value));
+    const sources = strippedValues.length ? strippedValues : [value];
+    sources.forEach(source => {
+      const sourceHasName = /[A-Z]/i.test(source);
+      const addSourceToken = (token) => {
+        if (sourceHasName && /^\d+$/.test(String(token || ''))) return;
+        addToken(token);
+      };
+      addPrecinctAliasVariants(source, addSourceToken);
+      for (const v of collectVtdCodeCandidates(source)) addSourceToken(v);
+      for (const codeToken of expandCompositePrecinctCodes(source)) {
+        addSourceToken(codeToken);
+        addPrecinctAliasVariants(codeToken, addSourceToken);
+      }
+    });
 
     // Directional swap heuristic: "N REPUBLIC A" -> "REPUBLIC NORTH" (and variants).
-    const rawNorm = normalizePrecinctAliasToken(value);
+    const rawNorm = normalizePrecinctAliasToken(sources[0]);
     const m = rawNorm.match(/^(N|S|E|W|NE|NW|SE|SW)\s+(.+)$/);
     if (m) {
       const dir = m[1];
