@@ -118,7 +118,10 @@ function parseArgs(argv) {
     contests: null,
     crosswalkPath: '',
     crosswalkOverridePath: '',
-    vtdGeojsonPath: ''
+    vtdGeojsonPath: '',
+    outputDir: DISTRICT_DIR,
+    filenameSuffix: '_overlap',
+    linesYear: null
   };
   const args = Array.from(argv || []);
   for (let i = 0; i < args.length; i += 1) {
@@ -150,6 +153,23 @@ function parseArgs(argv) {
     }
     if (a === '--vtd') {
       out.vtdGeojsonPath = String(args[i + 1] || '').trim();
+      i += 1;
+      continue;
+    }
+    if (a === '--output-dir') {
+      out.outputDir = String(args[i + 1] || '').trim() || DISTRICT_DIR;
+      i += 1;
+      continue;
+    }
+    if (a === '--filename-suffix') {
+      const value = String(args[i + 1] || '').trim();
+      out.filenameSuffix = value.toLowerCase() === 'none' ? '' : value;
+      i += 1;
+      continue;
+    }
+    if (a === '--lines-year') {
+      const value = Number(args[i + 1]);
+      out.linesYear = Number.isFinite(value) && value > 0 ? value : null;
       i += 1;
       continue;
     }
@@ -1793,7 +1813,10 @@ async function main() {
     contests,
     crosswalkPath,
     crosswalkOverridePath,
-    vtdGeojsonPath
+    vtdGeojsonPath,
+    outputDir,
+    filenameSuffix,
+    linesYear
   } = parseArgs(process.argv.slice(2));
   const crosswalkByPrecinct = readCrosswalkByPrecinct(crosswalkPath);
   let crosswalkOverrideStats = null;
@@ -2029,6 +2052,7 @@ async function main() {
           crosswalk_override: path.relative(ROOT, crosswalkOverridePath).replace(/\\/g, '/'),
           crosswalk_override_precincts: crosswalkOverrideStats ? crosswalkOverrideStats.total : 0
         } : {}),
+        ...(linesYear ? { lines_year: Number(linesYear) } : {}),
         label_match_votes: Math.round(labelMatchedVotes),
         legacy_district_labels_enabled: Boolean(allowLegacyDistrictLabels && Number(year) < 2022)
       }
@@ -2042,8 +2066,8 @@ async function main() {
         payload = calibratePayloadToDistrictStats(payload, year, statsPath);
       }
     }
-    const outName = `${scope}_${contestType}_${year}_overlap.json`;
-    writeJson(path.join(DISTRICT_DIR, outName), payload);
+    const outName = `${scope}_${contestType}_${year}${filenameSuffix}.json`;
+    writeJson(path.join(outputDir, outName), payload);
     writtenFiles += 1;
     writtenFiles && console.log(`Wrote ${outName} (coverage ${payload.meta.match_coverage_pct}%, direct ${payload.meta.direct_match_coverage_pct}%)`);
 
@@ -2086,7 +2110,7 @@ async function main() {
     }
   }
 
-  console.log(`Wrote ${writtenFiles} overlap statewide ${scope} slices to ${DISTRICT_DIR}`);
+  console.log(`Wrote ${writtenFiles} statewide ${scope} slices to ${outputDir}`);
 }
 
 main().catch(err => {

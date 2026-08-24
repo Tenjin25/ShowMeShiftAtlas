@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-Build statewide precinct -> congressional district crosswalks via tabulation
-blocks (+ optional NHGIS decade chaining), with the Jackson / Kansas City
-election-county fix. Supports both the enacted 2022 (CD118) plan and the 2026
-plan.
+Build statewide precinct -> district crosswalks via tabulation blocks
+(+ optional NHGIS decade chaining), with the Jackson / Kansas City
+election-county fix. Supports the enacted 2022 congressional and legislative
+plans as well as the 2026 congressional plan.
 
 Decade chain (--with-nhgis)
 ---------------------------
@@ -13,7 +13,7 @@ Decade chain (--with-nhgis)
   + NHGIS 2000->2010 + tabblock00 + VTD00
                       -> vtd00_to_{plan}_from_nhgis.csv
 
-Where {plan} is cd2026 by default or cd118 with --plan 2022.
+Where {plan} is selected with --plan (cd2026 by default).
 
 Usage
 -----
@@ -21,6 +21,7 @@ Usage
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --with-nhgis
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --with-nhgis --skip-block-dump
   python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --plan 2022 --with-nhgis
+  python scripts/build_congressional_2026_crosswalks_from_tabblocks.py --plan state-house-2022 --with-nhgis
 """
 
 from __future__ import annotations
@@ -63,6 +64,22 @@ PLAN_CONFIG = {
         "out_vtd20": CROSSWALK_DIR / "precinct_to_cd2026_from_tabblocks.csv",
         "out_vtd10": CROSSWALK_DIR / "vtd10_to_cd2026_from_nhgis.csv",
         "out_vtd00": CROSSWALK_DIR / "vtd00_to_cd2026_from_nhgis.csv",
+    },
+    "state-house-2022": {
+        "district_geojson": DATA_DIR / "mo_state_house_districts_2022.geojson",
+        "district_label": "2022 State House",
+        "out_block": CROSSWALK_DIR / "tabblock20_to_2022_state_house.csv",
+        "out_vtd20": CROSSWALK_DIR / "precinct_to_2022_state_house_from_tabblocks.csv",
+        "out_vtd10": CROSSWALK_DIR / "vtd10_to_2022_state_house_from_nhgis.csv",
+        "out_vtd00": CROSSWALK_DIR / "vtd00_to_2022_state_house_from_nhgis.csv",
+    },
+    "state-senate-2022": {
+        "district_geojson": DATA_DIR / "mo_state_senate_districts_2022.geojson",
+        "district_label": "2022 State Senate",
+        "out_block": CROSSWALK_DIR / "tabblock20_to_2022_state_senate.csv",
+        "out_vtd20": CROSSWALK_DIR / "precinct_to_2022_state_senate_from_tabblocks.csv",
+        "out_vtd10": CROSSWALK_DIR / "vtd10_to_2022_state_senate_from_nhgis.csv",
+        "out_vtd00": CROSSWALK_DIR / "vtd00_to_2022_state_senate_from_nhgis.csv",
     },
 }
 
@@ -314,11 +331,11 @@ def load_vtds(path: Path, era_label: str = "VTD20") -> "gpd.GeoDataFrame":
     ]
 
 
-def load_congressional_districts() -> "gpd.GeoDataFrame":
+def load_districts() -> "gpd.GeoDataFrame":
     import geopandas as gpd
 
     if not CD_GEOJSON.exists():
-        raise SystemExit(f"Missing congressional district geography: {CD_GEOJSON}")
+        raise SystemExit(f"Missing district geography: {CD_GEOJSON}")
     print(f"Reading {DISTRICT_LABEL} districts from {CD_GEOJSON} ...")
     gdf = gpd.read_file(CD_GEOJSON)
     if gdf.crs is None:
@@ -336,7 +353,7 @@ def load_congressional_districts() -> "gpd.GeoDataFrame":
     gdf["district_num"] = gdf[district_col].map(normalize_district_num)
     gdf = gdf.loc[gdf["district_num"] != ""].copy()
     if gdf.empty:
-        raise SystemExit("No congressional districts loaded")
+        raise SystemExit("No districts loaded")
     print(
         "  districts: "
         + ", ".join(sorted(gdf["district_num"].unique(), key=lambda x: int(x) if x.isdigit() else x))
@@ -462,7 +479,7 @@ def aggregate_vtd_district_weights(
 def build_crosswalk(*, write_blocks: bool = True) -> pd.DataFrame:
     blocks = load_block_points()
     vtds = load_vtds(VTD20_GEOJSON, "VTD20")
-    districts = load_congressional_districts()
+    districts = load_districts()
 
     blocks = blocks.copy()
     blocks["precinct_key"] = spatial_assign_blocks(blocks, vtds, "precinct_key", "VTD20")
@@ -828,7 +845,7 @@ def main() -> None:
         "--plan",
         choices=sorted(PLAN_CONFIG),
         default="2026",
-        help="Congressional plan to target (default: 2026).",
+        help="District plan to target (default: 2026 congressional).",
     )
     ap.add_argument(
         "--block-data-dir",
