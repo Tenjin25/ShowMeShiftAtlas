@@ -10316,8 +10316,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-01-mo-dropdown-init-v2';
-    const APP_BUILD_ID = '2026-09-01-mo-dropdown-init-v2';
+    const DATA_CACHE_BUSTER = '2026-09-01-mo-colorblind-legend-v3';
+    const APP_BUILD_ID = '2026-09-01-mo-colorblind-legend-v3';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -22059,7 +22059,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const footer = document.getElementById('legend-footer');
       const content = document.getElementById('legend-content');
       if (!content) return;
-      if (!content.dataset.marginsHtml) content.dataset.marginsHtml = buildMarginsLegendHTML();
 
       if (mode === 'winners') {
         if (header) header.textContent = 'Winners';
@@ -22111,8 +22110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (subtitle) subtitle.textContent = `Buckets by two-party margin (Rep% − Dem%). ${colorblind ? 'Orange' : 'Red'} = Republican lead; blue = Democratic lead.`;
         if (badge) badge.textContent = colorblind ? 'Margins · CB' : 'Margins';
         if (footer) footer.textContent = 'Darker shades mean a larger lead. Ranges are absolute two-party margin (|Rep% − Dem%|).';
-        content.dataset.marginsHtml = buildMarginsLegendHTML();
-        content.innerHTML = content.dataset.marginsHtml;
+        content.innerHTML = buildMarginsLegendHTML();
       }
 
     }
