@@ -10323,8 +10323,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-02-mo-original-dropdown-v1';
-    const APP_BUILD_ID = '2026-09-02-mo-original-dropdown-v1';
+    const DATA_CACHE_BUSTER = '2026-09-14-mo-cvap-districts-v2';
+    const APP_BUILD_ID = '2026-09-14-mo-cvap-districts-v2';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -10364,6 +10364,9 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_demographics: withBase('./Data/precinct_demographics_2020_vap.csv'),
         cvap_aggregates: {
           county_2020: withBase('./Data/cvap_aggregates/county_2020__cvap24.csv'),
+          cd118_2022: withBase('./Data/cvap_aggregates/cd118_2022_lines__cvap24.csv'),
+          state_house_2022: withBase('./Data/cvap_aggregates/state_house_2022_lines__cvap24.csv'),
+          state_senate_2022: withBase('./Data/cvap_aggregates/state_senate_2022_lines__cvap24.csv'),
           cd119_2024: withBase('./Data/cvap_aggregates/cd119_2024_lines__cvap24.csv'),
           state_house_2024: withBase('./Data/cvap_aggregates/state_house_2024_lines__cvap24.csv'),
           state_senate_2024: withBase('./Data/cvap_aggregates/state_senate_2024_lines__cvap24.csv')
