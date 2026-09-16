@@ -10407,6 +10407,11 @@ document.addEventListener('DOMContentLoaded', function() {
         state_senate_info: withBase('./Data/cvap_aggregates/state_senate_2022__demographics_cvap24.csv'),
         district_descriptions: withBase('./Data/district_descriptions.json'),
         contests_dir: withBase('./Data/contests'),
+        district_contests_dir: withBase('./Data/district_contests'),
+        district_contests_dirs: {
+          '2022': withBase('./Data/district_contests'),
+          '2026': withBase('./Data/district_contests_2026')
+        },
         reports_match_year_summary: withBase('./Data/reports/precinct_match_year_summary_fresh_2026-03-19.csv'),
         reports_top_unmatched: withBase('./Data/reports/precinct_match_top_unmatched_file_county.csv'),
         crosswalks: {
@@ -19392,6 +19397,10 @@ document.addEventListener('DOMContentLoaded', function() {
             skipEmptyLines: true
           });
           if (Array.isArray(result?.errors) && result.errors.length) {
+            const delimiterFailure = result.errors.some(error =>
+              error?.code === 'UndetectableDelimiter' || error?.code === 'TooManyFields'
+            );
+            if (delimiterFailure) return parseCSVFallback(csvText);
             setStatus('CSV Parse Error: ' + result.errors.map(e => e.message).join('; '));
             console.error(result.errors);
           }
@@ -33252,7 +33261,10 @@ document.addEventListener('DOMContentLoaded', function() {
       try { scheduleAtlasWidePrefetch(); } catch (_) {}
     }
 
+    let initStarted = false;
     async function init() {
+      if (initStarted) return;
+      initStarted = true;
       try {
         setStatus('Loading counties...');
         captureBasemapLayers();
@@ -35712,7 +35724,8 @@ document.addEventListener('DOMContentLoaded', function() {
       setStatus(`Applied statewide contest: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)`);
     }
 
-    window.onload = init;
+    if (map.loaded()) init();
+    else map.once('load', init);
 </script>
 </body>
 </html>
