@@ -10415,7 +10415,7 @@ document.addEventListener('DOMContentLoaded', function() {
         precincts_fallback_vtd20: withBase('./Data/mo_vtd20_precincts.geojson'),
         precinct_centroids: withBase('./Data/mo_vtd20_precinct_centroids.geojson'),
         precinct_aliases: '',
-        precinct_friendly_names: '',
+        precinct_friendly_names: withBase('./Data/precinct_friendly_names.json'),
         precinct_stable_to_nconemap_old_to_new: '',
         precinct_sbe2006_to_onemap: '',
         precinct_sbe2006_to_onemap_weights: '',
@@ -30391,6 +30391,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const canonicalCode = rawCode ? resolvePrecinctCanonicalCode(countyName, rawCode) : '';
       const friendly = rawCode ? getPrecinctFriendlyName(countyName, rawCode) : '';
       const friendlyLabel = friendly || '';
+      // The local index contains verified venue updates for church-named districts.
+      if (friendlyLabel) return friendlyLabel;
 
       const full = String(fullName || '').replace(/\s+/g, ' ').trim();
       const fallbackFull = String(fallbackFullName || '').replace(/\s+/g, ' ').trim();
