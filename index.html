@@ -29975,24 +29975,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
               }
               codesMap.forEach((label, code) => {
-                if (!existing.has(code)) {
-                  existing.set(code, label);
-                  return;
-                }
-                const current = String(existing.get(code) || '');
-                const currentNormalized = normalizeFriendlyPrecinctName(current);
-                const labelNormalized = normalizeFriendlyPrecinctName(label);
-                const currentCompact = currentNormalized.replace(/[^A-Z0-9]/gi, '').toUpperCase();
-                const labelCompact = labelNormalized.replace(/[^A-Z0-9]/gi, '').toUpperCase();
-                const aliasClearlyBetter = (
-                  !!labelNormalized &&
-                  /\s/.test(labelNormalized) &&
-                  !!currentCompact &&
-                  !!labelCompact &&
-                  currentCompact !== labelCompact &&
-                  currentCompact.includes(labelCompact)
-                );
-                if (aliasClearlyBetter) existing.set(code, label);
+                if (!existing.has(code)) existing.set(code, label);
               });
             });
           } catch (_) {}
