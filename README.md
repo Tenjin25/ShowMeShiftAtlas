@@ -21,6 +21,10 @@ The map supports several complementary views of an election:
 
 Search, hover details, pinned summaries, statewide totals, district profiles, and comparison panels make it possible to move between a broad statewide picture and individual communities.
 
+## Precinct display names
+
+`Data/precinct_friendly_names.json` supplies reviewed venue labels for three Buchanan County precincts, including verified church affiliations and a current church name. `Data/precinct_friendly_name_sources.md` records the supporting sources. These names affect map labels only; precinct codes and election-result joins remain unchanged.
+
 ## Data and methodology
 
 Election data is assembled from official Missouri results and public election datasets, then normalized so counties, precincts, and candidates can be compared consistently across years. Census geography and demographic data provide the map boundaries and population context. Historical precinct results are crosswalked when the election geography and the displayed district map do not line up directly.
