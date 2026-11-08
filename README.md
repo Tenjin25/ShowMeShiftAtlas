@@ -6,7 +6,7 @@ Show Me Shift Atlas is an interactive election atlas for exploring how Missouri 
 
 The atlas can display Missouri results by county, voting precinct, congressional district, State House district, and State Senate district. Available contests span multiple election cycles and include presidential, U.S. Senate, gubernatorial, other statewide executive, congressional, and General Assembly races where data is available.
 
-Congressional results can be viewed on both the 2022 and 2026 district lines. This makes it possible to separate changes caused by voter behavior from changes caused by district boundaries. Where a district is unchanged between maps, the atlas preserves the same underlying district result rather than introducing a second estimate.
+Congressional results, including the 2026 general election, use Missouri's 2022 district lines. The proposed 2025 mid-decade map was barred from the 2026 general election and rejected by voters in the November 2026 referendum, so it is not offered as an active atlas geography.
 
 ## Ways to explore the results
 
@@ -28,6 +28,8 @@ Search, hover details, pinned summaries, statewide totals, district profiles, an
 ## Data and methodology
 
 Election data is assembled from official Missouri results and public election datasets, then normalized so counties, precincts, and candidates can be compared consistently across years. Census geography and demographic data provide the map boundaries and population context. Historical precinct results are crosswalked when the election geography and the displayed district map do not line up directly.
+
+The 2026 election-night data is an unofficial county-level snapshot from the Missouri Secretary of State. Its normalized source file follows the OpenElections column convention and identifies every row as a county total; it will need to be refreshed after certification or when precinct-level files become available.
 
 Some historical results require allocation across changed precinct or district boundaries. Those values are best understood as geographic estimates rather than certified district-level returns. The atlas records the source and method used for its precomputed district slices so direct results, overlap allocations, and modeled values can be distinguished.
 

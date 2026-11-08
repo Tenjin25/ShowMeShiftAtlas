@@ -576,6 +576,21 @@
     },
     {
       "scope": "congressional",
+      "contest_type": "us_house",
+      "year": 2026,
+      "file": "congressional_us_house_2026.json",
+      "districts": 8,
+      "rows": 8,
+      "dem_total": 1008238,
+      "rep_total": 1022982,
+      "major_party_contested": true,
+      "match_coverage_pct": 100.0,
+      "source": "missouri_sos_enr",
+      "status": "unofficial",
+      "lines_year": 2022
+    },
+    {
+      "scope": "congressional",
       "contest_type": "us_senate",
       "year": 2002,
       "file": "congressional_us_senate_2002.json",

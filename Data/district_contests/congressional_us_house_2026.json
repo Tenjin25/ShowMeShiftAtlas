@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_house",
+    "year": 2026,
+    "district_count": 8,
+    "match_coverage_pct": 100.0,
+    "generated_at": "2026-11-08T17:43:19.464835+00:00",
+    "source": "missouri_sos_enr",
+    "source_url": "https://enr.sos.mo.gov/PickaRace.aspx",
+    "status": "unofficial",
+    "lines_year": 2022
+  },
+  "general": {
+    "results": {
+      "1": {
+        "dem_votes": 189175,
+        "rep_votes": 32308,
+        "other_votes": 10613,
+        "total_votes": 232096,
+        "dem_candidate": "Wesley Bell",
+        "rep_candidate": "Paul Berry III",
+        "margin": -156867,
+        "margin_pct": -67.587119,
+        "winner": "DEM",
+        "color": ""
+      },
+      "2": {
+        "dem_votes": 169477,
+        "rep_votes": 153132,
+        "other_votes": 8782,
+        "total_votes": 331391,
+        "dem_candidate": "Fred Wellman",
+        "rep_candidate": "Ann Wagner",
+        "margin": -16345,
+        "margin_pct": -4.93224,
+        "winner": "DEM",
+        "color": ""
+      },
+      "3": {
+        "dem_votes": 125271,
+        "rep_votes": 149239,
+        "other_votes": 7729,
+        "total_votes": 282239,
+        "dem_candidate": "Bethany E Mann",
+        "rep_candidate": "Bob Onder",
+        "margin": 23968,
+        "margin_pct": 8.492094,
+        "winner": "REP",
+        "color": ""
+      },
+      "4": {
+        "dem_votes": 89182,
+        "rep_votes": 154236,
+        "other_votes": 7530,
+        "total_votes": 250948,
+        "dem_candidate": "Jordan Herrera",
+        "rep_candidate": "Mark Alford",
+        "margin": 65054,
+        "margin_pct": 25.923299,
+        "winner": "REP",
+        "color": ""
+      },
+      "5": {
+        "dem_votes": 179256,
+        "rep_votes": 72572,
+        "other_votes": 6128,
+        "total_votes": 257956,
+        "dem_candidate": "Emanuel Cleaver  II",
+        "rep_candidate": "Rick Brattin",
+        "margin": -106684,
+        "margin_pct": -41.357441,
+        "winner": "DEM",
+        "color": ""
+      },
+      "6": {
+        "dem_votes": 100416,
+        "rep_votes": 151219,
+        "other_votes": 6189,
+        "total_votes": 257824,
+        "dem_candidate": "Josh Smead",
+        "rep_candidate": "Chris Stigall",
+        "margin": 50803,
+        "margin_pct": 19.704527,
+        "winner": "REP",
+        "color": ""
+      },
+      "7": {
+        "dem_votes": 89710,
+        "rep_votes": 157599,
+        "other_votes": 6263,
+        "total_votes": 253572,
+        "dem_candidate": "Missi Hesketh",
+        "rep_candidate": "Eric W. Burlison",
+        "margin": 67889,
+        "margin_pct": 26.773066,
+        "winner": "REP",
+        "color": ""
+      },
+      "8": {
+        "dem_votes": 65751,
+        "rep_votes": 152677,
+        "other_votes": 6996,
+        "total_votes": 225424,
+        "dem_candidate": "Chris Reichard",
+        "rep_candidate": "Jason T. Smith",
+        "margin": 86926,
+        "margin_pct": 38.561112,
+        "winner": "REP",
+        "color": ""
+      }
+    }
+  }
+}

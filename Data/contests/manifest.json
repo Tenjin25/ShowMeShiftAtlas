@@ -118,6 +118,17 @@
       "major_party_contested": true
     },
     {
+      "contest_type": "auditor",
+      "year": 2026,
+      "file": "auditor_2026.json",
+      "rows": 115,
+      "dem_total": 967727,
+      "rep_total": 1062203,
+      "major_party_contested": true,
+      "source": "missouri_sos_enr",
+      "status": "unofficial"
+    },
+    {
       "contest_type": "governor",
       "year": 2000,
       "file": "governor_2000.json",
@@ -656,6 +667,17 @@
       "dem_total": 1106236,
       "rep_total": 1684714,
       "major_party_contested": true
+    },
+    {
+      "contest_type": "us_house",
+      "year": 2026,
+      "file": "us_house_2026.json",
+      "rows": 115,
+      "dem_total": 1008238,
+      "rep_total": 1022982,
+      "major_party_contested": true,
+      "source": "missouri_sos_enr",
+      "status": "unofficial"
     },
     {
       "contest_type": "us_senate",
