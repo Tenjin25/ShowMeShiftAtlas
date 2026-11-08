@@ -9943,10 +9943,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="section-kicker">District Lines</span>
                 <div class="view-toggle-row" style="display:flex;gap:6px;flex-wrap:wrap;">
                   <button id="district-lines-2022" class="view-toggle-btn active" type="button" data-testid="lines-2022" aria-label="Use 2022 district lines" aria-pressed="true">2022 Lines</button>
-                  <button id="district-lines-2026" class="view-toggle-btn" type="button" data-testid="lines-2026" aria-label="Use 2026 congressional lines" aria-pressed="false" style="display:none;">2026 Lines</button>
                 </div>
                 <div style="margin-top:4px;font-size:11px;color:#6b7280;">
-                  Congress can switch between 2022 and 2026 lines. State House / Senate stay on 2022 lines.
+                  Congress uses the 2022 lines retained for the 2026 general election. State House / Senate also use 2022 lines.
                 </div>
                 <div id="district-lines-loading-hint" class="district-lines-loading-hint" aria-live="polite" aria-atomic="true"></div>
             </div>
@@ -10323,8 +10322,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-02-mo-original-dropdown-v1';
-    const APP_BUILD_ID = '2026-09-02-mo-original-dropdown-v1';
+    const DATA_CACHE_BUSTER = '2026-11-08-election-results-v1';
+    const APP_BUILD_ID = '2026-11-08-election-results-v1';
 
     function withCacheBuster(path) {
       return window.AtlasData.withCacheBuster(path, DATA_CACHE_BUSTER);
@@ -10354,7 +10353,6 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_variant_overrides: '',
         districts: withBase('./Data/mo_congressional_districts_2022.geojson'),
         districts_2022: withBase('./Data/mo_congressional_districts_2022.geojson'),
-        districts_2026: withBase('./Data/mo_congressional_districts_2026.geojson'),
         state_house: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_house_2022: withBase('./Data/mo_state_house_districts_2022.geojson'),
         state_senate: withBase('./Data/mo_state_senate_districts_2022.geojson'),
@@ -10375,13 +10373,17 @@ document.addEventListener('DOMContentLoaded', function() {
         state_house_info: withBase('./Data/empty.csv'),
         state_senate_info: withBase('./Data/empty.csv'),
         district_descriptions: withBase('./Data/district_descriptions.json'),
+        district_election: withBase('./Data/mo_district_results_2022_lines.json'),
+        district_contests_dir: withBase('./Data/district_contests'),
+        district_contests_dirs: {
+          '2022': withBase('./Data/district_contests')
+        },
         contests_dir: withBase('./Data/contests'),
         reports_match_year_summary: withBase('./Data/reports/precinct_match_year_summary_fresh_2026-03-19.csv'),
         reports_top_unmatched: withBase('./Data/reports/precinct_match_top_unmatched_file_county.csv'),
         crosswalks: {
           congressional: withBase('./Data/crosswalks/precinct_to_cd118_overlap.csv'),
           congressional_2022: withBase('./Data/crosswalks/precinct_to_cd118_overlap.csv'),
-          congressional_2026: withBase('./Data/crosswalks/precinct_to_cd2026_from_tabblocks.csv'),
           state_house_2022: withBase('./Data/crosswalks/precinct_to_2022_state_house_overlap.csv'),
           state_senate_2022: withBase('./Data/crosswalks/precinct_to_2022_state_senate_overlap.csv')
         }
@@ -12187,9 +12189,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function normalizeDistrictLinesYear(raw) {
-      const y = Number(raw);
-      // 2026 congressional lines use a separate geometry + contest-slice folder.
-      if (y === 2026) return 2026;
+      // The 2025 mid-decade plan never took effect for the 2026 general and
+      // was rejected at referendum, so all congressional views use 2022 lines.
       return 2022;
     }
 
@@ -12212,7 +12213,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Statewide contests reallocated onto district lines:
       // - VEST years (2016/2018/2020 absentee-complete overlays): prefer main *.json.
       // - Other years: prefer *_overlap.json (calibrated / tabblock-patched), then main.
-      // - 2026 congressional: main files in district_contests_2026 only.
       const statewideContestTypes = new Set([
         'president',
         'us_senate',
@@ -12243,10 +12243,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const yearNum = Number(year);
       const isStatewide = statewideContestTypes.has(contestKey);
       const hasVestMain = !!(vestMainByYear[yearNum] && vestMainByYear[yearNum].has(contestKey));
-      const prefersMainFirst = isStatewide && (
-        normalizedLines === 2026
-        || (normalizedLines === 2022 && hasVestMain)
-      );
+      const prefersMainFirst = isStatewide && normalizedLines === 2022 && hasVestMain;
       const prefersOverlapFirst = isStatewide
         && normalizedLines === 2022
         && !hasVestMain;
@@ -12270,9 +12267,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function getDistrictGeometryPath(scope, linesYear = currentDistrictLinesYear) {
       const y = normalizeDistrictLinesYear(linesYear);
       if (scope === 'congressional') {
-        if (y === 2026) {
-          return CONFIG.paths.districts_2026 || CONFIG.paths.districts_2022 || CONFIG.paths.districts;
-        }
         return CONFIG.paths.districts_2022 || CONFIG.paths.districts;
       }
       if (scope === 'state_house') {
@@ -12295,19 +12289,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const y = normalizeDistrictLinesYear(currentDistrictLinesYear);
       const group = document.getElementById('district-lines-control-group');
       const btn2022 = document.getElementById('district-lines-2022');
-      const btn2026 = document.getElementById('district-lines-2026');
       const showLinesControls = currentView !== 'counties';
-      const has2026CongressLines = !!(CONFIG.paths?.districts_2026 || '').toString().trim();
       if (group) group.style.display = showLinesControls ? '' : 'none';
       if (btn2022) {
         btn2022.classList.toggle('active', y === 2022);
         btn2022.setAttribute('aria-pressed', y === 2022 ? 'true' : 'false');
-      }
-      if (btn2026) {
-        const congressView = currentView === 'districts';
-        btn2026.style.display = (congressView && has2026CongressLines) ? '' : 'none';
-        btn2026.classList.toggle('active', y === 2026);
-        btn2026.setAttribute('aria-pressed', y === 2026 ? 'true' : 'false');
       }
     }
 
@@ -12384,21 +12370,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function shouldWarnDistrictLinesLoad(linesYear) {
-      const y = normalizeDistrictLinesYear(linesYear);
-      if (y !== 2026) return false;
-      const path = getDistrictGeometryPath('congressional', y);
-      if (!path) return false;
-      const cacheKey = `congressional:${path}`;
-      return !districtGeometryCache.has(cacheKey);
+      return false;
     }
 
     async function setDistrictLinesMode(linesYear) {
       const nextYear = normalizeDistrictLinesYear(linesYear);
-      if (nextYear === 2026 && currentView !== 'districts') {
-        setStatus('2026 lines are only available for congressional view.');
-        updateDistrictLinesToggleUI();
-        return;
-      }
       if (nextYear === normalizeDistrictLinesYear(currentDistrictLinesYear)) {
         updateDistrictLinesToggleUI();
         return;
@@ -20393,9 +20369,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const crosswalks = CONFIG.paths?.crosswalks || {};
       const linesYear = normalizeDistrictLinesYear(linesYearOverride);
       if (scope === 'congressional') {
-        if (linesYear === 2026) {
-          return (crosswalks.congressional_2026 || crosswalks.congressional_2022 || crosswalks.congressional) || '';
-        }
         return (crosswalks.congressional_2022 || crosswalks.congressional) || '';
       }
       if (scope === 'state_house') {
@@ -32880,7 +32853,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         let loadedAnyDistrictManifest = false;
         districtManifestByLines = { '2022': [], '2026': [] };
-        const manifestLoads = await Promise.all([2022, 2026].map(async (linesYear) => {
+        const manifestLoads = await Promise.all([2022].map(async (linesYear) => {
           const dir = getActiveDistrictContestsDir(linesYear);
           if (!dir) return { linesYear, files: [], err: null };
           try {
