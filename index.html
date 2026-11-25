@@ -7514,8 +7514,9 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 
   .vote-label.candidate {
     display: block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .vote-percent {
@@ -13748,11 +13749,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatVoteCounterWinnerLabel(name, partyCode, fallbackText) {
-      // Keep first+last name beside Lead; half-grid CSS clamp wraps long labels.
-      if (isMissingCandidatePlaceholder(name)) return String(name).trim();
-      const full = fullCandidateLabel(name, '');
-      if (!full || full.toUpperCase() === partyCode.toUpperCase()) return fallbackText;
-      return `${full} (${partyCode})`;
+      return formatVoteCounterCandidateLabel(name, partyCode, fallbackText);
     }
 
     function formatFocusBarLabel(name, pct, fallbackText, marginPct = null) {
